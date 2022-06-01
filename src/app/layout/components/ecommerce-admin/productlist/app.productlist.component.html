@@ -1,0 +1,62 @@
+<div class="surface-section px-6 py-6 border-1 surface-border" style="border-radius: 6px;">
+    <div class="grid">
+        <div class="col-12">
+            <p-table #dt [value]="products" [columns]="cols" responsiveLayout="scroll" [rows]="10" [globalFilterFields]="['name','code','price','inventoryStatus', 'date' ]" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [(selection)]="selectedProducts" selectionMode="multiple" [rowHover]="true" dataKey="id">
+                <ng-template pTemplate="caption">
+                    <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
+                        <span class="block text-900 font-bold text-lg mb-4 lg:mb-0">Product List</span>
+                        <div class="flex align-items-center">
+                            <span class="block p-input-icon-right mr-3 w-20rem">
+                                <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search Products" class="w-full"/>
+                                <i class="pi pi-search"></i>
+                            </span>
+                            <button pButton pRipple icon="pi pi-ellipsis-v" class="p-button-secondary" (click)="menu.toggle($event)"></button>
+                            <p-menu #menu [popup]="true" appendTo="body" [model]="items"></p-menu>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem"><p-tableHeaderCheckbox></p-tableHeaderCheckbox></th>
+                        <th class="font-bold" pSortableColumn="name">Product <p-sortIcon field="name"></p-sortIcon></th>
+                        <th class="font-bold" pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
+                        <th class="font-bold" pSortableColumn="rating">Rating <p-sortIcon field="rating"></p-sortIcon></th>
+                        <th class="font-bold" pSortableColumn="code">Tracking ID<p-sortIcon field="code"></p-sortIcon></th>
+                        <th class="font-bold" pSortableColumn="date">Date<p-sortIcon field="date"></p-sortIcon></th>
+                        <th class="font-bold" pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td style="width:3%; height:5rem;"> <p-tableCheckbox [value]="product"></p-tableCheckbox></td>
+                        <td style="width:14%; height:5rem; min-width:10rem;">
+                            <span class="p-column-title">Product</span>
+                            <span class="font-semibold text-900">{{product.name}}</span>
+                        </td>
+                        <td style="width:14%; height:5rem; min-width:8rem;">
+                            <span class="p-column-title">Price</span>
+                            <span class="text-900 font-semibold">{{product.price | currency:'USD'}}</span>
+                        </td>
+                        <td style="width:14%; height:5rem; min-width: 10rem;"><span class="p-column-title">Rating</span>
+                            <p-rating [(ngModel)]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
+                        </td>
+                        <td style="width:14%; height:5rem; min-width:10rem;"><span class="p-column-title">Tracking ID</span>
+                            <span class="text-900 font-semibold">#{{product.code || product.id}}</span>
+                        </td>
+                        <td style="width:14%; height:5rem; min-width:10rem;">
+                            <span class="p-column-title">Date</span>
+                            <span class="text-900 font-semibold">{{product.date}}</span>
+                        </td>
+                        <td style="width:14%; height:5rem; min-width: 10rem;"><span class="p-column-title">Status</span>
+                            <span [class]="'product-badge-text status-' + (product.inventoryStatus ? product.inventoryStatus.toLowerCase() : '')">{{product.inventoryStatus}}</span>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="paginatorleft" let-state></ng-template>
+                <ng-template pTemplate="paginatorright">
+                    <button type="button" pButton icon="pi pi-fw pi-arrow-left" label="Back"></button>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

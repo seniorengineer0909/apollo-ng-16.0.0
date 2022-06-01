@@ -1,0 +1,54 @@
+<p-toast></p-toast>
+<div class="surface-section px-4 py-4 md:px-6 lg:px-5 lg:py-5 border-1 surface-border" style="border-radius: 6px;">
+    <div class="flex justify-content-between align-items-center">
+        <span class="text-900 text-xl font-semibold">Create a new task</span>
+    </div>
+
+    <div #form class="grid p-fluid mt-5">
+        <div class="col-12 field">
+            <label for="name" class="block text-900 text-lg font-semibold mb-4">Task Name</label>
+            <input id="name" type="text" pInputText class="w-full px-3 text-900 font-semibold" placeholder="Enter task name" [(ngModel)]="task.name" style="height: 3.5rem; border-radius: 6px;"/>
+        </div>
+        <div class="col-12 field">
+            <label for="description" class="block text-900 text-lg font-semibold mb-4">Description</label>
+            <p-editor [(ngModel)]="task.description" [style]="{'height':'150px', 'border-bottom-left-radius': '6px', 'border-bottom-right-radius': '6px'}"></p-editor>
+        </div>
+
+        <div class="col-12 mb-2 pb-0">
+            <span class="block text-900 text-lg font-semibold w-full">Task Date</span>
+        </div>
+        <div class="col-6 field mt-0">
+            <span class="p-input-icon-left w-full" style="height: 3.5rem;">
+                <i class="pi pi-clock z-1" style="left: 1.5rem;"></i>
+                <p-calendar [appendTo]="form" dateFormat="mm-dd-yy" [maxDate]="task.endDate" [showTime]="true" inputId="start" placeholder="Start Date" inputStyleClass="w-full pl-7 text-900 font-semibold" [inputStyle]="{'height':'3.5rem', 'border-radius': '6px'}" [(ngModel)]="task.startDate"></p-calendar>
+            </span>
+        </div>
+        <div class="col-6 field mt-0">
+            <span class="p-input-icon-left w-full" style="height: 3.5rem;">
+                <i class="pi pi-clock z-1" style="left: 1.5rem;"></i>
+                <p-calendar [appendTo]="form" dateFormat="mm-dd-yy" [minDate]="task.startDate" [showTime]="true" inputId="end" placeholder="End Date" inputStyleClass="w-full pl-7 text-900 font-semibold" [inputStyle]="{'height':'3.5rem', 'border-radius': '6px'}" [(ngModel)]="task.endDate"></p-calendar>
+            </span>
+        </div>
+        <div class="col-12 field">
+            <label for="members" class="block text-900 text-lg font-semibold mb-4">Add Team Member</label>
+            <p-autoComplete [appendTo]="form" [(ngModel)]="task.members" [suggestions]="filteredMembers" (completeMethod)="filterMembers($event)" field="name" [multiple]="true" [showEmptyMessage]="true" emptyMessage="No results found" placeholder="Choose team members" [inputStyle]="{'height': '2.5rem'}">
+                <ng-template let-member pTemplate="selectedItem">
+                    <div class="flex align-items-center" style="border-radius: 6px;">
+                        <img src="assets/demo/images/avatar/{{member.image}}" [alt]="member.name" class="h-2rem w-2rem border-2 border-circle surface-border mr-2">
+                        <span class="text-900 font-semibold">{{member.name}}</span>
+                    </div>
+                </ng-template>
+                <ng-template let-member pTemplate="item">
+                    <div class="flex align-items-center" style="border-radius: 6px;">
+                        <img src="assets/demo/images/avatar/{{member.image}}" [alt]="member.name" class="h-2rem w-2rem border-2 border-circle surface-border mr-2">
+                        <span class="text-900 font-semibold">{{member.name}}</span>
+                    </div>
+                </ng-template>
+            </p-autoComplete>
+        </div>
+        <div class="col-12 field flex justify-content-end mb-0">
+            <button pButton class="p-button-secondary w-8rem mr-3" icon="pi pi-times" label="Cancel" (click)="resetTask()"></button>
+            <button pButton class="p-button-primary w-8rem" icon="pi pi-check" label="Save" (click)="save()"></button>
+        </div>
+    </div>
+</div>

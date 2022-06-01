@@ -1,0 +1,47 @@
+<div class="flex flex-column h-full">
+    <div class="w-full flex align-items-center border-bottom-1 surface-border p-3 lg:p-6">
+        <div class="relative flex align-items-center mr-3">
+            <img src="assets/demo/images/avatar/{{user.image}}" alt="user.name" class="w-4rem h-4rem border-circle border-2 surface-border">
+            <span class="w-1rem h-1rem border-circle border-2 surface-border absolute right-0" [ngClass]="{'bg-green-400': user.status === 'active', 'bg-red-400': user.status === 'busy', 'bg-yellow-400': user.status === 'away'}" style="bottom: 0px;"></span>
+        </div>
+        <div class="mr-2">
+            <span class="text-900 font-semibold block">{{user.name}}</span>
+            <span class="text-700 font-semibold">Last active 1 hour ago</span>
+        </div>
+        <div class="flex align-items-center ml-auto">
+            <button pButton pRipple type="button" icon="pi pi-phone" class="p-button-rounded p-button-outlined p-button-secondary mr-3"></button>
+            <button pButton pRipple type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-outlined p-button-secondary"></button>
+        </div>
+    </div>
+    <div class="w-full p-3 md:px-4 lg:px-6 lg:py-4 mt-2 overflow-y-auto" style="max-height: 38.5rem;" #chatWindow [scrollTop]="chatWindow.scrollHeight">
+        <div *ngFor="let message of user.messages">
+            <div *ngIf="message.ownerId !== 123" class="grid grid-nogutter mb-4">
+                <div class="mr-3 mt-1">
+                    <img src="assets/demo/images/avatar/{{user.image}}" alt="user.name" class="w-3rem h-3rem border-circle border-2 surface-border">
+                </div>
+                <div class="col mt-3">
+                    <p class="text-900 font-semibold mb-3">{{user.name}}</p>
+                    <span class="text-900 inline-block font-semibold border-1 surface-border p-3 white-space-normal" style="border-radius: 6px; word-break: break-word; max-width:80%;">{{message.text}}</span>
+                    <p class="text-700 mt-3">{{parseDate(message.createdAt)}}<i class="pi pi-check ml-2 text-green-400"></i></p>
+                </div>
+            </div>
+    
+            <div *ngIf="message.ownerId === defaultUserId" class="grid grid-nogutter mb-4">
+                <div class="col mt-3 text-right">
+                    <p class="text-900 font-semibold mb-3">Asiya Javayant</p>
+                    <span class="text-900 inline-block text-left font-semibold border-1 surface-border surface-100 p-3 white-space-normal" style="border-radius: 6px; word-break: break-word; max-width:80%;">{{message.text}}</span>
+                    <p class="text-700 mt-3">{{parseDate(message.createdAt)}} <i class="pi pi-check ml-2 text-green-400"></i></p>
+                </div>
+                <div class="ml-3 text-right">
+                    <img src="assets/demo/images/avatar/asiyajavayant.png" alt="Asiya Javayant" class="w-3rem h-3rem border-circle border-2 surface-border">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-3 md:p-4 lg:p-6 flex align-items-center mt-auto border-top-1 surface-border">
+        <input id="message" type="text" pInputText placeholder="Type a message" class="w-full px-3 text-900 font-semibold mr-2 md:mr-3 h-2rem md:h-3rem" [(ngModel)]="textContent" style="border-radius: 6px;" (keydown.enter)="sendMessage()"/>
+        <button pButton icon="pi pi-image text-sm md:text-base" class="p-button-secondary mr-2 md:mr-3 w-3rem h-2rem md:w-4rem md:h-3rem" style="border-radius: 6px;"></button>
+        <button pButton icon="pi pi-paperclip text-sm md:text-base" class="p-button-secondary mr-2 md:mr-3 w-3rem h-2rem md:w-4rem md:h-3rem" style="border-radius: 6px;"></button>
+        <button pButton label="Submit" icon="pi pi-send font-semibold text-sm md:text-base" class="w-9rem h-2rem md:h-3rem font-semibold text-sm md:text-base" style="border-radius: 6px;" (click)="sendMessage()"></button>
+    </div>
+</div>

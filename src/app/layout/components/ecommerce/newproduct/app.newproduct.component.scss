@@ -1,0 +1,28 @@
+.chip-remove-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    i {
+        font-size: 9px;
+    }
+}
+
+.border-transparent { 
+    border-color: transparent;
+}
+
+:host ::ng-deep .p-fileupload {
+    padding: 0;
+}
+
+:host ::ng-deep .p-fileupload-buttonbar {
+    display: none;
+}
+
+:host ::ng-deep .p-fileupload-content {
+    border: 0 none;
+}
+
+:host ::ng-deep .p-fileupload-row {
+    display: none;
+}

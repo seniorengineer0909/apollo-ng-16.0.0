@@ -1,0 +1,26 @@
+<div *ngIf="content" class="p-0 m-0">
+    <div class="surface-section grid grid-nogutter formgrid flex-column md:flex-row gap-6 p-5" style="border-radius: 6px;">
+        <div class="md:col">
+            <label for="to" class="block text-900 font-semibold mb-3">To</label>
+            <span class="p-input-icon-left w-full" style="height: 3.5rem;">
+                <i class="pi pi-user" style="left: 1.5rem;"></i>
+                <input id="to" type="text" pInputText class="w-full pl-7 text-900 font-semibold" style="height: 3.5rem" [(ngModel)]="content.from"/>
+            </span>
+        </div>
+        <div class="col">
+            <label for="Subject" class="block text-900 font-semibold mb-3">Subject</label>
+            <span class="p-input-icon-left w-full" style="height: 3.5rem;">
+                <i class="pi pi-pencil" style="left: 1.5rem;"></i>
+                <input id="subject" type="text" pInputText placeholder="Subject" class="w-full pl-7 text-900 font-semibold" style="height: 3.5rem" [(ngModel)]="content.title" />
+            </span>
+        </div>
+        <div class="col-12">
+            <textarea rows="7" pInputText class="w-full text-900 font-semibold h-full p-0"></textarea>
+        </div>
+    </div>
+    <div class="flex column-gap-3 justify-content-end p-5 border-top-1 surface-border">
+        <button pButton pRipple type="button" class="p-button-secondary w-3rem h-3rem" icon="pi pi-image"></button>
+        <button pButton pRipple type="button" class="p-button-secondary w-3rem h-3rem" icon="pi pi-paperclip"></button>
+        <button pButton pRipple type="button" class="p-button-primary h-3rem" icon="pi pi-send" label="Send Message" (click)="sendMail()"></button>
+    </div>
+</div>

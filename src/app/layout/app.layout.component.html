@@ -1,0 +1,14 @@
+<div class="layout-container" [ngClass]="{
+        'layout-light': !darkMode, 
+        'layout-dark': darkMode,
+        'layout-overlay': menuMode === 'overlay',
+        'layout-static': menuMode === 'static',
+        'layout-slim': menuMode === 'slim',
+        'layout-horizontal': menuMode === 'horizontal'
+    }">
+    <app-sidebar></app-sidebar>
+    <div class="layout-content-wrapper">
+        <app-topbar></app-topbar>
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+:host ::ng-deep {
+    .p-listbox {
+        &:not(.p-disabled) .p-listbox-item:not(.p-highlight):not(.p-disabled):hover{ 
+            border-radius: 6px;
+        }
+
+        .p-listbox-header {
+            background: none;
+        }
+
+        .p-listbox-list {
+            .p-listbox-item.p-highlight {
+                border-radius: 6px;
+            }
+
+            .p-listbox-item:focus {
+                border-radius: 6px;
+            }
+        }
+    }
+}

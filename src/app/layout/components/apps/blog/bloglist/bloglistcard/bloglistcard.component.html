@@ -1,0 +1,34 @@
+<div class="p-3 cursor-pointer" (click)="navigateToDetail()">
+    <div class="surface-100 z-index" style="border-radius: 6px">
+        <div class="relative">
+            <img [src]="blog.image" class="w-full" style="min-width: 10rem" />
+            <img [src]="blog.profile" class="flex absolute w-4rem h-4rem"
+                style="bottom: -15px; right: 30px;">
+        </div>
+        <div class="m-0 p-3 px-4">
+            <div>
+            <div class="px-0 py-2 flex justify-content-between align-items-center">
+                <p class="text-900 font-semibold text-xl">{{blog.title}}</p>
+            </div>
+            <div class="px-0 py-2  flex justify-content-between align-items-center">
+                <p class="text-900 text-lg">{{blog.description}}</p>
+            </div>
+        </div>
+            <div class="px-0 py-2  flex column-gap-5">
+                <div class="flex align-items-center">
+                    <i class="pi pi-comment mr-2"></i>
+                    <span class="text-900 font-semibold">{{blog.comment}}</span>
+                </div>
+                <div class="flex align-items-center">
+                    <i class="pi pi-share-alt mr-2"></i>
+                    <span class="text-900 font-semibold">{{blog.share}}</span>
+                </div>
+                <div class="flex align-items-center">
+                    <i class="pi pi-clock mr-2"></i>
+                    <span class="text-900 font-semibold mr-1">{{blog.day}}</span>
+                    <span class="text-900 font-semibold">{{blog.mounth}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="px-6 border-1 surface-border surface-card" style="border-radius: 6px;">
+	<div class="flex justify-content-between align-items-center my-4">
+		<span class="font-bold text-xl text-900">Invoice Details</span>
+		<div class="flex align-items-center">
+			<button pButton class="mr-3 p-button-secondary" style="border-radius: 6px;" label="Preview" icon="pi pi-eye"></button>
+			<button pButton style="border-radius: 6px;" class="p-button-primary" label="Download" icon="pi pi-download" (click)="print()"></button>
+		</div>
+	</div>
+	<div id="print" class="grid grid-nogutter surface-card border-1 surface-border my-6" style="border-radius: 6px;">
+		<div class="col-12 px-6 py-4 flex justify-content-between border-bottom-1 surface-border">
+			<img id="invoice-logo" class="logo-image" [src]="'assets/layout/images/logo-'+ (appMain.colorScheme === 'light' ? 'dark' : 'white') + '.svg'" alt="diamond-layout" />
+			<div class="flex align-items-center">
+				<span class="font-bold mr-3 text-900"> # 1643790146237 </span>
+				<span class="border-1 surface-border px-5 py-2 text-900 font-bold" style="border-radius: 6px;">PAID</span>
+			</div>
+		</div>
+
+		<div class="col-6 mt-4 px-6 py-4">
+			<span class="font-bold text-lg text-600 block mb-3">INVOICE FROM</span>
+			<ul class="list-none p-0 m-0">
+				<li class="mb-2 font-semibold text-900">Lucian Obrien</li>
+				<li class="mb-2 font-semibold text-900">1147 Rohan Drive Suite 819 - Burlington, VT / 82021</li>
+				<li class="mb-2 font-semibold text-900">Phone: 904-966-2836</li>
+			</ul>
+		</div>
+		<div class="col-6 mt-4 px-6 py-4">
+			<span class="font-bold text-lg text-600 block mb-3">INVOICE TO</span>
+			<ul class="list-none p-0 m-0">
+				<li class="mb-2 font-semibold text-900">Deja Brady</li>
+				<li class="mb-2 font-semibold text-900">18605 Thompson Circle Apt. 086 - Idaho Falls, WV / 50337</li>
+				<li class="mb-2 font-semibold text-900">Phone: 904-966-2836</li>
+			</ul>
+		</div>
+
+		<div class="col-12 mt-4 px-6">
+			<p-table [value]="tableData" responsiveLayout="scroll">
+				<ng-template pTemplate="header">
+					<tr>
+						<th class="border-none"><span class="text-900 font-bold">Name</span></th>
+						<th class="border-none"><span class="text-900 font-bold">Date</span></th>
+						<th class="border-none"><span class="text-900 font-bold">Hours</span></th>
+						<th class="border-none"><span class="text-900 font-bold">Rate</span></th>
+						<th class="border-none"><span class="text-900 font-bold">Amount</span></th>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="body" let-data>
+					<tr class="bg-transparent pb-6">
+						<td class="border-none"><span class="text-900 font-semibold">{{data.name}}</span></td>
+						<td class="border-none"><span class="text-900 font-semibold">{{data.date}}</span></td>
+						<td class="border-none"><span class="text-900 font-semibold">{{data.hours}}</span></td>
+						<td class="border-none"><span class="text-900 font-semibold">{{data.rate}}</span></td>
+						<td class="border-none"><span class="text-900 font-semibold">{{data.amount}}</span></td>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="summary">
+					<div class="grid grid-nogutter surface-card" style="column-gap: 1rem; row-gap: 1rem;">
+						<div class="col p-3 flex justify-content-between align-items-center border-1 surface-border" style="border-radius: 6px;">
+							<span class="text-600 font-bold">Taxes</span>
+							<span class="text-900 font-bold">$12.40</span>
+						</div>
+						
+						<div class="col p-3 flex justify-content-between align-items-center border-1 surface-border" style="border-radius: 6px;">
+							<span class="text-600 font-bold">Shipping Rate</span>
+							<span class="text-900 font-bold">$12.40</span>
+						</div>
+						
+						<div class="col p-3 flex justify-content-between align-items-center border-1 surface-border border-radius" style="border-radius: 6px;">
+							<span class="text-600 font-bold">Total</span>
+							<span class="text-900 font-bold">$12.40</span>
+						</div>
+					</div>
+				</ng-template>
+			</p-table>
+		</div>
+
+		<div id="footer" class="col-12 my-4 px-6 my-5">
+			<div class="border-1 surface-border p-3" style="border-radius: 6px;">
+				<span class="block text-600 font-bold">Notes</span>
+				<span class="block text-900 font-semibold mt-3">Please make sure you have the right bank registration number as I had issues before and make sure you guys cover transfer expenses.</span>
+			</div>
+		</div>
+	</div>
+</div>

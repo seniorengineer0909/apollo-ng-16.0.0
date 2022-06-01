@@ -1,0 +1,63 @@
+<p-sidebar [(visible)]="display" styleClass="w-30rem p-0" position="right" [showCloseIcon]="false" (onHide)="onFilterClose.emit(false)">
+    <div class="flex flex-column h-screen">
+        <div class="p-4 flex border-bottom-1 surface-border">
+            <span class="text-900 text-xl font-bold inline-flex align-items-center ml-2">Filters</span>
+            <button pButton pRipple icon="pi pi-fw pi-times text-700" class="p-button-text p-button-rounded ml-auto" (click)="display = false;"></button>
+        </div>
+        <div class="flex-auto py-5 overflow-y-auto px-3 md:px-5">
+            <div class="flex flex-column mb-5">
+                <span class="block text-600 font-semibold mb-3 text-lg">Gender</span>
+                <div *ngFor="let gender of genderOptions" class="flex justify-content-between align-items-center my-2">
+                    <div class="flex align-items-center">
+                        <p-checkbox name="group1" [value]="gender.name" [(ngModel)]="selectedFilters" [inputId]="gender.name" styleClass="mr-3"></p-checkbox>
+                        <label [for]="gender.name" class="block text-900 text-lg font-semibold">{{gender.name}}</label>
+                    </div>
+                    <span class="text-900 font-semibold">{{gender.value}}</span>
+                </div>
+            </div>
+
+            <div class="flex flex-column mb-5">
+                <span class="block text-600 font-semibold mb-3 text-lg">Brand</span>
+                <div class="mb-3">
+                    <span class="p-input-icon-right w-full">
+                        <i class="pi pi-search"></i>
+                        <input type="text" pInputText placeholder="Search" class="w-full"/>
+                    </span>
+                </div>
+                <div *ngFor="let brand of brandOptions" class="flex justify-content-between align-items-center my-2">
+                    <div class="flex align-items-center">
+                        <p-checkbox name="group1" [value]="brand.name" [(ngModel)]="selectedFilters" [inputId]="brand.name" styleClass="mr-3"></p-checkbox>
+                        <label [for]="brand.name" class="block text-900 text-lg font-semibold">{{brand.name}}</label>
+                    </div>
+                    <span class="text-900 font-semibold">{{brand.value}}</span>
+                </div>
+                <a tabindex="0" class="block cursor-pointer my-3 text-600 font-semibold">Show all...</a>
+            </div>
+
+            <div class="flex flex-column mb-5">
+                <span class="block text-600 font-semibold mb-3 text-lg">Price Range</span>
+                <p-slider [(ngModel)]="priceRanges" [range]="true" styleClass="mt-3 mx-auto" [style]="{'max-width':'98%'}" max="12000"></p-slider>
+                <div class="flex my-4 justify-content-between">
+                    <p-inputNumber placeholder="10" mode="currency" currency="USD" [(ngModel)]="priceRanges[0]" min="10" inputStyleClass="w-full mr-3"></p-inputNumber>
+                    <p-inputNumber placeholder="10000" max="10000" mode="currency" currency="USD" [(ngModel)]="priceRanges[1]" inputStyleClass="w-full"></p-inputNumber>
+                </div>
+            </div>
+
+            <div class="flex flex-column">
+                <span class="block text-600 font-semibold mb-3 text-lg">Color</span>
+                <div class="flex justify-content-between">
+                    <div *ngFor="let color of colorOptions" class="w-2rem h-2rem border-circle cursor-pointer border-none flex justify-content-center align-items-center" [class]="color.background" (click)="onColorSelect(color.name)">
+                        <i class="pi pi-check text-sm text-white" *ngIf="selectedFilters.indexOf(color.name) !== -1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-top-1 surface-border p-4">
+            <div class="flex justify-content-end w-full">
+                <button pButton pRipple class="p-button-secondary p-button-outlined mr-3 font-semibold" label="Clear All" icon="pi pi-fw pi-trash" style="border-radius: 6px;" (click)="clear()"></button>
+                <button pButton pRipple class="p-button-primary font-semibold" label="Apply Filter" icon="pi pi-fw pi-check" style="border-radius: 6px;"></button>
+            </div>
+        </div>
+    </div>
+</p-sidebar>

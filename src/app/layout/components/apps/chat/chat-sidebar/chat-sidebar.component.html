@@ -1,0 +1,11 @@
+<div class="w-full flex flex-column align-items-center border-bottom-1 surface-border p-6">
+    <img src="assets/demo/images/avatar/asiyajavayant.png" class="w-6rem h-6rem border-2 surface-border" style="border-radius: 50px" alt="amy elsner">
+    <span class="text-900 text-xl font-semibold mt-4">Asiya Javayant</span>
+</div>
+<div class="w-full flex row-gap-4 flex-column surface-border p-4">
+    <span class="p-input-icon-left w-full mb-3 mt-3 h-3rem">
+        <i class="pi pi-search text-900" style="left: 1.5rem;"></i>
+        <input id="search" type="text" pInputText placeholder="Quick Search.." class="w-full pl-7 text-900 font-semibold h-3rem" [(ngModel)]="searchValue" style="border-radius: 6px;" (input)="filter()"/>
+    </span>
+    <user-card *ngFor="let user of filteredUsers" [user]="user"></user-card>
+</div>

@@ -1,0 +1,92 @@
+<div class="surface-section px-6 py-6 border-1 surface-border" style="border-radius: 6px;">
+    <div class="flex justify-content-between flex-column md:flex-row md:align-items-center pb-4 mt-3">
+        <div class="flex align-items-center mr-4 align-self-center md:align-self-auto flex-column md:flex-row">
+            <img src="assets/demo/images/5.svg" class="mr-3 w-5rem" />
+
+            <div class="flex flex-column">
+                <span class="font-bold white-space-nowrap text-lg mb-2">Jane Cooper</span>
+                <p class="font-semibold mt-0 mb-0 text-sm text-600">UI/UX Designer</p>
+            </div>
+        </div>
+        <div class="grid align-items-center flex-wrap justify-content-center">
+            <div class="col-6 md:col-3 justify-content-center flex md:mt-0 mt-2">
+                <div class="border-1 surface-border p-3 inline-flex align-items-center mt-0 mb-0 m-3" style="border-radius: 6px">
+                    <i class="pi pi-dollar text-600"></i>
+                </div>
+
+                <div class="text-sm flex justify-content-center flex-column font-semibold md:mt-0 mt-2">
+                    <span class="font-bold text-900">$6200</span>
+                    <span class="text-600 font-semibold">Revenue</span>
+                </div>
+            </div>
+            <div class="col-6 md:col-3 justify-content-center flex md:mt-0 mt-2">
+                <div class="border-1 surface-border p-3 inline-flex align-items-center mt-0 mb-0 m-3" style="border-radius: 6px">
+                    <i class="pi pi-euro text-600"></i>
+                </div>
+
+                <div class="text-sm flex justify-content-center flex-column font-semibold md:mt-0 mt-2">
+                    <span class="font-bold text-900">$6200</span>
+                    <span class="text-600 font-semibold">Revenue</span>
+                </div>
+            </div>
+            <div class="col-6 md:col-3 justify-content-center flex md:mt-0 mt-2">
+                <div class="border-1 surface-border p-3 inline-flex align-items-center mt-0 mb-0 m-3" style="border-radius: 6px">
+                    <i class="pi pi-thumbs-up text-600"></i>
+                </div>
+
+                <div class="text-sm flex justify-content-center flex-column font-semibold md:mt-0 mt-2">
+                    <span class="font-bold text-900">$6200</span>
+                    <span class="text-600 font-semibold">Revenue</span>
+                </div>
+            </div>
+            <div class="col-6 md:col-3 justify-content-center flex md:mt-0 mt-2">
+                <div class="border-1 surface-border p-3 inline-flex align-items-center mt-0 mb-0 m-3" style="border-radius: 6px">
+                    <i class="pi pi-euro text-600"></i>
+                </div>
+
+                <div class="text-sm flex justify-content-center flex-column font-semibold md:mt-0 mt-2">
+                    <span class="font-bold text-900">$6200</span>
+                    <span class="text-600 font-semibold">Revenue</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <p-divider type="dashed"></p-divider>
+    <ul class="list-none p-0 flex overflow-x-auto select-none mt-4 mb-0">
+        <li class="mr-4">
+            <a routerLink="overview" class="cursor-pointer p-3 flex align-items-center hover:surface-100" style="border-radius: 6px;">
+                Overview
+            </a>
+        </li>
+        <li class="mr-4">
+            <a class="cursor-pointer p-3 flex align-items-center hover:surface-100" style="border-radius: 6px;">
+                Notifications
+            </a>
+        </li>
+        <li class="mr-4">
+            <a class="cursor-pointer p-3 flex align-items-center hover:surface-100" style="border-radius: 6px;">
+                Integrations
+            </a>
+        </li>
+        <li class="mr-4">
+            <a class="cursor-pointer p-3 flex align-items-center hover:surface-100" style="border-radius: 6px;">
+                Sales
+            </a>
+        </li>
+        <li class="mr-4">
+            <a routerLink="settings" class="cursor-pointer p-3 flex align-items-center hover:surface-100" style="border-radius: 6px;">
+                Settings
+            </a>
+        </li>
+        <li>
+            <a routerLink="followers" class="cursor-pointer p-3 flex align-items-center hover:surface-100">
+                Followers
+            </a>
+        </li>
+    </ul>
+
+</div>
+<div class="mt-6">
+    <router-outlet></router-outlet>
+</div>

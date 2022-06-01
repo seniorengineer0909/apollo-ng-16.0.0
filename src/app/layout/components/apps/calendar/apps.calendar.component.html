@@ -1,0 +1,109 @@
+<div class="surface-section px-4 py-6 md:px-6 border-1 surface-border" style="border-radius: 6px;">
+    <div class="grid">
+        <div class="col-12">
+            <full-calendar [options]="calendarOptions"></full-calendar>
+            <p-dialog #dd [(visible)]="showDialog" [style]="{width: '500px'}" [modal]="true" [closable]="true" (onHide)="view = null">
+                <ng-template pTemplate="header">
+                    <span class="text-900 font-semibold text-xl">{{view === 'display' ? changedEvent.title : view === 'new' ? 'New Event' : 'Edit Event'}}</span>
+                </ng-template>
+                <ng-template pTemplate="content">
+                    <div *ngIf="view === 'display'" class="py-5">
+                        <span class="text-900 font-semibold text-lg block mb-2">Description</span>
+                        <span class="text-700 block mb-4">{{changedEvent.description}}</span>
+       
+                        <div class="grid p-fluid">
+                            <div class="col-6">
+                                <p class="text-900 font-semibold text-lg">Start</p>
+                                <p>
+                                    <i class="pi pi-fw pi-clock text-700 mr-2"></i>
+                                    <span class="text-700">{{changedEvent.start.toISOString().slice(0,10)}}</span>
+                                </p>
+                            </div>
+                            <div class="col-6">
+                                <p class="text-900 font-semibold text-lg">End</p>
+                                <p>
+                                    <i class="pi pi-fw pi-clock text-700 mr-2"></i>
+                                    <span class="text-700">{{changedEvent.end.toISOString().slice(0,10)}}</span>
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p class="text-900 font-semibold text-lg">Location</p>
+                                <p>
+                                    <i class="pi pi-fw pi-map-marker text-700 mr-2"></i>
+                                    <span class="text-700">{{changedEvent.location}}</span>
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p class="text-900 font-semibold text-lg">Color</p>
+                                <div class="flex align-items-center">
+                                    <div class="w-1rem h-1rem" [style.backgroundColor]="changedEvent.tag.color" style="border-radius: 50px;"></div>
+                                    <span class="ml-2 font-semibold text-700">{{changedEvent.tag.name}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="view !== 'display'" class="py-5">
+                        <div class="grid p-fluid">
+                            <div class="col-12 md:col-6 field">
+                                <label for="title" class="block text-900 font-bold">Event Title</label>
+                                <span class="p-input-icon-left w-full" style="height: 3.5rem;">
+                                    <i class="pi pi-pencil" style="left: 1.5rem;"></i>
+                                    <input id="title" type="text" pInputText class="w-full pl-7 text-900 font-semibold" placeholder="Title" [(ngModel)]="changedEvent.title" style="height: 3.5rem"/>
+                                </span>
+                            </div>
+                            <div class="col-12 md:col-6 field">
+                                <label for="location" class="block text-900 font-bold">Location</label>
+                                <span class="p-input-icon-left w-full" style="height: 3.5rem;">
+                                    <i class="pi pi-map-marker" style="left: 1.5rem;"></i>
+                                    <input id="location" type="text" pInputText placeholder="Location" class="w-full pl-7 text-900 font-semibold" [(ngModel)]="changedEvent.location" style="height: 3.5rem"/>
+                                </span>
+                            </div>
+                            <div class="col-12 field">
+                                <label for="description" class="block text-900 font-bold">Event Description</label>
+                                <textarea id="description" type="text" pInputTextarea [rows]="5" [cols]="30" [(ngModel)]="changedEvent.description" style="resize: none"></textarea>        
+                            </div>
+
+                            <div class="col-12 md:col-6 field">
+                                <label for="start" class="block text-900 font-bold">Start Date</label>
+                                <span class="p-input-icon-left w-full" style="height: 3.5rem;">
+                                    <i class="pi pi-clock z-1" style="left: 1.5rem;"></i>
+                                    <p-calendar [appendTo]="dd" dateFormat="mm-dd-yy" [maxDate]="changedEvent.end" [showTime]="true" [required]="true" inputId="start" inputStyleClass="w-full pl-7 text-900 font-semibold" [inputStyle]="{'height':'3.5rem'}" [(ngModel)]="changedEvent.start"></p-calendar>
+                                </span>
+                            </div>
+                            <div class="col-12 md:col-6 field">
+                                <label for="end" class="block text-900 font-bold">End Date</label>
+                                <span class="p-input-icon-left w-full" style="height: 3.5rem;">
+                                    <i class="pi pi-clock z-1" style="left: 1.5rem;"></i>
+                                    <p-calendar [appendTo]="dd" dateFormat="mm-dd-yy" [minDate]="changedEvent.start" [showTime]="true" [required]="true" inputId="end" inputStyleClass="w-full pl-7 text-900 font-semibold" [inputStyle]="{'height':'3.5rem'}" [(ngModel)]="changedEvent.end"></p-calendar>
+                                </span>
+                            </div>
+                            <div class="col-12">
+                                <span class="text-900 block mb-2 font-semibold">Color</span>
+                                <p-dropdown [appendTo]="dd" [showClear]="true" [style]="{'height': '3.5rem'}" [options]="tags" [(ngModel)]="changedEvent.tag" optionLabel="name">
+                                    <ng-template pTemplate="selectedItem">
+                                        <div *ngIf="changedEvent.tag" class="flex align-items-center" style="padding: 0.5rem;">
+                                           <div class="w-1rem h-1rem mr-2" style="border-radius: 50px;" [style.backgroundColor]="changedEvent.tag.color"></div>
+                                            <div>{{changedEvent.tag.name}}</div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template let-tag pTemplate="item">
+                                        <div class="flex align-items-center">
+                                            <div class="w-1rem h-1rem mr-2" style="border-radius: 50px;" [style.backgroundColor]="tag.color"></div>
+                                            <div>{{tag.name}}</div>
+                                        </div>
+                                    </ng-template>
+                                </p-dropdown>
+
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+
+                <ng-template pTemplate="footer">
+                    <button pButton *ngIf="view === 'display'" label="Edit" icon="pi pi-pencil" class="p-button-primary" (click)="onEditClick()"></button>
+                    <button pButton *ngIf="view === 'new' || view === 'edit'" label="Save" icon="pi pi-check" class="p-button-primary" (click)="handleSave()"></button>
+                </ng-template>
+            </p-dialog>
+        </div>
+    </div>
+</div>

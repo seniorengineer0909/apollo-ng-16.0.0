@@ -1,0 +1,106 @@
+<div class="surface-section px-6 py-6 border-1 surface-border" style="border-radius: 6px;">
+    <div class="grid flex-column md:flex-row" style="gap: 1rem;">
+        <div class="col-12">
+            <span class="block text-900 font-bold w-full text-lg mb-4 lg:mb-0">Edit Order</span>
+        </div>
+        <div class="col">
+            <p-dropdown [options]="paymentMethods" [(ngModel)]="selectedPayment" [required]="true" optionLabel="name" placeholder="Payment Method" [showClear]="true" styleClass="w-full" panelStyleClass="w-full"></p-dropdown>
+        </div>
+        <div class="col">
+            <p-dropdown [options]="shippingMethods" [(ngModel)]="selectedShipping" optionLabel="name" placeholder="Shipping Method" [showClear]="true" styleClass="w-full" panelStyleClass="w-full"></p-dropdown>
+        </div>
+        <div class="col">
+            <p-dropdown [options]="orderDates" [(ngModel)]="selectedDate" optionLabel="date" placeholder="OrderDate" [showClear]="true" styleClass="w-full" panelStyleClass="w-full"></p-dropdown>
+        </div>
+    </div>
+    <div class="grid flex-column mt-4" style="gap: 1rem;">
+        <div class="p-2 flex-auto">
+            <div class="p-2 flex flex-column md:flex-row flex-wrap md:align-items-center">
+                <img src="assets/demo/images/ecommerce/shop/shop-1.png" class="w-8rem h-8rem mb-3 md:mb-0 flex-shrink-0" style="border-radius: 6px;" alt="product"/>
+                <div class="flex-auto md:ml-3">
+                    <div class="flex align-items-center justify-content-between mb-3">
+                        <span class="text-900 font-bold">Product Name</span>
+                        <span class="text-900 font-bold">$123.00</span>
+                    </div>
+                    <div class="text-600 text-sm mb-3">White | 42</div>
+                    <div class="flex flex-auto justify-content-between align-items-center">
+                        <p-inputNumber [showButtons]="true" buttonLayout="horizontal" spinnerMode="horizontal" min="0" inputStyleClass="w-2rem text-center p-0 border-none outline-none surface-50 shadow-none" [(ngModel)]="quantities1[0]"
+                        class="border-1 surface-border border-round" decrementButtonClass="surface-50 p-button-text text-600 hover:text-primary" incrementButtonClass="p-button-text surface-50 text-600 hover:text-primary py-1 px-1" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
+                        <button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-secondary p-button-text"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2 flex-auto">
+            <div class="p-2 flex flex-column md:flex-row flex-wrap md:align-items-center">
+                <img src="assets/demo/images/ecommerce/shop/shop-2.png" class="w-8rem h-8rem mb-3 md:mb-0 flex-shrink-0" style="border-radius: 6px;" alt="product"/>
+                <div class="flex-auto md:ml-3">
+                    <div class="flex align-items-center justify-content-between mb-3">
+                        <span class="text-900 font-bold">Product Name</span>
+                        <span class="text-900 font-bold">$123.00</span>
+                    </div>
+                    <div class="text-600 text-sm mb-3">Black | 42</div>
+                    <div class="flex flex-auto justify-content-between align-items-center">
+                        <p-inputNumber [showButtons]="true" buttonLayout="horizontal" spinnerMode="horizontal" min="0" inputStyleClass="w-2rem text-center p-0 border-none surface-50 shadow-none" [(ngModel)]="quantities1[0]"
+                        class="border-1 surface-border border-round" decrementButtonClass="surface-50 p-button-text text-600 hover:text-primary" incrementButtonClass="p-button-text surface-50 text-600 hover:text-primary py-1 px-1" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
+                        <button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-secondary p-button-text"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p-divider class="p-2"></p-divider>
+        <div class="col-12 flex justify-content-end">
+            <span class="text-900 font-bold text-lg">Total Cost: $402.00</span>
+        </div>
+    </div>
+    <div class="grid mt-4" style="gap: 1rem;">
+        <div class="col-12">
+            <p-table #dt [value]="products" [columns]="cols" responsiveLayout="scroll" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10,20]" [rowHover]="true" dataKey="id">
+                <ng-template pTemplate="caption">
+                    <span class="block p-input-icon-left mr-3 w-20rem">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search Products" class="w-full"/>
+                    </span>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem"><p-tableHeaderCheckbox></p-tableHeaderCheckbox></th>
+                        <th class="font-bold" pSortableColumn="name">Product <p-sortIcon field="name"></p-sortIcon></th>
+                        <th class="font-bold" pSortableColumn="category">Category<p-sortIcon field="category"></p-sortIcon></th>
+                        <th class="font-bold" pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
+                        <th class="font-bold" pSortableColumn="inventoryStatus">Status <p-sortIcon field="invengtoryStatus"></p-sortIcon></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td style="width:3%; height:5rem;"><p-tableCheckbox [value]="product"></p-tableCheckbox></td>
+                        <td style="width:67%; height:5rem; min-width:8rem;">
+                            <span class="p-column-title">Product</span>
+                            <div class="flex align-items-center">
+                                <img [src]="'assets/demo/images/product/' + product.image" class="w-4rem h-4rem mr-3 shadow-1" style="border-radius: 6px;" alt="">
+                                <span class="font-semibold text-900">{{product.name}}</span>
+                            </div>
+                        </td>
+                        <td style="width:15%; height:5rem; min-width:10rem;">
+                            <span class="p-column-title">Category</span>
+                            <span class="text-900 font-semibold">{{product.category}}</span>
+                        </td>
+                        <td style="width:10%; height:5rem; min-width:10rem;">
+                            <span class="p-column-title">Price</span>
+                            <span class="text-900 font-semibold">{{product.price | currency:'USD'}}</span>
+                        </td>
+                        <td style="width:10%; height:5rem; min-width:10rem;"><span class="p-column-title">Status</span>
+                            <span class="font-semibold" [ngClass]="'product-badge-text status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary" let-state>
+                    <div class="flex w-full justify-content-center md:justify-content-end mt-3">
+                        <button pButton pRipple icon="pi pi-fw pi-times" label="Cancel" class="p-button-secondary p-button-outlined mr-3"></button>
+                        <button pButton pRipple icon="pi pi-fw pi-check" label="Save Changes"></button>
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

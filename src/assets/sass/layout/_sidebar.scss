@@ -1,0 +1,11 @@
+.layout-static {
+    .layout-sidebar {
+        position: fixed;
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 16rem;
+        background-color: var(--sidebar-bg);
+        backdrop-filter: blur(20px);
+    }
+}

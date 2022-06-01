@@ -1,0 +1,14 @@
+<div class="surface-border" id="menu" style="border-radius: 6px;">
+    <button pButton pRipple label="Compose New" class="py-3 px-4 mb-5 w-full p-button-outlined p-button-secondary" routerLink="/apps/mail/compose" style="border-radius: 6px;"></button>
+    <ul class="list-none m-0 p-0 flex flex-column gap-1">
+        <li pRipple *ngFor="let item of items; let i = index" class="cursor-pointer select-none p-3 mb-1 transition-duration-150" style="border-radius: 6px" [ngClass]="{'bg-primary' : activeIndex === items.indexOf(item)}" (click)="navigate(item, i)">
+            <div class="flex align-items-center">
+                <i [class]="item.icon" class="mr-4 text-600 transition-duration-150 text-lg" [ngClass]="{'text-white' : activeIndex === items.indexOf(item)}"></i>
+                <span class="text-900 font-bold transition-duration-150" [ngClass]="{'text-white' : activeIndex === items.indexOf(item)}">
+                    {{item.label}}
+                </span>
+                <span *ngIf="item.badge" class="ml-auto text-sm font-semibold surface-ground text-primary px-2 py-1" style="border-radius: 30px;">{{item.badge}}</span>
+            </div>
+        </li>
+    </ul>
+</div>

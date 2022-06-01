@@ -1,0 +1,18 @@
+<div class="card px-6 py-6">
+    <p-dataView #dv [value]="totalBlogs" [paginator]="true" [rows]="rowCount" filterBy="title" [sortField]="sortField"
+        [sortOrder]="sortOrder" layout="grid">
+        <ng-template pTemplate="header">
+            <div class="flex flex-column sm:flex-row justify-content-between align-items-center mb-4 ">
+                <span class="text-xl text-900 font-semibold mb-2 md:mb-0">Blog List</span>
+                <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort by"
+                    (onChange)="onSortChange($event)" [style]="{ 'min-width': '10rem' }"></p-dropdown>
+            </div>
+        </ng-template>
+
+        <ng-template let-blog pTemplate="gridItem">
+            <div class="col-12 md:col-6 xl:col-4 ">
+                <bloglistcard [blog]="blog"></bloglistcard>
+            </div>
+        </ng-template>
+    </p-dataView>
+</div>

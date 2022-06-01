@@ -1,0 +1,103 @@
+<div class="surface-section px-6 py-6  border-1 surface-border" style="border-radius: 6px;">
+    <div class="grid">
+        <div class="col-12">
+            <p-table #dt [value]="products" [columns]="cols" responsiveLayout="scroll" [rows]="5" [globalFilterFields]="['name','country.name','representative.name','status']" [rows]="5" [rowHover]="true" dataKey="id">
+                <ng-template pTemplate="caption">
+                    <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center mb-5">
+                        <span class="block text-900 font-bold text-lg mb-4 lg:mb-0">Order Details</span>
+                        <span class="block text-900 font-bold text-lg mb-4 lg:mb-0">ID: #135582</span>
+                    </div>
+                    <div class="grid grid-nogutter border-1 surface-border mb-5 px-4 py-6" style="border-radius: 6px; gap: 2rem;">
+                        <div class="col-12 flex justify-content-between">
+                            <div class="flex align-items-center">
+                                <span class="text-900 font-bold mr-2">Order History</span>
+                                <i class="pi pi-fw pi-external-link text-700 cursor-pointer hover:text-primary"></i>
+                            </div>
+
+                            <span class="text-900 font-bold mr-2">21 April 2022</span>
+                        </div>
+                        <div class="col-12">
+                            <app-progress [events]="events"></app-progress>
+                        </div>
+                    </div>
+                    <div class="grid grid-nogutter flex-nowrap flex-column md:flex-row" style="gap: 2rem;">
+                        <div class="col p-4 border-1 surface-border" style="border-radius: 6px;">
+                            <span class="text-700 font-bold block mb-3">Payment Address</span>
+                            <span class="text-900 font-bold block">1147 Rohan Drive Suite 819 - Burlington, VT / 82021</span>
+                        </div>
+                        <div class="col p-4 border-1 surface-border" style="border-radius: 6px;">
+                            <span class="text-700 font-bold block mb-3">Shipping Address</span>
+                            <span class="text-900 font-bold block">1147 Rohan Drive Suite 819 - Burlington, VT / 82021</span>
+                        </div>
+
+                        <div class="col p-4 border-1 surface-border" style="border-radius: 6px;">
+                            <span class="text-700 font-bold block mb-3">Shipping Address</span>
+                            <div class="flex align-items-center">
+                                <img src="assets/demo/images/blocks/logos/visa.png" alt="VISA" width="50" class="mr-3">
+                                <span class="text-900 font-bold">4543 60** **** 9523</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th class="font-bold" pSortableColumn="name">Product <p-sortIcon field="name"></p-sortIcon></th>
+                        <th class="font-bold" pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
+                        <th class="font-bold" pSortableColumn="quantity">Quantity <p-sortIcon field="quantity"></p-sortIcon></th>
+                        <th class="font-bold" pSortableColumn="total">Total <p-sortIcon field="total"></p-sortIcon></th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td style="width:50%; height:5rem; min-width:15rem;">
+                            <span class="p-column-title">Product</span>
+                            <div class="flex align-items-center">
+                                <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.name" style="border-radius: 6px;" class="w-4rem h-4rem mr-4 shadow-1">
+                                <span class="font-semibold text-900">{{product.name}}</span>
+                            </div>
+                        </td>
+                        <td style="width:14%; height:5rem; min-width:8rem;">
+                            <span class="p-column-title">Price</span>
+                            <span class="text-900 font-semibold">{{product.price | currency:'USD'}}</span>
+                        </td>
+                        <td style="width:14%; height:5rem; min-width:10rem;"><span class="p-column-title">Quantity</span>
+                            <span class="text-900 font-semibold">{{product.quantity}}</span>
+                        </td>
+                        <td style="width:14%; height:5rem; min-width:10rem;">
+                            <span class="p-column-title">Total</span>
+                            <span class="text-900 font-semibold">{{product.total | currency:'USD'}}</span>
+                        </td>
+                        <td style="width:14%; height:5rem; min-width: 7rem;">
+                            <div class="flex flex-nowrap align-items-center">
+                                <button pButton pRipple icon="pi pi-shopping-cart" class="mr-2"></button>
+                                <button pButton pRipple icon="pi pi-replay"></button>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary" let-state>
+                    <div class="grid grid-nogutter" style="column-gap: 1rem; row-gap: 1rem;">
+						<div class="col p-3 flex flex-column md:flex-row justify-content-between align-items-center border-1 surface-border" style="border-radius: 6px;">
+							<span class="text-600 font-bold text-center md:text-left">Taxes</span>
+							<span class="text-900 font-bold">$12.40</span>
+						</div>
+
+						<div class="col p-3 flex flex-column md:flex-row justify-content-between align-items-center border-1 surface-border" style="border-radius: 6px;">
+							<span class="text-600 font-bold text-center md:text-left">Shipping Rate</span>
+							<span class="text-900 font-bold">$12.40</span>
+						</div>
+
+						<div class="col p-3 flex flex-column md:flex-row justify-content-between align-items-center border-1 surface-border border-radius" style="border-radius: 6px;">
+							<span class="text-600 font-bold text-center md:text-left">Total</span>
+							<span class="text-900 font-bold">$12.40</span>
+						</div>
+                        <div class="col-12 flex justify-content-center md:justify-content-end mt-3">
+                            <button pButton pRipple icon="pi pi-fw pi-pencil" label="Edit Order"></button>
+                        </div>
+					</div>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

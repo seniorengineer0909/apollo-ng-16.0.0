@@ -1,0 +1,26 @@
+<p-listbox #listbox [options]="taskList" [readonly]="true" [(ngModel)]="selectedTasks" [metaKeySelection]="false" [multiple]="true" optionLabel="name" [showToggleAll]="false" [listStyle]="{'max-height':'250px', 'padding': '0rem 1rem'}" [style]="{'width':'100%', 'border-radius': '6px'}" styleClass="z-1 mt-5">
+    <ng-template pTemplate="header">
+        <span class="text-900 font-semibold text-xl py-3">{{title}}</span>
+    </ng-template>
+    <ng-template let-task pTemplate="item">
+        <div class="grid grid-nogutter flex-column md:flex-row justify-content-center lg:justify-content-start align-items-center w-full">
+            <div class="col flex-grow-1 flex justify-content-start align-items-center mb-5 md:mb-0">
+                <p-checkbox [value]="task" [name]="task.name" [label]="task.name" [(ngModel)]="selectedTasks" [inputId]="task.id" styleClass="z-3" labelStyleClass="font-semibold text-lg text-900 white-space-nowrap"></p-checkbox>
+            </div>
+            <div class="col flex-grow-0 flex align-items-center mr-0 mb-5 md:mb-0 md:mr-3">
+                <span *ngIf="task.comments" class="flex align-items-center text-700 font-bold mr-3"><i class="pi pi-comment mr-2"></i>{{task.comments}}</span>
+                <span *ngIf="task.attachments" class="flex align-items-center text-700 font-bold mr-3"><i class="pi pi-paperclip mr-2"></i>{{task.attachments}}</span>
+                <span class="flex align-items-center text-700 font-bold white-space-nowrap"><i class="pi pi-clock mr-2"></i>{{parseDate(task.startDate)}}</span>
+            </div>
+            <div class="col flex-grow-0 flex align-items-center justify-content-between mb-7 md:mb-0">
+                <p-avatarGroup styleClass="mr-3">
+                    <p-avatar *ngFor="let member of task.members" image="assets/demo/images/avatar/{{member.image}}" size="large" shape="circle"></p-avatar>
+                    <p-avatar label="+2" shape="circle" size="large" [style]="{'background-color':'#ffffff', 'color': '#212121', 'border':'2px solid var(--surface-border)'}"></p-avatar>
+                </p-avatarGroup>
+                <p-badge [value]="task.status" styleClass="mr-3 w-6rem h-2rem flex align-items-center justify-content-center border-2 surface-border surface-section text-900 text-base" [style]="{'border-radius': '6px;'}"></p-badge>
+                <button pButton pRipple type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-text z-3" (click)="toggleMenu($event, task.id)"></button>
+                <p-menu [appendTo]="listbox" #menu [popup]="true" [model]="menuItems" styleClass="w-8rem"></p-menu>
+            </div>
+        </div>
+    </ng-template>
+</p-listbox>
