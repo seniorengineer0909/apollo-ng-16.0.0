@@ -4,6 +4,7 @@
 
 html {
     height: 100%;
+    font-size: 14px;
 }
 
 body {
@@ -11,6 +12,9 @@ body {
     padding: 0;
     margin: 0;
     min-height: 100%;
+    background: var(--surface-ground);
+    color: var(--text-color);
+    font-family: var(--font-family);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -20,8 +24,5 @@ a {
 }
 
 .layout-container {
-    background: var(--body-bg);
-    color: var(--text-color);
-    font-family: var(--font-family);
     min-height: 100vh;
 }

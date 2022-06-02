@@ -1,0 +1,49 @@
+.layout-light {
+  --sidebar-bg: #FFFFFF;
+}
+
+.layout-dark {
+  --sidebar-bg: #0A0E39;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  background: var(--surface-ground);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+.layout-container {
+  min-height: 100vh;
+}
+
+.layout-static .layout-sidebar {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  background-color: var(--sidebar-bg);
+  backdrop-filter: blur(20px);
+}
+
+.layout-content-wrapper {
+  margin-left: 16rem;
+}
