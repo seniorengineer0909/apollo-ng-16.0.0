@@ -1,3 +1,32 @@
 .layout-topbar {
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .layout-breadcrumb {
+        ol {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            .layout-breadcrumb-chevron {
+                margin: 0 1rem;
+            }
+
+            li {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .topbar-menu {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
 }

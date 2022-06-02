@@ -1,3 +1,33 @@
 <div class="layout-topbar">
-    My Topbar
+    <nav class="layout-breadcrumb">
+        <ol>
+            <ng-template ngFor let-item let-last="last" [ngForOf]="items">
+                <li>{{item.label}}</li>
+                <li *ngIf="!last" class="layout-breadcrumb-chevron"> / </li>
+            </ng-template>
+        </ol>
+    </nav>
+    
+    <ul class="topbar-menu">
+        <li>
+            <button type="button" class="p-link">
+                <i class="pi pi-search"></i>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="p-link">
+                <i class="pi pi-envelope"></i>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="p-link">
+                <i class="pi pi-bell"></i>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="p-link">
+                <img src="assets/images/avatar.png" alt="Profile"/>
+            </button>
+        </li>
+    </ul>
 </div>

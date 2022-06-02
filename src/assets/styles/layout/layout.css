@@ -70,11 +70,10 @@ a {
   font-size: 0.857rem;
   text-transform: uppercase;
   font-weight: 700;
+  color: var(--primary-color);
+  padding: 1rem 2rem;
 }
 .layout-sidebar .layout-menu .layout-root-menuitem > a {
-  display: none;
-}
-.layout-sidebar .layout-menu .layout-root-menuitem .layout-menu-tooltip {
   display: none;
 }
 .layout-sidebar .layout-menu ul {
@@ -88,11 +87,14 @@ a {
   position: relative;
   border-radius: var(--border-radius);
   outline: 0 none;
+  color: var(--text-color-secondary);
   cursor: pointer;
+  padding: 0.5rem 2rem;
   transition: background-color 0.5s, box-shadow 0.5s;
 }
 .layout-sidebar .layout-menu ul a .layout-menuitem-icon {
   margin-right: 0.5rem;
+  color: var(--primary-color);
 }
 .layout-sidebar .layout-menu ul a .layout-submenu-toggler {
   font-size: 75%;
@@ -105,34 +107,44 @@ a {
 .layout-sidebar .layout-menu ul a.active-route {
   font-weight: 700;
 }
-.layout-sidebar .layout-menu ul li.active-menuitem > a .layout-submenu-toggler {
-  transform: rotate(-180deg);
+.layout-sidebar .layout-menu ul a:hover {
+  background-color: var(--surface-hover);
 }
 .layout-sidebar .layout-menu ul ul {
   overflow: hidden;
   border-radius: var(--border-radius);
 }
 .layout-sidebar .layout-menu ul ul li a {
-  padding-left: 1.5rem;
+  padding-left: 2.5rem;
 }
 .layout-sidebar .layout-menu ul ul li li a {
-  padding-left: 2.5rem;
+  padding-left: 3rem;
 }
 .layout-sidebar .layout-menu ul ul li li li a {
   padding-left: 3.5rem;
 }
 .layout-sidebar .layout-menu ul ul li li li li a {
-  padding-left: 4.5rem;
+  padding-left: 4rem;
 }
 .layout-sidebar .layout-menu ul ul li li li li li a {
   padding-left: 5.5rem;
 }
 .layout-sidebar .layout-menu ul ul li li li li li li a {
-  padding-left: 6.5rem;
+  padding-left: 5rem;
 }
 
 .layout-topbar {
   margin-bottom: 2rem;
+}
+.layout-topbar .layout-breadcrumb ol {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.layout-topbar .layout-breadcrumb ol .layout-breadcrumb-chevron {
+  margin: 0 1rem;
 }
 
 .layout-content-wrapper {
