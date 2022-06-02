@@ -4,6 +4,30 @@
     justify-content: space-between;
     align-items: center;
 
+    .topbar-start {
+        display: flex;
+        align-items: center;
+
+        .topbar-menubutton {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 2rem;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            transition: background-color $transitionDuration;
+
+            i {
+                font-size: 1.25rem;
+            }
+
+            &:hover {
+                background-color: var(--primary-100);
+            }
+        }
+    }
+
     .layout-breadcrumb {
         ol {
             display: flex;
@@ -11,6 +35,7 @@
             margin: 0;
             padding: 0;
             list-style: none;
+            color: var(--text-color-secondary);
 
             .layout-breadcrumb-chevron {
                 margin: 0 1rem;
@@ -32,7 +57,7 @@
         li {
             margin-right: 1rem;
 
-            button.p-link {
+            button {
                 width: 2rem;
                 height: 2rem;
                 border-radius: 50%;
@@ -46,7 +71,7 @@
                 }
 
                 &:hover {
-                    background-color: var(--surface-hover);
+                    background-color: var(--primary-100);
                 }
             }
 

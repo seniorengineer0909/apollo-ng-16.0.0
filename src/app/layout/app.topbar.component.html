@@ -1,12 +1,18 @@
 <div class="layout-topbar">
-    <nav class="layout-breadcrumb">
-        <ol>
-            <ng-template ngFor let-item let-last="last" [ngForOf]="items">
-                <li>{{item.label}}</li>
-                <li *ngIf="!last" class="layout-breadcrumb-chevron"> / </li>
-            </ng-template>
-        </ol>
-    </nav>
+    <div class="topbar-start">
+        <button type="button" class="topbar-menubutton p-link" (click)="onMenuButtonClick()">
+            <i class="pi pi-bars"></i>
+        </button>
+
+        <nav class="layout-breadcrumb">
+            <ol>
+                <ng-template ngFor let-item let-last="last" [ngForOf]="items">
+                    <li>{{item.label}}</li>
+                    <li *ngIf="!last" class="layout-breadcrumb-chevron"> / </li>
+                </ng-template>
+            </ol>
+        </nav>
+    </div>
 
     <ul class="topbar-menu">
         <li>

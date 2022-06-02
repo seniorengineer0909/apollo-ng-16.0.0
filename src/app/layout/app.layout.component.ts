@@ -12,7 +12,11 @@ export class AppLayoutComponent {
 
     menuHoverActive = false;
 
+    menuClick: boolean;
+
     staticMenuMobileActive: boolean;
+
+    staticMenuDesktopInactive: boolean;
 
     isSlim() {
         return this.menuMode === 'slim';
@@ -20,6 +24,10 @@ export class AppLayoutComponent {
 
     isHorizontal() {
         return this.menuMode === 'horizontal';
+    }
+
+    isOverlay() {
+        return this.menuMode === 'overlay';
     }
 
     isDesktop() {
@@ -44,6 +52,14 @@ export class AppLayoutComponent {
         } else {
             document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
                 'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
+    }
+
+    onMenuButtonClick() {
+        this.menuClick = true;
+
+        if (this.isDesktop()) {
+            this.staticMenuDesktopInactive = !this.staticMenuDesktopInactive;
         }
     }
 
