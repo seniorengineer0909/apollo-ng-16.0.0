@@ -20,5 +20,23 @@
                 margin-left: 0;
             }
         }
+
+        &.layout-overlay {
+            .layout-content-wrapper {
+                margin-left: 0;
+            }
+
+            .layout-sidebar {
+                z-index: 999;
+                transform: translateX(-100%);
+                transition: transform $transitionDuration;
+            }
+
+            &.layout-overlay-active {
+                .layout-sidebar {
+                    transform: translateX(0);
+                }
+            }
+        }
     }
 }

@@ -5,8 +5,9 @@
         'layout-static': menuMode === 'static',
         'layout-slim': menuMode === 'slim',
         'layout-horizontal': menuMode === 'horizontal',
-        'layout-static-inactive': staticMenuDesktopInactive && menuMode === 'static'
-    }">
+        'layout-static-inactive': staticMenuDesktopInactive && menuMode === 'static',
+        'layout-overlay-active': overlayMenuActive
+    }" (click)="onLayoutClick()">
     <app-sidebar></app-sidebar>
     <div class="layout-content-wrapper">
         <app-topbar></app-topbar>

@@ -18,6 +18,10 @@ export class AppLayoutComponent {
 
     staticMenuDesktopInactive: boolean;
 
+    overlayMenuActive: boolean;
+
+    resetMenu: boolean;
+
     isSlim() {
         return this.menuMode === 'slim';
     }
@@ -58,9 +62,36 @@ export class AppLayoutComponent {
     onMenuButtonClick() {
         this.menuClick = true;
 
+        if (this.isOverlay()) {
+            this.overlayMenuActive = !this.overlayMenuActive;
+        }
+
         if (this.isDesktop()) {
             this.staticMenuDesktopInactive = !this.staticMenuDesktopInactive;
         }
+    }
+
+    onLayoutClick() {
+        if (!this.menuClick) {
+            if (this.overlayMenuActive || this.staticMenuMobileActive) {
+                this.hideOverlayMenu();
+            }
+
+            this.menuHoverActive = false;
+            this.unblockBodyScroll();
+        }
+
+        this.menuClick = false;
+    }
+
+    hideOverlayMenu() {
+        this.overlayMenuActive = false;
+        this.staticMenuMobileActive = false;
+    }
+
+    onMenuClick() {
+        this.menuClick = true;
+        this.resetMenu = false;
     }
 
 }
