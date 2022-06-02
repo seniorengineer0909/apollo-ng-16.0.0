@@ -28,10 +28,10 @@ import {AppLayoutComponent} from './app.layout.component';
 				<i class="pi pi-fw layout-submenu-toggler" [ngClass]="!appLayout.isHorizontal() ?'pi-chevron-down': 'pi-angle-down'" *ngIf="item.items"></i>
 			</a>
 
-			<ul *ngIf="item.items && item.visible !== false" role="menu" [@children]="(appLayout.isSlim() || appLayout.isHorizontal()) ? (root ? appLayout.isMobile()? 'visible':
+			<ul *ngIf="item.items && item.visible !== false" role="menu" [@children]="(appLayout.isSlim() || appLayout.isHorizontal()) ? (root ? appLayout.isMobile() ? 'visible':
 			slimClick && !appLayout.isHorizontal() ? (active  ? 'slimVisibleAnimated' : 'slimHiddenAnimated') : (active ? 'visible' : 'hidden') :
 			appLayout.isSlim() || appLayout.isHorizontal() ? (active ? 'visibleAnimated' : 'hiddenAnimated') : (active ? 'visible' : 'hidden')) :
-			(root ? 'visible' :(active ? 'visibleAnimated' : 'hiddenAnimated'))">
+			(root ? 'visible' : (active ? 'visibleAnimated' : 'hiddenAnimated'))">
 				<ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
 					<li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
 				</ng-template>
@@ -71,8 +71,7 @@ import {AppLayoutComponent} from './app.layout.component';
             })),
             transition('visibleAnimated => hiddenAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
             transition('hiddenAnimated => visibleAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
-            transition('void => visibleAnimated, visibleAnimated => void',
-                animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
+            transition('void => visibleAnimated, visibleAnimated => void', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
             transition('void => slimVisibleAnimated', animate('400ms cubic-bezier(.05,.74,.2,.99)')),
             transition('slimHiddenAnimated => slimVisibleAnimated', animate('400ms cubic-bezier(.05,.74,.2,.99)'))
         ])
