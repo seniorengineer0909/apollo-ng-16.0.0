@@ -1,9 +1,13 @@
 .layout-light {
-  --sidebar-bg: #FFFFFF;
+  --sidebar-shadow: 0px 4px 50px #D9DDFC;
+  --sidebar-border: 0 none;
+  --card-border: 1px solid #E7E9FF;
 }
 
 .layout-dark {
-  --sidebar-bg: #0A0E39;
+  --sidebar-shadow: none;
+  --sidebar-border: 1px solid #131B61;
+  --card-border: 1px solid #131B61;
 }
 
 * {
@@ -12,6 +16,7 @@
 
 html {
   height: 100%;
+  font-size: 14px;
 }
 
 body {
@@ -34,16 +39,198 @@ a {
   min-height: 100vh;
 }
 
-.layout-static .layout-sidebar {
+.layout-sidebar {
   position: fixed;
   height: 100%;
   top: 0;
   left: 0;
   width: 16rem;
-  background-color: var(--sidebar-bg);
+  background-color: var(--surface-overlay);
   backdrop-filter: blur(20px);
+  border-right: var(--sidebar-border);
+  box-shadow: var(--sidebar-shadow);
+  display: flex;
+  flex-direction: column;
+}
+.layout-sidebar .app-logo {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.layout-sidebar .layout-menu-container {
+  overflow: auto;
+  flex: 1;
+}
+.layout-sidebar .layout-menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
+  font-size: 0.857rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.layout-sidebar .layout-menu .layout-root-menuitem > a {
+  display: none;
+}
+.layout-sidebar .layout-menu .layout-root-menuitem .layout-menu-tooltip {
+  display: none;
+}
+.layout-sidebar .layout-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.layout-sidebar .layout-menu ul a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: var(--border-radius);
+  outline: 0 none;
+  cursor: pointer;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+.layout-sidebar .layout-menu ul a .layout-menuitem-icon {
+  margin-right: 0.5rem;
+}
+.layout-sidebar .layout-menu ul a .layout-submenu-toggler {
+  font-size: 75%;
+  margin-left: auto;
+  transition: transform 0.5s;
+}
+.layout-sidebar .layout-menu ul a.rotated-icon .layout-menuitem-icon {
+  transform: rotate(90deg);
+}
+.layout-sidebar .layout-menu ul a.active-route {
+  font-weight: 700;
+}
+.layout-sidebar .layout-menu ul li.active-menuitem > a .layout-submenu-toggler {
+  transform: rotate(-180deg);
+}
+.layout-sidebar .layout-menu ul ul {
+  overflow: hidden;
+  border-radius: var(--border-radius);
+}
+.layout-sidebar .layout-menu ul ul li a {
+  padding-left: 1.5rem;
+}
+.layout-sidebar .layout-menu ul ul li li a {
+  padding-left: 2.5rem;
+}
+.layout-sidebar .layout-menu ul ul li li li a {
+  padding-left: 3.5rem;
+}
+.layout-sidebar .layout-menu ul ul li li li li a {
+  padding-left: 4.5rem;
+}
+.layout-sidebar .layout-menu ul ul li li li li li a {
+  padding-left: 5.5rem;
+}
+.layout-sidebar .layout-menu ul ul li li li li li li a {
+  padding-left: 6.5rem;
+}
+
+.layout-topbar {
+  margin-bottom: 2rem;
 }
 
 .layout-content-wrapper {
   margin-left: 16rem;
+  padding: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.5rem 0 1rem 0;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  color: inherit;
+}
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+mark {
+  background: #FFF8E1;
+  padding: 0.25rem 0.4rem;
+  border-radius: var(--border-radius);
+  font-family: monospace;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding: 0 2rem;
+  border-left: 4px solid #90A4AE;
+}
+
+hr {
+  border-top: solid var(--surface-border);
+  border-width: 1px 0 0 0;
+  margin: 1rem 0;
+}
+
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Utils */
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.card {
+  background: var(--surface-card);
+  border: var(--card-border);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: 0px 4px 30px rgba(221, 224, 255, 0.54);
+  border-radius: var(--border-radius);
+}
+.card:last-child {
+  margin-bottom: 0;
+}
+.card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card .card-subtitle {
+  color: var(--text-color-secondary);
+  font-weight: 600;
+  margin: -1rem 0 1rem 0;
+}
+
+.p-toast.p-toast-top-right, .p-toast.p-toast-top-left, .p-toast.p-toast-top-center {
+  top: 70px;
 }

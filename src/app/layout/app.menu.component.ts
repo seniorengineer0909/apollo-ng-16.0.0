@@ -22,7 +22,6 @@ export class AppMenuComponent implements OnInit {
                     },
                 ],
             },
-            { separator: true },
             {
                 label: 'UI Kit',
                 icon: 'pi pi-fw pi-star-fill',
@@ -112,6 +111,129 @@ export class AppMenuComponent implements OnInit {
                     },
                 ],
             },
+            {
+                label: 'Prime Blocks',
+                icon: 'pi pi-fw pi-prime',
+                routerLink: ['/blocks'],
+                items: [
+                    {
+                        label: 'Free Blocks',
+                        icon: 'pi pi-fw pi-eye',
+                        routerLink: ['/blocks'],
+                    },
+                    {
+                        label: 'All Blocks',
+                        icon: 'pi pi-fw pi-globe',
+                        url: ['https://www.primefaces.org/primeblocks-ng'],
+                        target: '_blank',
+                    },
+                ]
+            },
+            { separator: true },
+            {
+                label: 'Utilities',
+                icon: 'pi pi-fw pi-compass',
+                routerLink: ['/utilities'],
+                items: [
+                    {
+                        label: 'PrimeIcons',
+                        icon: 'pi pi-fw pi-prime',
+                        routerLink: ['utilities/icons'],
+                    },
+                    {
+                        label: 'PrimeFlex',
+                        icon: 'pi pi-fw pi-desktop',
+                        url: ['https://www.primefaces.org/primeflex/'],
+                        target: '_blank',
+                    },
+                ]
+            },
+            {
+                label: 'Hierarchy',
+                icon: 'pi pi-fw pi-align-left',
+                items: [
+                    {
+                        label: 'Submenu 1',
+                        icon: 'pi pi-fw pi-align-left',
+                        items: [
+                            {
+                                label: 'Submenu 1.1',
+                                icon: 'pi pi-fw pi-align-left',
+                                items: [
+                                    {
+                                        label: 'Submenu 1.1.1',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                    {
+                                        label: 'Submenu 1.1.2',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                    {
+                                        label: 'Submenu 1.1.3',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                ],
+                            },
+                            {
+                                label: 'Submenu 1.2',
+                                icon: 'pi pi-fw pi-align-left',
+                                items: [
+                                    {
+                                        label: 'Submenu 1.2.1',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        label: 'Submenu 2',
+                        icon: 'pi pi-fw pi-align-left',
+                        items: [
+                            {
+                                label: 'Submenu 2.1',
+                                icon: 'pi pi-fw pi-align-left',
+                                items: [
+                                    {
+                                        label: 'Submenu 2.1.1',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                    {
+                                        label: 'Submenu 2.1.2',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                ],
+                            },
+                            {
+                                label: 'Submenu 2.2',
+                                icon: 'pi pi-fw pi-align-left',
+                                items: [
+                                    {
+                                        label: 'Submenu 2.2.1',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                label: 'Start',
+                icon: 'pi pi-fw pi-download',
+                items: [
+                    {
+                        label: 'Buy Now',
+                        icon: 'pi pi-fw pi-shopping-cart',
+                        url: ['https://www.primefaces.org/store'],
+                    },
+                    {
+                        label: 'Documentation',
+                        icon: 'pi pi-fw pi-info-circle',
+                        routerLink: ['/documentation'],
+                    },
+                ],
+            }
         ];
     }
 }

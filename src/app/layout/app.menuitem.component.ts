@@ -15,14 +15,14 @@ import {AppLayoutComponent} from './app.layout.component';
             <div *ngIf="root && item.visible !== false" class="layout-menuitem-root-text">{{item.label}}</div>
 			<a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="(!item.routerLink || item.items) && item.visible !== false" (mouseenter)="onMouseEnter()"
 			   (keydown.enter)="itemClick($event)" [ngClass]="item.class" pRipple
-			   [attr.target]="item.target" [attr.tabindex]="0">
+			   [attr.target]="item.target">
 				<i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
 				<span class="layout-menuitem-text">{{item.label}}</span>
 				<i class="pi pi-fw layout-submenu-toggler" [ngClass]="!appLayout.isHorizontal() ?'pi-chevron-down': 'pi-angle-down'" *ngIf="item.items"></i>
 			</a>
 			<a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="(item.routerLink && !item.items) && item.visible !== false"
 			   [routerLink]="item.routerLink" routerLinkActive="active-route" [ngClass]="item.class" pRipple
-			   [routerLinkActiveOptions]="{exact: !item.preventExact}" [attr.target]="item.target" [attr.tabindex]="0">
+			   [routerLinkActiveOptions]="{exact: !item.preventExact}" [attr.target]="item.target">
 				<i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
 				<span class="layout-menuitem-text">{{item.label}}</span>
 				<i class="pi pi-fw layout-submenu-toggler" [ngClass]="!appLayout.isHorizontal() ?'pi-chevron-down': 'pi-angle-down'" *ngIf="item.items"></i>
@@ -185,7 +185,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     onMouseEnter() {
         // activate item on hover
-        if (this.root  && (this.appLayout.isSlim() || this.appLayout.isHorizontal()) && this.appLayout.isDesktop()) {
+        if (this.root && (this.appLayout.isSlim() || this.appLayout.isHorizontal()) && this.appLayout.isDesktop()) {
             if (this.appLayout.menuHoverActive) {
                 this.menuService.onMenuStateChange(this.key);
                 this.active = true;
@@ -198,6 +198,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             }
         }
     }
+    
     removeActiveInk(event: Event) {
         let currentTarget = (event.currentTarget as HTMLElement);
         setTimeout(() => {
