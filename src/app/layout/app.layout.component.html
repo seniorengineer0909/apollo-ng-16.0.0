@@ -1,5 +1,5 @@
 <div class="layout-container" [ngClass]="{
-        'layout-light': !darkMode, 
+        'layout-light': !darkMode,
         'layout-dark': darkMode,
         'layout-overlay': menuMode === 'overlay',
         'layout-static': menuMode === 'static',
@@ -8,7 +8,7 @@
         'layout-static-inactive': staticMenuDesktopInactive && menuMode === 'static',
         'layout-overlay-active': overlayMenuActive
     }" (click)="onLayoutClick()">
-    <app-sidebar></app-sidebar>
+    <app-sidebar class="xl:inline hidden"></app-sidebar><!--Kendime not: Değişecek responsive testi için geliştirmeyi önlememesi için yaptım-->
     <div class="layout-content-wrapper">
         <app-topbar></app-topbar>
         <div class="layout-content">
