@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppMenuComponent implements OnInit {
 
     model: any[];
-    
+
     ngOnInit() {
         this.model = [
             {
@@ -147,6 +147,280 @@ export class AppMenuComponent implements OnInit {
                         target: '_blank',
                     },
                 ]
+            },
+            { separator: true },
+            {
+                label: 'Pages',
+                icon: 'pi pi-fw pi-briefcase',
+                routerLink: ['/pages'],
+                items: [
+                    {
+                        label: 'Crud',
+                        icon: 'pi pi-fw pi-pencil',
+                        routerLink: ['/pages/crud'],
+                    },
+                    {
+                        label: 'Timeline',
+                        icon: 'pi pi-fw pi-calendar',
+                        routerLink: ['/pages/timeline'],
+                    },
+                    {
+                        label: 'Landing',
+                        icon: 'pi pi-fw pi-globe',
+                        url: 'assets/pages/landing.html',
+                        target: '_blank',
+                    },
+                    {
+                        label: 'Login',
+                        icon: 'pi pi-fw pi-sign-in',
+                        routerLink: ['/login'],
+                    },
+                    {
+                        label: 'Invoice',
+                        icon: 'pi pi-fw pi-dollar',
+                        routerLink: ['/pages/invoice'],
+                    },
+                    {
+                        label: 'Pricing',
+                        icon: 'pi pi-fw pi-money-bill',
+                        routerLink: ['/pages/pricing'],
+                    },
+                    {
+                        label: 'About Us',
+                        icon: 'pi pi-fw pi-user',
+                        routerLink: ['/pages/about'],
+                    },
+                    {
+                        label: 'Help',
+                        icon: 'pi pi-fw pi-question-circle',
+                        routerLink: ['/pages/help'],
+                    },
+                    {
+                        label: 'Error',
+                        icon: 'pi pi-fw pi-times-circle',
+                        routerLink: ['error'],
+                    },
+                    {
+                        label: 'Not Found',
+                        icon: 'pi pi-fw pi-exclamation-circle',
+                        routerLink: ['notfound'],
+                    },
+                    {
+                        label: 'Access Denied',
+                        icon: 'pi pi-fw pi-lock',
+                        routerLink: ['access'],
+                    },
+                    {
+                        label: 'Empty',
+                        icon: 'pi pi-fw pi-circle-off',
+                        routerLink: ['/pages/empty'],
+                    },
+                    {
+                        label: 'FAQ',
+                        icon: 'pi pi-fw pi-question',
+                        routerLink: ['/pages/faq'],
+                    },
+                    {
+                        label: 'Contact Us',
+                        icon: 'pi pi-fw pi-phone',
+                        routerLink: ['/pages/contact'],
+                    },
+                    {
+                        label: 'Wizard',
+                        icon: 'pi pi-fw pi-bolt',
+                        routerLink: ['/pages/wizard'],
+                    },
+                    {
+                        label: 'Search Results ',
+                        icon: 'pi pi-fw pi-search',
+                        routerLink: ['/pages/search-results'],
+                    },
+                    {
+                        label: 'Register',
+                        icon: 'pi pi-fw pi-user-plus',
+                        routerLink: ['/register'],
+                    },
+                    {
+                        label: 'Forgot Password',
+                        icon: 'pi pi-fw pi-question',
+                        routerLink: ['/forgotpassword'],
+                    },
+                    {
+                        label: 'New Password',
+                        icon: 'pi pi-fw pi-cog',
+                        routerLink: ['/newpassword'],
+                    },
+                    {
+                        label: 'Email Verification',
+                        icon: 'pi pi-fw pi-envelope',
+                        routerLink: ['/emailverification'],
+                    },
+                    {
+                        label: 'Two-Step Verification',
+                        icon: 'pi pi-fw pi-phone',
+                        routerLink: ['/twostepverification'],
+                    },
+                    {
+                        label: 'Lock Screen',
+                        icon: 'pi pi-fw pi-eye-slash',
+                        routerLink: ['/lockscreen'],
+                    },
+                ],
+            },
+            { separator: true },
+            {
+                label: 'E-Commerce',
+                icon: 'pi pi-fw pi-wallet',
+                items: [
+                    {
+                        label: 'Product Overview',
+                        icon: 'pi pi-fw pi-image',
+                        routerLink: ['ecommerce/productoverview'],
+                    },
+                    {
+                        label: 'Shop',
+                        icon: 'pi pi-fw pi-shopping-bag',
+                        routerLink: ['ecommerce/shop'],
+                    },
+                    {
+                        label: 'Checkout',
+                        icon: 'pi pi-fw pi-shopping-cart',
+                        routerLink: ['ecommerce/checkout'],
+                    },
+                    {
+                        label: 'New Product',
+                        icon: 'pi pi-fw pi-plus',
+                        routerLink: ['ecommerce/newproduct'],
+                    },
+                ],
+            },
+            { separator: true },
+            {
+                label: 'E-Commerce Admin',
+                icon: 'pi pi-fw pi-shield',
+                items: [
+                    {
+                        label: 'Product List',
+                        icon: 'pi pi-fw pi-list',
+                        routerLink: ['ecommerce-admin/productlist'],
+                    },
+                    {
+                        label: 'Orders',
+                        icon: 'pi pi-fw pi-dollar',
+                        routerLink: ['ecommerce-admin/orders'],
+                    },
+                    {
+                        label: 'Order Details',
+                        icon: 'pi pi-fw pi-align-left',
+                        routerLink: ['ecommerce-admin/orderdetails'],
+                    },
+                    {
+                        label: 'Order History',
+                        icon: 'pi pi-fw pi-history',
+                        routerLink: ['ecommerce-admin/orderhistory'],
+                    },
+                    {
+                        label: 'Edit Order',
+                        icon: 'pi pi-fw pi-pencil',
+                        routerLink: ['ecommerce-admin/editorder'],
+                    },
+                ],
+            },
+            { separator: true },
+            {
+                label: 'Apps',
+                icon: 'pi-th-large',
+                items: [
+                    {
+                        label: 'File Managament',
+                        icon: 'pi pi-fw pi-folder',
+                        routerLink: ['apps/filemanagament']
+                    },
+                    {
+                        label: 'Task List',
+                        icon: 'pi pi-fw pi-check-square',
+                        routerLink: ['apps/tasklist']
+                    },
+                    {
+                        label: 'Chat',
+                        icon: 'pi pi-fw pi-comments',
+                        routerLink: ['apps/chat']
+                    },
+                    {
+                        label: 'Calendar',
+                        icon: 'pi pi-fw pi-calendar',
+                        routerLink: ['apps/calendar']
+                    },
+                    {
+                        label: 'Mail',
+                        icon:'pi pi-envelope',
+                        items: [
+                            {
+                                label: 'Inbox',
+                                icon: 'pi pi-fw pi-inbox',
+                                routerLink: ['apps/mail/inbox']
+                            },
+                            {
+                                label: 'Compose',
+                                icon: 'pi pi-fw pi-pencil',
+                                routerLink: ['apps/mail/compose']
+                            },
+                            {
+                                label: 'Mail Detail',
+                                icon: 'pi pi-fw pi-comment',
+                                routerLink: ['apps/mail/detail/1000']
+                            },
+                        ]
+                    },
+                    {
+                        label: 'Kanban',
+                        icon:'pi pi-envelope',
+                        items: [
+                            {
+                                label: 'Board',
+                                icon: 'pi pi-fw pi-th-large',
+                                routerLink: ['apps/kanban']
+                            },
+                        ]
+                    },
+
+                ]
+            },
+            { separator: true },
+            {
+                label: 'User Managament',
+                icon: 'pi pi-fw pi-user',
+                items: [
+                    {
+                        label: 'Profile Overview',
+                        icon: 'pi pi-fw pi-image',
+                        routerLink: ['profile/overview'],
+
+                    },
+                    {
+                        label: 'Profile List',
+                        icon: 'pi pi-fw pi-list',
+                        routerLink: ['profile/profilelist'],
+                    },
+                    {
+                        label: 'Create',
+                        icon: 'pi pi-fw pi-plus',
+                        routerLink: ['profile/create'],
+                    },
+                ],
+            },
+            { separator: true },
+            {
+                label: 'Blog',
+                icon: 'pi pi-fw pi-user',
+                items: [
+                    {
+                        label: 'Blog List',
+                        icon: 'pi pi-fw pi-image',
+                        routerLink: ['blog/list'],
+
+                    },
+                ],
             },
             {
                 label: 'Hierarchy',
