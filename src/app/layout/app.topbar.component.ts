@@ -24,6 +24,10 @@ export class AppTopbarComponent implements OnDestroy {
         this.appLayout.onMenuButtonClick();
     }
 
+    onProfileButtonClick() {
+        this.appLayout.profileSidebarVisible = true;
+    }
+
     ngOnDestroy() {
         if (this.subscription) {
             this.subscription.unsubscribe();

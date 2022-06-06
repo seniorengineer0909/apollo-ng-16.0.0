@@ -14,26 +14,19 @@
         </nav>
     </div>
 
-    <ul class="topbar-menu">
-        <li>
-            <button type="button" class="p-link">
-                <i class="pi pi-search"></i>
-            </button>
-        </li>
-        <li>
-            <button type="button" class="p-link">
-                <i class="pi pi-envelope"></i>
-            </button>
-        </li>
-        <li>
-            <button type="button" class="p-link">
-                <i class="pi pi-bell"></i>
-            </button>
-        </li>
-        <li class="topbar-profile">
-            <button type="button" class="p-link">
-                <img src="assets/images/avatar.png" alt="Profile" />
-            </button>
-        </li>
-    </ul>
+    <div class="topbar-end">
+        <ul class="topbar-menu">
+            <li class="topbar-search">
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="Search">         
+                </span>
+            </li>
+            <li class="topbar-profile">
+                <button type="button" class="p-link" (click)="onProfileButtonClick()">
+                    <img src="assets/images/avatar.png" alt="Profile" />
+                </button>
+            </li>
+        </ul>
+    </div>
 </div>

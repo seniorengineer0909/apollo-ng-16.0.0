@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AppLayoutComponent } from './layout/app.layout.component';
 import { AppSidebarComponent } from './layout/app.sidebar.component';
 import { AppTopbarComponent } from './layout/app.topbar.component';
+import { AppProfileSidebarComponent } from './layout/app.profilesidebar.component';
 import { AppMenuComponent } from './layout/app.menu.component';
 import { AppMenuitemComponent } from './layout/app.menuitem.component';
 
@@ -23,20 +24,28 @@ import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
 import { ConfigService } from 'src/app/service/app.config.service';
 import { MenuService } from './layout/app.menu.service';
 
+import { InputTextModule } from 'primeng/inputtext';
+import { SidebarModule } from 'primeng/sidebar';
+import { BadgeModule } from 'primeng/badge';
+
 @NgModule({
   declarations: [
     AppComponent,
     AppLayoutComponent,
     AppSidebarComponent,
     AppTopbarComponent,
+    AppProfileSidebarComponent,
     AppMenuComponent,
-    AppMenuitemComponent
+    AppMenuitemComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InputTextModule,
+    SidebarModule,
+    BadgeModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},

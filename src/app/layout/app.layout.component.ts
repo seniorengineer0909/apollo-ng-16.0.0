@@ -22,6 +22,8 @@ export class AppLayoutComponent {
 
     resetMenu: boolean;
 
+    profileSidebarVisible: boolean;
+
     isSlim() {
         return this.menuMode === 'slim';
     }

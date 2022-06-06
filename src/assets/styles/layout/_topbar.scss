@@ -55,32 +55,31 @@
         list-style: none;
 
         li {
-            margin-right: 1rem;
-
-            button {
-                width: 2rem;
-                height: 2rem;
-                border-radius: 50%;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                transition: background-color $transitionDuration;
-
-                i {
-                    font-size: 1.25rem;
-                }
-
-                &:hover {
-                    background-color: var(--primary-100);
-                }
-            }
-
             &.topbar-profile {
-                margin-right: 0;
+                margin-left: 1.5rem;
                 
                 img {
                     width: 2rem;
                     height: 2rem;
+                }
+
+                button {
+                    border-radius: 50%;
+                    width: 2rem;
+                    height: 2rem;
+                    transition: box-shadow $transitionDuration;
+
+                    &:focus {
+                        box-shadow: var(--focus-ring);
+                    }
+                }
+            }
+
+            &.topbar-search {
+                .p-inputtext {
+                    padding-top: .5rem;
+                    padding-bottom: .5rem;
+                    border-radius: 1rem;
                 }
             }
         }

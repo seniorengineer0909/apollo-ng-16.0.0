@@ -20,8 +20,8 @@ $shade200:#e9ecef !default;    //hover background
 $shade300:#dee2e6 !default;    //border, divider
 $shade400:#ced4da !default;    //input border
 $shade500:#adb5bd !default;    //input icon
-$shade600:#6c757d !default;    //text secondary color
-$shade700:#495057 !default;    //text color
+$shade600:#595959 !default;    //text secondary color
+$shade700:#191919 !default;    //text color
 $shade800:#343a40 !default;    //unused
 $shade900:#212529 !default;    //unused
 
@@ -29,8 +29,8 @@ $shade900:#212529 !default;    //unused
 $fontFamily:'Inter', sans-serif !default;
 $fontSize:1rem !default;
 $fontWeight:normal !default;
-$textColor:#191919 !default;
-$textSecondaryColor:#595959 !default;
+$textColor:$shade700 !default;
+$textSecondaryColor:$shade600 !default;
 $borderRadius:6px !default;
 $transitionDuration:.2s !default;
 $formElementTransition:background-color $transitionDuration, color $transitionDuration, border-color $transitionDuration, box-shadow $transitionDuration !default;
