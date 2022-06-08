@@ -6,16 +6,16 @@ import { ProductService } from 'src/app/service/productservice';
 @Component({
     selector: 'app-app.orderedit',
     templateUrl: './app.orderedit.component.html',
-    styleUrls: ['../../../../assets/demo/table.scss', '../../../../assets/demo/badges.scss']
+    styleUrls: ['../../../../../assets/demo/table.scss', '../../../../../assets/demo/badges.scss']
 })
 export class AppOrderEditComponent implements OnInit {
-      
+
     products: Product[];
-      
+
     cols: any[];
 
     paymentMethods: any[];
-    
+
     shippingMethods: any[];
 
     orderDates: any[];
@@ -27,7 +27,7 @@ export class AppOrderEditComponent implements OnInit {
     selectedShipping: any;
 
     quantities1: number[] = [1, 1, 1];
-    
+
     constructor(private productService: ProductService, private breadcrumbService: BreadcrumbService) {
       this.breadcrumbService.setItems([
         { label: 'Edit Order' }
@@ -41,7 +41,7 @@ export class AppOrderEditComponent implements OnInit {
         {field: 'price', header: 'Price'},
         {field: 'status', header: 'Status'}
       ];
-      
+
       this.paymentMethods = [
         {name: 'Visa'},
         {name: 'Mastercard'},

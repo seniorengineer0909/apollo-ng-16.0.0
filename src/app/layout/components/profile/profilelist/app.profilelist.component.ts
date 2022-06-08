@@ -12,9 +12,7 @@ interface Create {
 @Component({
   selector: 'app-app.profilelist',
   templateUrl: './app.profilelist.component.html',
-  styleUrls: ['../../../../assets/demo/table.scss']
-
-
+  styleUrls: ['../../../../../assets/demo/table.scss']
 })
 
 export class AppProfileListComponent implements OnInit {

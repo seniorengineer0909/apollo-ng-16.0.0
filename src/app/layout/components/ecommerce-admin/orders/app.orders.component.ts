@@ -7,7 +7,7 @@ import { ProductService } from 'src/app/service/productservice';
 @Component({
     selector: 'app-app.orders',
     templateUrl: './app.orders.component.html',
-    styleUrls: ['../../../../assets/demo/table.scss']
+    styleUrls: ['../../../../../assets/demo/table.scss']
 })
 export class AppOrdersComponent implements OnInit {
 

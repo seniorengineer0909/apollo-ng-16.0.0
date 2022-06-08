@@ -2,67 +2,72 @@
   <div class="grid">
     <div class="col-12 md:col-6 xl:col-3">
       <div class="card no-gutter widget-overview-box widget-overview-box-1">
-        <span class="card-title font-bold">Orders</span>
+        <span class="card-title font-bold text-lg">Orders</span>
         <div class="grid">
-          <div class="col-6">
+          <div class="col-5">
             <div class="text-600 font-semibold pt-3">Total Order Today</div>
-            <div class="overview-subtext pt-8">1240</div>
+            <div class="overview-subtext pt-6">1240</div>
           </div>
-          <div class="col-6">
-            <p-chart #chart type="doughnut" [plugins]="chartPlugins" id="country-chart" [data]="fileChart" [options]="fileChartOptions"[style]="{'width': '75%'}"></p-chart>
+          <div class="col-7 flex justify-content-end">
+            <p-knob [(ngModel)]="valueKnob" valueTemplate="{value}%" [step]="10" [min]="0" [max]="100"></p-knob>
           </div>
         </div>
       </div>
     </div>
     <div class="col-12 md:col-6 xl:col-3">
       <div class="card no-gutter widget-overview-box widget-overview-box-1">
-        <span class="card-title font-bold">Sales</span>
+        <span class="card-title font-bold text-lg">Sales</span>
         <div class="grid">
-          <div class="col-6">
-            <div class="text-600 font-semibold pt-3">Total Order Today</div>
-            <div class="overview-subtext pt-8">1240</div>
+          <div class="col-5">
+            <div class="text-600 font-semibold pt-3">Total Sales Today</div>
+            <div class="overview-subtext pt-6">$460</div>
           </div>
-          <div class="col-6">
-            <p-chart #chart type="doughnut" [plugins]="chartPlugins" id="country-chart" [data]="fileChart" [options]="fileChartOptions"[style]="{'width': '75%'}"></p-chart>
+          <div class="col-7 flex justify-content-end">
+            <p-knob [(ngModel)]="valueKnob1" valueTemplate="{value}%" [step]="10" [min]="0" [max]="100"></p-knob>
           </div>
         </div>
       </div>
     </div>
     <div class="col-12 md:col-6 xl:col-3">
       <div class="card no-gutter widget-overview-box widget-overview-box-3">
-        <span class="card-title font-bold">Visits</span>
+        <span class="card-title font-bold text-lg">Visits</span>
         <div class="grid">
-          <div class="col-6">
+          <div class="col-5">
             <div class="text-600 font-semibold pt-3">Total Visit Today</div>
-            <div class="overview-subtext pt-8">1240</div>
+            <div class="overview-subtext pt-6">32.4k</div>
           </div>
-          <div class="col-6">
-            <p-chart #chart type="doughnut" [plugins]="chartPlugins" id="country-chart" [data]="fileChart" [options]="fileChartOptions"[style]="{'width': '75%'}"></p-chart>
+          <div class="col-7 flex justify-content-end">
+            <div class="p-field p-col-12 p-md-4">
+              <p-knob [(ngModel)]="valueKnob2" valueTemplate="{value}%"></p-knob>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-12 md:col-6 xl:col-3">
       <div class="card no-gutter widget-overview-box widget-overview-box-4">
-        <span class="card-title font-bold">Orders</span>
+        <span class="card-title font-bold text-lg">Comments</span>
         <div class="grid">
-          <div class="col-6">
+          <div class="col-5">
             <div class="text-600 font-semibold pt-3">Total Comment Today</div>
-            <div class="overview-subtext pt-8">1240</div>
+            <div class="overview-subtext pt-6">239</div>
           </div>
-          <div class="col-6">
-            <p-chart #chart type="doughnut" [plugins]="chartPlugins" id="country-chart" [data]="fileChart" [options]="fileChartOptions"[style]="{'width': '75%'}"></p-chart>
+          <div class="col-7 flex justify-content-end">
+            <p-knob [(ngModel)]="valueKnob3" valueTemplate="{value}%" [step]="10" [min]="0" [max]="100"></p-knob>
           </div>
         </div>
       </div>
     </div>
     <div class="col-12 lg:col-9">
-      <div class="card">
+      <div class="card h-full">
         <div class="flex align-item-center justify-content-between mb-6">
           <span class="text-900 text-xl mt-2 font-semibold">Sales Overview</span>
-          <p-dropdown [options]="week" [(ngModel)]="selectedWeek" placeholder="Week" optionLabel="name"[style]="{ 'min-width': '10rem' }"></p-dropdown>
+          <p-dropdown [options]="week" [(ngModel)]="selectedWeek" placeholder="Week" optionLabel="name"
+            [style]="{ 'min-width': '10rem' }"></p-dropdown>
         </div>
-        <p-chart type="bar" [data]="barData" [options]="barOptions"></p-chart>
+        <div class="h-full">
+          <p-chart type="bar" [data]="barData" [options]="barOptions"></p-chart>
+        </div>
       </div>
     </div>
     <div class="col-12 lg:col-3">
@@ -72,15 +77,17 @@
           <button class="flex" pButton pRipple icon="pi pi-ellipsis-v" class="p-button-text p-button-primary"></button>
         </div>
         <div *ngFor="let brand of brands"
-          class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer"
+          class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
           style="border-radius: 6px">
-          <div style="width:48px;height:32px;border-radius:10px"
-            class="inline-flex align-items-center justify-content-center mr-3">
-            <i [ngClass]="brand.icon" class="text-3xl text-primary"></i>
+          <div class="flex align-items-center">
+            <div style="width:48px;height:32px;border-radius:10px"
+              class="inline-flex align-items-center justify-content-center mr-3">
+              <i [ngClass]="brand.icon" class="text-3xl text-primary"></i>
+            </div>
+            <span class="text-900 text-xl font-medium">{{brand.name}}</span>
           </div>
-          <span class="text-900 text-xl font-medium ">{{brand.name}}</span>
-          <div class="ml-auto">
-            <span class="text-600 text-lg font-semibold">{{brand.price}}</span>
+          <div>
+            <span class="text-600 text-lg font-semibold text-overflow-ellipsis">{{brand.price}}</span>
           </div>
         </div>
       </div>
@@ -95,12 +102,12 @@
               <input type="text" style="border-radius: 6px" pInputText placeholder="Search..."
                 class="w-full pl-7 text-900  h-full" />
             </span>
-            <button pButton pRipple label="Export" icon="pi pi-upload"  class="p-button-outlined"
+            <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-outlined"
               (click)="dt.exportCSV()"></button>
           </div>
         </div>
-        <p-table responsiveLayout="scroll" #dt [value]="lists" [columns]="cols" [rows]="20" [paginator]="true" selectionMode="multiple" [rowHover]="true"
-          [rowsPerPageOptions]="[10,20]" dataKey="id">
+        <p-table responsiveLayout="scroll" #dt [value]="lists" [columns]="cols" [rows]="20" [paginator]="true"
+          selectionMode="multiple" [rowHover]="true" [rowsPerPageOptions]="[10,20]" dataKey="id">
           <ng-template pTemplate="header">
             <tr>
               <th style="width: 3rem">
@@ -119,7 +126,9 @@
           </ng-template>
           <ng-template pTemplate="body" let-list>
             <tr>
-              <td style="width:3%; height:5rem;"> <p-tableCheckbox [value]="list"></p-tableCheckbox></td>
+              <td style="width:3%; height:5rem;">
+                <p-tableCheckbox [value]="list"></p-tableCheckbox>
+              </td>
               <td style="width:35%;height:5rem; min-width:15rem;">
 
                 <span class="p-column-title">Name</span>
@@ -133,39 +142,37 @@
                 <span class="text-900 font-semibold">{{list.price}}</span>
               </td>
               <td style=" height:5rem; min-width:8rem;">
-                <span class="p-column-title">File Size</span>
                 <span class="text-900 font-semibold">{{list.tracking}}</span>
               </td>
               <td style=" height:5rem; min-width:8rem;">
-                <span class="p-column-title">File Size</span>
                 <span class="text-900 font-semibold">{{list.country}}</span>
               </td>
               <td style=" height:5rem; min-width:8rem;">
-                <span class="p-column-title">File Size</span>
                 <span class="text-900 font-semibold">{{list.date}}</span>
               </td>
               <td style="width: 5%;">
-                <button pButton pRipple type="button" label="Complate" class="p-button-outlined"></button>
+                <button pButton pRipple type="button" label={{list.label}} class="p-button-outlined"></button>
               </td>
             </tr>
           </ng-template>
           <ng-template pTemplate="paginatorleft" let-list></ng-template>
           <ng-template pTemplate="paginatorright">
           </ng-template>
-      </p-table>
+        </p-table>
       </div>
     </div>
     <div class="col-12 lg:col-3">
-      <div class="card">
-      <div class="flex flex-column sm:flex-row justify-content-between align-items-center mb-4 ">
+      <div class="card h-full flex justify-content-between flex-column">
+        <div
+          class="flex flex-column xl:flex-row gap-1 justify-content-center xl:justify-content-between align-items-center ">
           <p class="text-900 text-xl font-semibold mb-2 md:mb-0">Top Products</p>
           <p-dropdown [options]="mounths" [(ngModel)]="selectedMounths" placeholder="Mounth" optionLabel="name"
             [style]="{ 'min-width': '10rem' }"></p-dropdown>
         </div>
         <div *ngFor="let product of products"
-          class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer"
+          class="cursor-pointer flex surface-border mb-3 p-3 align-items-center border-1 surface-border border-round hover:surface-hover transition-colors transition-duration-150"
           style="border-radius: 6px">
-          <span class="inline-flex justify-content-center mr-3 ml-3">
+          <span class="flex justify-content-center mr-3 ml-3">
             <img [src]=product.image class="w-3rem h-3rem" />
           </span>
           <div class="ml-3">
@@ -179,3 +186,4 @@
     </div>
   </div>
 </div>
+

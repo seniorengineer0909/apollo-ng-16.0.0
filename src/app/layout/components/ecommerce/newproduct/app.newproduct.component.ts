@@ -19,11 +19,11 @@ interface Product{
 @Component({
     selector: 'app-newproduct',
     templateUrl: './app.newproduct.component.html',
-    styleUrls: ['./app.newproduct.component.scss','../../../../assets/demo/editor.scss']
+    styleUrls: ['./app.newproduct.component.scss','../../../../../assets/demo/editor.scss']
 })
 export class AppNewProductComponent {
 
-    @ViewChildren('buttonEl') buttonEl: QueryList<ElementRef>; 
+    @ViewChildren('buttonEl') buttonEl: QueryList<ElementRef>;
 
     text: string;
 
@@ -59,7 +59,7 @@ export class AppNewProductComponent {
         {label: 'New Product'},
       ]);
     }
-    
+
     onChipRemove(item) {
       this.product.tags = this.product.tags.filter(i => i !== item);
     }

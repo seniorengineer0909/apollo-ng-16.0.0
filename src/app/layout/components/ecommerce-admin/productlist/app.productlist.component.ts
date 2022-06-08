@@ -7,10 +7,10 @@ import { MenuItem } from 'primeng/api';
 @Component({
     selector: 'app-app.productlist',
     templateUrl: './app.productlist.component.html',
-    styleUrls: ['../../../../assets/demo/table.scss', '../../../../assets/demo/badges.scss']
+    styleUrls: ['../../../../../assets/demo/table.scss', '../../../../../assets/demo/badges.scss']
 })
 export class AppProductListComponent implements OnInit {
-    
+
     items: MenuItem[];
 
     products: Product[];
@@ -33,7 +33,7 @@ export class AppProductListComponent implements OnInit {
 
     ngOnInit(): void {
       this.productService.getProducts().then(data => this.products = data);
-      
+
       this.items = [
         {label: 'Edit', icon: 'pi pi-fw pi-pencil'},
         {label: 'New Product', icon: 'pi pi-fw pi-plus'},

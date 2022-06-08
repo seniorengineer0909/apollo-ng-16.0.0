@@ -6,7 +6,7 @@ import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
 
 @Component({
     templateUrl: './app.crud.component.html',
-    styleUrls: ['../../../../assets/demo/badges.scss'],
+    styleUrls: ['../../../../../assets/demo/badges.scss'],
     providers: [MessageService, ConfirmationService]
 })
 export class AppCrudComponent implements OnInit {

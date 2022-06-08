@@ -9,16 +9,22 @@ interface List {
     tracking: string;
     country: string;
     date: string;
+    label:string;
 }
 
 @Component({
-    templateUrl: './dashboard.component.html'
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['../../../../assets/demo/table.scss',]
 })
 export class DashboardDemoComponent {
 
-    fileChart: any;
+    valueKnob = 10;
 
-    fileChartOptions: any;
+    valueKnob1 = 50;
+
+    valueKnob2 = 90;
+
+    valueKnob3 = 75;
 
     chartPlugins: any;
 
@@ -60,7 +66,7 @@ export class DashboardDemoComponent {
         },
         {
             name: "Vimeo",
-            price: "$9,324",
+            price: "$19,324",
             icon: "pi pi-vimeo"
         }
     ];
@@ -90,6 +96,11 @@ export class DashboardDemoComponent {
             price: "$45,230 - 234 pieces",
             image: "assets/images/pngwing 1 (1).png"
         },
+        {
+          name: "Apple Watch 2",
+          price: "$45,230 - 234 pieces",
+          image: "assets/images/pngwing 1 (1).png"
+      },
 
     ];
     lists: List[] = [
@@ -100,7 +111,8 @@ export class DashboardDemoComponent {
             price: "$325",
             tracking: "#249234",
             country: "England",
-            date: "09/13/2015"
+            date: "09/13/2015",
+            label: "Complate"
         },
         {
             id: 2,
@@ -109,7 +121,8 @@ export class DashboardDemoComponent {
             price: "$156",
             tracking: "#241235",
             country: "Germany",
-            date: "09/02/2011"
+            date: "09/02/2011",
+            label: "Shipped"
         },
         {
             id: 3,
@@ -118,7 +131,8 @@ export class DashboardDemoComponent {
             price: "$325",
             tracking: "#423552",
             country: "Italy",
-            date: "09/13/2012"
+            date: "09/13/2012",
+            label: "Processing"
         },
         {
             id: 4,
@@ -127,7 +141,8 @@ export class DashboardDemoComponent {
             price: "$654",
             tracking: "#123563",
             country: "Holland",
-            date: "09/13/2015"
+            date: "09/13/2015",
+            label: "View"
         },
         {
             id: 5,
@@ -136,7 +151,8 @@ export class DashboardDemoComponent {
             price: "$412",
             tracking: "#943563",
             country: "Amsterdam",
-            date: "09/05/2014"
+            date: "09/05/2014",
+            label: "Closed"
         },
 
     ];
@@ -206,7 +222,7 @@ export class DashboardDemoComponent {
                 }
             },
         },
-        scales: {            
+        scales: {
             x: {
                 ticks: {
                     font: {
@@ -257,63 +273,6 @@ export class DashboardDemoComponent {
             { name: 'Week 2' },
 
         ];
-    }
-    ngOnInit() {
-
-        this.chartPlugins = [{
-            beforeDraw: function (chart) {
-
-                let ctx = chart.ctx;
-                let width = chart.width;
-                let height = chart.height;
-                let fontSize = 1.50;
-                let oldFill = ctx.fillStyle;
-
-                ctx.restore();
-                ctx.font = fontSize + "rem sans-serif";
-                ctx.textBaseline = "middle";
-
-                let text = 80 + "GB";
-                let textX = Math.round((width - ctx.measureText(text).width) / 2);
-                let textY = (height + chart.chartArea.top) / 2.25;
-
-
-                ctx.fillStyle = chart.config.data.datasets[0].backgroundColor[0];
-                ctx.fillText(text, textX, textY);
-                ctx.fillStyle = oldFill;
-                ctx.save();
-            }
-        }]
-
-        this.fileChart = {
-
-            datasets: [
-                {
-                    data: [300, 100],
-                    backgroundColor: [
-                        '#E0E3FF',
-                        '#FFFFFF'
-                    ],
-                    hoverBackgroundColor: [
-                        '#E0E3FF',
-                        '#FFFFFF'
-                    ],
-                    borderColor: 'transparent',
-                    fill: true
-                }
-            ]
-        };
-
-        this.fileChartOptions = {
-            cutout: '80%',
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#ebedef'
-                    }
-                }
-            }
-        };
     }
 
 }

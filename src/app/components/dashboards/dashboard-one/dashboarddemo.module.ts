@@ -9,6 +9,9 @@ import { TableModule } from 'primeng/table';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { ChartModule } from 'primeng/chart';
+import { KnobModule } from 'primeng/knob';
+import { RippleModule } from 'primeng/ripple';
+
 
 
 @NgModule({
@@ -16,12 +19,14 @@ import { ChartModule } from 'primeng/chart';
     CommonModule,
     DashboardDemoRoutingModule,
     ButtonModule,
+    RippleModule,
     DropdownModule,
     FormsModule,
     TableModule,
     InputTextModule,
     InputTextareaModule,
-    ChartModule
+    ChartModule,
+    KnobModule
   ],
   declarations: [DashboardDemoComponent]
 })

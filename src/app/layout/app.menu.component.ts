@@ -20,6 +20,12 @@ export class AppMenuComponent implements OnInit {
                         icon: 'pi pi-fw pi-home',
                         routerLink: ['/'],
                     },
+                      {
+                          label: 'Dashboard',
+                          icon: 'pi pi-fw pi-image',
+                          routerLink: ['/dashboard-second'],
+
+                      },
                 ],
             },
             {
@@ -411,17 +417,29 @@ export class AppMenuComponent implements OnInit {
             },
             { separator: true },
             {
-                label: 'Blog',
-                icon: 'pi pi-fw pi-user',
-                items: [
-                    {
-                        label: 'Blog List',
-                        icon: 'pi pi-fw pi-image',
-                        routerLink: ['blog/list'],
+              label: 'Blog',
+              icon: 'pi pi-fw pi-comment',
+              items: [
+                  {
+                      label: 'Blog List',
+                      icon: 'pi pi-fw pi-image',
+                      routerLink: ['blog/list'],
 
-                    },
-                ],
-            },
+                  },
+                  {
+                      label: 'Blog Detail',
+                      icon: 'pi pi-fw pi-list',
+                      routerLink: ['blog/detail'],
+
+                  },
+                  {
+                      label: 'Blog Edit',
+                      icon: 'pi pi-fw pi-pencil',
+                      routerLink: ['blog/edit'],
+
+                  }
+              ]
+          },
             {
                 label: 'Hierarchy',
                 icon: 'pi pi-fw pi-align-left',
