@@ -1,0 +1,60 @@
+.exception-body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  @include flex();
+  @include flex-justify-center();
+  @include flex-align-center();
+  min-height: 100vh;
+
+  .exception-content {
+      .exception-title {
+          font-size: 250px;
+          font-weight: 700;
+          background: -webkit-linear-gradient(#F0F1FF, #DBE0FF);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+      }
+      .exception-title-access{
+        font-size: 120px;
+        font-weight: 700;
+        background: -webkit-linear-gradient(#F0F1FF, #DBE0FF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+      .exception-detail {
+          font-size: 20px;
+          font-weight: 600;
+          color: #97A5D9;
+          margin: 20px 20px;
+      }
+  }
+
+  &.access {
+      background-image: url("../../demo/images/pages/bg-auth.svg");
+  }
+
+  &.notfound {
+    background-image: url("../../demo/images/pages/bg-auth.svg");
+  }
+
+  &.error {
+    background-image: url("../../demo/images/pages/bg-auth.svg");
+  }
+}
+
+@media(max-width:640px) {
+  .exception-body {
+      .exception-content {
+          .exception-title {
+              font-size: 72px;
+          }
+      }
+  }
+}
+
+
+
+

@@ -15,6 +15,7 @@ import { ChipModule } from 'primeng/chip';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ChipsModule } from 'primeng/chips';
 import { MenuModule } from 'primeng/menu';
+import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
 
 
 
@@ -37,6 +38,6 @@ import { MenuModule } from 'primeng/menu';
     MenuModule,
 
   ],
-  declarations: [DashboardTwoComponent]
+  declarations: [DashboardTwoComponent, DashboardCardComponent]
 })
 export class DashboardTwoModule { }

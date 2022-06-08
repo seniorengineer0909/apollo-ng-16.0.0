@@ -21,40 +21,36 @@ export class DashboardTwoComponent {
 
 
     ngOnInit() {
-      this.chartPlugins = [{
-        beforeDraw: function (chart) {
-
-
-        }
-      }]
-
 
     this.lineData = {
       labels: ['MON', 'TUE', 'WED', 'THU', 'SUN'],
       datasets: [
         {
           label: 'First Dataset',
-          data: [65, 59, 80, 81, 56, 55, 40],
-          fill: false,
-          backgroundColor: '#0E1ECC',
-          borderColor: '#0E1ECC',
+          data: [10, 25, 48, 35, 54, 70],
+          fill: true,
+          backgroundColor: '#2738E61A',
+          borderColor: '#2738E61A',
           tension: .4,
+          categoryPercentage: 1.0,
+                    barPercentage: 1.0
         },
         {
           label: 'Second Dataset',
-          data: [28, 48, 40, 19, 86, 27, 90],
-          fill: false,
-          backgroundColor: '#F3229F',
-          borderColor: '#F3229F',
+          data: [18, 35, 23, 30, 59, 65],
+          fill: true,
+          backgroundColor: '#F3229F26',
+          borderColor: '#F3229F26',
           tension: .4
         },
         {
           label: 'Third Dataset',
-          data: [10, 16, 25, 30, 50, 60, 70],
-          fill: false,
-          backgroundColor: '#C79D33',
-          borderColor: '#C79D33',
-          tension: .4
+          data: [20, 47, 46, 46, 61, 70],
+          fill: true,
+          backgroundColor: '#3BF4B21A',
+          borderColor: '#3BF4B21A',
+          tension: .4,
+
         }
       ]
     };
@@ -73,7 +69,7 @@ export class DashboardTwoComponent {
           position: 'bottom'
         },
         tooltip: {
-          backgroundColor: '#1F2ED0',
+          backgroundColor: '#F3229F26',
           titleFont: {
             weight: 'bold'
           },
@@ -144,11 +140,7 @@ export class DashboardTwoComponent {
             '#F3229F26',
             '#3BF4B21A',
           ],
-          borderColor: ['#293BF1',
-            '#F3229F',
-            '#3BF4B2',
-
-          ],
+          borderColor: 'transparent',
 
           fill: true
         }
@@ -174,8 +166,6 @@ export class DashboardTwoComponent {
     }
   }
 };
-
-
 
 
 
