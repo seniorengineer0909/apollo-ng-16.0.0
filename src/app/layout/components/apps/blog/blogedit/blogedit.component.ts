@@ -13,7 +13,7 @@ interface blog {
 @Component({
     selector: 'app-blogedit',
     templateUrl: './blogedit.component.html',
-    styleUrls: ['../bloglist/bloglist.component.scss', '../../../../../assets/demo/editor.scss']
+    styleUrls: ['../bloglist/bloglist.component.scss']
 
 })
 
