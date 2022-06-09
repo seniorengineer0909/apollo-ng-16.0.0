@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarModule } from 'primeng/calendar';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
@@ -29,7 +28,6 @@ import { ChartComponent } from './chart/chart.component';
   imports: [
     CommonModule,
     FormsModule,
-    FullCalendarModule,
     DialogModule,
     InputTextareaModule,
     ButtonModule,

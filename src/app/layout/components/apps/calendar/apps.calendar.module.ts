@@ -22,6 +22,7 @@ FullCalendarModule.registerPlugins([
   interactionPlugin,
   timeGridPlugin
 ]);
+
 @NgModule({
   imports: [
     CommonModule,

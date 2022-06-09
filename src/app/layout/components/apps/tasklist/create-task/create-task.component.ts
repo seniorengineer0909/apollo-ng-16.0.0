@@ -9,17 +9,17 @@ import { TaskService } from 'src/app/service/taskservice';
 @Component({
     selector: 'app-create-task',
     templateUrl: './create-task.component.html',
-    styleUrls: ['./create-task.component.scss', '../../../../../assets/demo/editor.scss'],
+    styleUrls: ['./create-task.component.scss','../../../../../../assets/demo/editor.scss'],
     providers: [MessageService, MemberService]
 })
 export class CreateTaskComponent implements OnInit {
-    
+
     task: Task;
-    
+
     members: Member[];
-    
+
     filteredMembers: Member[];
-    
+
     constructor(public breadcrumbService: BreadcrumbService, private memberService: MemberService, private messageService: MessageService, private taskService: TaskService) {
         this.breadcrumbService.setItems([
             {label: 'Create Task'}

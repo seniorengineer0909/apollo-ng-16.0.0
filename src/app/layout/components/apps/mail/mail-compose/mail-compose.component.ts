@@ -5,11 +5,11 @@ import { MessageService } from 'primeng/api';
 @Component({
     selector: 'mail-compose',
     templateUrl: './mail-compose.component.html',
-    styleUrls: ['./mail-compose.component.scss', '../../../../../assets/demo/editor.scss']
+    styleUrls: ['./mail-compose.component.scss', '../../../../../../assets/demo/editor.scss']
 })
 export class MailComposeComponent implements OnInit {
 
-    constructor(private breadcrumbService: BreadcrumbService, private messageService: MessageService) { 
+    constructor(private breadcrumbService: BreadcrumbService, private messageService: MessageService) {
         this.breadcrumbService.setItems([
           {label: 'Mail Compose'},
         ]);

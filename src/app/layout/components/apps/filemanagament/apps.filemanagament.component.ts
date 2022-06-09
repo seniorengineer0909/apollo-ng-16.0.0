@@ -12,7 +12,7 @@ interface File {
 @Component({
     selector: 'app-apps.filemanagament',
     templateUrl: './apps.filemanagament.component.html',
-    styleUrls: ['./apps.filemanagament.scss', '../../../../assets/demo/table.scss']
+    styleUrls: ['./apps.filemanagament.scss', '../../../../../assets/demo/table.scss']
 })
 export class AppsFilemanagamentComponent {
 

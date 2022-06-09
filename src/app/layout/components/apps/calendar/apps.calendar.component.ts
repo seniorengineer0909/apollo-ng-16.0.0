@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from 'src/app/service/eventservice';
-import { BreadcrumbService } from '../../../service/app.breadcrumb.service';
+import { BreadcrumbService } from '../../../../service/app.breadcrumb.service';
 import { CalendarOptions } from '@fullcalendar/angular';
 
 @Component({
@@ -35,7 +35,7 @@ export class AppsCalendarComponent implements OnInit {
     tags: any[];
 
     view: string;
-    
+
     changedEvent: any;
 
     constructor(private eventService: EventService, public breadcrumbService: BreadcrumbService) {
@@ -52,7 +52,7 @@ export class AppsCalendarComponent implements OnInit {
             this.calendarOptions = {...this.calendarOptions, ...{events: events}};
             this.tags = this.events.map(item => item.tag);
         });
-      
+
         this.calendarOptions = {
             height: 720,
             initialDate: this.today,
@@ -90,11 +90,11 @@ export class AppsCalendarComponent implements OnInit {
     handleSave() {
         this.showDialog = false;
         this.clickedEvent = {...this.changedEvent, backgroundColor: this.changedEvent.tag.color, borderColor: this.changedEvent.tag.color, textColor: '#212121'};
-        
+
         if(this.clickedEvent.hasOwnProperty('id')) {
             this.events = this.events.map(i => i.id.toString() === this.clickedEvent.id.toString() ? i = this.clickedEvent : i);
         } else {
-            this.events = [...this.events, {...this.clickedEvent, id: Math.floor(Math.random() * 10000)}];    
+            this.events = [...this.events, {...this.clickedEvent, id: Math.floor(Math.random() * 10000)}];
         }
 
         this.calendarOptions = {...this.calendarOptions, ...{events: this.events}};

@@ -17,7 +17,7 @@ const routes: Routes = [
             {path: 'blog', loadChildren: () => import('./layout/components/apps/blog/blog.module').then(m => m.BlogModule)},
             {path: 'ecommerce', loadChildren: () => import('./layout/components/ecommerce/app.ecommerce.module').then(m => m.AppEcommerceModule)},
             {path: 'ecommerce-admin', loadChildren: () => import('./layout/components/ecommerce-admin/app.ecommerce-admin.module').then(m => m.AppEcommerceAdminModule)},
-
+            {path: 'apps', loadChildren: () => import('./layout/components/apps/apps.module').then(m => m.AppsModule)}
         ]
     },
     {path: 'error', loadChildren: () => import('./layout/components/pages/error/app.error.module').then(m => m.AppErrorModule)},

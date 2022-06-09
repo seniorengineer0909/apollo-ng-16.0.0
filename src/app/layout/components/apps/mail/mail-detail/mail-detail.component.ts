@@ -9,7 +9,7 @@ import { MailService } from 'src/app/service/mailservice';
 @Component({
     selector: 'mail-detail',
     templateUrl: './mail-detail.component.html',
-    styleUrls: ['../../../../../assets/demo/editor.scss']
+    styleUrls: ['../../../../../../assets/demo/editor.scss']
 })
 export class MailDetailComponent implements OnInit, OnDestroy {
 
@@ -22,7 +22,7 @@ export class MailDetailComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.subscription = this.route.params.pipe(
           switchMap(params => {
-            return this.mailService.getMail(params.id)
+            return this.mailService.getMail(params['id'])
           })
         ).subscribe(d => this.mail = d);
     }
