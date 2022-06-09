@@ -9,18 +9,15 @@
                 <i class="pi pi-envelope"></i>
                 <input id="email1" type="text" pInputText class="w-full pl-5 h-3rem" placeholder="Enter email" style="border-radius: 6px;">
             </span>
-
             <span class="p-input-icon-left w-full mb-4 relative">
                 <i class="pi pi-lock"></i>
                 <input id="password" [type]="inputType" pInputText class="w-full pl-5 h-3rem" placeholder="Enter password" style="border-radius: 6px;">
                 <i class="pi cursor-pointer absolute" [ngClass]="{'pi-eye-slash': inputType === 'text', 'pi-eye': inputType === 'password'}" (click)="togglePassword()" style="right: 5px;"></i>
             </span>
-            
             <div class="mb-4">
                 <p-checkbox name="checkbox" value="val" [(ngModel)]="selectedValues" styleClass="mr-2"></p-checkbox>
                 <label for="checkbox" class="text-500 font-bold">I have read the <a class="text-900 cursor-pointer">Terms and Conditions</a></label>
             </div>
-
             <button pButton pRipple label="Sign Up" class="mr-2 w-full p-button-primary h-3rem mb-4" style="border-radius: 6px;"></button>
             <span class="font-bold text-500">Already have an account? <a class="cursor-pointer text-900">Login</a></span>
         </div>

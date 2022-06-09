@@ -1,17 +1,28 @@
-import {Component, OnInit} from '@angular/core';
-import { ConfigService } from 'src/app/service/app.config.service';
+import {Component} from '@angular/core';
+
 
 @Component({
     selector: 'app-login',
     templateUrl: './app.login.component.html'
 })
-export class AppLoginComponent implements OnInit {
+export class AppLoginComponent {
 
-    dark: boolean = false;
+  inputType: string = 'password';
 
-    constructor(public configService: ConfigService) { }
+  email: string;
 
-    ngOnInit() {
-        this.dark = this.configService.getConfig().dark;
+  password: string;
+
+  val: any;
+
+  selectedValues: any[];
+
+  togglePassword(){
+    if (this.inputType === 'text') {
+      this.inputType = 'password';
+    } else {
+      this.inputType = 'text';
     }
+  }
+
 }
