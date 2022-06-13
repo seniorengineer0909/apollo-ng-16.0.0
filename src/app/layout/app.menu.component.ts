@@ -26,6 +26,12 @@ export class AppMenuComponent implements OnInit {
                           routerLink: ['/dashboard-second'],
 
                       },
+                      {
+                        label: 'Dashboard',
+                        icon: 'pi pi-fw pi-image',
+                        routerLink: ['/dashboard-banking'],
+
+                    },
                 ],
             },
             {

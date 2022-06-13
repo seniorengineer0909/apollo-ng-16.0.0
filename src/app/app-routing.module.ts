@@ -9,6 +9,7 @@ const routes: Routes = [
             {path: '', loadChildren: () => import('./components/dashboards/dashboard-one/dashboarddemo.module').then(m => m.DashboardDemoModule)},
             {path: 'uikit', loadChildren: () => import('./components/uikit/uikit.module').then(m => m.UIkitModule)},
             {path: 'dashboard-second', loadChildren: () => import('./components/dashboards/dashboard-two/dashboard-two.module').then(m => m.DashboardTwoModule)},
+            {path: 'dashboard-banking', loadChildren: () => import('./components/dashboards/dashboard-banking/dashboard-banking.module').then(m => m.DashboardBankingModule)},
             {path: 'utilities', loadChildren: () => import('./layout/components/utilities/utilities.module').then(m => m.UtilitiesModule)},
             {path: 'pages', loadChildren: () => import('./layout/components/pages/pages.module').then(m => m.PagesModule)},
             {path: 'profile', loadChildren: () => import('./layout/components/profile/profile.module').then(m => m.ProfileModule)},
