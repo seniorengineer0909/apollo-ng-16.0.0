@@ -1,0 +1,146 @@
+@media screen and (min-width: $tabletBreakpoint + 1) {
+    .layout-container {
+        &.layout-horizontal {
+            .layout-topbar {
+                .topbar-menubutton {
+                    display: none;
+                }
+            }
+
+            .layout-sidebar {
+                width: 100%;
+                height: auto;
+                top: 0;
+                z-index: 999;
+                overflow: visible;
+                flex-direction: row;
+                position: static;
+
+                .layout-menu-container {
+                    overflow: visible;
+                }
+
+                .app-logo {
+                    padding: 0 2rem;
+                }
+            }
+
+            .layout-menu {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 100%;
+
+                ul {
+                    display: none;
+                }
+
+                li.active-menuitem {
+                    > ul {
+                        display: block;
+                    }
+
+                    > a {
+                        .layout-submenu-toggler {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+
+                .layout-root-menuitem {
+                    position: relative;
+                    border-radius: var(--border-radius);
+
+                    > .layout-menuitem-root-text {
+                        display: none;
+                    }
+
+                    > a {
+                        display: flex;
+                        align-items: center;
+                        padding: .75rem;
+                        border-radius: var(--border-radius);
+                        cursor: pointer;
+                        outline: none;
+                        transition: background-color $transitionDuration;
+
+                        .layout-submenu-toggler {
+                            display: block;
+                            margin-left: auto;
+                            transition: transform 0.2s;
+                        }
+
+                        .layout-menuitem-icon {
+                            font-size: 1.25rem;
+                        }
+
+                        .layout-menuitem-text {
+                            font-size: 0.875rem;
+                            display: block;
+                            margin-left: .75rem;
+                            margin-right: .75rem;
+                            white-space: nowrap;
+                        }
+
+                        &:hover {
+                            background-color: var(--surface-hover);
+                        }
+                    }
+
+                    > ul {
+                        position: absolute;
+                        left: 0;
+                        top: 3rem;
+                        min-width: 15rem;
+                        background-color: var(--surface-overlay);
+                        box-shadow: var(--sidebar-shadow);
+                        padding: 1rem;
+                        border-radius: var(--border-radius);
+                        max-height: 20rem;
+                        overflow: auto;
+
+                        a {
+                            padding-right: .5rem;
+                        }
+
+                        li {
+                            a {
+                                padding-left: 0.5rem;
+                            }
+            
+                            li {
+                                a {
+                                    padding-left: 1rem;
+                                }
+            
+                                li {
+                                    a {
+                                        padding-left: 1.5rem;
+                                    }
+            
+                                    li {
+                                        a {
+                                            padding-left: 2rem;
+                                        }
+            
+                                        li {
+                                            a {
+                                                padding-left: 2.5rem;
+                                            }
+            
+                                            li {
+                                                a {
+                                                    padding-left: 3rem;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

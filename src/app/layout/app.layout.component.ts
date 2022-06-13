@@ -9,7 +9,7 @@ export class AppLayoutComponent {
 
     darkMode: boolean;
 
-    menuMode = 'slim';
+    menuMode = 'horizontal';
 
     menuHoverActive = false;
 
