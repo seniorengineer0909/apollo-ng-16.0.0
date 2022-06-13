@@ -7,7 +7,8 @@ import { RouterModule } from '@angular/router';
     {path: 'tasklist', loadChildren: () => import('./tasklist/apps.tasklist.module').then(m => m.AppsTaskListModule)},
     {path: 'chat', loadChildren: () => import('./chat/apps.chat.module').then(m => m.AppsChatModule)},
     {path: 'filemanagament', loadChildren: () => import('./filemanagament/apps.filemanagament.module').then(m => m.AppsFileManagamentModule)},
-    {path: 'mail', loadChildren: () => import('./mail/apps.mail.module').then(m => m.AppsMailModule)}
+    {path: 'mail', loadChildren: () => import('./mail/apps.mail.module').then(m => m.AppsMailModule)},
+    {path: 'kanban', loadChildren: () => import('./kanban/apps.kanban.module').then(m => m.AppsKanbanModule)},
 
   ])],
   exports: [RouterModule]

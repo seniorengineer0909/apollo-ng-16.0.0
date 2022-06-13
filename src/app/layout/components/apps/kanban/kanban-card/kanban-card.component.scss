@@ -1,0 +1,9 @@
+:host ::ng-deep {
+    .avatar-group {
+        display: flex;
+    }
+    
+    .avatar-group p-avatar + p-avatar {
+        margin-left: -1rem;
+    }
+}

@@ -1,0 +1,25 @@
+:host ::ng-deep {
+    .p-autocomplete {
+        display: block;
+
+        .p-autocomplete-multiple-container {
+            gap: 0.5rem;
+
+            .p-autocomplete-token {
+                background: var(--surface-ground);
+                border: 1px solid var(--surface-border);
+            }
+        }
+    }
+
+    .p-sidebar {
+        .p-sidebar-header {
+            display: none;
+        }
+
+        .p-sidebar-content {
+            height: 100vh;
+            padding: 0;
+        }
+    }
+}
