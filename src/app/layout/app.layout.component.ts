@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuService } from './app.menu.service';
 
 @Component({
     selector: 'app-layout',
@@ -8,7 +9,7 @@ export class AppLayoutComponent {
 
     darkMode: boolean;
 
-    menuMode = 'static';
+    menuMode = 'slim';
 
     menuHoverActive = false;
 
@@ -23,6 +24,8 @@ export class AppLayoutComponent {
     resetMenu: boolean;
 
     profileSidebarVisible: boolean;
+
+    constructor(private menuService: MenuService) {}
 
     isSlim() {
         return this.menuMode === 'slim';
@@ -75,6 +78,10 @@ export class AppLayoutComponent {
 
     onLayoutClick() {
         if (!this.menuClick) {
+            if (this.isSlim() || this.isHorizontal()) {
+                this.menuService.reset();
+            }
+
             if (this.overlayMenuActive || this.staticMenuMobileActive) {
                 this.hideOverlayMenu();
             }

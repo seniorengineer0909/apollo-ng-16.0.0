@@ -234,8 +234,12 @@ a {
   border-radius: 1rem;
 }
 
-.layout-profile-sidebar {
-  padding: 0.75rem;
+.layout-profile-sidebar.p-sidebar {
+  width: 30rem;
+}
+.layout-profile-sidebar.p-sidebar .p-sidebar-content {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .layout-content-wrapper {
@@ -335,4 +339,95 @@ p:last-child {
 
 .p-toast.p-toast-top-right, .p-toast.p-toast-top-left, .p-toast.p-toast-top-center {
   top: 70px;
+}
+
+.exception-body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.exception-body .exception-content .exception-title {
+  font-size: 250px;
+  font-weight: 700;
+  background: -webkit-linear-gradient(#F0F1FF, #DBE0FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.exception-body .exception-content .exception-title-access {
+  font-size: 112px;
+  font-weight: 700;
+  background: -webkit-linear-gradient(#F0F1FF, #DBE0FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.exception-body .exception-content .exception-detail {
+  font-size: 20px;
+  font-weight: 600;
+  color: #97A5D9;
+  margin: 10px 10px 40px 10px;
+}
+.exception-body .exception-content > a {
+  margin-top: 40px;
+  width: 250px;
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  transition: background-color 0.2s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.exception-body .exception-content > a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.exception-body.access {
+  background-image: url("../../demo/images/pages/bg-auth.svg");
+}
+.exception-body.notfound {
+  background-image: url("../../demo/images/pages/bg-auth.svg");
+}
+.exception-body.error {
+  background-image: url("../../demo/images/pages/bg-auth.svg");
+}
+
+@media (max-width: 640px) {
+  .exception-body .exception-content .exception-title {
+    font-size: 72px;
+  }
+}
+.login-body .login-wrapper {
+  height: 100vh;
+  background-image: url("../../demo/images/pages/bg-auth.svg");
+}
+
+.auth-container {
+  background-image: url("../../demo/images/pages/bg-auth.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (min-width: 993px) {
+  .login-body .login-wrapper .login-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../demo/images/pages/bg-auth.svg");
+  }
+}
+@media (max-width: 992px) {
+  .login-body .login-wrapper .login-panel {
+    width: 100%;
+    z-index: 2;
+  }
+  .login-body .login-wrapper .login-image {
+    display: none;
+  }
 }
