@@ -6,7 +6,8 @@
         'layout-slim': menuMode === 'slim',
         'layout-horizontal': menuMode === 'horizontal',
         'layout-static-inactive': staticMenuDesktopInactive && menuMode === 'static',
-        'layout-overlay-active': overlayMenuActive
+        'layout-overlay-active': overlayMenuActive,
+        'p-ripple-disabled': !ripple
     }" (click)="onLayoutClick()">
     <app-sidebar class="xl:inline hidden"></app-sidebar><!--Kendime not: Değişecek responsive testi için geliştirmeyi önlememesi için yaptım-->
     <div class="layout-content-wrapper">
@@ -16,4 +17,5 @@
         </div>
     </div>
     <app-profilemenu></app-profilemenu>
+    <app-config></app-config>
 </div>

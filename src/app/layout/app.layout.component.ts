@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PrimeNGConfig } from 'primeng/api';
 import { MenuService } from './app.menu.service';
 
 @Component({
     selector: 'app-layout',
     templateUrl: './app.layout.component.html'
 })
-export class AppLayoutComponent {
+export class AppLayoutComponent implements OnInit {
 
     darkMode: boolean;
 
@@ -25,7 +26,18 @@ export class AppLayoutComponent {
 
     profileSidebarVisible: boolean;
 
-    constructor(private menuService: MenuService) {}
+    configVisible: boolean;
+
+    inputStyle: string = 'outlined';
+
+    ripple: boolean;
+
+    constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig) {}
+
+    ngOnInit() {
+        this.primengConfig.ripple = true;
+        this.ripple = false;
+    }
 
     isSlim() {
         return this.menuMode === 'slim';
@@ -101,6 +113,10 @@ export class AppLayoutComponent {
     onMenuClick() {
         this.menuClick = true;
         this.resetMenu = false;
+    }
+
+    onRippleChange(event) {
+        this.ripple = event.checked;
     }
 
 }
