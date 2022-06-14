@@ -1,8 +1,7 @@
 <div class="grid flex-column lg:flex-row">
   <div class="col p-3">
-    <div
-      class="flex surface-card flex-column border-round border-1 surface-border p-4 cursor-pointer hover:border-primary transition-duration-150">
-      <span class="inline-block text-900">Bank Card</span>
+    <div class="flex surface-card flex-column border-round border-1 surface-border p-4 cursor-pointer hover:border-primary transition-duration-150">
+      <span class="inline-block text-900 font-bold">Bank Card</span>
       <div class="flex justify-content-between align-items-center mt-3">
         <span class="inline-block text-900 text-xl text-primary mb-5">$934,04</span>
       </div>
@@ -13,9 +12,8 @@
     </div>
   </div>
   <div class="col p-3">
-    <div
-      class="flex surface-card flex-column border-round border-1 surface-border p-4 cursor-pointer hover:border-primary transition-duration-150">
-      <span class="inline-block text-900">Credit Card</span>
+    <div class="flex surface-card flex-column border-round border-1 surface-border p-4 cursor-pointer hover:border-primary transition-duration-150">
+      <span class="inline-block text-900 font-bold">Credit Card</span>
       <div class="flex justify-content-between align-items-center mt-3">
         <span class="inline-block text-900 text-xl text-primary mb-5">$345,21</span>
       </div>
@@ -26,16 +24,14 @@
     </div>
   </div>
   <div class="col-12 lg:col-2 p-3">
-    <div
-      class="flex surface-card h-full flex-column justify-content-center align-items-center py-5 lg:py-0 border-round border-1 surface-border surface-100 cursor-pointer hover:border-primary transition-duration-150">
+    <div class="flex surface-card h-full flex-column justify-content-center align-items-center py-5 lg:py-0 border-round border-1 surface-border surface-100 cursor-pointer hover:border-primary transition-duration-150">
       <i class="pi pi-arrow-circle-up text-primary" style="font-size: 2rem"></i>
       <span class="text-900 text-xl mt-3 text-center">Savings</span>
       <span class="inline-block text-900 text-xl text-primary mt-3">$2,345.21</span>
     </div>
   </div>
   <div class="col-12 lg:col-2 p-3">
-    <div
-      class="flex surface-card h-full flex-column justify-content-center align-items-center py-5 lg:py-0 border-round border-1 surface-border surface-100 cursor-pointer hover:border-primary transition-duration-150">
+    <div class="flex surface-card h-full flex-column justify-content-center align-items-center py-5 lg:py-0 border-round border-1 surface-border surface-100 cursor-pointer hover:border-primary transition-duration-150">
       <i class="pi pi-arrow-circle-down text-primary" style="font-size: 2rem"></i>
       <span class="text-900 text-xl mt-3 text-center">Expenses</span>
       <span class="inline-block text-900 text-xl text-primary mt-3">$1,253.21</span>
@@ -48,61 +44,61 @@
     <div class="card">
       <div class="flex align-item-center justify-content-between ">
         <p class="text-900 text-xl font-semibold mt-2">Transactions</p>
-        <button class="flex" pButton pRipple icon="pi pi-ellipsis-v" class="p-button-text p-button-primary"></button>
+        <p-dropdown [options]="week" [(ngModel)]="selectedWeek" placeholder="Date" optionLabel="name"></p-dropdown>
       </div>
-      <div
-        class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
-        style="border-radius: 6px">
+      <div class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
         <div class="flex align-items-center">
-          <div style="width:48px;height:32px;border-radius:10px"
-            class="inline-flex align-items-center justify-content-center mr-3">
+          <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
             <i class="pi pi-arrow-circle-down text-primary" style="font-size: 2rem"></i>
           </div>
+          <div class="">
           <span class="text-900 text-xl font-medium">Home Insurance</span>
+          <p class="font-semibold text-600 text-sm text-pink-500">-$440</p>
         </div>
       </div>
-      <div
-        class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
-        style="border-radius: 6px">
+      </div>
+      <div class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
         <div class="flex align-items-center">
-          <div style="width:48px;height:32px;border-radius:10px"
-            class="inline-flex align-items-center justify-content-center mr-3">
+          <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
             <i class="pi pi-arrow-circle-up text-primary" style="font-size: 2rem"></i>
           </div>
+          <div class="">
           <span class="text-900 text-xl font-medium">Starbucks</span>
+          <p class="font-semibold text-600 text-sm text-green-500">+$440</p>
         </div>
       </div>
-      <div
-        class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
-        style="border-radius: 6px">
+      </div>
+      <div class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
         <div class="flex align-items-center">
-          <div style="width:48px;height:32px;border-radius:10px"
-            class="inline-flex align-items-center justify-content-center mr-3">
+          <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
             <i class="pi pi-arrow-circle-up text-primary" style="font-size: 2rem"></i>
           </div>
+          <div class="">
           <span class="text-900 text-xl font-medium">Cash Refund</span>
+          <p class="font-semibold text-600 text-sm text-green-500">+$440</p>
         </div>
       </div>
-      <div
-        class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
-        style="border-radius: 6px">
+      </div>
+      <div class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
         <div class="flex align-items-center">
-          <div style="width:48px;height:32px;border-radius:10px"
-            class="inline-flex align-items-center justify-content-center mr-3">
+          <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
             <i class="pi pi-arrow-circle-down text-primary" style="font-size: 2rem"></i>
           </div>
+          <div class="">
           <span class="text-900 text-xl font-medium">Home Insurance</span>
+          <p class="font-semibold text-600 text-sm text-pink-500">-$440</p>
         </div>
       </div>
-      <div
-        class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
-        style="border-radius: 6px">
+      </div>
+      <div class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
         <div class="flex align-items-center">
-          <div style="width:48px;height:32px;border-radius:10px"
-            class="inline-flex align-items-center justify-content-center mr-3">
+          <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
             <i class="pi pi-arrow-circle-up text-primary" style="font-size: 2rem"></i>
           </div>
+          <div class="">
           <span class="text-900 text-xl font-medium">Starbucks</span>
+            <p class="font-semibold text-600 text-sm text-green-500">+$440</p>
+          </div>
         </div>
       </div>
     </div>
@@ -121,3 +117,93 @@
     </div>
   </div>
 </div>
+
+<div class="grid grid-nogutter gap-5">
+  <div class="col-6 md:col-6 surface-section px-4 py-6 border-1 surface-border" style="border-radius: 6px;">
+      <p class="text-900 font-bold text-xl">Quick Transfer</p>
+      <div class="grid gap-3 grid-nogutter flex-column sm:flex-row">
+        <div class="col w-5 mt-3 mb-0">
+          <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+          <div class="flex align-items-center">
+            <div style="width:48px;height:32px;border-radius:10px"
+              class="inline-flex align-items-center justify-content-center mr-3">
+              <img src="../../../../assets/demo/images/avatar-1.png" class="w-3rem">
+            </div>
+            <span class="text-900 text-xl font-medium">Robert Fox</span>
+          </div>
+        </div>
+        </div>
+          <div class="col w-5 mt-3 mb-0">
+            <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+            <div class="flex align-items-center">
+              <div style="width:48px;height:32px;border-radius:10px"
+                class="inline-flex align-items-center justify-content-center mr-3">
+                <img src="../../../../assets/demo/images/avatar-2.png" class="w-3rem">
+              </div>
+              <span class="text-900 text-xl font-medium">Jane Cooper</span>
+            </div>
+          </div>
+          </div>
+      </div>
+      <div class="grid gap-3 grid-nogutter flex-column sm:flex-row">
+        <div class="col w-5 mt-3 mb-0">
+          <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+          <div class="flex align-items-center">
+            <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+              <img src="../../../../assets/demo/images/avatar-3.png" class="w-3rem">
+            </div>
+            <span class="text-900 text-xl font-medium">Savannah Nyan</span>
+          </div>
+        </div>
+        </div>
+          <div class="col w-5 mt-3 mb-0">
+            <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+            <div class="flex align-items-center">
+              <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+                <img src="../../../../assets/demo/images/avatar-2.png" class="w-3rem">
+              </div>
+              <span class="text-900 text-xl font-medium">Annette Black</span>
+            </div>
+          </div>
+          </div>
+      </div>
+      <div class="grid gap-3 grid-nogutter flex-column sm:flex-row">
+        <div class="col w-5 mt-3 mb-0">
+          <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+          <div class="flex align-items-center">
+            <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+              <img src="../../../../assets/demo/images/avatar-3.png" class="w-3rem">
+            </div>
+            <span class="text-900 text-xl font-medium">Savannah Nyan</span>
+          </div>
+        </div>
+        </div>
+          <div class="col w-5 mt-3 mb-0">
+            <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+            <div class="flex align-items-center">
+              <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+                <img src="../../../../assets/demo/images/avatar-2.png" class="w-3rem">
+              </div>
+              <span class="text-900 text-xl font-medium">Annette Black</span>
+            </div>
+          </div>
+          </div>
+      </div>
+      <div class="grid gap-3 grid-nogutter flex-column sm:flex-row flex align-items-center justify-content-center">
+        <div class="col w-5 mt-3 mb-0">
+          <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+          <div class="flex align-items-center">
+            <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+              <img src="../../../../assets/demo/images/avatar-3.png" class="w-3rem">
+            </div>
+            <span class="text-900 text-xl font-medium">Darlene Robertson</span>
+          </div>
+        </div>
+        </div>
+          <div class="col-2 w-5 mt-3 mb-0">
+        <p-button label="Send Money" styleClass="p-button-lg"></p-button>
+          </div>
+      </div>
+    </div>
+  </div>
+

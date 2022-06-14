@@ -1,111 +1,124 @@
 import { Component, OnInit } from '@angular/core';
+import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
 
 @Component({
     selector: 'app-dashboard-banking',
     templateUrl: './dashboard-banking.component.html',
-
 })
+
 export class DashboardBankingComponent implements OnInit {
+  selectedDate: number;
 
-    selectedDate: number;
+  mounths: any[];
 
-    mounths: any[];
+  selectedMounths: any;
 
-    selectedMounths: any;
+  selectedWeek: any;
 
-    selectedWeek: any;
+  week: any[];
 
-    week: any[];
+  days: any[];
 
+  selectedDay: any;
 
   barData = {
     labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
     datasets: [
-        {
-            label: 'Income',
-            backgroundColor: '#3157DE',
-            borderColor: 'rgb(255, 99, 132)',
-            barThickness: 12,
-            borderRadius: Number.MAX_VALUE,
-            data: [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-            label: 'Expense',
-            backgroundColor: '#AFC1FF',
-            barThickness: 12,
-            borderColor: 'rgb(54, 162, 235)',
-            borderRadius: Number.MAX_VALUE,
-            data: [28, 48, 40, 19, 86, 27, 90]
-        }
-    ]
-};
+      {
+        label: 'Income',
+        backgroundColor: '#3157DE',
+        borderColor: 'rgb(255, 99, 132)',
+        barThickness: 12,
+        borderRadius: Number.MAX_VALUE,
+        data: [65, 59, 80, 81, 56, 55, 40],
+      },
+      {
+        label: 'Expense',
+        backgroundColor: '#AFC1FF',
+        barThickness: 12,
+        borderColor: 'rgb(54, 162, 235)',
+        borderRadius: Number.MAX_VALUE,
+        data: [28, 48, 40, 19, 86, 27, 90],
+      },
+    ],
+  };
 
-barOptions = {
-
+  barOptions = {
     plugins: {
-        legend: {
-            labels: {
-                fontColor: '#A0A7B5',
-                usePointStyle: true,
-                font: {
-                    weight: 700,
-                },
-                padding: 30
-            },
-            position: 'bottom'
+      legend: {
+        labels: {
+          fontColor: '#A0A7B5',
+          usePointStyle: true,
+          font: {
+            weight: 700,
+          },
+          padding: 30,
         },
-        tooltip: {
-            backgroundColor: '#1F2ED0',
-            titleFont: {
-                weight: 'bold'
-            },
-            bodyFont: {
-                weight: 'bold'
-            },
-            displayColors: false,
-            padding: {
-                left: 40,
-                right: 40,
-                top: 10,
-                bottom: 10
-            },
-            callbacks: {
-                label: function(tooltipItem) {
-                    return `$ ${tooltipItem.raw}`
-                }
-            }
+        position: 'bottom',
+      },
+      tooltip: {
+        backgroundColor: '#1F2ED0',
+        titleFont: {
+          weight: 'bold',
         },
+        bodyFont: {
+          weight: 'bold',
+        },
+        displayColors: false,
+        padding: {
+          left: 40,
+          right: 40,
+          top: 10,
+          bottom: 10,
+        },
+        callbacks: {
+          label: function (tooltipItem) {
+            return `$ ${tooltipItem.raw}`;
+          },
+        },
+      },
     },
     scales: {
-        x: {
-            ticks: {
-                font: {
-                    weight: 500
-                }
-            },
-            grid: {
-                display: false,
-                drawBorder: false
-            }
+      x: {
+        ticks: {
+          font: {
+            weight: 500,
+          },
         },
-        y: {
-            ticks: {
-                display: false,
-            },
-            grid: {
-                borderDash: [3, 6],
-                color: '#E4EAFF',
-                drawBorder: false,
-                drawTicks: false
-            }
-        }
-    }
-};
+        grid: {
+          display: false,
+          drawBorder: false,
+        },
+      },
+      y: {
+        ticks: {
+          display: false,
+        },
+        grid: {
+          borderDash: [3, 6],
+          color: '#E4EAFF',
+          drawBorder: false,
+          drawTicks: false,
+        },
+      },
+    },
+  };
 
+  constructor(private breadcrumbService: BreadcrumbService) {
+    this.breadcrumbService.setItems([{ label: 'Profile Overview' }]);
 
-    constructor() { }
+    this.days = [
+      { name: 'Sunday' },
+      { name: 'Monday' },
+      { name: 'Tuesday' },
+      { name: 'Wednesday' },
+      { name: 'Thursday' },
+      { name: 'Friday' },
+      { name: 'Saturday' },
+    ];
 
-    ngOnInit() {
-    }
+    this.week = [{ name: 'Week 1' }, { name: 'Week 2' }];
+  }
 
+  ngOnInit() {}
 }
