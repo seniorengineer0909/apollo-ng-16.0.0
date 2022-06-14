@@ -22,7 +22,7 @@
     </div>
 
     <h5>Dark Mode</h5>
-    <p-inputSwitch [(ngModel)]="appLayout.darkMode"></p-inputSwitch>
+    <p-inputSwitch [(ngModel)]="appLayout.darkMode" (onChange)="onDarkModeChange($event)"></p-inputSwitch>
 
     <h5>Input Style</h5>
     <div class="field-radiobutton">
@@ -37,11 +37,9 @@
     <h5>Ripple Effect</h5>
     <p-inputSwitch [ngModel]="appLayout.ripple" (onChange)="appLayout.onRippleChange($event)"></p-inputSwitch>
 
-    <!--
-    <h5>Component Themes</h5>
-    <div class="layout-themes">
-        <div *ngFor="let theme of componentThemes">
-            <a style="cursor:pointer" (click)="changeComponentTheme(theme.name)" [ngStyle]="{'background-color': theme.color}"></a>
-        </div>
-    </div>-->
+    <h5>Themes</h5>
+    <div class="flex gap-2">
+        <button *ngFor="let theme of componentThemes" type="button" 
+            class="cursor-pointer p-link w-2rem h-2rem border-circle" (click)="changeTheme(theme.name)" [ngStyle]="{'background-color': theme.color}"></button>
+    </div>
 </p-sidebar>
