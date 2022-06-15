@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { LayoutService } from '../service/app.layout.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { LayoutService } from '../service/app.layout.service';
 })
 export class AppSidebarComponent {
 
-    constructor(public layoutService: LayoutService) {}
+    constructor(public layoutService: LayoutService, public el: ElementRef) {}
 
     get logo(): string {
         return (this.layoutService.isSlim() || this.layoutService.isHorizontal()) ? 'assets/images/logo-colored-sm.svg' : 'assets/images/logo-colored.svg' 

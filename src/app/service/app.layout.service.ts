@@ -13,12 +13,7 @@ interface LayoutState {
 @Injectable()
 export class LayoutService {
 
-    config: AppConfig = {
-        theme: 'indigo',
-        darkMode: false,
-        inputStyle: 'outlined',
-        ripple: true
-    };
+    config: AppConfig;
 
     state: LayoutState = {
         staticMenuDesktopInactive: false,
@@ -32,22 +27,19 @@ export class LayoutService {
 
     private configUpdate = new Subject<AppConfig>();
 
+    private overlayOpen = new Subject<any>();
+    
     configUpdate$ = this.configUpdate.asObservable();
 
-    updateConfig(config: AppConfig) {
-        this.config = config;
-        this.configUpdate.next(config);
-    }
-
-    getConfig() {
-        return this.config;
-    }
+    overlayOpen$ = this.overlayOpen.asObservable();
 
     onMenuToggle() {
-        //this.menuClick = true;
-
         if (this.isOverlay()) {
             this.state.overlayMenuActive = !this.state.overlayMenuActive;
+
+            if (this.state.overlayMenuActive) {
+                this.overlayOpen.next(null);
+            } 
         }
 
         if (this.isDesktop()) {
@@ -55,10 +47,9 @@ export class LayoutService {
         } 
         else {
             this.state.staticMenuMobileActive = !this.state.staticMenuMobileActive;
+
             if (this.state.staticMenuMobileActive) {
-                this.blockBodyScroll();
-            } else {
-                this.unblockBodyScroll();
+                this.overlayOpen.next(null);
             }
         }
     }
@@ -89,27 +80,6 @@ export class LayoutService {
 
     isMobile() {
         return window.innerWidth <= 1091;
-    }
-    
-    onMenuClick() {
-        throw "Error";
-    }
-
-    blockBodyScroll(): void {
-        if (document.body.classList) {
-            document.body.classList.add('blocked-scroll');
-        } else {
-            document.body.className += ' blocked-scroll';
-        }
-    }
-
-    unblockBodyScroll(): void {
-        if (document.body.classList) {
-            document.body.classList.remove('blocked-scroll');
-        } else {
-            document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
-                'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-        }
     }
 
 }

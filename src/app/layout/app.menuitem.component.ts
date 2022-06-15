@@ -176,7 +176,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
                 this.layoutService.menuHoverActive = false;
             }
 
-            this.layoutService.unblockBodyScroll();
+            //this.layoutService.unblockBodyScroll();
         }
 
         this.removeActiveInk(event);

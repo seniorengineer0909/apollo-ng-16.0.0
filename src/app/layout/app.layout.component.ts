@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
+import { Subscription } from 'rxjs';
 import { LayoutService } from '../service/app.layout.service';
 import { MenuService } from './app.menu.service';
+import { AppSidebarComponent } from './app.sidebar.component';
 
 @Component({
     selector: 'app-layout',
     templateUrl: './app.layout.component.html'
 })
-export class AppLayoutComponent implements OnInit {
+export class AppLayoutComponent implements OnInit, OnDestroy {
 
     darkMode: boolean;
 
@@ -33,14 +35,40 @@ export class AppLayoutComponent implements OnInit {
 
     ripple: boolean;
 
-    constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig, public layoutService: LayoutService) {}
+    overlayMenuOpenSubscription: Subscription;
+
+    menuOutsideClickListener: any;
+
+    @ViewChild(AppSidebarComponent) appSidebar: AppSidebarComponent;
+
+    constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig, public layoutService: LayoutService, public renderer: Renderer2) {
+        this.overlayMenuOpenSubscription = this.layoutService.overlayOpen$.subscribe(() => {
+            this.menuOutsideClickListener = this.renderer.listen('document', 'click', event => {
+                const isOutsideClicked = !(this.appSidebar.el.nativeElement.isSameNode(event.target) || this.appSidebar.el.nativeElement.contains(event.target) 
+                    || event.target.classList.contains('p-trigger') || event.target.parentNode.classList.contains('p-trigger'));
+
+                if (isOutsideClicked) {
+                    this.layoutService.state.overlayMenuActive = false;
+                    this.layoutService.state.staticMenuMobileActive = false;
+                    this.menuOutsideClickListener();
+                    this.menuOutsideClickListener = null;
+                    this.unblockBodyScroll();
+                }
+                else {
+                    if (this.layoutService.state.staticMenuMobileActive) {
+                        this.blockBodyScroll();
+                    }
+                }
+            });
+        });
+    }
 
     ngOnInit() {
         this.primengConfig.ripple = true;
         this.layoutService.config = {
             ripple: false,
             inputStyle: 'outlined',
-            menuMode: 'static',
+            menuMode: 'overlay',
             darkMode: false,
             theme: 'indigo'
         };
@@ -70,7 +98,8 @@ export class AppLayoutComponent implements OnInit {
     blockBodyScroll(): void {
         if (document.body.classList) {
             document.body.classList.add('blocked-scroll');
-        } else {
+        } 
+        else {
             document.body.className += ' blocked-scroll';
         }
     }
@@ -78,7 +107,8 @@ export class AppLayoutComponent implements OnInit {
     unblockBodyScroll(): void {
         if (document.body.classList) {
             document.body.classList.remove('blocked-scroll');
-        } else {
+        } 
+        else {
             document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
                 'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
         }
@@ -140,6 +170,16 @@ export class AppLayoutComponent implements OnInit {
             'layout-mobile-active': this.layoutService.state.staticMenuMobileActive,
             'p-input-filled': this.layoutService.config.inputStyle === 'filled',
             'p-ripple-disabled': !this.layoutService.config.ripple
+        }
+    }
+
+    ngOnDestroy() {
+        if (this.overlayMenuOpenSubscription) {
+            this.overlayMenuOpenSubscription.unsubscribe();
+        }
+
+        if (this.menuOutsideClickListener) {
+            this.menuOutsideClickListener();
         }
     }
 
