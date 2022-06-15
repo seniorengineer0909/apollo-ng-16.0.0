@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
+import { LayoutService } from '../service/app.layout.service';
 import { MenuService } from './app.menu.service';
 
 @Component({
@@ -32,10 +33,17 @@ export class AppLayoutComponent implements OnInit {
 
     ripple: boolean;
 
-    constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig) {}
+    constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig, public layoutService: LayoutService) {}
 
     ngOnInit() {
         this.primengConfig.ripple = true;
+        this.layoutService.config = {
+            ripple: false,
+            inputStyle: 'outlined',
+            menuMode: 'static',
+            darkMode: false,
+            theme: 'indigo'
+        };
         this.ripple = false;
     }
 
@@ -94,7 +102,7 @@ export class AppLayoutComponent implements OnInit {
                 this.menuService.reset();
             }
 
-            if (this.overlayMenuActive || this.staticMenuMobileActive) {
+            if (this.layoutService.state.overlayMenuActive || this.layoutService.state.staticMenuMobileActive) {
                 this.hideOverlayMenu();
             }
 
@@ -117,6 +125,21 @@ export class AppLayoutComponent implements OnInit {
 
     onRippleChange(event) {
         this.ripple = event.checked;
+    }
+
+    get containerClass() {
+        return {
+            'layout-light': !this.layoutService.config.darkMode,
+            'layout-dark': this.layoutService.config.darkMode,
+            'layout-overlay': this.layoutService.config.menuMode === 'overlay',
+            'layout-static': this.layoutService.config.menuMode === 'static',
+            'layout-slim': this.layoutService.config.menuMode === 'slim',
+            'layout-horizontal': this.layoutService.config.menuMode === 'horizontal',
+            'layout-static-inactive': this.layoutService.state.staticMenuDesktopInactive && this.layoutService.config.menuMode === 'static',
+            'layout-overlay-active': this.layoutService.state.overlayMenuActive,
+            'p-input-filled': this.layoutService.config.inputStyle === 'filled',
+            'p-ripple-disabled': !this.layoutService.config.ripple
+        }
     }
 
 }

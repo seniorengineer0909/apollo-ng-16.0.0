@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
 import { Subscription } from 'rxjs';
 import { MenuItem } from 'primeng/api';
-import { AppLayoutComponent } from './app.layout.component';
+import { LayoutService } from 'src/app/service/app.layout.service';
 
 @Component({
     selector: 'app-topbar',
@@ -14,18 +14,18 @@ export class AppTopbarComponent implements OnDestroy {
 
     items: MenuItem[];
 
-    constructor(public breadcrumbService: BreadcrumbService, public appLayout: AppLayoutComponent) {
+    constructor(public breadcrumbService: BreadcrumbService, public layoutService: LayoutService) {
         this.subscription = breadcrumbService.itemsHandler.subscribe(response => {
             this.items = response;
         });
     }
 
     onMenuButtonClick() {
-        this.appLayout.onMenuButtonClick();
+        this.layoutService.onMenuToggle();
     }
 
     onProfileButtonClick() {
-        this.appLayout.profileSidebarVisible = true;
+        this.layoutService.showProfileSidebar();
     }
 
     ngOnDestroy() {

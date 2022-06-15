@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
-import {AppConfig} from 'src/app/api/appconfig';
+import {AppConfig} from 'src/app/api/app.config';
 import {ConfigService} from 'src/app/service/app.config.service';
 import {BreadcrumbService} from 'src/app/service/app.breadcrumb.service';
 @Component({

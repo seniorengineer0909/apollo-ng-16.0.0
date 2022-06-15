@@ -1,6 +1,6 @@
-<div class="layout-sidebar" (click)="appLayout.onMenuClick()">
+<div class="layout-sidebar" (click)="layoutService.onMenuClick()">
     <a [routerLink]="['/']" class="app-logo">
-        <img [src]="(appLayout.isSlim() || appLayout.isHorizontal()) ? 'assets/images/logo-colored-sm.svg' : 'assets/images/logo-colored.svg'" alt="Logo" />
+        <img [src]="logo" alt="Logo" />
     </a>
 
     <div class="layout-menu-container">

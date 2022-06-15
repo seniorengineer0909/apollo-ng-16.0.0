@@ -4,7 +4,7 @@ import {Product} from 'src/app/api/product';
 import {ProductService} from 'src/app/service/productservice';
 import {BreadcrumbService} from 'src/app/service/app.breadcrumb.service';
 import {ConfigService} from 'src/app/service/app.config.service';
-import {AppConfig} from 'src/app/api/appconfig';
+import {AppConfig} from 'src/app/api/app.config';
 import {Subscription} from 'rxjs';
 @Component({
     templateUrl: './dashboard.component.html',

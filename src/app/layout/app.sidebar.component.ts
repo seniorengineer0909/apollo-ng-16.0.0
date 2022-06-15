@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppLayoutComponent } from './app.layout.component';
+import { LayoutService } from '../service/app.layout.service';
 
 @Component({
     selector: 'app-sidebar',
@@ -7,7 +7,10 @@ import { AppLayoutComponent } from './app.layout.component';
 })
 export class AppSidebarComponent {
 
-    constructor(public appLayout: AppLayoutComponent) {
+    constructor(public layoutService: LayoutService) {}
+
+    get logo(): string {
+        return (this.layoutService.isSlim() || this.layoutService.isHorizontal()) ? 'assets/images/logo-colored-sm.svg' : 'assets/images/logo-colored.svg' 
     }
 
 }

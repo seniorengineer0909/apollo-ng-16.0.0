@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfigService } from '../service/app.config.service';
-import { AppLayoutComponent } from './app.layout.component';
+import { LayoutService } from '../service/app.layout.service';
 
 @Component({
     selector: 'app-config',
@@ -10,7 +9,46 @@ export class AppConfigComponent implements OnInit {
 
     componentThemes: any[];
 
-    constructor(public appLayout: AppLayoutComponent, public appConfig: ConfigService) {
+    constructor(public layoutService: LayoutService) {}
+
+    get visible(): boolean {
+        return this.layoutService.state.configSidebarVisible;
+    }
+
+    set visible(_val: boolean) {
+        this.layoutService.state.configSidebarVisible = _val;
+    }
+
+    get menuMode(): string {
+        return this.layoutService.config.menuMode;
+    }
+
+    set menuMode(_val: string) {
+        this.layoutService.config.menuMode = _val;
+    }
+
+    get darkMode(): boolean {
+        return this.layoutService.config.darkMode;
+    }
+
+    set darkMode(_val: boolean) {
+        this.toggleDarkMode(_val);
+    }
+
+    get inputStyle(): string {
+        return this.layoutService.config.inputStyle;
+    }
+
+    set inputStyle(_val: string) {
+        this.layoutService.config.inputStyle = _val;
+    }
+
+    get ripple(): boolean {
+        return this.layoutService.config.ripple;
+    }
+
+    set ripple(_val: boolean) {
+        this.layoutService.config.ripple = _val;
     }
 
     ngOnInit() {
@@ -23,23 +61,22 @@ export class AppConfigComponent implements OnInit {
     }
 
     onConfigButtonClick() {
-        this.appLayout.configVisible = true;
+        this.layoutService.showConfigSidebar();
     }
 
-    onDarkModeChange(event) {
-        const darkMode = this.appConfig.config.dark;
+    toggleDarkMode(darkMode: boolean) {
+        this.layoutService.config.darkMode = darkMode;
         const themeLink = <HTMLLinkElement> document.getElementById('theme-link');
         const themeLinkHref = themeLink.getAttribute('href');
-        const newHref = darkMode ? themeLinkHref.replace('theme-dark', 'theme-light') : themeLinkHref.replace('theme-light', 'theme-dark');
+        const newHref = this.layoutService.config.darkMode ? themeLinkHref.replace('theme-light', 'theme-dark') : themeLinkHref.replace('theme-dark', 'theme-light');
         this.replaceThemeLink(newHref);
-        this.appConfig.config.dark = event.checked;
     }
 
     changeTheme(theme: string) {
         const themeLink = <HTMLLinkElement> document.getElementById('theme-link');
-        const newHref = themeLink.getAttribute('href').replace(this.appConfig.config.theme, theme);
+        const newHref = themeLink.getAttribute('href').replace(this.layoutService.config.theme, theme);
         this.replaceThemeLink(newHref);
-        this.appConfig.config.theme = theme;
+        this.layoutService.config.theme = theme;
     }
 
     replaceThemeLink(href: string) {

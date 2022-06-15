@@ -15,6 +15,7 @@ import { AppConfigComponent } from './layout/app.config.component';
 import { AppMenuComponent } from './layout/app.menu.component';
 import { AppMenuitemComponent } from './layout/app.menuitem.component';
 
+import { LayoutService } from 'src/app/service/app.layout.service';
 import { CountryService } from 'src/app/service/countryservice';
 import { CustomerService } from 'src/app/service/customerservice';
 import { EventService } from 'src/app/service/eventservice';
@@ -57,7 +58,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
-    CountryService, CustomerService, EventService, IconService, NodeService,
+    LayoutService, CountryService, CustomerService, EventService, IconService, NodeService,
     PhotoService, ProductService, BreadcrumbService, ConfigService, MenuService
 ],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 export interface AppConfig {
     inputStyle?: string;
-    dark?: boolean;
+    darkMode?: boolean;
     theme?: string;
     ripple?: boolean;
+    menuMode?: string;
 }
