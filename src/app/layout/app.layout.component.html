@@ -1,5 +1,5 @@
 <div class="layout-container" [ngClass]="containerClass" (click)="onLayoutClick()">
-    <app-sidebar class="xl:inline hidden"></app-sidebar><!--Kendime not: Değişecek responsive testi için geliştirmeyi önlememesi için yaptım-->
+    <app-sidebar></app-sidebar><!--Kendime not: Değişecek responsive testi için geliştirmeyi önlememesi için yaptım-->
     <div class="layout-content-wrapper">
         <app-topbar></app-topbar>
         <div class="layout-content">
@@ -8,4 +8,5 @@
     </div>
     <app-profilemenu></app-profilemenu>
     <app-config></app-config>
+    <div class="layout-mask"></div>
 </div>

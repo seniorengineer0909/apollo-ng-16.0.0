@@ -97,7 +97,7 @@ export class AppLayoutComponent implements OnInit {
     }
 
     onLayoutClick() {
-        if (!this.menuClick) {
+        /*if (!this.menuClick) {
             if (this.isSlim() || this.isHorizontal()) {
                 this.menuService.reset();
             }
@@ -110,7 +110,7 @@ export class AppLayoutComponent implements OnInit {
             this.unblockBodyScroll();
         }
 
-        this.menuClick = false;
+        this.menuClick = false;*/
     }
 
     hideOverlayMenu() {
@@ -137,6 +137,7 @@ export class AppLayoutComponent implements OnInit {
             'layout-horizontal': this.layoutService.config.menuMode === 'horizontal',
             'layout-static-inactive': this.layoutService.state.staticMenuDesktopInactive && this.layoutService.config.menuMode === 'static',
             'layout-overlay-active': this.layoutService.state.overlayMenuActive,
+            'layout-mobile-active': this.layoutService.state.staticMenuMobileActive,
             'p-input-filled': this.layoutService.config.inputStyle === 'filled',
             'p-ripple-disabled': !this.layoutService.config.ripple
         }

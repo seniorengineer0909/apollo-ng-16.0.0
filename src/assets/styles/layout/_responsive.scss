@@ -40,3 +40,43 @@
         }
     }
 }
+
+@media screen and (max-width: $tabletBreakpoint) {
+    .blocked-scroll {
+        overflow: hidden;
+    }
+
+    .layout-container {
+        .layout-content-wrapper {
+            margin-left: 0;
+        }
+    
+        .layout-sidebar {
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: transform $transitionDuration;
+        }
+
+        &.layout-mobile-active {
+            .layout-sidebar {
+                transform: translateX(0);
+            }
+
+            .layout-mask {
+                display: block;
+            }
+        }
+
+        .layout-mask {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 998;
+            width: 100%;
+            height: 100%;
+            background-color: var(--maskbg);
+        }
+    }
+    
+}
