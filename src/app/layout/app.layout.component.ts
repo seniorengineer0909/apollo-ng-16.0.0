@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ThirdPartyDraggable } from '@fullcalendar/interaction';
 import { PrimeNGConfig } from 'primeng/api';
 import { Subscription } from 'rxjs';
 import { LayoutService } from '../service/app.layout.service';
@@ -43,23 +44,27 @@ export class AppLayoutComponent implements OnInit, OnDestroy {
 
     constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig, public layoutService: LayoutService, public renderer: Renderer2) {
         this.overlayMenuOpenSubscription = this.layoutService.overlayOpen$.subscribe(() => {
-            this.menuOutsideClickListener = this.renderer.listen('document', 'click', event => {
-                const isOutsideClicked = !(this.appSidebar.el.nativeElement.isSameNode(event.target) || this.appSidebar.el.nativeElement.contains(event.target) 
-                    || event.target.classList.contains('p-trigger') || event.target.parentNode.classList.contains('p-trigger'));
-
-                if (isOutsideClicked) {
-                    this.layoutService.state.overlayMenuActive = false;
-                    this.layoutService.state.staticMenuMobileActive = false;
-                    this.menuOutsideClickListener();
-                    this.menuOutsideClickListener = null;
-                    this.unblockBodyScroll();
-                }
-                else {
-                    if (this.layoutService.state.staticMenuMobileActive) {
-                        this.blockBodyScroll();
+            if (!this.menuOutsideClickListener) {
+                this.menuOutsideClickListener = this.renderer.listen('document', 'click', event => {
+                    const isOutsideClicked = !(this.appSidebar.el.nativeElement.isSameNode(event.target) || this.appSidebar.el.nativeElement.contains(event.target) 
+                        || event.target.classList.contains('p-trigger') || event.target.parentNode.classList.contains('p-trigger'));
+    
+                    if (isOutsideClicked) {
+                        this.layoutService.state.overlayMenuActive = false;
+                        this.layoutService.state.staticMenuMobileActive = false;
+                        this.layoutService.state.menuHoverActive = false;
+                        this.menuService.reset();
+                        this.menuOutsideClickListener();
+                        this.menuOutsideClickListener = null;
+                        this.unblockBodyScroll();
                     }
-                }
-            });
+                    else {
+                        if (this.layoutService.state.staticMenuMobileActive) {
+                            this.blockBodyScroll();
+                        }
+                    }
+                });
+            }
         });
     }
 
@@ -68,7 +73,7 @@ export class AppLayoutComponent implements OnInit, OnDestroy {
         this.layoutService.config = {
             ripple: false,
             inputStyle: 'outlined',
-            menuMode: 'overlay',
+            menuMode: 'slim',
             darkMode: false,
             theme: 'indigo'
         };

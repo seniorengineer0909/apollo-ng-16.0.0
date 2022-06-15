@@ -147,8 +147,8 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
         }
 
         // navigate with hover in horizontal mode
-        if (this.root) {
-            this.layoutService.menuHoverActive = !this.layoutService.menuHoverActive;
+        if (this.root && this.layoutService.isSlim() || this.layoutService.isHorizontal()) {
+            this.layoutService.state.menuHoverActive = !this.layoutService.state.menuHoverActive;
         }
 
         // notify other items
@@ -162,7 +162,12 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
         // toggle active state
         if (this.item.items) {
             this.active = !this.active;
-        } else {
+
+            if (this.root && this.active && this.layoutService.isSlim() || this.layoutService.isHorizontal()) {
+                this.layoutService.onOverlaySubmenuOpen();
+            }
+        } 
+        else {
             // activate item
             this.active = true;
 
@@ -173,7 +178,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             // reset horizontal menu
             if (this.layoutService.isSlim() || this.layoutService.isHorizontal()) {
                 this.menuService.reset();
-                this.layoutService.menuHoverActive = false;
+                this.layoutService.state.menuHoverActive = false;
             }
 
             //this.layoutService.unblockBodyScroll();
@@ -185,7 +190,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     onMouseEnter() {
         // activate item on hover
         if (this.root && (this.layoutService.isSlim() || this.layoutService.isHorizontal()) && this.layoutService.isDesktop()) {
-            if (this.layoutService.menuHoverActive) {
+            if (this.layoutService.state.menuHoverActive) {
                 this.menuService.onMenuStateChange(this.key);
                 this.active = true;
                 this.slimClick = false;

@@ -8,6 +8,7 @@ interface LayoutState {
     profileSidebarVisible?: boolean;
     configSidebarVisible?: boolean;
     staticMenuMobileActive?: boolean;
+    menuHoverActive?: boolean;
 }
 
 @Injectable()
@@ -20,10 +21,9 @@ export class LayoutService {
         overlayMenuActive: false,
         profileSidebarVisible: false,
         configSidebarVisible: false,
-        staticMenuMobileActive: false
+        staticMenuMobileActive: false,
+        menuHoverActive: false
     };
-
-    menuHoverActive = false;
 
     private configUpdate = new Subject<AppConfig>();
 
@@ -52,6 +52,10 @@ export class LayoutService {
                 this.overlayOpen.next(null);
             }
         }
+    }
+
+    onOverlaySubmenuOpen() {
+        this.overlayOpen.next(null);
     }
 
     showProfileSidebar() {
