@@ -1,5 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { ThirdPartyDraggable } from '@fullcalendar/interaction';
+import { Component, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { Subscription } from 'rxjs';
 import { LayoutService } from '../service/app.layout.service';
@@ -11,30 +10,6 @@ import { AppSidebarComponent } from './app.sidebar.component';
     templateUrl: './app.layout.component.html'
 })
 export class AppLayoutComponent implements OnInit, OnDestroy {
-
-    darkMode: boolean;
-
-    menuMode = 'static';
-
-    menuHoverActive = false;
-
-    menuClick: boolean;
-
-    staticMenuMobileActive: boolean;
-
-    staticMenuDesktopInactive: boolean;
-
-    overlayMenuActive: boolean;
-
-    resetMenu: boolean;
-
-    profileSidebarVisible: boolean;
-
-    configVisible: boolean;
-
-    inputStyle: string = 'outlined';
-
-    ripple: boolean;
 
     overlayMenuOpenSubscription: Subscription;
 
@@ -77,27 +52,6 @@ export class AppLayoutComponent implements OnInit, OnDestroy {
             darkMode: false,
             theme: 'indigo'
         };
-        this.ripple = false;
-    }
-
-    isSlim() {
-        return this.menuMode === 'slim';
-    }
-
-    isHorizontal() {
-        return this.menuMode === 'horizontal';
-    }
-
-    isOverlay() {
-        return this.menuMode === 'overlay';
-    }
-
-    isDesktop() {
-        return window.innerWidth > 1091;
-    }
-
-    isMobile() {
-        return window.innerWidth <= 1091;
     }
 
     blockBodyScroll(): void {
@@ -117,49 +71,6 @@ export class AppLayoutComponent implements OnInit, OnDestroy {
             document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
                 'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
         }
-    }
-
-    onMenuButtonClick() {
-        this.menuClick = true;
-
-        if (this.isOverlay()) {
-            this.overlayMenuActive = !this.overlayMenuActive;
-        }
-
-        if (this.isDesktop()) {
-            this.staticMenuDesktopInactive = !this.staticMenuDesktopInactive;
-        }
-    }
-
-    onLayoutClick() {
-        /*if (!this.menuClick) {
-            if (this.isSlim() || this.isHorizontal()) {
-                this.menuService.reset();
-            }
-
-            if (this.layoutService.state.overlayMenuActive || this.layoutService.state.staticMenuMobileActive) {
-                this.hideOverlayMenu();
-            }
-
-            this.menuHoverActive = false;
-            this.unblockBodyScroll();
-        }
-
-        this.menuClick = false;*/
-    }
-
-    hideOverlayMenu() {
-        this.overlayMenuActive = false;
-        this.staticMenuMobileActive = false;
-    }
-
-    onMenuClick() {
-        this.menuClick = true;
-        this.resetMenu = false;
-    }
-
-    onRippleChange(event) {
-        this.ripple = event.checked;
     }
 
     get containerClass() {

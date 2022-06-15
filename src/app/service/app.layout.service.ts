@@ -83,7 +83,7 @@ export class LayoutService {
     }
 
     isMobile() {
-        return window.innerWidth <= 1091;
+        return !this.isDesktop();
     }
 
 }
