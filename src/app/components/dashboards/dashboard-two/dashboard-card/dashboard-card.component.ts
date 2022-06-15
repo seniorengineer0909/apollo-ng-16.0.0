@@ -17,15 +17,17 @@ export class DashboardCardComponent implements OnInit {
          type:"Total Visit Today",
          size:"43%",
          lineData : {
-          labels: ['MON'],
+          labels: ['MON', 'TUE', 'WED', 'THU', 'SUN'],
           datasets: [
             {
               label: 'Second Dataset',
-              data: [50, 50, 50, 50, 50, 50],
+              data: [10, 25, 48, 35, 54, 70],
               fill: true,
-              backgroundColor: '#2738E61A',
-              borderColor: '#2738E61A',
+              backgroundColor: '#F3229F26',
+              borderColor: '#F3229F26',
               tension: 0.1,
+              categoryPercentage: 1.0,
+                          barPercentage: 1.0
 
             },
 
@@ -62,8 +64,8 @@ export class DashboardCardComponent implements OnInit {
                 label: 'First Dataset',
                 data: [10, 25, 48, 35, 54, 70],
                 fill: true,
-                backgroundColor: '#2738E61A',
-                borderColor: '#2738E61A',
+                backgroundColor: '#3BF4B21A',
+                borderColor: '#3BF4B21A',
                 tension: .4,
                 categoryPercentage: 1.0,
                           barPercentage: 1.0
@@ -82,8 +84,8 @@ export class DashboardCardComponent implements OnInit {
                 label: 'First Dataset',
                 data: [10, 25, 48, 35, 54, 70],
                 fill: true,
-                backgroundColor: '#2738E61A',
-                borderColor: '#2738E61A',
+                backgroundColor: '#FFC11E4D',
+                borderColor: '#FFC11E4D',
                 tension: .4,
                 categoryPercentage: 1.0,
                 barPercentage: 1.0

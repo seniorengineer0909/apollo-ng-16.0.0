@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
 
+interface File {
+  name: string;
+  image: string;
+  date: string;
+  amount: string;
+}
+
 @Component({
     selector: 'app-dashboard-banking',
     templateUrl: './dashboard-banking.component.html',
@@ -119,6 +126,43 @@ export class DashboardBankingComponent implements OnInit {
 
     this.week = [{ name: 'Week 1' }, { name: 'Week 2' }];
   }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
-  ngOnInit() {}
+  files: File[] = [
+    {
+        name: "29 Jul 2021",
+        image: "assets/demo/images/avatar/elwinsharvill.png",
+        date: "29 Jul 2021",
+        amount: "$920.34"
+    },
+    {
+        name: "Courtney Henry",
+        image: "assets/demo/images/avatar/bernardodominic.png",
+        date: "29 Jul 2021",
+        amount: "$834.12"
+    },
+    {
+        name: "Theresa Webb",
+        image: "assets/demo/images/avatar/ionibowcher.png",
+        date: "29 Jul 2021",
+        amount: "$340.20"
+    },
+    {
+        name: "Theresa Webb",
+        image: "assets/demo/images/avatar/bernardodominic.png",
+        date: "29 Jul 2021",
+        amount: "$920.34"
+    }
+
+];
+cols = [
+  { field: 'name', header: 'Name' },
+  { field: 'date', header: 'Date' },
+  { field: 'amount', header: 'Amount' },
+  { field: 'status', header: 'Status' },
+];
+
+
 }
