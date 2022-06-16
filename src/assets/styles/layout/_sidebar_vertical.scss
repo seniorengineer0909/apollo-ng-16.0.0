@@ -46,6 +46,14 @@
             }
         }
 
+        li.active-menuitem {
+            > a {
+                .layout-submenu-toggler {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+
         ul {
             margin: 0;
             padding: 0;

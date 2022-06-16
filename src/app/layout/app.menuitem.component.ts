@@ -13,18 +13,20 @@ import { LayoutService } from '../service/app.layout.service';
     template: `
 		<ng-container>
             <div *ngIf="root && item.visible !== false" class="layout-menuitem-root-text">{{item.label}}</div>
-			<a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="(!item.routerLink || item.items) && item.visible !== false" (mouseenter)="onMouseEnter()"
-			   (keydown.enter)="itemClick($event)" [ngClass]="item.class" [attr.target]="item.target" pRipple>
+			<a *ngIf="(!item.routerLink || item.items) && item.visible !== false" [attr.href]="item.url" (click)="itemClick($event)"  (mouseenter)="onMouseEnter()"
+			   [ngClass]="item.class" [attr.target]="item.target" tabindex="0" pRipple>
 				<i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
 				<span class="layout-menuitem-text">{{item.label}}</span>
-				<i class="pi pi-fw layout-submenu-toggler" [ngClass]="!layoutService.isHorizontal() ? 'pi-chevron-down': 'pi-angle-down'" *ngIf="item.items"></i>
+				<i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
 			</a>
-			<a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="(item.routerLink && !item.items) && item.visible !== false"
-			   [routerLink]="item.routerLink" routerLinkActive="active-route" [ngClass]="item.class" pRipple
-			   [routerLinkActiveOptions]="{exact: !item.preventExact}" [attr.target]="item.target">
+			<a *ngIf="(item.routerLink && !item.items) && item.visible !== false" (click)="itemClick($event)" (mouseenter)="onMouseEnter()" [ngClass]="item.class" 
+			   [routerLink]="item.routerLink" routerLinkActive="active-route" [routerLinkActiveOptions]="item.routerLinkOptions||{exact: false}"
+               [fragment]="item.fragment" [queryParamsHandling]="item.queryParamsHandling" [preserveFragment]="item.preserveFragment" 
+               [skipLocationChange]="item.skipLocationChange" [replaceUrl]="item.replaceUrl" [state]="item.state" [queryParams]="item.queryParams"
+               [attr.target]="item.target" tabindex="0" pRipple>
 				<i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
 				<span class="layout-menuitem-text">{{item.label}}</span>
-				<i class="pi pi-fw layout-submenu-toggler" [ngClass]="!layoutService.isHorizontal() ?'pi-chevron-down': 'pi-angle-down'" *ngIf="item.items"></i>
+				<i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
 			</a>
 
 			<ul *ngIf="item.items && item.visible !== false" [@children]="submenuAnimation">
@@ -36,7 +38,7 @@ import { LayoutService } from '../service/app.layout.service';
     `,
     host: {
         '[class.layout-root-menuitem]': 'root',
-        '[class.active-menuitem]': '(active && !root) || (active && (layoutService.isSlim() || layoutService.isHorizontal()))'
+        '[class.active-menuitem]': 'active'
     },
     animations: [
         trigger('children', [
@@ -55,40 +57,6 @@ import { LayoutService } from '../service/app.layout.service';
             transition('collapsed <=> expanded', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)'))
         ])
     ]
-    /*animations: [
-        trigger('children', [
-            state('void', style({
-                height: '0px'
-            })),
-            state('hiddenAnimated', style({
-                height: '0px'
-            })),
-            state('visibleAnimated', style({
-                height: '*'
-            })),
-            state('visible', style({
-                height: '*',
-                'z-index': 100
-            })),
-            state('hidden', style({
-                height: '0px',
-                'z-index': '*'
-            })),
-            state('slimVisibleAnimated', style({
-                opacity: 1,
-                transform: 'none'
-            })),
-            state('slimHiddenAnimated', style({
-                opacity: 0,
-                transform: 'translateX(20px)'
-            })),
-            transition('visibleAnimated => hiddenAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
-            transition('hiddenAnimated => visibleAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
-            transition('void => visibleAnimated, visibleAnimated => void', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
-            transition('void => slimVisibleAnimated', animate('400ms cubic-bezier(.05,.74,.2,.99)')),
-            transition('slimHiddenAnimated => slimVisibleAnimated', animate('400ms cubic-bezier(.05,.74,.2,.99)'))
-        ])
-    ]*/
 })
 export class AppMenuitemComponent implements OnInit, OnDestroy {
 
@@ -110,7 +78,6 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     constructor(public layoutService: LayoutService, public router: Router, private cd: ChangeDetectorRef, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(key => {
-            // deactivate current active menu
             if (this.active && this.key !== key && key.indexOf(this.key) !== 0) {
                 this.active = false;
             }
@@ -122,7 +89,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
         this.router.events.pipe(filter(event => event instanceof NavigationEnd))
             .subscribe(params => {
-                if (this.layoutService.isSlim() || this.layoutService.isHorizontal()) {
+                if (this.isSlim || this.isHorizontal) {
                     this.active = false;
                 } else {
                     if (this.item.routerLink) {
@@ -135,7 +102,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        if (!(this.layoutService.isSlim() || this.layoutService.isHorizontal()) && this.item.routerLink) {
+        if (!(this.isSlim || this.isHorizontal) && this.item.routerLink) {
             this.updateActiveStateFromRoute();
         }
 
@@ -153,13 +120,10 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             return;
         }
 
-        // navigate with hover in horizontal mode
-        if (this.root && this.layoutService.isSlim() || this.layoutService.isHorizontal()) {
+        // navigate with hover
+        if (this.root && this.isSlim || this.isHorizontal) {
             this.layoutService.state.menuHoverActive = !this.layoutService.state.menuHoverActive;
         }
-
-        // notify other items
-        this.menuService.onMenuStateChange(this.key);
 
         // execute command
         if (this.item.command) {
@@ -170,60 +134,50 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
         if (this.item.items) {
             this.active = !this.active;
 
-            if (this.root && this.active && this.layoutService.isSlim() || this.layoutService.isHorizontal()) {
+            if (this.root && this.active && (this.isSlim || this.isHorizontal)) {
                 this.layoutService.onOverlaySubmenuOpen();
             }
         } 
         else {
-            // activate item
             this.active = true;
 
             if (this.layoutService.isMobile()) {
                 this.layoutService.state.staticMenuMobileActive = false;
             }
 
-            // reset horizontal menu
-            if (this.layoutService.isSlim() || this.layoutService.isHorizontal()) {
+            if (this.isSlim || this.isHorizontal) {
                 this.menuService.reset();
                 this.layoutService.state.menuHoverActive = false;
             }
-
-            //this.layoutService.unblockBodyScroll();
         }
 
-        this.removeActiveInk(event);
+        // notify other items
+        this.menuService.onMenuStateChange(this.key);
     }
 
     onMouseEnter() {
         // activate item on hover
-        if (this.root && (this.layoutService.isSlim() || this.layoutService.isHorizontal()) && this.layoutService.isDesktop()) {
+        if (this.root && (this.isSlim || this.isHorizontal) && this.layoutService.isDesktop()) {
             if (this.layoutService.state.menuHoverActive) {
-                this.menuService.onMenuStateChange(this.key);
                 this.active = true;
+                this.menuService.onMenuStateChange(this.key);
             }
         }
     }
     
-    removeActiveInk(event: Event) {
-        let currentTarget = (event.currentTarget as HTMLElement);
-        setTimeout(() => {
-            if (currentTarget) {
-                let activeInk = currentTarget.querySelector('.p-ink-active');
-                if (activeInk) {
-                    if (activeInk.classList)
-                        activeInk.classList.remove('p-ink-active');
-                    else
-                        activeInk.className = activeInk.className.replace(new RegExp('(^|\\b)' + 'p-ink-active'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-                }
-            }
-        }, 401);
-    }
-
     get submenuAnimation() {
         if (this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim()))
             return this.active ? 'visible' : 'hidden';
         else
             return this.root ? 'expanded' : (this.active ? 'expanded' : 'collapsed');
+    }
+
+    get isHorizontal() {
+        return this.layoutService.isHorizontal();
+    }
+
+    get isSlim() {
+        return this.layoutService.isSlim();
     }
 
     ngOnDestroy() {

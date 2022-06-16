@@ -29,10 +29,9 @@ export class AppMenuComponent implements OnInit {
                       {
                         label: 'Dashboard',
                         icon: 'pi pi-fw pi-image',
-                        routerLink: ['/dashboard-banking'],
-
-                    },
-                ],
+                        routerLink: ['/dashboard-banking']
+                    }
+                ]
             },
             {
                 label: 'UI Kit',
@@ -99,7 +98,7 @@ export class AppMenuComponent implements OnInit {
                         label: 'Menu',
                         icon: 'pi pi-fw pi-bars',
                         routerLink: ['/uikit/menu'],
-                        preventExact: true,
+                        routerLinkActiveOptions: {exact: false}
                     },
                     {
                         label: 'Message',

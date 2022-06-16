@@ -35,18 +35,6 @@
                     display: none;
                 }
 
-                li.active-menuitem {
-                    > ul {
-                        display: block;
-                    }
-
-                    > a {
-                        .layout-submenu-toggler {
-                            transform: rotate(-180deg);
-                        }
-                    }
-                }
-
                 .layout-root-menuitem {
                     position: relative;
                     border-radius: var(--border-radius);

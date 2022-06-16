@@ -46,7 +46,7 @@ export class AppLayoutComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.primengConfig.ripple = true;
         this.layoutService.config = {
-            ripple: false,
+            ripple: true,
             inputStyle: 'outlined',
             menuMode: 'static',
             darkMode: false,

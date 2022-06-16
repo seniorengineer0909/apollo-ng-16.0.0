@@ -32,6 +32,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { BadgeModule } from 'primeng/badge';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     SidebarModule,
     BadgeModule,
     RadioButtonModule,
-    InputSwitchModule
+    InputSwitchModule,
+    RippleModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
