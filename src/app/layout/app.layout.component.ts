@@ -48,7 +48,7 @@ export class AppLayoutComponent implements OnInit, OnDestroy {
         this.layoutService.config = {
             ripple: false,
             inputStyle: 'outlined',
-            menuMode: 'slim',
+            menuMode: 'static',
             darkMode: false,
             theme: 'indigo'
         };

@@ -14,11 +14,10 @@ import { LayoutService } from '../service/app.layout.service';
 		<ng-container>
             <div *ngIf="root && item.visible !== false" class="layout-menuitem-root-text">{{item.label}}</div>
 			<a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="(!item.routerLink || item.items) && item.visible !== false" (mouseenter)="onMouseEnter()"
-			   (keydown.enter)="itemClick($event)" [ngClass]="item.class" pRipple
-			   [attr.target]="item.target">
+			   (keydown.enter)="itemClick($event)" [ngClass]="item.class" [attr.target]="item.target" pRipple>
 				<i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
 				<span class="layout-menuitem-text">{{item.label}}</span>
-				<i class="pi pi-fw layout-submenu-toggler" [ngClass]="!layoutService.isHorizontal() ?'pi-chevron-down': 'pi-angle-down'" *ngIf="item.items"></i>
+				<i class="pi pi-fw layout-submenu-toggler" [ngClass]="!layoutService.isHorizontal() ? 'pi-chevron-down': 'pi-angle-down'" *ngIf="item.items"></i>
 			</a>
 			<a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="(item.routerLink && !item.items) && item.visible !== false"
 			   [routerLink]="item.routerLink" routerLinkActive="active-route" [ngClass]="item.class" pRipple
@@ -28,10 +27,7 @@ import { LayoutService } from '../service/app.layout.service';
 				<i class="pi pi-fw layout-submenu-toggler" [ngClass]="!layoutService.isHorizontal() ?'pi-chevron-down': 'pi-angle-down'" *ngIf="item.items"></i>
 			</a>
 
-			<ul *ngIf="item.items && item.visible !== false" role="menu" [@children]="(layoutService.isSlim() || layoutService.isHorizontal()) ? (root ? layoutService.isMobile() ? 'visible':
-			slimClick && !layoutService.isHorizontal() ? (active  ? 'slimVisibleAnimated' : 'slimHiddenAnimated') : (active ? 'visible' : 'hidden') :
-			layoutService.isSlim() || layoutService.isHorizontal() ? (active ? 'visibleAnimated' : 'hiddenAnimated') : (active ? 'visible' : 'hidden')) :
-			(root ? 'visible' : (active ? 'visibleAnimated' : 'hiddenAnimated'))">
+			<ul *ngIf="item.items && item.visible !== false" [@children]="submenuAnimation">
 				<ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
 					<li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
 				</ng-template>
@@ -43,6 +39,23 @@ import { LayoutService } from '../service/app.layout.service';
         '[class.active-menuitem]': '(active && !root) || (active && (layoutService.isSlim() || layoutService.isHorizontal()))'
     },
     animations: [
+        trigger('children', [
+            state('collapsed', style({
+                height: '0'
+            })),
+            state('expanded', style({
+                height: '*'
+            })),
+            state('hidden', style({
+                display: 'none'
+            })),
+            state('visible', style({
+                display: 'block'
+            })),
+            transition('collapsed <=> expanded', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)'))
+        ])
+    ]
+    /*animations: [
         trigger('children', [
             state('void', style({
                 height: '0px'
@@ -75,7 +88,7 @@ import { LayoutService } from '../service/app.layout.service';
             transition('void => slimVisibleAnimated', animate('400ms cubic-bezier(.05,.74,.2,.99)')),
             transition('slimHiddenAnimated => slimVisibleAnimated', animate('400ms cubic-bezier(.05,.74,.2,.99)'))
         ])
-    ]
+    ]*/
 })
 export class AppMenuitemComponent implements OnInit, OnDestroy {
 
@@ -94,8 +107,6 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     menuResetSubscription: Subscription;
 
     key: string;
-
-    slimClick = false;
 
     constructor(public layoutService: LayoutService, public router: Router, private cd: ChangeDetectorRef, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(key => {
@@ -132,14 +143,10 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     }
 
     updateActiveStateFromRoute() {
-        this.active = this.router.isActive(this.item.routerLink[0], !this.item.items && !this.item.preventExact);
+        //this.active = this.router.isActive(this.item.routerLink[0], !this.item.items && !this.item.preventExact);
     }
 
     itemClick(event: Event) {
-        if (this.layoutService.isSlim()) {
-            this.slimClick = true;
-        }
-
         // avoid processing disabled items
         if (this.item.disabled) {
             event.preventDefault();
@@ -193,12 +200,6 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             if (this.layoutService.state.menuHoverActive) {
                 this.menuService.onMenuStateChange(this.key);
                 this.active = true;
-                this.slimClick = false;
-            }
-            else {
-                if (this.layoutService.isSlim()) {
-                    this.slimClick = true;
-                }
             }
         }
     }
@@ -216,6 +217,13 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
                 }
             }
         }, 401);
+    }
+
+    get submenuAnimation() {
+        if (this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim()))
+            return this.active ? 'visible' : 'hidden';
+        else
+            return this.root ? 'expanded' : (this.active ? 'expanded' : 'collapsed');
     }
 
     ngOnDestroy() {
