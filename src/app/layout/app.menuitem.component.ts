@@ -20,7 +20,7 @@ import { LayoutService } from '../service/app.layout.service';
 				<i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
 			</a>
 			<a *ngIf="(item.routerLink && !item.items) && item.visible !== false" (click)="itemClick($event)" (mouseenter)="onMouseEnter()" [ngClass]="item.class" 
-			   [routerLink]="item.routerLink" routerLinkActive="active-route" [routerLinkActiveOptions]="item.routerLinkOptions||{exact: false}"
+			   [routerLink]="item.routerLink" routerLinkActive="active-route" [routerLinkActiveOptions]="item.routerLinkOptions||{exact: true}"
                [fragment]="item.fragment" [queryParamsHandling]="item.queryParamsHandling" [preserveFragment]="item.preserveFragment" 
                [skipLocationChange]="item.skipLocationChange" [replaceUrl]="item.replaceUrl" [state]="item.state" [queryParams]="item.queryParams"
                [attr.target]="item.target" tabindex="0" pRipple>
@@ -76,11 +76,9 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     key: string;
 
-    constructor(public layoutService: LayoutService, public router: Router, private cd: ChangeDetectorRef, private menuService: MenuService) {
+    constructor(public layoutService: LayoutService, private cd: ChangeDetectorRef, public router: Router, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(key => {
-            if (this.active && this.key !== key && key.indexOf(this.key) !== 0) {
-                this.active = false;
-            }
+            this.active = this.key === key || key.indexOf(this.key) === 0;
         });
 
         this.menuResetSubscription = this.menuService.resetSource$.subscribe(() => {
@@ -91,26 +89,30 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             .subscribe(params => {
                 if (this.isSlim || this.isHorizontal) {
                     this.active = false;
-                } else {
+                } 
+                else {
                     if (this.item.routerLink) {
                         this.updateActiveStateFromRoute();
-                    } else {
-                        this.active = false;
                     }
                 }
             });
     }
 
     ngOnInit() {
+        this.key = this.parentKey ? this.parentKey + '-' + this.index : String(this.index);
+
         if (!(this.isSlim || this.isHorizontal) && this.item.routerLink) {
             this.updateActiveStateFromRoute();
+            this.cd.detectChanges();
         }
-
-        this.key = this.parentKey ? this.parentKey + '-' + this.index : String(this.index);
     }
 
     updateActiveStateFromRoute() {
-        //this.active = this.router.isActive(this.item.routerLink[0], !this.item.items && !this.item.preventExact);
+        let activeRoute = this.router.isActive(this.item.routerLink[0], {paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored'});
+        
+        if (activeRoute) {
+            this.menuService.onMenuStateChange(this.key);
+        }
     }
 
     itemClick(event: Event) {

@@ -34,6 +34,81 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             {
+                label: 'Hierarchy',
+                icon: 'pi pi-fw pi-align-left',
+                items: [
+                    {
+                        label: 'Submenu 1',
+                        icon: 'pi pi-fw pi-align-left',
+                        items: [
+                            {
+                                label: 'Submenu 1.1',
+                                icon: 'pi pi-fw pi-align-left',
+                                items: [
+                                    {
+                                        label: 'Submenu 1.1.1',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                    {
+                                        label: 'Submenu 1.1.2',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                    {
+                                        label: 'Submenu 1.1.3',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                    {
+                                        label: 'Input',
+                                        icon: 'pi pi-fw pi-check-square',
+                                        routerLink: ['/uikit/input'],
+                                    }
+                                ],
+                            },
+                            {
+                                label: 'Submenu 1.2',
+                                icon: 'pi pi-fw pi-align-left',
+                                items: [
+                                    {
+                                        label: 'Submenu 1.2.1',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        label: 'Submenu 2',
+                        icon: 'pi pi-fw pi-align-left',
+                        items: [
+                            {
+                                label: 'Submenu 2.1',
+                                icon: 'pi pi-fw pi-align-left',
+                                items: [
+                                    {
+                                        label: 'Submenu 2.1.1',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                    {
+                                        label: 'Submenu 2.1.2',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                ],
+                            },
+                            {
+                                label: 'Submenu 2.2',
+                                icon: 'pi pi-fw pi-align-left',
+                                items: [
+                                    {
+                                        label: 'Submenu 2.2.1',
+                                        icon: 'pi pi-fw pi-align-left',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
                 label: 'UI Kit',
                 icon: 'pi pi-fw pi-star-fill',
                 routerLink: ['/uikit'],
@@ -42,11 +117,6 @@ export class AppMenuComponent implements OnInit {
                         label: 'Form Layout',
                         icon: 'pi pi-fw pi-id-card',
                         routerLink: ['/uikit/formlayout'],
-                    },
-                    {
-                        label: 'Input',
-                        icon: 'pi pi-fw pi-check-square',
-                        routerLink: ['/uikit/input'],
                     },
                     {
                         label: 'Float Label',
@@ -445,76 +515,7 @@ export class AppMenuComponent implements OnInit {
                   }
               ]
           },
-            {
-                label: 'Hierarchy',
-                icon: 'pi pi-fw pi-align-left',
-                items: [
-                    {
-                        label: 'Submenu 1',
-                        icon: 'pi pi-fw pi-align-left',
-                        items: [
-                            {
-                                label: 'Submenu 1.1',
-                                icon: 'pi pi-fw pi-align-left',
-                                items: [
-                                    {
-                                        label: 'Submenu 1.1.1',
-                                        icon: 'pi pi-fw pi-align-left',
-                                    },
-                                    {
-                                        label: 'Submenu 1.1.2',
-                                        icon: 'pi pi-fw pi-align-left',
-                                    },
-                                    {
-                                        label: 'Submenu 1.1.3',
-                                        icon: 'pi pi-fw pi-align-left',
-                                    },
-                                ],
-                            },
-                            {
-                                label: 'Submenu 1.2',
-                                icon: 'pi pi-fw pi-align-left',
-                                items: [
-                                    {
-                                        label: 'Submenu 1.2.1',
-                                        icon: 'pi pi-fw pi-align-left',
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                    {
-                        label: 'Submenu 2',
-                        icon: 'pi pi-fw pi-align-left',
-                        items: [
-                            {
-                                label: 'Submenu 2.1',
-                                icon: 'pi pi-fw pi-align-left',
-                                items: [
-                                    {
-                                        label: 'Submenu 2.1.1',
-                                        icon: 'pi pi-fw pi-align-left',
-                                    },
-                                    {
-                                        label: 'Submenu 2.1.2',
-                                        icon: 'pi pi-fw pi-align-left',
-                                    },
-                                ],
-                            },
-                            {
-                                label: 'Submenu 2.2',
-                                icon: 'pi pi-fw pi-align-left',
-                                items: [
-                                    {
-                                        label: 'Submenu 2.2.1',
-                                        icon: 'pi pi-fw pi-align-left',
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                ],
-            },
+            
             {
                 label: 'Start',
                 icon: 'pi pi-fw pi-download',
