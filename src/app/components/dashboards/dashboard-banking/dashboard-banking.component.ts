@@ -114,7 +114,7 @@ export class DashboardBankingComponent implements OnInit {
   };
 
   constructor(private breadcrumbService: BreadcrumbService) {
-    this.breadcrumbService.setItems([{ label: 'Profile Overview' }]);
+    this.breadcrumbService.setItems([{ label: 'Banking Dashboard' }]);
 
     this.days = [
       { name: 'Sunday' },

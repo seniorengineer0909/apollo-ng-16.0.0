@@ -5,7 +5,7 @@ import { DashboardBankingComponent } from './dashboard-banking.component';
 
 @NgModule({
     imports: [RouterModule.forChild([
-      {path: '', component: DashboardBankingComponent},
+    {path: '', component: DashboardBankingComponent},
 
   ])],
   exports: [RouterModule]
