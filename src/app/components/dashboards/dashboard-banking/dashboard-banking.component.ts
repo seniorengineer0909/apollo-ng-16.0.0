@@ -2,83 +2,85 @@ import { Component, OnInit } from '@angular/core';
 import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
 
 interface File {
-  name: string;
-  image: string;
-  date: string;
-  amount: string;
+    name: string;
+     image: string;
+     date: string;
+     amount: string;
+     label:string;
 }
 
 @Component({
     selector: 'app-dashboard-banking',
     templateUrl: './dashboard-banking.component.html',
+    styleUrls: ['../../../../assets/demo/table.scss']
 })
 
 export class DashboardBankingComponent implements OnInit {
-  selectedDate: number;
+    selectedDate: number;
 
-  mounths: any[];
+    mounths: any[];
 
-  selectedMounths: any;
+    selectedMounths: any;
 
-  selectedWeek: any;
+    selectedWeek: any;
 
-  week: any[];
+    week: any[];
 
-  days: any[];
+    days: any[];
 
-  selectedDay: any;
+    selectedDay: any;
 
-  barData = {
-    labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
-    datasets: [
-      {
-        label: 'Income',
-        backgroundColor: '#3157DE',
-        borderColor: 'rgb(255, 99, 132)',
-        barThickness: 12,
-        borderRadius: Number.MAX_VALUE,
-        data: [65, 59, 80, 81, 56, 55, 40],
-      },
-      {
-        label: 'Expense',
-        backgroundColor: '#AFC1FF',
-        barThickness: 12,
-        borderColor: 'rgb(54, 162, 235)',
-        borderRadius: Number.MAX_VALUE,
-        data: [28, 48, 40, 19, 86, 27, 90],
-      },
-    ],
-  };
+    barData = {
+      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      datasets: [
+        {
+          label: 'Income',
+          backgroundColor: '#3157DE',
+          borderColor: 'rgb(255, 99, 132)',
+          barThickness: 12,
+          borderRadius: Number.MAX_VALUE,
+          data: [65, 59, 80, 81, 56, 55, 40],
+        },
+        {
+          label: 'Expense',
+          backgroundColor: '#AFC1FF',
+          barThickness: 12,
+          borderColor: 'rgb(54, 162, 235)',
+          borderRadius: Number.MAX_VALUE,
+          data: [28, 48, 40, 19, 86, 27, 90],
+        },
+      ],
+    };
 
-  barOptions = {
-    plugins: {
-      legend: {
-        labels: {
-          fontColor: '#A0A7B5',
-          usePointStyle: true,
-          font: {
+    barOptions = {
+      plugins: {
+        legend: {
+          labels: {
+            fontColor: '#A0A7B5',
+            usePointStyle: true,
+            font: {
             weight: 700,
+            },
+            padding: 30,
           },
-          padding: 30,
+          position: 'bottom',
         },
-        position: 'bottom',
-      },
-      tooltip: {
-        backgroundColor: '#1F2ED0',
-        titleFont: {
+        tooltip: {
+          backgroundColor: '#1F2ED0',
+          titleFont: {
+            weight: 'bold',
+          },
+          bodyFont: {
           weight: 'bold',
-        },
-        bodyFont: {
-          weight: 'bold',
-        },
-        displayColors: false,
-        padding: {
+          },
+          displayColors: false,
+          padding: {
           left: 40,
           right: 40,
           top: 10,
           bottom: 10,
         },
-        callbacks: {
+          callbacks: {
           label: function (tooltipItem) {
             return `$ ${tooltipItem.raw}`;
           },
@@ -135,33 +137,37 @@ export class DashboardBankingComponent implements OnInit {
         name: "29 Jul 2021",
         image: "assets/demo/images/avatar/elwinsharvill.png",
         date: "29 Jul 2021",
-        amount: "$920.34"
+        amount: "$920.34",
+        label: "Complate"
     },
     {
         name: "Courtney Henry",
         image: "assets/demo/images/avatar/bernardodominic.png",
         date: "29 Jul 2021",
-        amount: "$834.12"
+        amount: "$834.12",
+        label: "In progress"
     },
     {
         name: "Theresa Webb",
         image: "assets/demo/images/avatar/ionibowcher.png",
         date: "29 Jul 2021",
-        amount: "$340.20"
+        amount: "$340.20",
+        label: "Failed"
     },
     {
         name: "Theresa Webb",
         image: "assets/demo/images/avatar/bernardodominic.png",
         date: "29 Jul 2021",
-        amount: "$920.34"
+        amount: "$920.34",
+        label: "Complate"
     }
 
 ];
-cols = [
-  { field: 'name', header: 'Name' },
-  { field: 'date', header: 'Date' },
-  { field: 'amount', header: 'Amount' },
-  { field: 'status', header: 'Status' },
+    cols = [
+    { field: 'name', header: 'Name' },
+    { field: 'date', header: 'Date' },
+    { field: 'amount', header: 'Amount' },
+    { field: 'status', header: 'Status' },
 ];
 
 

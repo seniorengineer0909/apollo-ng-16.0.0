@@ -72,34 +72,40 @@ export class DashboardDemoComponent {
     ];
     products = [
         {
+            id: 1,
             name: "Apple Watch 2",
             price: "$45,230 - 234 pieces",
             image: "assets/images/pngwing 1 (1).png"
         },
         {
+            id: 2,
             name: "Apple Watch 4",
             price: "$45,230 - 234 pieces",
             image: "assets/images/kisspng-apple-watch-series-2-apple-watch-series-3-apple-wa-applewatch-5b1dde444cea99 1.png"
         },
         {
+            id: 3,
             name: "Apple Watch 2",
             price: "$45,230 - 234 pieces",
             image: "assets/images/pngwing 1 (1).png"
         },
         {
+            id: 4,
             name: "Apple Watch 3",
             price: "$45,230 - 234 pieces",
             image: "assets/images/kisspng-apple-watch-series-2-apple-watch-series-3-apple-wa-applewatch-5b1dde444cea99 1.png"
         },
         {
+            id: 5,
             name: "Apple Watch 2",
             price: "$45,230 - 234 pieces",
             image: "assets/images/pngwing 1 (1).png"
         },
         {
-          name: "Apple Watch 2",
-          price: "$45,230 - 234 pieces",
-          image: "assets/images/pngwing 1 (1).png"
+            id: 6,
+            name: "Apple Watch 2",
+            price: "$45,230 - 234 pieces",
+            image: "assets/images/pngwing 1 (1).png"
       },
 
     ];

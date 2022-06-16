@@ -10,6 +10,7 @@ import { ChartModule } from 'primeng/chart';
 import { RippleModule } from 'primeng/ripple';
 import { DashboardBankingComponent } from './dashboard-banking.component';
 import { DashboardBankingRoutingModule } from './dashboard-banking-routing.module';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 
 
@@ -24,7 +25,7 @@ import { DashboardBankingRoutingModule } from './dashboard-banking-routing.modul
     InputTextModule,
     InputTextareaModule,
     ChartModule,
-    DashboardBankingRoutingModule
+    DashboardBankingRoutingModule,
 
   ],
   declarations: [DashboardBankingComponent]

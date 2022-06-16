@@ -1,6 +1,7 @@
 <div class="grid flex-column lg:flex-row">
   <div class="col p-3">
-    <div class="flex surface-card flex-column border-round border-1 surface-border p-4 cursor-pointer hover:border-primary transition-duration-150">
+    <div
+      class="flex surface-card flex-column border-round border-1 surface-border p-4 cursor-pointer hover:border-primary transition-duration-150">
       <span class="inline-block text-900 font-bold">Bank Card</span>
       <div class="flex justify-content-between align-items-center mt-3">
         <span class="inline-block text-900 text-xl text-primary mb-5">$934,04</span>
@@ -12,7 +13,8 @@
     </div>
   </div>
   <div class="col p-3">
-    <div class="flex surface-card flex-column border-round border-1 surface-border p-4 cursor-pointer hover:border-primary transition-duration-150">
+    <div
+      class="flex surface-card flex-column border-round border-1 surface-border p-4 cursor-pointer hover:border-primary transition-duration-150">
       <span class="inline-block text-900 font-bold">Credit Card</span>
       <div class="flex justify-content-between align-items-center mt-3">
         <span class="inline-block text-900 text-xl text-primary mb-5">$345,21</span>
@@ -24,14 +26,16 @@
     </div>
   </div>
   <div class="col-12 lg:col-2 p-3">
-    <div class="flex surface-card h-full flex-column justify-content-center align-items-center py-5 lg:py-0 border-round border-1 surface-border surface-100 cursor-pointer hover:border-primary transition-duration-150">
+    <div
+      class="flex surface-card h-full flex-column justify-content-center align-items-center py-5 lg:py-0 border-round border-1 surface-border surface-100 cursor-pointer hover:border-primary transition-duration-150">
       <i class="pi pi-arrow-circle-up text-primary" style="font-size: 2rem"></i>
       <span class="text-900 text-xl mt-3 text-center">Savings</span>
       <span class="inline-block text-900 text-xl text-primary mt-3">$2,345.21</span>
     </div>
   </div>
   <div class="col-12 lg:col-2 p-3">
-    <div class="flex surface-card h-full flex-column justify-content-center align-items-center py-5 lg:py-0 border-round border-1 surface-border surface-100 cursor-pointer hover:border-primary transition-duration-150">
+    <div
+      class="flex surface-card h-full flex-column justify-content-center align-items-center py-5 lg:py-0 border-round border-1 surface-border surface-100 cursor-pointer hover:border-primary transition-duration-150">
       <i class="pi pi-arrow-circle-down text-primary" style="font-size: 2rem"></i>
       <span class="text-900 text-xl mt-3 text-center">Expenses</span>
       <span class="inline-block text-900 text-xl text-primary mt-3">$1,253.21</span>
@@ -39,64 +43,78 @@
   </div>
 </div>
 
-<div class="grid flex-column lg:flex-row">
+<div class="grid">
   <div class="col-12 lg:col-6">
     <div class="card">
       <div class="flex align-item-center justify-content-between ">
         <p class="text-900 text-xl font-semibold mt-2">Transactions</p>
         <p-dropdown [options]="week" [(ngModel)]="selectedWeek" placeholder="Date" optionLabel="name"></p-dropdown>
       </div>
-      <div class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+      <div
+        class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+        style="border-radius: 6px">
         <div class="flex align-items-center">
-          <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+          <div style="width:48px;height:32px;border-radius:10px"
+            class="inline-flex align-items-center justify-content-center mr-3">
             <i class="pi pi-arrow-circle-down text-primary" style="font-size: 2rem"></i>
           </div>
           <div class="">
-          <span class="text-900 text-xl font-medium">Home Insurance</span>
-          <p class="font-semibold text-600 text-sm text-pink-500">-$440</p>
+            <span class="text-900 text-xl font-medium">Home Insurance</span>
+            <p class="font-semibold text-600 text-sm text-pink-500">-$440</p>
+          </div>
         </div>
       </div>
-      </div>
-      <div class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+      <div class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+        style="border-radius: 6px">
         <div class="flex align-items-center">
-          <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+          <div style="width:48px;height:32px;border-radius:10px"
+            class="inline-flex align-items-center justify-content-center mr-3">
             <i class="pi pi-arrow-circle-up text-primary" style="font-size: 2rem"></i>
           </div>
           <div class="">
-          <span class="text-900 text-xl font-medium">Starbucks</span>
-          <p class="font-semibold text-600 text-sm text-green-500">+$440</p>
+            <span class="text-900 text-xl font-medium">Starbucks</span>
+            <p class="font-semibold text-600 text-sm text-green-500">+$440</p>
+          </div>
         </div>
       </div>
-      </div>
-      <div class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+      <div
+        class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+        style="border-radius: 6px">
         <div class="flex align-items-center">
-          <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+          <div style="width:48px;height:32px;border-radius:10px"
+            class="inline-flex align-items-center justify-content-center mr-3">
             <i class="pi pi-arrow-circle-up text-primary" style="font-size: 2rem"></i>
           </div>
           <div class="">
-          <span class="text-900 text-xl font-medium">Cash Refund</span>
-          <p class="font-semibold text-600 text-sm text-green-500">+$440</p>
+            <span class="text-900 text-xl font-medium">Cash Refund</span>
+            <p class="font-semibold text-600 text-sm text-green-500">+$440</p>
+          </div>
         </div>
       </div>
-      </div>
-      <div class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+      <div
+        class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+        style="border-radius: 6px">
         <div class="flex align-items-center">
-          <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+          <div style="width:48px;height:32px;border-radius:10px"
+            class="inline-flex align-items-center justify-content-center mr-3">
             <i class="pi pi-arrow-circle-down text-primary" style="font-size: 2rem"></i>
           </div>
           <div>
-          <span class="text-900 text-xl font-medium">Home Insurance</span>
-          <p class="font-semibold text-600 text-sm text-pink-500">-$440</p>
+            <span class="text-900 text-xl font-medium">Home Insurance</span>
+            <p class="font-semibold text-600 text-sm text-pink-500">-$440</p>
+          </div>
         </div>
       </div>
-      </div>
-      <div class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+      <div
+        class="p-3 mt-4 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+        style="border-radius: 6px">
         <div class="flex align-items-center">
-          <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+          <div style="width:48px;height:32px;border-radius:10px"
+            class="inline-flex align-items-center justify-content-center mr-3">
             <i class="pi pi-arrow-circle-up text-primary" style="font-size: 2rem"></i>
           </div>
           <div class="">
-          <span class="text-900 text-xl font-medium">Starbucks</span>
+            <span class="text-900 text-xl font-medium">Starbucks</span>
             <p class="font-semibold text-600 text-sm text-green-500">+$440</p>
           </div>
         </div>
@@ -104,148 +122,176 @@
     </div>
   </div>
 
-   <div class="col-12 lg:col-6">
-     <div class="card h-full">
-       <div class="flex align-item-center justify-content-between mb-6">
-         <span class="text-900 text-xl mt-2 font-semibold">Sales Overview</span>
-        <p-dropdown [options]="week" [(ngModel)]="selectedWeek" placeholder="Week" optionLabel="name" [style]="{ 'min-width': '10rem' }"></p-dropdown>
-       </div>
-       <div class="h-full"><p-chart type="bar" [data]="barData" [options]="barOptions"></p-chart>
-       </div>
-     </div>
-   </div>
- </div>
+  <div class="col-12 lg:col-6">
+    <div class="card h-full">
+      <div class="flex align-items-center justify-content-between mb-6">
+        <span class="text-900 text-xl mt-2 font-semibold">Sales Overview</span>
+        <p-dropdown [options]="week" [(ngModel)]="selectedWeek" placeholder="Week" optionLabel="name"
+          [style]="{ 'min-width': '10rem' }"></p-dropdown>
+      </div>
+      <div class="h-full">
+        <p-chart type="bar" [data]="barData" [options]="barOptions"></p-chart>
+      </div>
+    </div>
+  </div>
 
-
-     <div class="grid grid-nogutter gap-5">
-       <div class="col-12 md:col surface-section px-6 py-6 border-1 surface-border" style="border-radius: 6px;">
-         <div class="flex align-item-center justify-content-between ">
-         <p class="text-900 font-bold text-xl">Quick Transfer</p>
-        <button pButton pRipple type="button" icon="pi pi-plus" style="border-radius: 6px" label="Add New" class="p-button-outlined p-button-primary mr-2"></button>
+  <div class="col-12 lg:col-6">
+    <div class="card">
+      <div class="flex align-items-center justify-content-between ">
+        <p class="text-900 font-bold text-xl">Quick Transfer</p>
+        <button pButton pRipple type="button" icon="pi pi-plus" style="border-radius: 6px" label="Add New"
+          class="p-button-outlined p-button-primary mr-2"></button>
       </div>
       <div class="grid gap-3 grid-nogutter flex-column sm:flex-row">
-        <div class="col w-5 mt-3 mb-0">
-          <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
-          <div class="flex align-items-center">
-            <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
-              <img src="../../../../assets/demo/images/avatar-1.png" class="w-3rem">
+        <div class="col mt-3 mb-0">
+          <div
+            class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+            style="border-radius: 6px">
+            <div class="flex align-items-center">
+              <div style="width:48px;height:32px;border-radius:10px"
+                class="inline-flex align-items-center justify-content-center mr-3">
+                <img src="../../../../assets/demo/images/avatar-1.png" class="w-3rem">
+              </div>
+              <span class="text-900 text-xl font-medium">Robert Fox</span>
             </div>
-            <span class="text-900 text-xl font-medium">Robert Fox</span>
           </div>
         </div>
-        </div>
-          <div class="col w-5 mt-3 mb-0">
-            <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+        <div class="col mt-3 mb-0">
+          <div
+            class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+            style="border-radius: 6px">
             <div class="flex align-items-center">
-              <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+              <div style="width:48px;height:32px;border-radius:10px"
+                class="inline-flex align-items-center justify-content-center mr-3">
                 <img src="../../../../assets/demo/images/avatar-2.png" class="w-3rem">
               </div>
               <span class="text-900 text-xl font-medium">Jane Cooper</span>
             </div>
           </div>
-          </div>
+        </div>
       </div>
       <div class="grid gap-3 grid-nogutter flex-column sm:flex-row">
-        <div class="col w-5 mt-3 mb-0">
-          <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
-          <div class="flex align-items-center">
-            <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
-              <img src="../../../../assets/demo/images/avatar-3.png" class="w-3rem">
+        <div class="col mt-3 mb-0">
+          <div
+            class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+            style="border-radius: 6px">
+            <div class="flex align-items-center">
+              <div style="width:48px;height:32px;border-radius:10px"
+                class="inline-flex align-items-center justify-content-center mr-3">
+                <img src="../../../../assets/demo/images/avatar-3.png" class="w-3rem">
+              </div>
+              <span class="text-900 text-xl font-medium">Savannah Nyan</span>
             </div>
-            <span class="text-900 text-xl font-medium">Savannah Nyan</span>
           </div>
         </div>
-        </div>
-          <div class="col w-5 mt-3 mb-0">
-            <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+        <div class="col mt-3 mb-0">
+          <div
+            class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+            style="border-radius: 6px">
             <div class="flex align-items-center">
-              <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+              <div style="width:48px;height:32px;border-radius:10px"
+                class="inline-flex align-items-center justify-content-center mr-3">
                 <img src="../../../../assets/demo//images/banking/banking-img-3.png" class="w-3rem">
               </div>
               <span class="text-900 text-xl font-medium">Annette Black</span>
             </div>
           </div>
-          </div>
+        </div>
       </div>
       <div class="grid gap-3 grid-nogutter flex-column sm:flex-row">
-        <div class="col w-5 mt-3 mb-0">
-          <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
-          <div class="flex align-items-center">
-            <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
-              <img src="../../../../assets/demo//images/banking/banking-img-2.png" class="w-3rem">
+        <div class="col mt-3 mb-0 ">
+          <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+            style="border-radius: 6px">
+            <div class="flex align-items-center">
+              <div style="width:48px;height:32px;border-radius:10px"
+                class="inline-flex align-items-center justify-content-center mr-3">
+                <img src="../../../../assets/demo//images/banking/banking-img-2.png" class="w-3rem">
+              </div>
+              <span class="text-900 text-xl font-medium">Darlene Robertson</span>
             </div>
-            <span class="text-900 text-xl font-medium">Darlene Robertson</span>
           </div>
         </div>
-        </div>
-          <div class="col w-5 mt-3 mb-0">
-            <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
+        <div class="col mt-3 mb-0">
+          <div
+            class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+            style="border-radius: 6px">
             <div class="flex align-items-center">
-              <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
+              <div style="width:48px;height:32px;border-radius:10px"
+                class="inline-flex align-items-center justify-content-center mr-3">
                 <img src="../../../../assets/demo//images/banking/banking-img-1.png" class="w-3rem">
               </div>
               <span class="text-900 text-xl font-medium">Jerome Bel</span>
             </div>
           </div>
-          </div>
+        </div>
       </div>
+
       <div class="grid gap-3 grid-nogutter flex-column sm:flex-row flex align-items-center justify-content-center">
-        <div class="col w-5 mt-3 mb-0">
-          <div class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap" style="border-radius: 6px">
-          <div class="flex align-items-center">
-            <div style="width:48px;height:32px;border-radius:10px" class="inline-flex align-items-center justify-content-center mr-3">
-              <i class="pi pi-dollar text-primary" style="font-size: 2rem"></i>
+        <div class="col mt-3 mb-0">
+          <div
+            class="p-3 mt-1 border-1 surface-border flex align-items-center surface-card hover:surface-100 cursor-pointer justify-content-between flex-wrap"
+            style="border-radius: 6px">
+            <div class="flex align-items-center">
+              <div style="width:48px;height:32px;border-radius:10px"
+                class="inline-flex align-items-center justify-content-center mr-3">
+                <i class="pi pi-dollar text-primary" style="font-size: 2rem"></i>
+              </div>
+              <span class="text-600 text-xl font-light">Provide Amount</span>
             </div>
-            <span class="text-600 text-xl font-light">Provide Amount</span>
           </div>
         </div>
+        <div class="col-2 mt-3 mb-0">
+          <p-button label="Send Money" styleClass="p-button-md"></p-button>
         </div>
-          <div class="col-2 mt-3 mb-0">
-          <p-button label="Send Money" styleClass="p-button-lg"></p-button>
-          </div>
       </div>
     </div>
-    <div class="col-12 md:col surface-section px-6 py-6 border-1 surface-border" style="border-radius: 6px;">
-        <div class="flex align-item-center justify-content-between ">
-         <p class="text-900 font-bold text-xl">Recent Transitions</p>
-        <button pButton pRipple type="button" style="border-radius: 6px" label="View All" class="p-button-outlined p-button-primary mr-2"></button>
-   </div>
-   <p-table responsiveLayout="scroll" #dt [value]="files" [columns]="cols" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[10,20]" dataKey="file">
-    <ng-template pTemplate="header">
-        <tr>
+  </div>
+
+
+  <div class="col-12 lg:col-6">
+    <div class="card">
+      <div class="flex align-items-center justify-content-between ">
+        <p class="text-900 font-bold text-xl">Recent Transitions</p>
+        <button pButton pRipple type="button" style="border-radius: 6px" label="View All"
+          class="p-button-outlined p-button-primary mr-2 mb-4"></button>
+      </div>
+      <p-table responsiveLayout="scroll" #dt [value]="files" [columns]="cols" [rows]="10" [paginator]="false"
+        [rowsPerPageOptions]="[10,20]" dataKey="file">
+        <ng-template pTemplate="header">
+          <tr>
             <th class="font-bold" pSortableColumn="name">Name </th>
             <th class="font-bold" pSortableColumn="date">Date </th>
             <th class="font-bold" pSortableColumn="amount">Amount</th>
             <th class="font-bold" pSortableColumn="status">Status </th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-file>
-        <tr>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-file>
+          <tr>
             <td style="width:35%;height:5rem; min-width:15rem;">
-                <span class="p-column-title">Name</span>
-                <div class="flex align-items-center">
-                  <i class="pi pi-arrow-circle-up text-primary mr-4" style="font-size: 2rem"></i>
-                    <span class="font-semibold text-900">{{file.name}}</span>
-                </div>
+              <span class="p-column-title">Name</span>
+              <div class="flex align-items-center">
+                <i class="pi pi-arrow-circle-up text-primary mr-4" style="font-size: 2rem"></i>
+                <span class="font-semibold text-900">{{file.name}}</span>
+              </div>
             </td>
             <td style="height:5rem; min-width:8rem;">
-                <span class="p-column-title">Date</span>
-                <span class="text-900 font-semibold">{{file.date}}</span>
+              <span class="p-column-title">Date</span>
+              <span class="text-900 font-semibold">{{file.date}}</span>
             </td>
             <td style=" height:5rem; min-width:8rem;">
-                <span class="p-column-title">File Size</span>
-                <span class="text-900 font-semibold">{{file.amount}}</span>
+              <span class="p-column-title">Amount</span>
+              <span class="text-900 font-semibold">{{file.amount }}</span>
             </td>
             <td style="width: 5%;">
-                <button class="flex" pButton pRipple icon="pi pi-ellipsis-v"
-                    class="p-button-text p-button-secondary"></button>
+              <button pButton pRipple type="button" label={{file.label}} class="p-button-outlined p-button-rounded p-button-success"></button>
             </td>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="paginatorleft" let-state></ng-template>
-    <ng-template pTemplate="paginatorright">
-    </ng-template>
-</p-table>
-</div>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft" let-state></ng-template>
+        <ng-template pTemplate="paginatorright">
+        </ng-template>
+      </p-table>
+    </div>
   </div>
+</div>
 
