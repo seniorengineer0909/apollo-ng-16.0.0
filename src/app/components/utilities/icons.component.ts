@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { IconService } from 'src/app/service/iconservice';
-import {BreadcrumbService} from 'src/app/service/app.breadcrumb.service';
+import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     templateUrl: './icons.component.html',

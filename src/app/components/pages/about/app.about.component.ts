@@ -1,5 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {BreadcrumbService} from 'src/app/service/app.breadcrumb.service';
+import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     templateUrl: './app.about.component.html',

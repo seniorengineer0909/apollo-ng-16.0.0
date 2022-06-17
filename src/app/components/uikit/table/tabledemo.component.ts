@@ -4,7 +4,7 @@ import {CustomerService} from 'src/app/service/customerservice';
 import {Product} from 'src/app/api/product';
 import {ProductService} from 'src/app/service/productservice';
 import {Table} from 'primeng/table';
-import {BreadcrumbService} from 'src/app/service/app.breadcrumb.service';
+import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 import {MessageService, ConfirmationService} from 'primeng/api';
 
 @Component({

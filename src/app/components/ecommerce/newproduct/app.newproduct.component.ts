@@ -1,5 +1,5 @@
 import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
-import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
+import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 interface Product{
     name: string;

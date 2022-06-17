@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
-import { LayoutService } from 'src/app/service/app.layout.service';
+import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
+import { LayoutService } from 'src/app/layout/service/app.layout.service';
+
 @Component({
     templateUrl: './chartsdemo.component.html'
 })

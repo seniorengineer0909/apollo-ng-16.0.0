@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
+import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 interface blog {
     name: string;

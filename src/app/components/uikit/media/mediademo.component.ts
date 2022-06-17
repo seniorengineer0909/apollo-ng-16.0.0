@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { ProductService } from 'src/app/service/productservice';
 import { PhotoService } from 'src/app/service/photoservice';
 import { Product } from 'src/app/api/product';
-import {BreadcrumbService} from 'src/app/service/app.breadcrumb.service';
+import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     templateUrl: './mediademo.component.html'

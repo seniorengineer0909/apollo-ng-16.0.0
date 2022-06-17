@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Product } from 'src/app/api/product';
-import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
+import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { ProductService } from 'src/app/service/productservice';
 
 interface Create {

@@ -1,8 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
-import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
+import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { Subscription } from 'rxjs';
 import { MenuItem } from 'primeng/api';
-import { LayoutService } from 'src/app/service/app.layout.service';
+import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
     selector: 'app-topbar',

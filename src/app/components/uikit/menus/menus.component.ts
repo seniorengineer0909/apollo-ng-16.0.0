@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MegaMenuItem, MenuItem } from 'primeng/api';
-import {BreadcrumbService} from 'src/app/service/app.breadcrumb.service';
+import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 @Component({
     templateUrl: './menus.component.html',
     encapsulation: ViewEncapsulation.None

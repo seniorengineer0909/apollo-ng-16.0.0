@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from 'src/app/service/eventservice';
 import { CalendarOptions } from '@fullcalendar/angular';
-import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
+import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     selector: 'app-apps.calendar',

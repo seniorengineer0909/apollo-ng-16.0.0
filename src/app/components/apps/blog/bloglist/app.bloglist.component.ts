@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PrimeNGConfig, SelectItem } from 'primeng/api';
-import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
+import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 interface Blog {
     image: string;

@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { Subscription } from 'rxjs';
-import { LayoutService } from '../service/app.layout.service';
 import { MenuService } from './app.menu.service';
 import { AppSidebarComponent } from './app.sidebar.component';
+import { LayoutService } from './service/app.layout.service';
 
 @Component({
     selector: 'app-layout',
