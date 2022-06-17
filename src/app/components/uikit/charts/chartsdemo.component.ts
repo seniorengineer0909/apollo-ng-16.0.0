@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs';
-import {AppConfig} from 'src/app/api/app.config';
-import {ConfigService} from 'src/app/service/app.config.service';
-import {BreadcrumbService} from 'src/app/service/app.breadcrumb.service';
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
+import { LayoutService } from 'src/app/service/app.layout.service';
 @Component({
     templateUrl: './chartsdemo.component.html'
 })
@@ -28,22 +27,21 @@ export class ChartsDemoComponent implements OnInit {
 
     radarOptions: any;
 
-    config: AppConfig;
-
     subscription: Subscription;
-    
-    constructor(public breadcrumbService: BreadcrumbService, public configService: ConfigService) {
+
+    constructor(public breadcrumbService: BreadcrumbService, public layoutService: LayoutService) {
         this.breadcrumbService.setItems([
-            {label: 'Charts'}
+            { label: 'Charts' }
         ]);
 
-        this.config = this.configService.config;
-        this.subscription = this.configService.configUpdate$.subscribe(config => {
-            this.config = config;
-            this.updateChartOptions();
+        this.subscription = this.layoutService.configUpdate$.subscribe(config => {
+            if (config.darkMode)
+                this.applyDarkTheme();
+            else
+                this.applyLightTheme();
         });
     }
-    
+
     ngOnInit() {
         this.lineData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -81,7 +79,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#A0A7B5'
                     },
                     grid: {
-                        color:  'rgba(160, 167, 181, .3)',
+                        color: 'rgba(160, 167, 181, .3)',
                     }
                 },
                 y: {
@@ -89,7 +87,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#A0A7B5'
                     },
                     grid: {
-                        color:  'rgba(160, 167, 181, .3)',
+                        color: 'rgba(160, 167, 181, .3)',
                     }
                 },
             }
@@ -127,7 +125,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#A0A7B5'
                     },
                     grid: {
-                        color:  'rgba(160, 167, 181, .3)',
+                        color: 'rgba(160, 167, 181, .3)',
                     }
                 },
                 y: {
@@ -135,7 +133,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#A0A7B5'
                     },
                     grid: {
-                        color:  'rgba(160, 167, 181, .3)',
+                        color: 'rgba(160, 167, 181, .3)',
                     }
                 },
             }
@@ -250,13 +248,6 @@ export class ChartsDemoComponent implements OnInit {
         };
     }
 
-    updateChartOptions() {
-        if (this.config.darkMode)
-            this.applyDarkTheme();
-        else
-            this.applyLightTheme();
-    }
-
     applyLightTheme() {
         this.lineOptions = {
             plugins: {
@@ -272,7 +263,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#495057'
                     },
                     grid: {
-                        color:  '#ebedef',
+                        color: '#ebedef',
                     }
                 },
                 y: {
@@ -280,7 +271,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#495057'
                     },
                     grid: {
-                        color:  '#ebedef',
+                        color: '#ebedef',
                     }
                 },
             }
@@ -300,7 +291,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#495057'
                     },
                     grid: {
-                        color:  '#ebedef',
+                        color: '#ebedef',
                     }
                 },
                 y: {
@@ -308,7 +299,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#495057'
                     },
                     grid: {
-                        color:  '#ebedef',
+                        color: '#ebedef',
                     }
                 },
             }
@@ -375,7 +366,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#ebedef'
                     },
                     grid: {
-                        color:  'rgba(160, 167, 181, .3)',
+                        color: 'rgba(160, 167, 181, .3)',
                     }
                 },
                 y: {
@@ -383,7 +374,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#ebedef'
                     },
                     grid: {
-                        color:  'rgba(160, 167, 181, .3)',
+                        color: 'rgba(160, 167, 181, .3)',
                     }
                 },
             }
@@ -403,7 +394,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#ebedef'
                     },
                     grid: {
-                        color:  'rgba(160, 167, 181, .3)',
+                        color: 'rgba(160, 167, 181, .3)',
                     }
                 },
                 y: {
@@ -411,7 +402,7 @@ export class ChartsDemoComponent implements OnInit {
                         color: '#ebedef'
                     },
                     grid: {
-                        color:  'rgba(160, 167, 181, .3)',
+                        color: 'rgba(160, 167, 181, .3)',
                     }
                 },
             }
