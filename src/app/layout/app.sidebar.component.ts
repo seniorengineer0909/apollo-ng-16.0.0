@@ -10,7 +10,7 @@ export class AppSidebarComponent {
     constructor(public layoutService: LayoutService, public el: ElementRef) {}
 
     get logo(): string {
-        return (this.layoutService.isSlim() || this.layoutService.isHorizontal()) ? 'assets/images/logo-colored-sm.svg' : 'assets/images/logo-colored.svg' 
+        return (this.layoutService.isSlim() || this.layoutService.isHorizontal()) ? 'assets/layout/images/logo-colored-sm.svg' : 'assets/layout/images/logo-colored.svg' 
     }
 
 }
