@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Message } from 'src/app/api/message';
 import { User } from 'src/app/api/user';
-import { ChatService } from 'src/app/service/chatservice';
+import { ChatService } from 'src/app/service/chat.service';
 
 @Component({
     selector: 'chat-box',

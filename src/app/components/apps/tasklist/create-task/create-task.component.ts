@@ -3,8 +3,8 @@ import { MessageService } from 'primeng/api';
 import { Member } from 'src/app/api/member';
 import { Task } from 'src/app/api/task';
 import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
-import { MemberService } from 'src/app/service/memberservice';
-import { TaskService } from 'src/app/service/taskservice';
+import { MemberService } from 'src/app/service/member.service';
+import { TaskService } from 'src/app/service/task.service';
 
 @Component({
     selector: 'app-create-task',

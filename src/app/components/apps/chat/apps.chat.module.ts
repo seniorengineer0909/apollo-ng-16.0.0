@@ -10,7 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
 import { BadgeModule } from 'primeng/badge';
 import { UserCardComponent } from './user-card/user-card.component';
-import { ChatService } from 'src/app/service/chatservice';
+import { ChatService } from 'src/app/service/chat.service';
 import { ChatBoxComponent } from './chat-box/chat-box.component';
 
 @NgModule({

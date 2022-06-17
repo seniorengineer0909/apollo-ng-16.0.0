@@ -37,8 +37,8 @@ import { LayoutService } from './service/app.layout.service';
 		</ng-container>
     `,
     host: {
-        '[class.layout-root-menuitem]': 'root',
-        '[class.active-menuitem]': 'active'
+        '[class.layout-root-menuitem]': 'root'/*,
+        '[class.active-menuitem]': 'active'*/
     },
     animations: [
         trigger('children', [

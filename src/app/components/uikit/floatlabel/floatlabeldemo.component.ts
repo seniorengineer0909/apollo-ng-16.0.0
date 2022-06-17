@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CountryService} from 'src/app/service/countryservice';
+import {CountryService} from 'src/app/service/country.service';
 import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({

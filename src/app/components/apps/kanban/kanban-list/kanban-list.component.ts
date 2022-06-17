@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { KanbanList } from 'src/app/api/kanban';
-import { KanbanService } from 'src/app/service/kanbanservice';
+import { KanbanService } from 'src/app/service/kanban.service';
 import { AppsKanbanComponent } from '../apps.kanban.component';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 

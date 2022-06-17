@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import {Customer, Representative} from 'src/app/api/customer';
-import {CustomerService} from 'src/app/service/customerservice';
+import {CustomerService} from 'src/app/service/customer.service';
 import {Product} from 'src/app/api/product';
-import {ProductService} from 'src/app/service/productservice';
+import {ProductService} from 'src/app/service/product.service';
 import {Table} from 'primeng/table';
 import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 import {MessageService, ConfirmationService} from 'primeng/api';

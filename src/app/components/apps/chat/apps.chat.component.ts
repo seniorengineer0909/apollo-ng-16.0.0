@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
-import { ChatService } from 'src/app/service/chatservice';
+import { ChatService } from 'src/app/service/chat.service';
 import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/api/user';

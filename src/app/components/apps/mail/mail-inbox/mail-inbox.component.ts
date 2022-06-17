@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
 import { Mail } from 'src/app/api/mail';
 import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
-import { MailService } from 'src/app/service/mailservice';
+import { MailService } from 'src/app/service/mail.service';
 
 @Component({
     selector: 'mail-inbox',

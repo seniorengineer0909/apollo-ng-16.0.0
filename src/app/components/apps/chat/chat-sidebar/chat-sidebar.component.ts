@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/api/user';
-import { ChatService } from 'src/app/service/chatservice';
+import { ChatService } from 'src/app/service/chat.service';
 
 @Component({
     selector: 'chat-sidebar',

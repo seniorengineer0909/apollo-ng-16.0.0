@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NodeService} from 'src/app/service/nodeservice';
+import {NodeService} from 'src/app/service/node.service';
 import {TreeNode} from 'primeng/api';
 import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 

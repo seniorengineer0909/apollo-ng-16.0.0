@@ -2,8 +2,8 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/co
 import { KanbanCard, Comment, ListName, Task } from 'src/app/api/kanban';
 import { Member } from 'src/app/api/member';
 import { AppsKanbanComponent } from '../apps.kanban.component';
-import { MemberService } from 'src/app/service/memberservice';
-import { KanbanService } from 'src/app/service/kanbanservice';
+import { MemberService } from 'src/app/service/member.service';
+import { KanbanService } from 'src/app/service/kanban.service';
 import { Subscription } from 'rxjs';
 import { MenuItem } from 'primeng/api';
 

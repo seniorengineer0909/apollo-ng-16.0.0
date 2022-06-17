@@ -11,7 +11,7 @@ import { MailSidebarComponent } from './mail-sidebar/mail-sidebar.component';
 import { MenuModule } from 'primeng/menu';
 import { ButtonModule } from 'primeng/button'
 import { RippleModule } from 'primeng/ripple';
-import { MailService } from 'src/app/service/mailservice';
+import { MailService } from 'src/app/service/mail.service';
 import { TableModule } from 'primeng/table';
 import { ToolbarModule } from 'primeng/toolbar';
 import { InputTextModule } from 'primeng/inputtext';

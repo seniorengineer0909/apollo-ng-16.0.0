@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventService } from 'src/app/service/eventservice';
+import { EventService } from 'src/app/service/event.service';
 import { CalendarOptions } from '@fullcalendar/angular';
 import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
