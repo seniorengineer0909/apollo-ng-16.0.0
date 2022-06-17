@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Task } from '../api/task';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class TaskService {
 
     tasks:Task[] = [];

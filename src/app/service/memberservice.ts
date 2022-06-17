@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Member } from 'src/app/api/member';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class MemberService {
 
     constructor(private http: HttpClient) { }

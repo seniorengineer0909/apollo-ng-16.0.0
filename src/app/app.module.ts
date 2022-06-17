@@ -15,17 +15,6 @@ import { AppConfigComponent } from './layout/app.config.component';
 import { AppMenuComponent } from './layout/app.menu.component';
 import { AppMenuitemComponent } from './layout/app.menuitem.component';
 
-import { LayoutService } from 'src/app/service/app.layout.service';
-import { CountryService } from 'src/app/service/countryservice';
-import { CustomerService } from 'src/app/service/customerservice';
-import { EventService } from 'src/app/service/eventservice';
-import { IconService } from 'src/app/service/iconservice';
-import { NodeService } from 'src/app/service/nodeservice';
-import { PhotoService } from 'src/app/service/photoservice';
-import { ProductService } from 'src/app/service/productservice';
-import { ConfigService } from 'src/app/service/app.config.service';
-import { MenuService } from './layout/app.menu.service';
-
 import { InputTextModule } from 'primeng/inputtext';
 import { SidebarModule } from 'primeng/sidebar';
 import { BadgeModule } from 'primeng/badge';
@@ -34,34 +23,32 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AppLayoutComponent,
-    AppSidebarComponent,
-    AppTopbarComponent,
-    AppProfileSidebarComponent,
-    AppConfigComponent,
-    AppMenuComponent,
-    AppMenuitemComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    InputTextModule,
-    SidebarModule,
-    BadgeModule,
-    RadioButtonModule,
-    InputSwitchModule,
-    RippleModule
-  ],
-  providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy},
-    LayoutService, CountryService, CustomerService, EventService, IconService, NodeService,
-    PhotoService, ProductService, ConfigService, MenuService
-],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AppLayoutComponent,
+        AppSidebarComponent,
+        AppTopbarComponent,
+        AppProfileSidebarComponent,
+        AppConfigComponent,
+        AppMenuComponent,
+        AppMenuitemComponent,
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        InputTextModule,
+        SidebarModule,
+        BadgeModule,
+        RadioButtonModule,
+        InputSwitchModule,
+        RippleModule
+    ],
+    providers: [
+        { provide: LocationStrategy, useClass: HashLocationStrategy }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

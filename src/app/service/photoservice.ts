@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 
 import { Image } from 'src/app/api/image';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class PhotoService {
 
     constructor(private http: HttpClient) { }

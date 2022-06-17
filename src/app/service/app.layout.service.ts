@@ -11,7 +11,9 @@ interface LayoutState {
     menuHoverActive?: boolean;
 }
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class LayoutService {
 
     config: AppConfig;

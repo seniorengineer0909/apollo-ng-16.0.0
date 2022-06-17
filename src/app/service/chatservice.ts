@@ -4,7 +4,9 @@ import { BehaviorSubject } from 'rxjs';
 import { Message } from 'src/app/api/message';
 import { User } from 'src/app/api/user';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class ChatService {
 
     _activeUser: User = {

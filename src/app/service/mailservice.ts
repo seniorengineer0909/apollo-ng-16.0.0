@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Mail } from 'src/app/api/mail';
-import { Subject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class MailService {
 
     constructor(private http: HttpClient) { }
