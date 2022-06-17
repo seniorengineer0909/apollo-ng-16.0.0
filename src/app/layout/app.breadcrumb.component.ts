@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
-import { BehaviorSubject, filter } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 interface Breadcrumb {
     label: string;
