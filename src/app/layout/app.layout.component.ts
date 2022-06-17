@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { PrimeNGConfig } from 'primeng/api';
 import { Subscription } from 'rxjs';
 import { MenuService } from './app.menu.service';
 import { AppSidebarComponent } from './app.sidebar.component';
@@ -9,7 +8,7 @@ import { LayoutService } from './service/app.layout.service';
     selector: 'app-layout',
     templateUrl: './app.layout.component.html'
 })
-export class AppLayoutComponent implements OnInit, OnDestroy {
+export class AppLayoutComponent implements OnDestroy {
 
     overlayMenuOpenSubscription: Subscription;
 
@@ -17,7 +16,7 @@ export class AppLayoutComponent implements OnInit, OnDestroy {
 
     @ViewChild(AppSidebarComponent) appSidebar: AppSidebarComponent;
 
-    constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig, public layoutService: LayoutService, public renderer: Renderer2) {
+    constructor(private menuService: MenuService, public layoutService: LayoutService, public renderer: Renderer2) {
         this.overlayMenuOpenSubscription = this.layoutService.overlayOpen$.subscribe(() => {
             if (!this.menuOutsideClickListener) {
                 this.menuOutsideClickListener = this.renderer.listen('document', 'click', event => {
@@ -41,17 +40,6 @@ export class AppLayoutComponent implements OnInit, OnDestroy {
                 });
             }
         });
-    }
-
-    ngOnInit() {
-        this.primengConfig.ripple = true;
-        this.layoutService.config = {
-            ripple: true,
-            inputStyle: 'outlined',
-            menuMode: 'static',
-            darkMode: false,
-            theme: 'indigo'
-        };
     }
 
     blockBodyScroll(): void {
