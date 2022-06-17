@@ -2,9 +2,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
-  @include flex();
-  @include flex-justify-center();
-  @include flex-align-center();
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
 
   .exception-content {
@@ -46,7 +46,7 @@
         }
     }
   }
-
+/*
   &.access {
       background-image: url("../../demo/images/pages/bg-auth.svg");
   }
@@ -57,7 +57,7 @@
 
   &.error {
     background-image: url("../../demo/images/pages/bg-auth.svg");
-  }
+  }*/
 }
 
 @media(max-width:640px) {

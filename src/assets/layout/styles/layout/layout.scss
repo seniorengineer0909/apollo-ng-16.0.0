@@ -2,8 +2,9 @@ $transitionDuration: .3s;
 $tabletBreakpoint:1091px !default;
 $phoneBreakpoint:576px !default;
 
-@import './mixins';
+@import './_fonts';
 @import './_layout_light';
+@import './_layout_dim';
 @import './_layout_dark';
 @import './_main';
 @import './_sidebar_vertical';
