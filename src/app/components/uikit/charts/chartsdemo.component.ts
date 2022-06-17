@@ -31,10 +31,10 @@ export class ChartsDemoComponent implements OnInit {
 
     constructor(public layoutService: LayoutService) {
         this.subscription = this.layoutService.configUpdate$.subscribe(config => {
-            if (config.darkMode)
-                this.applyDarkTheme();
-            else
+            if (config.colorScheme == 'light')
                 this.applyLightTheme();
+            else
+                this.applyDarkTheme();
         });
     }
 

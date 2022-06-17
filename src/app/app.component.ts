@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
             ripple: true,
             inputStyle: 'outlined',
             menuMode: 'static',
-            darkMode: false,
+            colorScheme: 'light',
             theme: 'indigo'
         };
     }

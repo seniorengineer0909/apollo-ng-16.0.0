@@ -69,8 +69,9 @@ export class AppLayoutComponent implements OnDestroy {
 
     get containerClass() {
         return {
-            'layout-light': !this.layoutService.config.darkMode,
-            'layout-dark': this.layoutService.config.darkMode,
+            'layout-light': this.layoutService.config.colorScheme === 'light',
+            'layout-dim': this.layoutService.config.colorScheme === 'dim',
+            'layout-dark': this.layoutService.config.colorScheme === 'dark',
             'layout-overlay': this.layoutService.config.menuMode === 'overlay',
             'layout-static': this.layoutService.config.menuMode === 'static',
             'layout-slim': this.layoutService.config.menuMode === 'slim',

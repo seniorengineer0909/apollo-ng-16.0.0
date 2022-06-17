@@ -20,7 +20,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { SidebarModule } from 'primeng/sidebar';
 import { BadgeModule } from 'primeng/badge';
 import { RadioButtonModule } from 'primeng/radiobutton';
-import { InputSwitchModule } from 'primeng/inputswitch';
 import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
@@ -45,7 +44,6 @@ import { RippleModule } from 'primeng/ripple';
         SidebarModule,
         BadgeModule,
         RadioButtonModule,
-        InputSwitchModule,
         RippleModule
     ],
     providers: [

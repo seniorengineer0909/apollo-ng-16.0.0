@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 
 export interface AppConfig {
     inputStyle?: string;
-    darkMode?: boolean;
+    colorScheme?: string;
     theme?: string;
     ripple?: boolean;
     menuMode?: string;

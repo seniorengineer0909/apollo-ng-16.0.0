@@ -27,12 +27,12 @@ export class AppConfigComponent implements OnInit {
         this.layoutService.config.menuMode = _val;
     }
 
-    get darkMode(): boolean {
-        return this.layoutService.config.darkMode;
+    get colorScheme(): string {
+        return this.layoutService.config.colorScheme;
     }
 
-    set darkMode(_val: boolean) {
-        this.toggleDarkMode(_val);
+    set colorScheme(_val: string) {
+        this.changeColorScheme(_val);
     }
 
     get inputStyle(): string {
@@ -64,12 +64,14 @@ export class AppConfigComponent implements OnInit {
         this.layoutService.showConfigSidebar();
     }
 
-    toggleDarkMode(darkMode: boolean) {
-        this.layoutService.config.darkMode = darkMode;
+    changeColorScheme(colorScheme: string) {
         const themeLink = <HTMLLinkElement> document.getElementById('theme-link');
         const themeLinkHref = themeLink.getAttribute('href');
-        const newHref = this.layoutService.config.darkMode ? themeLinkHref.replace('theme-light', 'theme-dark') : themeLinkHref.replace('theme-dark', 'theme-light');
+        const currentColorScheme = 'theme-' + this.layoutService.config.colorScheme;
+        const newColorScheme = 'theme-' + colorScheme;
+        const newHref = themeLinkHref.replace(currentColorScheme, newColorScheme);
         this.replaceThemeLink(newHref);
+        this.layoutService.config.colorScheme = colorScheme;
     }
 
     changeTheme(theme: string) {
