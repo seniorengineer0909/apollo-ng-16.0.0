@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { AppConfig } from 'src/app/api/app.config';
+
+export interface AppConfig {
+    inputStyle?: string;
+    darkMode?: boolean;
+    theme?: string;
+    ripple?: boolean;
+    menuMode?: string;
+}
 
 interface LayoutState {
     staticMenuDesktopInactive?: boolean;
