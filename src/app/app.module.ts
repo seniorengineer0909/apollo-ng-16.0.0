@@ -23,7 +23,6 @@ import { IconService } from 'src/app/service/iconservice';
 import { NodeService } from 'src/app/service/nodeservice';
 import { PhotoService } from 'src/app/service/photoservice';
 import { ProductService } from 'src/app/service/productservice';
-import { BreadcrumbService } from 'src/app/service/app.breadcrumb.service';
 import { ConfigService } from 'src/app/service/app.config.service';
 import { MenuService } from './layout/app.menu.service';
 
@@ -61,7 +60,7 @@ import { RippleModule } from 'primeng/ripple';
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     LayoutService, CountryService, CustomerService, EventService, IconService, NodeService,
-    PhotoService, ProductService, BreadcrumbService, ConfigService, MenuService
+    PhotoService, ProductService, ConfigService, MenuService
 ],
   bootstrap: [AppComponent]
 })

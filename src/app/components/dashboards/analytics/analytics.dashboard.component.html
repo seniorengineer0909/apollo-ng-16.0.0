@@ -1,0 +1,104 @@
+<div class="layout-dashboard">
+  <div class="grid">
+    <div *ngFor="let card of cards" class="col-12 md:col-6 xl:col-3">
+      <div class="card no-gutter widget-overview-box widget-overview-box-1">
+        <span class="card-title font-bold text-lg">{{card.title}}</span>
+        <div class="grid">
+          <div class="col-5">
+            <div class="text-600 font-semibold pt-3">{{card.type}}</div>
+            <div class="overview-subtext pt-6">{{card.size}}</div>
+          </div>
+          <div class="col-7 flex justify-content-end">
+            <p-chart type="line" [data]="card.lineData" [options]="cardLineOptions" ></p-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  <div class="grid">
+    <div class="col-12 lg:col-9">
+      <div class="card h-full">
+        <div class="flex align-item-center justify-content-between mb-6">
+          <span class="text-900 text-xl mt-2 font-semibold">Sales Statistics</span>
+        </div>
+        <div class="h-full"><p-chart type="line" [data]="lineData" [options]="lineOptions" [style]="{'width': '50%'}"></p-chart></div>
+      </div>
+    </div>
+    <div class="col-12 lg:col-3">
+      <div class="card">
+        <div class="flex align-item-center justify-content-between ">
+          <p class="text-900 text-xl font-semibold mt-2">Devices</p>
+          <button class="flex" pButton pRipple icon="pi pi-ellipsis-v" class="p-button-text p-button-primary"></button>
+        </div>
+        <p-chart #chart type="doughnut" [plugins]="chartPlugins" id="country-chart" [data]="fileChart"
+          [options]="fileChartOptions" ></p-chart>
+      </div>
+    </div>
+    <div class="col-12 lg:col-9">
+      <div class="card h-full">
+        <div class="flex align-item-center justify-content-between mb-6">
+          <span class="text-900 text-xl mt-2 font-semibold">Sales Statistics</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 lg:col-3">
+      <div class="card">
+        <div class="flex align-item-center justify-content-between ">
+          <p class="text-900 text-xl font-semibold mt-2">Recent Transitions</p>
+          <button class="flex" pButton pRipple icon="pi pi-ellipsis-v" class="p-button-text p-button-primary"></button>
+        </div>
+        <div class="mb-5">
+          <div class="flex align-items-start mb-5">
+          </div>
+          <ul class="list-none p-0 m-0">
+            <li class="mb-5">
+              <div class="flex justify-content-between align-items-center">
+                <span class="font-medium text-900">Mon</span>
+                <span class="font-medium">631</span>
+              </div>
+              <div class="bg-teal-100 w-full mt-2 " style="height: 7px; border-radius: 4px">
+                <div class="bg-teal-300 h-full" style="width:34%; border-radius: 4px"></div>
+              </div>
+            </li>
+            <li class="mb-5">
+              <div class="flex justify-content-between align-items-center">
+                <span class="font-medium text-900">February</span>
+                <span class="font-medium">435</span>
+              </div>
+              <div class="bg-indigo-100 w-full mt-2" style="height: 7px; border-radius: 4px">
+                <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+              </div>
+            </li>
+            <li class="mb-5">
+              <div class="flex justify-content-between align-items-center">
+                <span class="font-medium text-900">March</span>
+                <span class="font-medium">412</span>
+              </div>
+              <div class="bg-indigo-100 w-full mt-2" style="height: 7px; border-radius: 4px">
+                <div class="bg-indigo-500 h-full" style="width:79%; border-radius: 4px"></div>
+              </div>
+            </li>
+            <li class="mb-5">
+              <div class="flex justify-content-between align-items-center">
+                <span class="font-medium text-900">April</span>
+                <span class="font-medium">160</span>
+              </div>
+              <div class="bg-yellow-100 w-full mt-2" style="height: 7px; border-radius: 4px">
+                <div class="bg-yellow-500 h-full" style="width:79%; border-radius: 4px"></div>
+              </div>
+            </li>
+            <li class="mb-5">
+              <div class="flex justify-content-between align-items-center">
+                <span class="font-medium text-900">May</span>
+                <span class="font-medium">90</span>
+              </div>
+              <div class="bg-pink-100 w-full mt-2" style="height: 7px; border-radius: 4px">
+                <div class="bg-pink-500 h-full" style="width:79%; border-radius: 4px"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
