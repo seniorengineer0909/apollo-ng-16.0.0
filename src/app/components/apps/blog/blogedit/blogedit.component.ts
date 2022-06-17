@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 interface blog {
     name: string;
@@ -34,12 +33,6 @@ export class BlogeditComponent {
     uploadedFiles: any[] = [];
 
     showRemove = false;
-
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            { label: 'Blog Edit' },
-        ]);
-    }
 
     onChipRemove(item) {
         this.blog.tags = this.blog.tags.filter(i => i !== item);

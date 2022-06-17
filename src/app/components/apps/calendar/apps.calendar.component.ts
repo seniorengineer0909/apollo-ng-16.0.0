@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from 'src/app/service/event.service';
 import { CalendarOptions } from '@fullcalendar/angular';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     selector: 'app-apps.calendar',
@@ -38,11 +37,7 @@ export class AppsCalendarComponent implements OnInit {
 
     changedEvent: any;
 
-    constructor(private eventService: EventService, public breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            {label: 'Calendar'}
-        ]);
-  }
+    constructor(private eventService: EventService) {}
 
     ngOnInit(): void {
         this.today = new Date().toISOString().slice(0,10);

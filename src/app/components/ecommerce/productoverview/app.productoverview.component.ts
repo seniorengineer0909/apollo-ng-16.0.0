@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     selector: 'app-productoverview',
@@ -18,15 +17,8 @@ export class AppProductOverviewComponent implements OnInit {
     selectedImageIndex: number = 0;
 
     quantity: number = 1;
-      
-    constructor(private breadcrumbService: BreadcrumbService) {
-      this.breadcrumbService.setItems([
-        {label: 'Product Overview'},
-      ]);
-    }
-    
+          
     ngOnInit(): void {
-
       this.images = [
           'product-overview-3-1.png',
           'product-overview-3-2.png',

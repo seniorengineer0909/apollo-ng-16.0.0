@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { AppLayoutComponent } from './layout/app.layout.component';
+import { AppBreadcrumbComponent } from './layout/app.breadcrumb.component';
 import { AppSidebarComponent } from './layout/app.sidebar.component';
 import { AppTopbarComponent } from './layout/app.topbar.component';
 import { AppProfileSidebarComponent } from './layout/app.profilesidebar.component';
@@ -26,6 +27,7 @@ import { RippleModule } from 'primeng/ripple';
     declarations: [
         AppComponent,
         AppLayoutComponent,
+        AppBreadcrumbComponent,
         AppSidebarComponent,
         AppTopbarComponent,
         AppProfileSidebarComponent,

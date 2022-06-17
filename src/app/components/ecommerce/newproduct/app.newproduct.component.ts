@@ -1,5 +1,4 @@
 import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 interface Product{
     name: string;
@@ -53,12 +52,6 @@ export class AppNewProductComponent {
     uploadedFiles: any[] = [];
 
     showRemove: boolean = false;
-
-    constructor(private breadcrumbService: BreadcrumbService) {
-      this.breadcrumbService.setItems([
-        {label: 'New Product'},
-      ]);
-    }
 
     onChipRemove(item) {
       this.product.tags = this.product.tags.filter(i => i !== item);

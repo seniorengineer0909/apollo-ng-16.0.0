@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import { ProductService } from 'src/app/service/product.service';
 import { PhotoService } from 'src/app/service/photo.service';
 import { Product } from 'src/app/api/product';
-import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     templateUrl: './mediademo.component.html'
@@ -50,11 +49,7 @@ export class MediaDemoComponent implements OnInit{
         }
     ];
 
-    constructor(private productService: ProductService, private photoService: PhotoService, private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            {label: 'Media'}
-        ]);
-    }
+    constructor(private productService: ProductService, private photoService: PhotoService) {}
 
     ngOnInit() {
         this.productService.getProductsSmall().then(products => {

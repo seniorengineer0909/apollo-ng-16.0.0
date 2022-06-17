@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import {MessageService} from 'primeng/api';
 
 declare var google: any;
@@ -37,11 +36,7 @@ export class AppContactComponent implements OnInit {
         {icon: 'pi pi-fw pi-print', title: 'Fax', info:'3 (833) 297-1548'}
     ];
 
-    constructor(private breadcrumbService: BreadcrumbService, private messageService: MessageService) {
-      this.breadcrumbService.setItems([
-          {label: 'Contact Us'}
-      ]);
-    }
+    constructor(private messageService: MessageService) {}
 
     ngOnInit() {
       this.options = {

@@ -1,18 +1,10 @@
 import {Component} from '@angular/core';
-import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
-
 
 @Component({
     templateUrl: './app.invoice.component.html',
     styleUrls: ['./app.invoice.component.scss']
 })
 export class AppInvoiceComponent {
-
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            {label: 'Invoice'}
-        ]);
-    }
 
     print() {
         window.print();

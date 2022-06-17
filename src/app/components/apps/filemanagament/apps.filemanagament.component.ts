@@ -1,5 +1,4 @@
 import { Component, ElementRef, QueryList, ViewChildren, OnInit } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 
 interface File {
@@ -196,11 +195,5 @@ export class AppsFilemanagamentComponent {
         { field: 'file size', header: 'File Size' },
         { field: 'status', header: 'Status' },
     ];
-
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            { label: 'File Managament' }
-        ]);
-    }
 
 }

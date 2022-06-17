@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { MenuItem, SelectItem } from 'primeng/api';
 
 @Component({
@@ -22,12 +21,6 @@ export class AppShopComponent implements OnInit {
     sortField: string;
 
     filterVisible: boolean = false;
-
-    constructor(private breadcrumbService: BreadcrumbService) {
-      this.breadcrumbService.setItems([
-        {label: 'Shop'},
-      ]);
-    }
 
     ngOnInit(): void {
       this.products = [

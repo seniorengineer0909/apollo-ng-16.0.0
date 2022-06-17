@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
+import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
 @Component({
@@ -7,16 +6,9 @@ import { MessageService } from 'primeng/api';
     templateUrl: './mail-compose.component.html',
     styleUrls: ['./mail-compose.component.scss']
 })
-export class MailComposeComponent implements OnInit {
+export class MailComposeComponent {
 
-    constructor(private breadcrumbService: BreadcrumbService, private messageService: MessageService) {
-        this.breadcrumbService.setItems([
-          {label: 'Mail Compose'},
-        ]);
-    }
-
-    ngOnInit(): void {
-    }
+    constructor(private messageService: MessageService) {}
 
     sendMail() {
         this.messageService.add({severity:'success', summary: 'Success', detail: 'Mail sent'});

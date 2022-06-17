@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-blog-detail',
-    templateUrl: './blog-detail.component.html',
-
+    templateUrl: './blog-detail.component.html'
 })
-export class BlogDetailComponent implements OnInit {
+export class BlogDetailComponent {
 
     comments = [
         {
@@ -32,16 +30,6 @@ export class BlogDetailComponent implements OnInit {
             name: "Esther Howard",
             date: "03 February 2022",
             description: "How likely are you to recommend our company to your friends and family ?"
-        },
+        }
     ];
-
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            { label: 'Blog Detail' },
-        ]);
-    }
-
-    ngOnInit() {
-    }
-
 }

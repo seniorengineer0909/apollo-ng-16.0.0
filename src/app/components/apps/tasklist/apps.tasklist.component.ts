@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { Task } from 'src/app/api/task';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { TaskService } from 'src/app/service/task.service';
 import { PrimeNGConfig } from 'primeng/api';
 import { Subscription } from 'rxjs';
@@ -19,10 +18,7 @@ export class AppsTaskListComponent implements OnInit {
 
     completed: Task[];
 
-    constructor(public breadcrumbService: BreadcrumbService, private taskService: TaskService, private config: PrimeNGConfig) {
-        this.breadcrumbService.setItems([
-            {label: 'Task List'}
-        ]);
+    constructor(private taskService: TaskService, private config: PrimeNGConfig) {
         this.subscription = this.taskService.taskSource$.subscribe(data => this.categorize(data))
     }
 

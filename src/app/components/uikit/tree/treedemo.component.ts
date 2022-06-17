@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NodeService} from 'src/app/service/node.service';
 import {TreeNode} from 'primeng/api';
-import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     templateUrl: './treedemo.component.html'
@@ -22,11 +21,7 @@ export class TreeDemoComponent implements OnInit {
 
     cols: any[];
 
-    constructor(private nodeService: NodeService, private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            {label: 'Tree'}
-        ]);
-    }
+    constructor(private nodeService: NodeService) {}
 
     ngOnInit() {
         this.nodeService.getFiles().then(files => this.files1 = files);

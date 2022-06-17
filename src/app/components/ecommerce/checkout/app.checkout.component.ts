@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     selector: 'app-checkout',
@@ -24,10 +23,5 @@ export class AppCheckoutComponent {
     ];
     
     selectedCity: string;
-    
-    constructor(private breadcrumbService: BreadcrumbService) {
-      this.breadcrumbService.setItems([
-        {label: 'Checkout'},
-      ]);
-    }
+
 }

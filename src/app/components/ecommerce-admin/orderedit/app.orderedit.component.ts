@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/api/product';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -27,11 +26,7 @@ export class AppOrderEditComponent implements OnInit {
 
     quantities1: number[] = [1, 1, 1];
 
-    constructor(private productService: ProductService, private breadcrumbService: BreadcrumbService) {
-      this.breadcrumbService.setItems([
-        { label: 'Edit Order' }
-      ]);
-    }
+    constructor(private productService: ProductService) {}
 
     ngOnInit() {
       this.productService.getProductsWithOrdersLarge().then(data => this.products = data.filter(i => i.quantity !== 0));

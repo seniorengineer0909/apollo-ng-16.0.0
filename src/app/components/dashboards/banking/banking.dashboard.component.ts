@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 interface File {
     name: string;
@@ -111,9 +110,7 @@ export class BankingDashboardComponent implements OnInit {
     },
   };
 
-  constructor(private breadcrumbService: BreadcrumbService) {
-    this.breadcrumbService.setItems([{ label: 'Banking Dashboard' }]);
-
+  constructor() {
     this.days = [
       { name: 'Sunday' },
       { name: 'Monday' },

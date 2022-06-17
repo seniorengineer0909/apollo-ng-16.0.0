@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {Product} from 'src/app/api/product';
 import {ProductService} from 'src/app/service/product.service';
-import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     templateUrl: './overlaysdemo.component.html',
@@ -28,12 +27,7 @@ export class OverlaysDemoComponent implements OnInit {
 
     visibleSidebar5;
 
-    constructor(private productService: ProductService, private confirmationService: ConfirmationService,
-                private messageService: MessageService, private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            {label: 'Overlay'}
-        ]);
-    }
+    constructor(private productService: ProductService, private confirmationService: ConfirmationService, private messageService: MessageService) {}
 
     ngOnInit() {
         this.productService.getProductsSmall().then(products => this.products = products);

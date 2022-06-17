@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/api/product';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -15,11 +14,7 @@ export class AppOrderDetailsComponent implements OnInit {
 
     events: any[];
 
-    constructor(private productService: ProductService, private breadcrumbService: BreadcrumbService) {
-      this.breadcrumbService.setItems([
-        { label: 'Order Details' }
-      ]);
-    }
+    constructor(private productService: ProductService) {}
 
     ngOnInit(): void {
       this.productService.getProductsWithOrdersLarge().then(data => this.products = data.filter(i => i.quantity !== 0).map(item => ({...item, total: item.quantity * item.price})).slice(0,6));

@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
-
 
 @Component({
     selector: 'app-app.overview',
     templateUrl: './app.overview.component.html',
-
 })
 
 export class AppOverviewComponent {
@@ -20,11 +17,7 @@ export class AppOverviewComponent {
 
     week: any[];
 
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            { label: 'Profile Overview' }
-        ]);
-
+    constructor() {
         this.days = [
             { name: 'Sunday' },
             { name: 'Monday' },

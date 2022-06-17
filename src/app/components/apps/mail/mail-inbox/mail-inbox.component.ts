@@ -2,7 +2,6 @@ import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@
 import { Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
 import { Mail } from 'src/app/api/mail';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { MailService } from 'src/app/service/mail.service';
 
 @Component({
@@ -24,11 +23,7 @@ export class MailInboxComponent implements OnInit {
 
     dialogVisible: boolean = false;
 
-    constructor(private mailService: MailService, private breadcrumbService: BreadcrumbService, private router: Router, private messageService: MessageService, private cd: ChangeDetectorRef) {
-        this.breadcrumbService.setItems([
-            {label: 'Inbox'}
-        ]);
-    }
+    constructor(private mailService: MailService, private router: Router, private messageService: MessageService, private cd: ChangeDetectorRef) {}
 
     ngOnInit(): void {
         this.mailService.getMails().then(data => this.mails = data);

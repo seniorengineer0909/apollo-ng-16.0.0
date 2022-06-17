@@ -4,7 +4,6 @@ import {CustomerService} from 'src/app/service/customer.service';
 import {Product} from 'src/app/api/product';
 import {ProductService} from 'src/app/service/product.service';
 import {Table} from 'primeng/table';
-import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 import {MessageService, ConfirmationService} from 'primeng/api';
 
 @Component({
@@ -57,12 +56,8 @@ export class TableDemoComponent implements OnInit {
     @ViewChild('dt') table: Table;
 
     @ViewChild('filter') filter: ElementRef;
-    constructor(private customerService: CustomerService, private productService: ProductService,
-                private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            {label: 'Table'}
-        ]);
-    }
+    
+    constructor(private customerService: CustomerService, private productService: ProductService) {} 
 
     ngOnInit() {
         this.customerService.getCustomersLarge().then(customers => {

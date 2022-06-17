@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CountryService} from 'src/app/service/country.service';
 import {SelectItem} from 'primeng/api';
-import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     templateUrl: './inputdemo.component.html',
@@ -86,11 +85,7 @@ export class InputDemoComponent implements OnInit{
 
     valueKnob = 20;
 
-    constructor(private countryService: CountryService, private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            {label: 'Input'}
-        ]);
-    }
+    constructor(private countryService: CountryService) {}
 
     ngOnInit() {
         this.countryService.getCountries().then(countries => {

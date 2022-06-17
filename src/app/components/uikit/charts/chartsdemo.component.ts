@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
@@ -30,11 +29,7 @@ export class ChartsDemoComponent implements OnInit {
 
     subscription: Subscription;
 
-    constructor(public breadcrumbService: BreadcrumbService, public layoutService: LayoutService) {
-        this.breadcrumbService.setItems([
-            { label: 'Charts' }
-        ]);
-
+    constructor(public layoutService: LayoutService) {
         this.subscription = this.layoutService.configUpdate$.subscribe(config => {
             if (config.darkMode)
                 this.applyDarkTheme();

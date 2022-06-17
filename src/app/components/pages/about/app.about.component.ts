@@ -1,5 +1,4 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     templateUrl: './app.about.component.html',
@@ -10,9 +9,4 @@ export class AppAboutComponent {
 
     visibleMember: number = null;
     
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            {label: 'About Us'}
-        ]);
-    }
 }

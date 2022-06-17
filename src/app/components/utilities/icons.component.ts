@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import { IconService } from 'src/app/service/icon.service';
-import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     templateUrl: './icons.component.html',
@@ -13,11 +12,7 @@ export class IconsComponent implements OnInit {
 
     selectedIcon: any;
 
-    constructor(private iconService: IconService, private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            {label: 'Icons'}
-        ]);
-    }
+    constructor(private iconService: IconService) {}
 
     ngOnInit() {
 		this.iconService.getIcons().subscribe(data => {

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 interface Create {
     name: string;
@@ -15,12 +14,5 @@ export class AppCreateComponent {
     emailNotifications: boolean =false;
 
     smsNotifications: boolean =false;
-
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            { label: 'Create' }
-        ]);
-    }
-
 
 }

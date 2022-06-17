@@ -1,26 +1,25 @@
-import {Component, OnInit} from '@angular/core';
-import {BreadcrumbService} from 'src/app/layout/service/app.breadcrumb.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
     templateUrl: './miscdemo.component.html'
 })
-export class MiscDemoComponent implements OnInit {
+export class MiscDemoComponent implements OnInit, OnDestroy {
 
     value = 0;
 
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            {label: 'Misc'}
-        ]);
-    }
+    interval: any;
 
     ngOnInit() {
-        const interval = setInterval(() => {
+        this.interval = setInterval(() => {
             this.value = this.value + Math.floor(Math.random() * 10) + 1;
             if (this.value >= 100) {
                 this.value = 100;
-                clearInterval(interval);
+                clearInterval(this.interval);
             }
         }, 2000);
+    }
+
+    ngOnDestroy() {
+        clearInterval(this.interval);
     }
 }

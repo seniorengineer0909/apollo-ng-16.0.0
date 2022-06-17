@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ChatService } from 'src/app/service/chat.service';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/api/user';
 
@@ -9,21 +8,14 @@ import { User } from 'src/app/api/user';
     templateUrl: './apps.chat.component.html',
     styleUrls: ['./apps.chat.component.scss']
 })
-export class AppsChatComponent implements OnInit, OnDestroy {
+export class AppsChatComponent implements OnDestroy {
 
     subscription: Subscription;
 
     activeUser: User;
     
-    constructor(public breadcrumbService: BreadcrumbService, private chatService: ChatService) { 
-        this.breadcrumbService.setItems([
-            {label: 'Chat'}
-        ]);
-
+    constructor(private chatService: ChatService) { 
         this.subscription = this.chatService.activeUser$.subscribe(data => this.activeUser = data);
-    }
-
-    ngOnInit(): void {
     }
 
     ngOnDestroy() {

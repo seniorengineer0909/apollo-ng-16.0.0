@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Mail } from 'src/app/api/mail';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { MailService } from 'src/app/service/mail.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class MailDetailComponent implements OnInit, OnDestroy {
 
     mail: Mail;
 
-    constructor(private route: ActivatedRoute, private mailService: MailService, private breadcrumbService: BreadcrumbService) { }
+    constructor(private route: ActivatedRoute, private mailService: MailService) { }
 
     ngOnInit(): void {
         this.subscription = this.route.params.pipe(

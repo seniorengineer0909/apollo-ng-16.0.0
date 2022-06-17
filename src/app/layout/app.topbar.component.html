@@ -4,14 +4,7 @@
             <i class="pi pi-bars"></i>
         </button>
 
-        <nav class="layout-breadcrumb">
-            <ol>
-                <ng-template ngFor let-item let-last="last" [ngForOf]="items">
-                    <li>{{item.label}}</li>
-                    <li *ngIf="!last" class="layout-breadcrumb-chevron"> / </li>
-                </ng-template>
-            </ol>
-        </nav>
+        <app-breadcrumb></app-breadcrumb>
     </div>
 
     <div class="topbar-end">

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 interface List {
     id: number;
@@ -253,11 +252,7 @@ export class EcommerceDashboardComponent {
         }
     };
 
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            { label: 'E-Commerce Dashboard' }
-        ]);
-
+    constructor() {
         this.mounths = [
             { name: 'January' },
             { name: 'February' },
@@ -275,8 +270,7 @@ export class EcommerceDashboardComponent {
 
         this.week = [
             { name: 'Week 1' },
-            { name: 'Week 2' },
-
+            { name: 'Week 2' }
         ];
     }
 

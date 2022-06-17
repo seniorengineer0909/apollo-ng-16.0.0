@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Product } from 'src/app/api/product';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { ProductService } from 'src/app/service/product.service';
 
 interface Create {
     name: string;
 }
-
 
 @Component({
   selector: 'app-app.profilelist',
@@ -30,12 +28,7 @@ export class AppProfileListComponent implements OnInit {
 
     statuses: any[];
 
-
-    constructor(private productService: ProductService, private breadcrumbService: BreadcrumbService) {
-      this.breadcrumbService.setItems([
-        { label: 'Profile List' }
-      ]);
-    }
+    constructor(private productService: ProductService) {}
 
     ngOnInit(): void {
       this.productService.getProductsWithOrdersLarge().then(data => this.products = data.filter(i => i.quantity !== 0).map((el,index) => ({...el, total: el.quantity * el.price, paymentMethod: index % 2 === 0 ? 'Visa' : 'Mastercard', verified: index % 2 === 0 ? 'Yes' : 'No', status: index % 2 === 0 ? 'Completed' : 'Cancelled'})));

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { Product } from 'src/app/api/product';
 import { ProductService } from 'src/app/service/product.service';
 import { MenuItem } from 'primeng/api';
@@ -24,11 +23,7 @@ export class AppProductListComponent implements OnInit {
 
     rowsPerPageOptions = [5, 10, 20];
 
-    constructor(private productService: ProductService, private breadcrumbService: BreadcrumbService) {
-      this.breadcrumbService.setItems([
-        { label: 'Product List' }
-      ]);
-    }
+    constructor(private productService: ProductService) {}
 
     ngOnInit(): void {
       this.productService.getProducts().then(data => this.products = data);

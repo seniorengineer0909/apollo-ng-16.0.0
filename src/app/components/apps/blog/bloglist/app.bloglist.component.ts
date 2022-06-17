@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { PrimeNGConfig, SelectItem } from 'primeng/api';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
+import { SelectItem } from 'primeng/api';
 
 interface Blog {
     image: string;
@@ -143,13 +142,6 @@ export class AppBloglistComponent {
             mounth: "October"
         },
     ];
-
-    constructor(private breadcrumbService: BreadcrumbService, private primengConfig: PrimeNGConfig) {
-        this.breadcrumbService.setItems([
-            { label: 'Blog List' }
-        ]);
-        this.primengConfig.ripple = true;
-    }
 
     onSortChange(event): void {
         let value = event.value;

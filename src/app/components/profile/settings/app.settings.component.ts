@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 
 @Component({
     selector: 'app-app.settings',
@@ -30,9 +29,4 @@ export class AppSettingsComponent {
 
     sound: boolean = false;
 
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            { label: 'Settings' }
-        ]);
-    }
 }

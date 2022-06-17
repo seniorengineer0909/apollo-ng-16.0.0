@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Member } from 'src/app/api/member';
 import { Task } from 'src/app/api/task';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { MemberService } from 'src/app/service/member.service';
 import { TaskService } from 'src/app/service/task.service';
 
@@ -20,11 +19,7 @@ export class CreateTaskComponent implements OnInit {
 
     filteredMembers: Member[];
 
-    constructor(public breadcrumbService: BreadcrumbService, private memberService: MemberService, private messageService: MessageService, private taskService: TaskService) {
-        this.breadcrumbService.setItems([
-            {label: 'Create Task'}
-        ]);
-    }
+    constructor(private memberService: MemberService, private messageService: MessageService, private taskService: TaskService) {}
 
     ngOnInit(): void {
         this.memberService.getMembers().then(members => this.members = members);

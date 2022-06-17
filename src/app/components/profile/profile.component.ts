@@ -1,20 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
 })
-export class ProfileComponent implements OnInit {
-
-
-  constructor(private breadcrumbService: BreadcrumbService) {
-    this.breadcrumbService.setItems([
-      { label: 'Profile' }
-    ]);
-  }
-
-  ngOnInit(): void {
-  }
+export class ProfileComponent {
 
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChildren, QueryList } from '@angular/core';
 import { KanbanList } from 'src/app/api/kanban';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
 import { KanbanService } from 'src/app/service/kanban.service';
 import { Subscription } from 'rxjs';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
@@ -27,11 +26,7 @@ export class AppsKanbanComponent implements OnInit, OnDestroy {
 
     @ViewChildren('listEl') listEl: QueryList<KanbanListComponent>;
 
-    constructor(private breadcrumbService: BreadcrumbService, private kanbanService: KanbanService) { 
-        this.breadcrumbService.setItems([
-            {label: 'Kanban'}
-        ]);
-
+    constructor(private kanbanService: KanbanService) { 
         this.subscription = this.kanbanService.lists$.subscribe(data => {
             this.lists = data
             this.listIds = data.map(l => l.listId);

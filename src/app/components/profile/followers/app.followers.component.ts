@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { BreadcrumbService } from 'src/app/layout/service/app.breadcrumb.service';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-followers',
     templateUrl: './app.followers.component.html',
 })
-export class AppFollowersComponent implements OnInit {
+export class AppFollowersComponent {
 
     followers = [
         {
@@ -50,15 +49,4 @@ export class AppFollowersComponent implements OnInit {
             type:"Project Manager"
         }
     ];
-
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            { label: 'Followers' }
-        ]);
-    }
-
-    ngOnInit(): void {
-    }
-
-
 }
