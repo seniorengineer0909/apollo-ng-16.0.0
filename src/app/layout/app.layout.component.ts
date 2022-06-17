@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter, Subscription } from 'rxjs';
 import { MenuService } from './app.menu.service';
 import { AppSidebarComponent } from './app.sidebar.component';
 import { LayoutService } from './service/app.layout.service';
@@ -16,7 +17,7 @@ export class AppLayoutComponent implements OnDestroy {
 
     @ViewChild(AppSidebarComponent) appSidebar: AppSidebarComponent;
 
-    constructor(private menuService: MenuService, public layoutService: LayoutService, public renderer: Renderer2) {
+    constructor(private menuService: MenuService, public layoutService: LayoutService, public renderer: Renderer2, public router: Router) {
         this.overlayMenuOpenSubscription = this.layoutService.overlayOpen$.subscribe(() => {
             if (!this.menuOutsideClickListener) {
                 this.menuOutsideClickListener = this.renderer.listen('document', 'click', event => {
@@ -40,6 +41,11 @@ export class AppLayoutComponent implements OnDestroy {
                 });
             }
         });
+
+        this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+            .subscribe(() => {
+                this.unblockBodyScroll();
+            });
     }
 
     blockBodyScroll(): void {
