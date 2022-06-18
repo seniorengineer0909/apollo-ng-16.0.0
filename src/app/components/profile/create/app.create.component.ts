@@ -9,10 +9,10 @@ interface Create {
 })
 export class AppCreateComponent {
 
-    pushNotifacitons: boolean =false;
-    
-    emailNotifications: boolean =false;
+    pushNotifacitons: boolean = false;
 
-    smsNotifications: boolean =false;
+    emailNotifications: boolean = true;
+
+    smsNotifications: boolean = true;
 
 }
