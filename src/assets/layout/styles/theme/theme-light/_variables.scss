@@ -20,13 +20,13 @@ $shade200:#e9ecef !default;    //hover background
 $shade300:#dee2e6 !default;    //border, divider
 $shade400:#ced4da !default;    //input border
 $shade500:#adb5bd !default;    //input icon
-$shade600:#595959 !default;    //text secondary color
-$shade700:#191919 !default;    //text color
+$shade600:#6c757d !default;    //text secondary color
+$shade700:#495057 !default;    //text color
 $shade800:#343a40 !default;    //unused
 $shade900:#212529 !default;    //unused
 
 //global
-$fontFamily:'Poppins', sans-serif !default;
+$fontFamily: 'Poppins', sans-serif !default;
 $fontSize:1rem !default;
 $fontWeight:normal !default;
 $textColor:$shade700 !default;
@@ -833,8 +833,8 @@ $imagePreviewActionIconBorderRadius:50% !default;
     --surface-d:#{$shade300};
     --surface-e:#{$shade000};
     --surface-f:#{$shade000};
-    --text-color:#191919;
-    --text-color-secondary:#595959;
+    --text-color:#{$shade700};
+    --text-color-secondary:#{$shade600};
     --primary-color:#{$primaryColor};
     --primary-color-text:#{$primaryTextColor};
     --font-family:#{$fontFamily};
@@ -862,7 +862,7 @@ $imagePreviewActionIconBorderRadius:50% !default;
     --content-padding:#{$panelContentPadding};
     --inline-spacing:#{$inlineSpacing};
     --border-radius:#{$borderRadius};
-    --surface-ground:#f9f9ff;
+    --surface-ground:#eff3f8;
     --surface-section:#ffffff;
     --surface-card:#ffffff;
     --surface-overlay:#ffffff;

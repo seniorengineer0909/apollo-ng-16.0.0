@@ -25,7 +25,7 @@ $shade900:#040d19 !default;  //ground surface
 $hoverBg:rgba(255,255,255,.03) !default;
 
 //global
-$fontFamily:'Poppins', sans-serif !default;
+$fontFamily: 'Poppins', sans-serif !default;
 $fontSize:1rem !default;
 $fontWeight:normal !default;
 $textColor:$shade000 !default;
@@ -860,7 +860,7 @@ $imagePreviewActionIconBorderRadius:50% !default;
     --content-padding:#{$panelContentPadding};
     --inline-spacing:#{$inlineSpacing};
     --border-radius:#{$borderRadius};
-    --surface-ground:#040726;
+    --surface-ground:#040d19;
     --surface-section:#040d19;
     --surface-card:#071426;
     --surface-overlay:#071426;

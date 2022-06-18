@@ -1,5 +1,5 @@
-.layout-dark {
+.layout-dim {
     --sidebar-shadow: none;
-    --sidebar-border: 1px solid #212121;
-    --card-border: 1px solid #212121;
+    --sidebar-border: 1px solid var(--surface-border);
+    --card-shadow: none;
 }

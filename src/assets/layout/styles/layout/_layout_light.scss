@@ -1,12 +1,5 @@
 .layout-light {
     --sidebar-shadow: 0px 4px 50px #D9DDFC;
-    --sidebar-border: 0 none;
-    --card-border: 1px solid #E7E9FF;
+    --sidebar-border: 1px solid transparent;
+    --card-shadow: 0px 4px 30px rgba(221, 224, 255, 0.54);
 }
-
-.widget-overview-box .overview-subtext {
-  color: #0048FF;
-  font-weight: 600;
-  margin-top: 0.25rem;
-}
-
