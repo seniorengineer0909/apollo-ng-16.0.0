@@ -1,18 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectItem } from 'primeng/api';
 import { Product } from 'src/app/api/product';
 import { ProductService } from 'src/app/service/product.service';
-
-interface List {
-    id: number;
-    name: string;
-    image: string;
-    price: string;
-    tracking: string;
-    country: string;
-    date: string;
-    label:string;
-}
 
 @Component({
     templateUrl: './ecommerce.dashboard.component.html'
@@ -142,12 +130,12 @@ export class EcommerceDashboardComponent implements OnInit {
             labels: ['Electronics', 'Fashion', 'Household', 'Others'],
             datasets: [
                 {
-                    data: [300, 50, 100, 41],
+                    data: [300, 50, 100, 20],
                     backgroundColor: [
                         documentStyle.getPropertyValue('--indigo-500'),
                         documentStyle.getPropertyValue('--purple-500'),
                         documentStyle.getPropertyValue('--teal-500'),
-                        documentStyle.getPropertyValue('--yellow-500')
+                        documentStyle.getPropertyValue('--pink-500')
                     ],
                     hoverBackgroundColor: [
                         "#64B5F6",
@@ -180,61 +168,4 @@ export class EcommerceDashboardComponent implements OnInit {
         this.barData = newBarData;
     }
 
-    lists: List[] = [
-        {
-            id: 1,
-            name: "Apple Watch 2",
-            image: "assets/images/kisspng-apple-watch-series-2-apple-watch-series-3-apple-wa-applewatch-5b1dde444cea99 1.png",
-            price: "$325",
-            tracking: "#249234",
-            country: "England",
-            date: "09/13/2015",
-            label: "Complate"
-        },
-        {
-            id: 2,
-            name: "Apple Watch 4",
-            image: "assets/images/pngwing 1 (1).png",
-            price: "$156",
-            tracking: "#241235",
-            country: "Germany",
-            date: "09/02/2011",
-            label: "Shipped"
-        },
-        {
-            id: 3,
-            name: "Apple Watch 2",
-            image: "assets/images/kisspng-apple-watch-series-2-apple-watch-series-3-apple-wa-applewatch-5b1dde444cea99 1.png",
-            price: "$325",
-            tracking: "#423552",
-            country: "Italy",
-            date: "09/13/2012",
-            label: "Processing"
-        },
-        {
-            id: 4,
-            name: "Apple Watch 1",
-            image: "assets/images/kisspng-apple-watch-series-2-apple-watch-series-3-apple-wa-applewatch-5b1dde444cea99 1.png",
-            price: "$654",
-            tracking: "#123563",
-            country: "Holland",
-            date: "09/13/2015",
-            label: "View"
-        },
-        {
-            id: 5,
-            name: "Apple Watch 3",
-            image: "assets/images/pngwing 1 (1).png",
-            price: "$412",
-            tracking: "#943563",
-            country: "Amsterdam",
-            date: "09/05/2014",
-            label: "Closed"
-        }
-    ];
-    
-
-    
-
-    
 }
