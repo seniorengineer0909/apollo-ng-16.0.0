@@ -53,8 +53,8 @@ export class AppConfigComponent implements OnInit {
 
     ngOnInit() {
         this.componentThemes = [
-            {name: 'blue', color: '#3B82F6'},
             {name: 'indigo', color: '#6366F1'},
+            {name: 'blue', color: '#3B82F6'},
             {name: 'purple', color: '#8B5CF6'},
             {name: 'teal', color: '#14B8A6'}
         ];
@@ -81,6 +81,7 @@ export class AppConfigComponent implements OnInit {
         const newHref = themeLink.getAttribute('href').replace(this.layoutService.config.theme, theme);
         this.replaceThemeLink(newHref, () => {
             this.layoutService.config.theme = theme;
+            this.layoutService.onConfigUpdate();
         });
     }
 

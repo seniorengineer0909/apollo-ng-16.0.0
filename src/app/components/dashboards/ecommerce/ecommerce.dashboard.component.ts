@@ -29,7 +29,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
 
     constructor(private productService: ProductService, private layoutService: LayoutService) {
         this.subscription = this.layoutService.configUpdate$.subscribe(config => {
-            this.initChartOptions();
+            this.initCharts();
         });
     }
 
@@ -51,12 +51,10 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     }
 
     initCharts() {
-        this.initChartData();
-        this.initChartOptions();
-    }
-    
-    initChartData() {
         const documentStyle = getComputedStyle(document.documentElement);
+        const textColor = documentStyle.getPropertyValue('--text-color');
+        const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
+        const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
         
         this.barData = {
             labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
@@ -96,13 +94,6 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 }
             ]
         };
-    }
-
-    initChartOptions() {
-        const documentStyle = getComputedStyle(document.documentElement);
-        const textColor = documentStyle.getPropertyValue('--text-color');
-        const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
-        const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
         this.barOptions = {
             plugins: {
