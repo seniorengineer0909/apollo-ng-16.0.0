@@ -14,16 +14,22 @@
             justify-content: center;
             margin-right: 2rem;
             border-radius: 50%;
-            width: 2rem;
-            height: 2rem;
+            width: 2.5rem;
+            height: 2.5rem;
             transition: background-color $transitionDuration;
 
             i {
                 font-size: 1.25rem;
+                color: var(--text-color);
+                transition: color $transitionDuration;
             }
 
             &:hover {
-                background-color: var(--primary-100);
+                background-color: var(--primary-color);
+
+                i {
+                    color: var(--primary-color-text);
+                }
             }
         }
     }
