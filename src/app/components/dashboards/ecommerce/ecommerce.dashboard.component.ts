@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Product } from 'src/app/api/product';
+import { LayoutService } from 'src/app/layout/service/app.layout.service';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
     templateUrl: './ecommerce.dashboard.component.html'
 })
-export class EcommerceDashboardComponent implements OnInit {
+export class EcommerceDashboardComponent implements OnInit, OnDestroy {
 
-    knobValue: number;
+    knobValue: number = 90;
 
     selectedWeek: any;
 
@@ -23,12 +25,15 @@ export class EcommerceDashboardComponent implements OnInit {
 
     products: Product[];
 
-    constructor(private productService: ProductService) {}
+    subscription: Subscription;
+
+    constructor(private productService: ProductService, private layoutService: LayoutService) {
+        this.subscription = this.layoutService.configUpdate$.subscribe(config => {
+            this.initChartOptions();
+        });
+    }
 
     ngOnInit(): void {
-        let documentStyle = getComputedStyle(document.documentElement);
-        this.knobValue = 90;
-
         this.weeks = [{
             label: 'Last Week', 
             value: 0,
@@ -39,37 +44,71 @@ export class EcommerceDashboardComponent implements OnInit {
             value: 1,
             data: [[35, 19, 40, 61, 16, 55, 30], [48, 78, 10, 29, 76, 77, 10]]
         }];
-        this.selectedWeek = this.weeks[0];
-        
-        let primaryColor900 = documentStyle.getPropertyValue('--primary-900');
-        let primaryColor500 = documentStyle.getPropertyValue('--primary-500');
-        let primaryColor200 = documentStyle.getPropertyValue('--primary-200');
 
+        this.selectedWeek = this.weeks[0];
+        this.initCharts();
+        this.productService.getProductsSmall().then(data => this.products = data);
+    }
+
+    initCharts() {
+        this.initChartData();
+        this.initChartOptions();
+    }
+    
+    initChartData() {
+        const documentStyle = getComputedStyle(document.documentElement);
+        
         this.barData = {
             labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
             datasets: [
                 {
                     label: 'Revenue',
-                    backgroundColor: primaryColor500,
+                    backgroundColor: documentStyle.getPropertyValue('--primary-500'),
                     barThickness: 12,
-                    borderRadius: Number.MAX_VALUE,
+                    borderRadius: 12,
                     data: this.selectedWeek.data[0]
                 },
                 {
                     label: 'Profit',
-                    backgroundColor: primaryColor200,
+                    backgroundColor: documentStyle.getPropertyValue('--primary-200'),
                     barThickness: 12,
-                    borderRadius: Number.MAX_VALUE,
+                    borderRadius: 12,
                     data: this.selectedWeek.data[1]
                 }
             ]
         };
     
+        this.pieData = {
+            labels: ['Electronics', 'Fashion', 'Household'],
+            datasets: [
+                {
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        documentStyle.getPropertyValue('--indigo-500'),
+                        documentStyle.getPropertyValue('--purple-500'),
+                        documentStyle.getPropertyValue('--teal-500')
+                    ],
+                    hoverBackgroundColor: [
+                        documentStyle.getPropertyValue('--indigo-400'),
+                        documentStyle.getPropertyValue('--purple-400'),
+                        documentStyle.getPropertyValue('--teal-400')
+                    ]
+                }
+            ]
+        };
+    }
+
+    initChartOptions() {
+        const documentStyle = getComputedStyle(document.documentElement);
+        const textColor = documentStyle.getPropertyValue('--text-color');
+        const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
+        const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
+
         this.barOptions = {
             plugins: {
                 legend: {
                     labels: {
-                        fontColor: '#A0A7B5',
+                        color: textColor,
                         usePointStyle: true,
                         font: {
                             weight: 700,
@@ -77,32 +116,12 @@ export class EcommerceDashboardComponent implements OnInit {
                         padding: 28
                     },
                     position: 'bottom'
-                },
-                tooltip: {
-                    backgroundColor: primaryColor900,
-                    titleFont: {
-                        weight: 'bold'
-                    },
-                    bodyFont: {
-                        weight: 'bold'
-                    },
-                    displayColors: false,
-                    padding: {
-                        left: 40,
-                        right: 40,
-                        top: 10,
-                        bottom: 10
-                    },
-                    callbacks: {
-                        label: function(tooltipItem) {
-                            return `$ ${tooltipItem.raw}`
-                        }
-                    }
-                },
+                }
             },
             scales: {
                 x: {
                     ticks: {
+                        color: textColorSecondary,
                         font: {
                             weight: 500
                         }
@@ -114,58 +133,39 @@ export class EcommerceDashboardComponent implements OnInit {
                 },
                 y: {
                     ticks: {
-                        display: false,
+                        color: textColorSecondary
                     },
                     grid: {
-                        borderDash: [3, 6],
-                        color: '#E4EAFF',
-                        drawBorder: false,
-                        drawTicks: false
+                        color: surfaceBorder,
+                        drawBorder: false
                     }
                 }
             }
-        };
-
-        this.pieData = {
-            labels: ['Electronics', 'Fashion', 'Household', 'Others'],
-            datasets: [
-                {
-                    data: [300, 50, 100, 20],
-                    backgroundColor: [
-                        documentStyle.getPropertyValue('--indigo-500'),
-                        documentStyle.getPropertyValue('--purple-500'),
-                        documentStyle.getPropertyValue('--teal-500'),
-                        documentStyle.getPropertyValue('--pink-500')
-                    ],
-                    hoverBackgroundColor: [
-                        "#64B5F6",
-                        "#81C784",
-                        "#FFB74D"
-                    ]
-                }
-            ]
         };
 
         this.pieOptions = {
             plugins: {
                 legend: {
-                    
                     labels: {
-                        color: '#495057'
+                        usePointStyle: true,
+                        color: textColor
                     }
                 }
             }
         };
-
-        this.productService.getProductsSmall().then(data => this.products = data);
     }
 
     onWeekChange() {
-        console.log(this.selectedWeek);
         let newBarData = {...this.barData};
         newBarData.datasets[0].data = this.selectedWeek.data[0];
         newBarData.datasets[1].data = this.selectedWeek.data[1];
         this.barData = newBarData;
+    }
+
+    ngOnDestroy(): void {
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
     }
 
 }

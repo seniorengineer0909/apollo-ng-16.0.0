@@ -95,4 +95,8 @@ export class LayoutService {
         return !this.isDesktop();
     }
 
+    onConfigUpdate() {
+        this.configUpdate.next(this.config);
+    }
+
 }

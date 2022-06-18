@@ -70,18 +70,21 @@ export class AppConfigComponent implements OnInit {
         const currentColorScheme = 'theme-' + this.layoutService.config.colorScheme;
         const newColorScheme = 'theme-' + colorScheme;
         const newHref = themeLinkHref.replace(currentColorScheme, newColorScheme);
-        this.replaceThemeLink(newHref);
-        this.layoutService.config.colorScheme = colorScheme;
+        this.replaceThemeLink(newHref, () => {
+            this.layoutService.config.colorScheme = colorScheme;
+            this.layoutService.onConfigUpdate();
+        });
     }
 
     changeTheme(theme: string) {
         const themeLink = <HTMLLinkElement> document.getElementById('theme-link');
         const newHref = themeLink.getAttribute('href').replace(this.layoutService.config.theme, theme);
-        this.replaceThemeLink(newHref);
-        this.layoutService.config.theme = theme;
+        this.replaceThemeLink(newHref, () => {
+            this.layoutService.config.theme = theme;
+        });
     }
 
-    replaceThemeLink(href: string) {
+    replaceThemeLink(href: string, onComplete: Function) {
         const id = 'theme-link';
         const themeLink = <HTMLLinkElement> document.getElementById('theme-link');
         const cloneLinkElement = <HTMLLinkElement> themeLink.cloneNode(true);
@@ -94,6 +97,7 @@ export class AppConfigComponent implements OnInit {
         cloneLinkElement.addEventListener('load', () => {
             themeLink.remove();
             cloneLinkElement.setAttribute('id', id);
+            onComplete();
         });
     }
 }
