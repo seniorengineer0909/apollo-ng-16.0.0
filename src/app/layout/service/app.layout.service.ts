@@ -7,6 +7,7 @@ export interface AppConfig {
     theme?: string;
     ripple?: boolean;
     menuMode?: string;
+    transparentMenu?: boolean;
 }
 
 interface LayoutState {

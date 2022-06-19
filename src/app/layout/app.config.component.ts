@@ -51,6 +51,14 @@ export class AppConfigComponent implements OnInit {
         this.layoutService.config.ripple = _val;
     }
 
+    get transparentMenu(): boolean {
+        return this.layoutService.config.transparentMenu;
+    }
+
+    set transparentMenu(_val: boolean) {
+        this.layoutService.config.transparentMenu = _val;
+    }
+
     ngOnInit() {
         this.componentThemes = [
             {name: 'indigo', color: '#6366F1'},

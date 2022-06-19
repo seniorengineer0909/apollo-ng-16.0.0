@@ -7,18 +7,18 @@
     letter-spacing: .3px;
 
     &.status-instock {
-        background: #C8E6C9;
-        color: #256029;
+        background: var(--green-200);
+        color: var(--green-800);
     }
 
     &.status-outofstock {
-        background: #FFCDD2;
-        color: #C63737;
+        background: var(--pink-200);
+        color: var(--pink-800);
     }
 
     &.status-lowstock {
-        background: #FEEDAF;
-        color: #8A5340;
+        background: var(--yellow-200);
+        color: var(--yellow-800);
     }
 }
 
@@ -49,33 +49,33 @@
     letter-spacing: .3px;
 
     &.status-qualified {
-        background: #C8E6C9;
-        color: #256029;
+        background: var(--green-200);
+        color: var(--green-800);
     }
 
     &.status-unqualified {
-        background: #FFCDD2;
-        color: #C63737;
+        background: var(--pink-200);
+        color: var(--pink-800);
     }
 
     &.status-negotiation {
-        background: #FEEDAF;
-        color: #8A5340;
+        background: var(--yellow-200);
+        color: var(--yellow-800);
     }
 
     &.status-new {
-        background: #B3E5FC;
-        color: #23547B;
+        background: var(--blue-200);
+        color: var(--blue-800);
     }
 
     &.status-renewal {
-        background: #ECCFFF;
-        color: #694382;
+        background: var(--purple-200);
+        color: var(--purple-800);
     }
 
     &.status-proposal {
-        background: #FFD8B2;
-        color: #805B36;
+        background: var(--orange-200);
+        color: var(--orange-800);
     }
 }
 

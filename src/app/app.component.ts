@@ -17,7 +17,8 @@ export class AppComponent implements OnInit {
             inputStyle: 'outlined',
             menuMode: 'static',
             colorScheme: 'light',
-            theme: 'indigo'
+            theme: 'indigo',
+            transparentMenu: true
         };
     }
 
