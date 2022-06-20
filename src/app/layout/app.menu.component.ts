@@ -192,11 +192,6 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['/pages/invoice'],
                     },
                     {
-                        label: 'Pricing',
-                        icon: 'pi pi-fw pi-money-bill',
-                        routerLink: ['/pages/pricing'],
-                    },
-                    {
                         label: 'About Us',
                         icon: 'pi pi-fw pi-user',
                         routerLink: ['/pages/about'],
@@ -235,16 +230,6 @@ export class AppMenuComponent implements OnInit {
                         label: 'Contact Us',
                         icon: 'pi pi-fw pi-phone',
                         routerLink: ['/pages/contact'],
-                    },
-                    {
-                        label: 'Wizard',
-                        icon: 'pi pi-fw pi-bolt',
-                        routerLink: ['/pages/wizard'],
-                    },
-                    {
-                        label: 'Search Results ',
-                        icon: 'pi pi-fw pi-search',
-                        routerLink: ['/pages/search-results'],
                     },
                     {
                         label: 'Register',
