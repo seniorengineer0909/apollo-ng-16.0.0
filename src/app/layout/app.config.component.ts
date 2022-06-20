@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from './app.menu.service';
 import { LayoutService } from './service/app.layout.service';
 
 @Component({
@@ -9,7 +10,7 @@ export class AppConfigComponent implements OnInit {
 
     componentThemes: any[];
 
-    constructor(public layoutService: LayoutService) {}
+    constructor(public layoutService: LayoutService, public menuService: MenuService) {}
 
     get visible(): boolean {
         return this.layoutService.state.configSidebarVisible;
@@ -25,6 +26,9 @@ export class AppConfigComponent implements OnInit {
 
     set menuMode(_val: string) {
         this.layoutService.config.menuMode = _val;
+        if (this.layoutService.isSlim || this.layoutService.isHorizontal) {
+            this.menuService.onMenuStateChange(null);
+        }
     }
 
     get colorScheme(): string {

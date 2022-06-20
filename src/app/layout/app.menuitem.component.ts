@@ -37,8 +37,8 @@ import { LayoutService } from './service/app.layout.service';
 		</ng-container>
     `,
     host: {
-        '[class.layout-root-menuitem]': 'root'/*,
-        '[class.active-menuitem]': 'active'*/
+        '[class.layout-root-menuitem]': 'root',
+        '[class.active-menuitem]': 'active'
     },
     animations: [
         trigger('children', [
@@ -78,9 +78,9 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     constructor(public layoutService: LayoutService, private cd: ChangeDetectorRef, public router: Router, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(key => {
-            if (this.key !== key) {
-                this.active = key.indexOf(this.key) === 0;
-            }
+            Promise.resolve(null).then(() => {
+                this.active = key ? (key === this.key || key.indexOf(this.key) === 0) : false;
+            });
         });
 
         this.menuResetSubscription = this.menuService.resetSource$.subscribe(() => {
@@ -91,7 +91,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             .subscribe(params => {
                 if (this.isSlim || this.isHorizontal) {
                     this.active = false;
-                } 
+                }
                 else {
                     if (this.item.routerLink) {
                         this.updateActiveStateFromRoute();
@@ -105,7 +105,6 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
         if (!(this.isSlim || this.isHorizontal) && this.item.routerLink) {
             this.updateActiveStateFromRoute();
-            this.cd.detectChanges();
         }
     }
 
@@ -136,14 +135,17 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
         // toggle active state
         if (this.item.items) {
-            this.active = !this.active;
+            if (this.active)
+                this.menuService.onMenuStateChange(null);
+            else
+                this.menuService.onMenuStateChange(this.key);
 
             if (this.root && this.active && (this.isSlim || this.isHorizontal)) {
                 this.layoutService.onOverlaySubmenuOpen();
             }
         } 
         else {
-            this.active = true;
+            this.menuService.onMenuStateChange(this.key);
 
             if (this.layoutService.isMobile()) {
                 this.layoutService.state.staticMenuMobileActive = false;
@@ -154,16 +156,12 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
                 this.layoutService.state.menuHoverActive = false;
             }
         }
-
-        // notify other items
-        this.menuService.onMenuStateChange(this.key);
     }
 
     onMouseEnter() {
         // activate item on hover
         if (this.root && (this.isSlim || this.isHorizontal) && this.layoutService.isDesktop()) {
             if (this.layoutService.state.menuHoverActive) {
-                this.active = true;
                 this.menuService.onMenuStateChange(this.key);
             }
         }
