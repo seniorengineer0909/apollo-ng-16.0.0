@@ -41,6 +41,14 @@
             }
         }
 
+        a {
+            &.active-menuitem {
+                > .layout-submenu-toggler {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+
         li.active-menuitem {
             > a {
                 .layout-submenu-toggler {
