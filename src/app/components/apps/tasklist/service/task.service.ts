@@ -1,11 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Task } from '../api/task';
+import { Task } from 'src/app/api/task';
 
-@Injectable({
-    providedIn: 'root',
-})
+@Injectable()
 export class TaskService {
 
     tasks:Task[] = [];

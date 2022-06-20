@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Member } from 'src/app/api/member';
 import { Task } from 'src/app/api/task';
+import { TaskService } from '../service/task.service';
 import { MemberService } from 'src/app/service/member.service';
-import { TaskService } from 'src/app/service/task.service';
 
 @Component({
     selector: 'app-create-task',
     templateUrl: './create-task.component.html',
     styleUrls: ['./create-task.component.scss'],
-    providers: [MessageService, MemberService]
+    providers: [MessageService]
 })
 export class CreateTaskComponent implements OnInit {
 

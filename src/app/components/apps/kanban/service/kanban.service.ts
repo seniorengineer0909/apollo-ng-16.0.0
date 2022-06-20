@@ -1,11 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { KanbanCard, KanbanList } from '../api/kanban';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { KanbanCard, KanbanList } from 'src/app/api/kanban';
 
-@Injectable({
-    providedIn: 'root',
-})
+@Injectable()
 export class KanbanService {
 
     private _lists: KanbanList[] = [];

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { Task } from 'src/app/api/task';
-import { TaskService } from 'src/app/service/task.service';
+import { TaskService } from './service/task.service';
 import { PrimeNGConfig } from 'primeng/api';
 import { Subscription } from 'rxjs';
 

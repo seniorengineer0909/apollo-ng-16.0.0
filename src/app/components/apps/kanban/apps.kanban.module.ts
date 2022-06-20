@@ -6,6 +6,7 @@ import { AppsKanbanComponent } from './apps.kanban.component';
 import { KanbanListComponent } from './kanban-list/kanban-list.component';
 import { KanbanSidebarComponent } from './kanban-sidebar/kanban-sidebar.component';
 import { KanbanCardComponent } from './kanban-card/kanban-card.component';
+import { KanbanService } from './service/kanban.service';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { FormsModule } from '@angular/forms';
@@ -21,8 +22,6 @@ import { SidebarModule } from 'primeng/sidebar';
 import { MenuModule } from 'primeng/menu';
 import { InplaceModule } from 'primeng/inplace';
 import { AutoCompleteModule } from 'primeng/autocomplete';
-import { MemberService } from 'src/app/service/member.service';
-import { KanbanService } from 'src/app/service/kanban.service';
 import { TooltipModule } from 'primeng/tooltip';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
@@ -59,6 +58,6 @@ import { CheckboxModule } from 'primeng/checkbox';
     KanbanSidebarComponent,
     KanbanCardComponent
   ],
-  providers: [MemberService, KanbanService]
+  providers: [KanbanService]
 })
 export class AppsKanbanModule { }

@@ -3,9 +3,9 @@ import { KanbanCard, Comment, ListName, Task } from 'src/app/api/kanban';
 import { Member } from 'src/app/api/member';
 import { AppsKanbanComponent } from '../apps.kanban.component';
 import { MemberService } from 'src/app/service/member.service';
-import { KanbanService } from 'src/app/service/kanban.service';
 import { Subscription } from 'rxjs';
 import { MenuItem } from 'primeng/api';
+import { KanbanService } from '../service/kanban.service';
 
 @Component({
     selector: 'kanban-sidebar',

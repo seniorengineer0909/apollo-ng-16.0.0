@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
-import { ChatService } from 'src/app/service/chat.service';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/api/user';
+import { ChatService } from './service/chat.service';
 
 @Component({
     selector: 'app-apps.chat',
