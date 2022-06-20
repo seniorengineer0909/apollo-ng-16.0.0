@@ -34,6 +34,76 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             {
+                label: 'Apps',
+                icon: 'pi-th-large',
+                items: [
+                    {
+                        label: 'File Managament',
+                        icon: 'pi pi-fw pi-folder',
+                        routerLink: ['apps/filemanagament']
+                    },
+                    {
+                        label: 'Task List',
+                        icon: 'pi pi-fw pi-check-square',
+                        routerLink: ['apps/tasklist']
+                    },
+                    {
+                        label: 'Chat',
+                        icon: 'pi pi-fw pi-comments',
+                        routerLink: ['apps/chat']
+                    },
+                    {
+                        label: 'Calendar',
+                        icon: 'pi pi-fw pi-calendar',
+                        routerLink: ['apps/calendar']
+                    },
+                    {
+                        label: 'Mail',
+                        icon:'pi pi-envelope',
+                        items: [
+                            {
+                                label: 'Inbox',
+                                icon: 'pi pi-fw pi-inbox',
+                                routerLink: ['apps/mail/inbox']
+                            },
+                            {
+                                label: 'Compose',
+                                icon: 'pi pi-fw pi-pencil',
+                                routerLink: ['apps/mail/compose']
+                            },
+                            {
+                                label: 'Mail Detail',
+                                icon: 'pi pi-fw pi-comment',
+                                routerLink: ['apps/mail/detail/1000']
+                            },
+                        ]
+                    },
+                    {
+                        label: 'Kanban',
+                        icon:'pi pi-envelope',
+                        items: [
+                            {
+                                label: 'Board',
+                                icon: 'pi pi-fw pi-th-large',
+                                routerLink: ['apps/kanban']
+                            },
+                        ]
+                    },
+
+                ]
+            },
+            {
+                label: 'Landing',
+                items: [
+                    {
+                        label: 'Landing',
+                        icon: 'pi pi-fw pi-globe',
+                        url: 'assets/pages/landing.html',
+                        target: '_blank'
+                    }
+                ]
+            },
+            {
                 label: 'UI Kit',
                 icon: 'pi pi-fw pi-star-fill',
                 routerLink: ['/uikit'],
@@ -176,12 +246,6 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['/pages/timeline'],
                     },
                     {
-                        label: 'Landing',
-                        icon: 'pi pi-fw pi-globe',
-                        url: 'assets/pages/landing.html',
-                        target: '_blank',
-                    },
-                    {
                         label: 'Login',
                         icon: 'pi pi-fw pi-sign-in',
                         routerLink: ['/login'],
@@ -321,66 +385,6 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['ecommerce-admin/editorder'],
                     },
                 ],
-            },
-            { separator: true },
-            {
-                label: 'Apps',
-                icon: 'pi-th-large',
-                items: [
-                    {
-                        label: 'File Managament',
-                        icon: 'pi pi-fw pi-folder',
-                        routerLink: ['apps/filemanagament']
-                    },
-                    {
-                        label: 'Task List',
-                        icon: 'pi pi-fw pi-check-square',
-                        routerLink: ['apps/tasklist']
-                    },
-                    {
-                        label: 'Chat',
-                        icon: 'pi pi-fw pi-comments',
-                        routerLink: ['apps/chat']
-                    },
-                    {
-                        label: 'Calendar',
-                        icon: 'pi pi-fw pi-calendar',
-                        routerLink: ['apps/calendar']
-                    },
-                    {
-                        label: 'Mail',
-                        icon:'pi pi-envelope',
-                        items: [
-                            {
-                                label: 'Inbox',
-                                icon: 'pi pi-fw pi-inbox',
-                                routerLink: ['apps/mail/inbox']
-                            },
-                            {
-                                label: 'Compose',
-                                icon: 'pi pi-fw pi-pencil',
-                                routerLink: ['apps/mail/compose']
-                            },
-                            {
-                                label: 'Mail Detail',
-                                icon: 'pi pi-fw pi-comment',
-                                routerLink: ['apps/mail/detail/1000']
-                            },
-                        ]
-                    },
-                    {
-                        label: 'Kanban',
-                        icon:'pi pi-envelope',
-                        items: [
-                            {
-                                label: 'Board',
-                                icon: 'pi pi-fw pi-th-large',
-                                routerLink: ['apps/kanban']
-                            },
-                        ]
-                    },
-
-                ]
             },
             { separator: true },
             {
