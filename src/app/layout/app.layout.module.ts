@@ -29,7 +29,7 @@ import { RouterModule } from '@angular/router';
         AppProfileSidebarComponent,
         AppConfigComponent,
         AppMenuComponent,
-        AppMenuitemComponent,
+        AppMenuitemComponent
     ],
     imports: [
         BrowserModule,
