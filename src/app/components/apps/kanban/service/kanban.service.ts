@@ -57,7 +57,7 @@ export class KanbanService {
     addCard(listId) {
         const cardId = this.generateId();
         const title = "Untitled card";
-        const newCard = {id: cardId, title: title, description: '', progress: '', assignees: [], attachments: 0, comments: [], startDate: '', dueDate: '', completed: false};
+        const newCard = {id: cardId, title: title, description: '', progress: '', assignees: [], attachments: 0, comments: [], startDate: '', dueDate: '', completed: false, taskList: {tasks: []}};
 
         let lists = this._lists.map(l => l.listId === listId ? ({...l, cards: [...l.cards, newCard]}) : l);
         this.updateLists(lists);
