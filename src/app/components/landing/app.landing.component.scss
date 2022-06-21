@@ -1,0 +1,16 @@
+@media screen and (min-width: 1729px) {
+    .landing-wrapper {
+        width: 1478px;
+        margin: 0 auto;
+    }
+}
+
+.bg-circle {
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    background-image: linear-gradient(140deg,var(--primary-color),var(--surface-ground) 80%);
+    opacity: 0.25;
+    position: absolute;
+    z-index: -1;
+}

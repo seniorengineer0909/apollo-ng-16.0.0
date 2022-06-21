@@ -19,6 +19,7 @@ const routes: Routes = [
             { path: 'apps', loadChildren: () => import('./components/apps/apps.module').then(m => m.AppsModule) }
         ]
     },
+    { path: 'landing', loadChildren: () => import('./components/landing/app.landing.module').then(m => m.AppLandingModule) },
     { path: 'error', loadChildren: () => import('./components/auth/error/app.error.module').then(m => m.AppErrorModule) },
     { path: 'access', loadChildren: () => import('./components/auth/accessdenied/app.accessdenied.module').then(m => m.AppAccessdeniedModule) },
     { path: 'login', loadChildren: () => import('./components/auth/login/app.login.module').then(m => m.AppLoginModule) },

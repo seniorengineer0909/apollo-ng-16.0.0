@@ -178,8 +178,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'Landing',
                         icon: 'pi pi-fw pi-globe',
-                        url: 'assets/pages/landing.html',
-                        target: '_blank',
+                        routerLink: ['/landing'],
                     },
                     {
                         label: 'Login',

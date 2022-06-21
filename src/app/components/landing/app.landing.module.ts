@@ -2,23 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppLandingRoutingModule } from './app.landing-routing.module';
 import { AppLandingComponent } from './app.landing.component';
-import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-import { PasswordModule } from 'primeng/password';
-import { CheckboxModule } from 'primeng/checkbox';
-import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { StyleClassModule } from 'primeng/styleclass';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   imports: [
     CommonModule,
     AppLandingRoutingModule,
     ButtonModule,
-    InputTextModule,
-    PasswordModule,
-    CheckboxModule,
-    FormsModule
-
+    RouterModule,
+    StyleClassModule,
+    DragDropModule
   ],
   declarations: [AppLandingComponent]
 })
-export class AppLoginModule { }
+export class AppLandingModule { }
