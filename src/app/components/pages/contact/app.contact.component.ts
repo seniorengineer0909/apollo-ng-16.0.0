@@ -24,11 +24,11 @@ export class AppContactComponent implements OnInit {
 
     draggable: boolean;
 
-    name: string = 'Jane Cooper';
+    name: string;
 
-    email: string = 'janecooper@gmail.com';
+    email: string;
 
-    message: string = 'I’m Product Designer based in Turkey, I specialise in UI/UX design.';
+    message: string;
 
     content: any[] = [
         {icon: 'pi pi-fw pi-phone', title: 'Phone', info:'1 (833) 597-7538'},

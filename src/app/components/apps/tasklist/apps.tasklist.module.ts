@@ -19,7 +19,7 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
 import { TaskCardComponent } from './task-card/task-card.component';
-import { TaskService } from 'src/app/service/task.service';
+import { TaskService } from './service/task.service';
 
 @NgModule({
   imports: [

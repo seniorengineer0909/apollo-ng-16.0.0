@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Menu } from 'primeng/menu';
 import { Task } from 'src/app/api/task';
-import { TaskService } from 'src/app/service/task.service';
+import { TaskService } from '../service/task.service';
 
 @Component({
     selector: 'task-card',

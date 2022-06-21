@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy, ViewChildren, QueryList } from '@angular/core';
 import { KanbanList } from 'src/app/api/kanban';
-import { KanbanService } from 'src/app/service/kanban.service';
 import { Subscription } from 'rxjs';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { KanbanListComponent } from './kanban-list/kanban-list.component';
+import { KanbanService } from './service/kanban.service';
 
 @Component({
     selector: 'app-apps.kanban',

@@ -53,8 +53,10 @@
     <p-inputSwitch [(ngModel)]="ripple"></p-inputSwitch>
 
     <h5>Themes</h5>
-    <div class="flex gap-2">
+    <div class="flex flex-wrap gap-3">
         <button *ngFor="let theme of componentThemes" type="button" 
-            class="cursor-pointer p-link w-2rem h-2rem border-circle" (click)="changeTheme(theme.name)" [ngStyle]="{'background-color': theme.color}"></button>
+            class="cursor-pointer p-link w-2rem h-2rem border-circle flex-shrink-0" 
+            (click)="changeTheme(theme.name)" 
+            [ngStyle]="{'background-color': theme.color}"></button>
     </div>
 </p-sidebar>

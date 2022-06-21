@@ -31,77 +31,33 @@ export class ChartsDemoComponent implements OnInit {
 
     constructor(public layoutService: LayoutService) {
         this.subscription = this.layoutService.configUpdate$.subscribe(config => {
-            if (config.colorScheme == 'light')
-                this.applyLightTheme();
-            else
-                this.applyDarkTheme();
+            this.initCharts();
         });
     }
 
     ngOnInit() {
-        this.lineData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [
-                {
-                    label: 'First Dataset',
-                    data: [65, 59, 80, 81, 56, 55, 40],
-                    fill: false,
-                    backgroundColor: 'rgb(255, 205, 86)',
-                    borderColor: 'rgb(255, 205, 86)',
-                    tension: .4
-                },
-                {
-                    label: 'Second Dataset',
-                    data: [28, 48, 40, 19, 86, 27, 90],
-                    fill: false,
-                    backgroundColor: 'rgb(75, 192, 192)',
-                    borderColor: 'rgb(75, 192, 192)',
-                    tension: .4
-                }
-            ]
-        };
+        this.initCharts();
+    }
 
-        this.lineOptions = {
-            plugins: {
-                legend: {
-                    labels: {
-                        fontColor: '#A0A7B5'
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    ticks: {
-                        color: '#A0A7B5'
-                    },
-                    grid: {
-                        color: 'rgba(160, 167, 181, .3)',
-                    }
-                },
-                y: {
-                    ticks: {
-                        color: '#A0A7B5'
-                    },
-                    grid: {
-                        color: 'rgba(160, 167, 181, .3)',
-                    }
-                },
-            }
-        };
-
+    initCharts() {
+        const documentStyle = getComputedStyle(document.documentElement);
+        const textColor = documentStyle.getPropertyValue('--text-color');
+        const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
+        const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
+        
         this.barData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
                 {
                     label: 'My First dataset',
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
+                    backgroundColor: documentStyle.getPropertyValue('--primary-500'),
+                    borderColor: documentStyle.getPropertyValue('--primary-500'),
                     data: [65, 59, 80, 81, 56, 55, 40]
                 },
                 {
                     label: 'My Second dataset',
-                    backgroundColor: 'rgb(54, 162, 235)',
-                    borderColor: 'rgb(54, 162, 235)',
+                    backgroundColor: documentStyle.getPropertyValue('--primary-200'),
+                    borderColor: documentStyle.getPropertyValue('--primary-200'),
                     data: [28, 48, 40, 19, 86, 27, 90]
                 }
             ]
@@ -111,25 +67,30 @@ export class ChartsDemoComponent implements OnInit {
             plugins: {
                 legend: {
                     labels: {
-                        fontColor: '#A0A7B5'
+                        fontColor: textColor
                     }
                 }
             },
             scales: {
                 x: {
                     ticks: {
-                        color: '#A0A7B5'
+                        color: textColorSecondary,
+                        font: {
+                            weight: 500
+                        }
                     },
                     grid: {
-                        color: 'rgba(160, 167, 181, .3)',
+                        display: false,
+                        drawBorder: false
                     }
                 },
                 y: {
                     ticks: {
-                        color: '#A0A7B5'
+                        color: textColorSecondary
                     },
                     grid: {
-                        color: 'rgba(160, 167, 181, .3)',
+                        color: surfaceBorder,
+                        drawBorder: false
                     }
                 },
             }
@@ -139,12 +100,16 @@ export class ChartsDemoComponent implements OnInit {
             labels: ['A', 'B', 'C'],
             datasets: [
                 {
-                    data: [540, 325, 702, 421],
+                    data: [540, 325, 702],
                     backgroundColor: [
-                        'rgb(54, 162, 235)',
-                        'rgb(255, 99, 132)',
-                        'rgb(255, 205, 86)',
-                        'rgb(75, 192, 192)'
+                        documentStyle.getPropertyValue('--indigo-500'),
+                        documentStyle.getPropertyValue('--purple-500'),
+                        documentStyle.getPropertyValue('--teal-500')
+                    ],
+                    hoverBackgroundColor: [
+                        documentStyle.getPropertyValue('--indigo-400'),
+                        documentStyle.getPropertyValue('--purple-400'),
+                        documentStyle.getPropertyValue('--teal-400')
                     ]
                 }]
         };
@@ -153,9 +118,62 @@ export class ChartsDemoComponent implements OnInit {
             plugins: {
                 legend: {
                     labels: {
-                        fontColor: '#A0A7B5'
+                        usePointStyle: true,
+                        color: textColor
                     }
                 }
+            }
+        };
+
+        this.lineData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [
+                {
+                    label: 'First Dataset',
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    fill: false,
+                    backgroundColor: documentStyle.getPropertyValue('--primary-500'),
+                    borderColor: documentStyle.getPropertyValue('--primary-500'),
+                    tension: .4
+                },
+                {
+                    label: 'Second Dataset',
+                    data: [28, 48, 40, 19, 86, 27, 90],
+                    fill: false,
+                    backgroundColor: documentStyle.getPropertyValue('--primary-200'),
+                    borderColor: documentStyle.getPropertyValue('--primary-200'),
+                    tension: .4
+                }
+            ]
+        };
+
+        this.lineOptions = {
+            plugins: {
+                legend: {
+                    labels: {
+                        fontColor: textColor
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: textColorSecondary
+                    },
+                    grid: {
+                        color: surfaceBorder,
+                        drawBorder: false
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: textColorSecondary
+                    },
+                    grid: {
+                        color: surfaceBorder,
+                        drawBorder: false
+                    }
+                },
             }
         };
 
@@ -168,18 +186,18 @@ export class ChartsDemoComponent implements OnInit {
                     3
                 ],
                 backgroundColor: [
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 99, 132)',
-                    'rgb(255, 205, 86)',
-                    'rgb(75, 192, 192)'
+                    documentStyle.getPropertyValue('--indigo-500'),
+                    documentStyle.getPropertyValue('--purple-500'),
+                    documentStyle.getPropertyValue('--teal-500'),
+                    documentStyle.getPropertyValue('--orange-500')
                 ],
                 label: 'My dataset'
             }],
             labels: [
-                'Blue',
+                'Indigo',
                 'Purple',
-                'Orange',
-                'Green'
+                'Teal',
+                'Orange'
             ]
         };
 
@@ -187,14 +205,14 @@ export class ChartsDemoComponent implements OnInit {
             plugins: {
                 legend: {
                     labels: {
-                        fontColor: '#A0A7B5'
+                        color: textColor
                     }
                 }
             },
             scales: {
                 r: {
                     grid: {
-                        color: 'rgba(160, 167, 181, .3)'
+                        color: surfaceBorder
                     }
                 }
             }
@@ -205,22 +223,20 @@ export class ChartsDemoComponent implements OnInit {
             datasets: [
                 {
                     label: 'My First dataset',
-                    backgroundColor: 'rgba(54, 162, 235,0.2)',
-                    borderColor: 'rgba(54, 162, 235,1)',
-                    pointBackgroundColor: 'rgba(54, 162, 235,1)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(54, 162, 235,1)',
+                    borderColor: documentStyle.getPropertyValue('--indigo-400'),
+                    pointBackgroundColor: documentStyle.getPropertyValue('--indigo-400'),
+                    pointBorderColor: documentStyle.getPropertyValue('--indigo-400'),
+                    pointHoverBackgroundColor: textColor,
+                    pointHoverBorderColor: documentStyle.getPropertyValue('--indigo-400'),
                     data: [65, 59, 90, 81, 56, 55, 40]
                 },
                 {
                     label: 'My Second dataset',
-                    backgroundColor: 'rgba(255, 99, 132,0.2)',
-                    borderColor: 'rgba(255, 99, 132,1)',
-                    pointBackgroundColor: 'rgba(255, 99, 132,1)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(255, 99, 132,1)',
+                    borderColor: documentStyle.getPropertyValue('--purple-400'),
+                    pointBackgroundColor: documentStyle.getPropertyValue('--purple-400'),
+                    pointBorderColor: documentStyle.getPropertyValue('--purple-400'),
+                    pointHoverBackgroundColor: textColor,
+                    pointHoverBorderColor: documentStyle.getPropertyValue('--purple-400'),
                     data: [28, 48, 40, 19, 96, 27, 100]
                 }
             ]
@@ -230,219 +246,14 @@ export class ChartsDemoComponent implements OnInit {
             plugins: {
                 legend: {
                     labels: {
-                        fontColor: '#A0A7B5'
+                        fontColor: textColor
                     }
                 }
             },
             scales: {
                 r: {
                     grid: {
-                        color: 'rgba(160, 167, 181, .3)'
-                    }
-                }
-            }
-        };
-    }
-
-    applyLightTheme() {
-        this.lineOptions = {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#495057'
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    ticks: {
-                        color: '#495057'
-                    },
-                    grid: {
-                        color: '#ebedef',
-                    }
-                },
-                y: {
-                    ticks: {
-                        color: '#495057'
-                    },
-                    grid: {
-                        color: '#ebedef',
-                    }
-                },
-            }
-        };
-
-        this.barOptions = {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#495057'
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    ticks: {
-                        color: '#495057'
-                    },
-                    grid: {
-                        color: '#ebedef',
-                    }
-                },
-                y: {
-                    ticks: {
-                        color: '#495057'
-                    },
-                    grid: {
-                        color: '#ebedef',
-                    }
-                },
-            }
-        };
-
-        this.pieOptions = {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#495057'
-                    }
-                }
-            }
-        };
-
-        this.polarOptions = {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#495057'
-                    }
-                }
-            },
-            scales: {
-                r: {
-                    grid: {
-                        color: '#ebedef'
-                    }
-                }
-            }
-        };
-
-        this.radarOptions = {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#495057'
-                    }
-                }
-            },
-            scales: {
-                r: {
-                    grid: {
-                        color: '#ebedef'
-                    }
-                }
-            }
-        };
-
-    }
-
-    applyDarkTheme() {
-        this.lineOptions = {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#ebedef'
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    ticks: {
-                        color: '#ebedef'
-                    },
-                    grid: {
-                        color: 'rgba(160, 167, 181, .3)',
-                    }
-                },
-                y: {
-                    ticks: {
-                        color: '#ebedef'
-                    },
-                    grid: {
-                        color: 'rgba(160, 167, 181, .3)',
-                    }
-                },
-            }
-        };
-
-        this.barOptions = {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#ebedef'
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    ticks: {
-                        color: '#ebedef'
-                    },
-                    grid: {
-                        color: 'rgba(160, 167, 181, .3)',
-                    }
-                },
-                y: {
-                    ticks: {
-                        color: '#ebedef'
-                    },
-                    grid: {
-                        color: 'rgba(160, 167, 181, .3)',
-                    }
-                },
-            }
-        };
-
-        this.pieOptions = {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#ebedef'
-                    }
-                }
-            }
-        };
-
-        this.polarOptions = {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#ebedef'
-                    }
-                }
-            },
-            scales: {
-                r: {
-                    grid: {
-                        color: 'rgba(160, 167, 181, .3)'
-                    }
-                }
-            }
-        };
-
-        this.radarOptions = {
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#ebedef'
-                    }
-                }
-            },
-            scales: {
-                r: {
-                    grid: {
-                        color: 'rgba(160, 167, 181, .3)'
+                        color: textColorSecondary
                     }
                 }
             }
