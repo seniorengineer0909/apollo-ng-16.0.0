@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconsComponent } from './icons.component';
+import { IconsComponent } from './icons/icons.component';
 import { UtilitiesRoutingModule } from './utilities-routing.module';
 import { AppCodeModule } from '../primeblocks/app-code/app.code.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { ColorsComponent } from './colors/colors.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { InputTextModule } from 'primeng/inputtext';
     AppCodeModule,
     InputTextModule,
   ],
-  declarations: [IconsComponent]
+  declarations: [IconsComponent, ColorsComponent]
 })
 export class UtilitiesModule { }
