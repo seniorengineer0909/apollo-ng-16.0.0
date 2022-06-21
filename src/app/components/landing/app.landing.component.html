@@ -71,16 +71,16 @@
                 </ul>
                 <button pButton pRipple type="button" label="Live Preview" icon="pi pi-arrow-right" iconPos="right" class="w-12rem p-button-outlined"></button>
             </div>
-            <div id="image-container" class="col-12 md:col-7 flex-order-0 md:flex-order-1 mb-6 md:mb-0 relative select-none shadow-2 border-round h-30rem" cdkDropListOrientation="horizontal" style="height: 800px;">
+            <div id="image-container" class="col-12 md:col-7 flex-order-0 md:flex-order-1 mb-6 md:mb-0 relative select-none shadow-2 border-1 surface-border border-round" cdkDropListOrientation="horizontal" style="height: 45rem;">
                 <div #splitter class="absolute z-3 flex justify-content-center align-items-center" [ngStyle]="{'height': '100%', 'cursor': 'pointer'}" cdkDrag cdkDragHandle cdkDragLockAxis="x" cdkDragBoundary="#image-container" (cdkDragStarted)="dragStart()" (cdkDragEnded)="dragEnd()" (cdkDragMoved)="move($event)" (mousedown)="onMouseDown($event)">
-                    <div class="relative h-full w-full">
+                    <div class="relative h-full w-full border-none">
                         <div class="w-4rem h-4rem border-circle flex justify-content-center align-items-center absolute surface-card border-3 border-primary-100" style="left: -28px; top: 45%;" >
                             <i class="pi pi-code text-3xl text-900 font-bold"></i>
                         </div>
                     </div>
                 </div>
-                <div class="h-full w-full border-1 border-transparent border-round z-2" style="background-image: url('/assets/demo/images/landing/dashboard-4.png');"></div>
-                <div class="h-full border-left-1 border-transparent border-round absolute top-0 z-2" [ngStyle]="{'width': width, 'background-image': 'url(/assets/demo/images/landing/dashboard-3.png)'}"></div>
+                <div class="h-full w-full border-1 border-round surface-border z-2 bg-no-repeat" style="background-image: url('/assets/demo/images/landing/dashboard-light.png');"></div>
+                <div class="h-full border-1 border-round surface-border absolute top-0 z-2 bg-no-repeat" [ngStyle]="{'width': width, 'background-image': 'url(/assets/demo/images/landing/dashboard-dark.png)'}"></div>
             </div>
         </div>
         
