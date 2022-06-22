@@ -7,7 +7,7 @@
                     <img *ngFor="let image of images; let i = index" [ngClass]="{'border-primary': selectedImageIndex === i}" src="assets/demo/images/ecommerce/productoverview/{{image}}" class="w-full cursor-pointer border-2 border-transparent transition-colors transition-duration-150" style="border-radius: 6px;" (click)="selectedImageIndex = i"/>
                 </div>
                 <div class="pl-3 w-10 flex">
-                    <img src="assets/demo/images/ecommerce/productoverview/{{images[selectedImageIndex]}}" class="w-full border-2 border-transparent" style="border-radius: 6px; max-height: 34rem;"/>
+                    <img src="assets/demo/images/ecommerce/productoverview/{{images[selectedImageIndex]}}" class="w-full border-2 border-transparent" style="border-radius: 6px;"/>
                 </div>
             </div>
         </div>
