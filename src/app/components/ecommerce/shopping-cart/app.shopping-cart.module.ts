@@ -12,18 +12,18 @@ import { SidebarModule } from 'primeng/sidebar';
 import { AppShoppingCartRoutingModule } from './app.shopping-cart-routing.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    AppShoppingCartRoutingModule,
-    InputNumberModule,
-    ButtonModule,
-    SidebarModule,
-    StyleClassModule,
-    RippleModule,
-    DropdownModule,
-    DividerModule    
-  ],
-  declarations: [AppShoppingCartComponent],
+    imports: [
+        CommonModule,
+        FormsModule,
+        AppShoppingCartRoutingModule,
+        InputNumberModule,
+        ButtonModule,
+        SidebarModule,
+        StyleClassModule,
+        RippleModule,
+        DropdownModule,
+        DividerModule
+    ],
+    declarations: [AppShoppingCartComponent],
 })
 export class AppShoppingCartModule { }
