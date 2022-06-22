@@ -22,7 +22,7 @@
                 <div class="text-900 font-bold">{{content.header}}</div>
                 <i class="pi pi-fw text-600 cursor-pointer" [ngClass]="content.collapsed ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
             </div>
-            <div [@tabContent]="!content.collapsed ? {value: 'visible', params: {transitionParams: transitionOptions }} : {value: 'hidden', params: {transitionParams: transitionOptions}}">
+            <div [@tabContent]="!content.collapsed ? {value: 'visible'} : {value: 'hidden'}">
                 <p class="font-semibold px-5 py-4 text-600">{{content.text}}</p>
             </div>
         </div>
