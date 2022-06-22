@@ -1,26 +1,22 @@
-<div class="grid grid-nogutter px-6 py-6 surface-card border-1 surface-border" style="border-radius: 6px;">
+<div class="grid">
     <div class="col-12">
-        <span class="block text-2xl font-bold text-900">Timeline</span>
-        <span class="block text-xl font-semibold text-600 mt-3">Enim viverra turpis dictum massa dictum maecenas arcu, curabitur.</span>
-    </div>
-
-    <div class="col-12 md:col-8 lg:col-6 mt-5">
-        <div class="flex cursor-pointer w-full h-6rem transition-duration-100" *ngFor="let item of timelineContent; let i = index;" style="border-radius: 6px;" (click)="selectedIndex = i;" [ngClass]="{'bg-primary' : selectedIndex === i}">
-            <div class="flex flex-column align-items-center ml-3" style="width:2rem">
-                <div class="h-full border-dashed border-1 surface-border" style="min-height: 1.5rem" [ngStyle]="{'visibility': i == 0 || selectedIndex == i ? 'hidden' : 'visible'}"></div>
-                <span class="text-900 flex align-items-center justify-content-center border-2 border-circle" [ngClass]="{'border-0': selectedIndex === i}" style="min-width:1.3rem; min-height: 1.3rem">
-                    <i class="pi pi-fw pi-arrow-right font-bold text-xs" [ngClass]="{'text-0': selectedIndex === i, 'text-900': selectedIndex !== i}"></i>
+        <div class="card">
+            <h4>Timeline</h4>
+            <p-timeline [value]="customEvents" align="alternate" styleClass="customized-timeline">
+                <ng-template pTemplate="marker" let-event>
+                <span class="flex z-1 w-2rem h-2rem align-items-center justify-content-center text-white border-circle shadow-2" [style.backgroundColor]="event.color">
+                    <i [ngClass]="event.icon"></i>
                 </span>
-                <div class="h-full border-dashed border-1 surface-border" style="min-height: 1.5rem" [ngStyle]="{'visibility': i == timelineContent.length - 1 || selectedIndex == i ? 'hidden' : 'visible'}"></div>
-            </div>
-
-            <div class="ml-0 lg:ml-4 p-2 flex align-items-center">
-                <i [class]="item.icon" class="text-3xl mr-3" [ngClass]="{'text-0': selectedIndex === i, 'text-600': selectedIndex !== i}"></i>
-                <div>
-                    <span class="font-bold block ml-2" [ngClass]="{'text-0': selectedIndex === i, 'text-900': selectedIndex !== i}">{{item.title}}</span>
-                    <span class="font-semibold block ml-2" [ngClass]="{'text-0': selectedIndex === i, 'text-600': selectedIndex !== i}">{{item.info}}</span>
-                </div>
-            </div>
+                </ng-template>
+                <ng-template pTemplate="content" let-event>
+                    <p-card [header]="event.status" [subheader]="event.date">
+                        <img *ngIf="event.image" [src]="'assets/demo/images/product/' + event.image" [alt]="event.name" width="200" class="shadow-2" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+                            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+                        <button pButton label="Read more" class="p-button-text"></button>
+                    </p-card>
+                </ng-template>
+            </p-timeline>
         </div>
     </div>
 </div>
