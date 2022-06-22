@@ -7,15 +7,15 @@ const routes: Routes = [
         path: '', component: AppLayoutComponent,
         children: [
             { path: '', loadChildren: () => import('./components/dashboards/dashboards.module').then(m => m.DashboardsModule) },
-            { path: 'uikit', data: {breadcrumb: 'UI Kit'}, loadChildren: () => import('./components/uikit/uikit.module').then(m => m.UIkitModule) },
-            { path: 'utilities', loadChildren: () => import('./components/utilities/utilities.module').then(m => m.UtilitiesModule) },
-            { path: 'pages', loadChildren: () => import('./components/pages/pages.module').then(m => m.PagesModule) },
-            { path: 'profile', loadChildren: () => import('./components/profile/profile.module').then(m => m.ProfileModule) },
-            { path: 'documentation', loadChildren: () => import('./components/start/start.module').then(m => m.StartModule) },
-            { path: 'blocks', loadChildren: () => import('./components/primeblocks/primeblocks.module').then(m => m.PrimeBlocksModule) },
-            { path: 'blog', loadChildren: () => import('./components/apps/blog/blog.module').then(m => m.BlogModule) },
-            { path: 'ecommerce', data: {breadcrumb: 'E-Commerce'}, loadChildren: () => import('./components/ecommerce/app.ecommerce.module').then(m => m.AppEcommerceModule) },
-            { path: 'apps', loadChildren: () => import('./components/apps/apps.module').then(m => m.AppsModule) }
+            { path: 'uikit', data: { breadcrumb: 'UI Kit' }, loadChildren: () => import('./components/uikit/uikit.module').then(m => m.UIkitModule) },
+            { path: 'utilities', data: { breadcrumb: 'Utilities' }, loadChildren: () => import('./components/utilities/utilities.module').then(m => m.UtilitiesModule) },
+            { path: 'pages', data: { breadcrumb: 'Pages' }, loadChildren: () => import('./components/pages/pages.module').then(m => m.PagesModule) },
+            { path: 'profile', data: { breadcrumb: 'User Management' }, loadChildren: () => import('./components/profile/profile.module').then(m => m.ProfileModule) },
+            { path: 'documentation', data: { breadcrumb: 'Documentation' }, loadChildren: () => import('./components/start/start.module').then(m => m.StartModule) },
+            { path: 'blocks', data: { breadcrumb: 'Prime Blocks' }, loadChildren: () => import('./components/primeblocks/primeblocks.module').then(m => m.PrimeBlocksModule) },
+            { path: 'blog', data: { breadcrumb: 'Blog' }, loadChildren: () => import('./components/apps/blog/blog.module').then(m => m.BlogModule) },
+            { path: 'ecommerce', data: { breadcrumb: 'E-Commerce' }, loadChildren: () => import('./components/ecommerce/app.ecommerce.module').then(m => m.AppEcommerceModule) },
+            { path: 'apps', data: { breadcrumb: 'Apps' }, loadChildren: () => import('./components/apps/apps.module').then(m => m.AppsModule) }
         ]
     },
     { path: 'landing', loadChildren: () => import('./components/landing/app.landing.module').then(m => m.AppLandingModule) },

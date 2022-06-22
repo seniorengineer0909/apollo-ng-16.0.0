@@ -5,7 +5,7 @@ import { BlocksComponent } from './blocks/blocks.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
-    {path: '', component: BlocksComponent}
+    {path: '', data: {breadcrumb: 'Free Blocks'}, component: BlocksComponent}
   ])],
   exports: [RouterModule]
 })

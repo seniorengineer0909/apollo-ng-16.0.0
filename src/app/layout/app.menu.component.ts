@@ -40,7 +40,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'File Managament',
                         icon: 'pi pi-fw pi-folder',
-                        routerLink: ['apps/filemanagament']
+                        routerLink: ['apps/file-managament']
                     },
                     {
                         label: 'Task List',
@@ -390,7 +390,7 @@ export class AppMenuComponent implements OnInit {
             },
             { separator: true },
             {
-                label: 'User Managament',
+                label: 'User Management',
                 icon: 'pi pi-fw pi-user',
                 items: [
                     {

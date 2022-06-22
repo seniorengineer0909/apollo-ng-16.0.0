@@ -4,10 +4,10 @@ import { ColorsComponent } from './colors/colors.component';
 import { IconsComponent } from './icons/icons.component';
 
 @NgModule({
-	imports: [RouterModule.forChild([
-		{ path: 'icons', component: IconsComponent },
-		{ path: 'colors', component: ColorsComponent }
-	])],
-	exports: [RouterModule]
+    imports: [RouterModule.forChild([
+        { path: 'icons', data: { breadcrumb: 'Prime Icons' }, component: IconsComponent },
+        { path: 'colors', data: { breadcrumb: 'Colors' }, component: ColorsComponent }
+    ])],
+    exports: [RouterModule]
 })
 export class UtilitiesRoutingModule { }
