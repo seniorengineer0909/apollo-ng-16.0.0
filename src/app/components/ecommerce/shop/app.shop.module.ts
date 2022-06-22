@@ -9,7 +9,6 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RippleModule } from 'primeng/ripple';
 import { DataViewModule } from 'primeng/dataview';
 import { RatingModule } from 'primeng/rating';
-import { ShoppingCartModule } from '../shopping-cart/shopping-cart.module';
 import { FilterModule } from '../filter/filter.module';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { FilterModule } from '../filter/filter.module';
     ButtonModule,
     DropdownModule,
     FilterModule,
-    ShoppingCartModule,
     DataViewModule,
     RatingModule,
     RippleModule
