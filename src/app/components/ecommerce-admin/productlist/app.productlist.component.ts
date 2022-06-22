@@ -1,20 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-app.productlist',
     templateUrl: './app.productlist.component.html'
 })
-export class AppProductListComponent implements OnInit {
-
-    hoveredItem: number;
+export class AppProductListComponent {
 
     color1: string = 'Bluegray';
-    
-    color2: string = 'Indigo';
-    
-    color3: string = 'Purple';
-    
-    color4: string = 'Cyan';
 
     products =  [
         {
@@ -62,7 +54,4 @@ export class AppProductListComponent implements OnInit {
         },
     ];
 
-    constructor() {}
-
-    ngOnInit(): void {}
 }
