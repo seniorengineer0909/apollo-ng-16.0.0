@@ -13,14 +13,13 @@ import { MenuItem } from 'primeng/api';
                 overflow: 'hidden'
             })),
             state('void', style({
-                height: '{{height}}'
-            }), {params: {height: '0'}}),
+                height: '0',
+                overflow: 'hidden'
+            })),
             state('visible', style({
                 height: '*'
             })),
-            transition('visible <=> hidden', [style({ overflow: 'hidden'}), animate('{{transitionParams}}')]),
-            transition('void => hidden', animate('{{transitionParams}}')),
-            transition('void => visible', animate('{{transitionParams}}'))
+            transition('visible <=> hidden', [style({ overflow: 'hidden'}), animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')]),
         ])
   ],
 })
@@ -31,8 +30,6 @@ export class AppFaqComponent implements OnInit {
     content: string = `Mailing`;
 
     tabContent: any[];
-
-    transitionOptions: string = '400ms cubic-bezier(0.86, 0, 0.07, 1)';
 
     activeIndex: number = 0;
 
