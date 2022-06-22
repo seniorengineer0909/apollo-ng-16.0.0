@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
     imports: [RouterModule.forChild([
-        { path: 'aboutus', data: { breadcrumb: 'About Us' }, loadChildren: () => import('./aboutus/app.aboutus.module').then(m => m.AppAboutUsModule) },
+        { path: 'aboutus', data: { breadcrumb: 'About' }, loadChildren: () => import('./aboutus/app.aboutus.module').then(m => m.AppAboutUsModule) },
         { path: 'contact', data: { breadcrumb: 'Contact' }, loadChildren: () => import('./contact/app.contact.module').then(m => m.AppContactModule) },
         { path: 'crud', data: { breadcrumb: 'Crud' }, loadChildren: () => import('./crud/app.crud.module').then(m => m.AppCrudModule) },
         { path: 'empty', data: { breadcrumb: 'Empty' }, loadChildren: () => import('./empty/app.emptydemo.module').then(m => m.AppEmptyDemoModule) },
