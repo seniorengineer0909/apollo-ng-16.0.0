@@ -343,7 +343,7 @@ export class AppMenuComponent implements OnInit {
                     },
                     {
                         label: 'Checkout',
-                        icon: 'pi pi-fw pi-shopping-cart',
+                        icon: 'pi pi-fw pi-dollar',
                         routerLink: ['ecommerce/checkout'],
                     },
                     {
