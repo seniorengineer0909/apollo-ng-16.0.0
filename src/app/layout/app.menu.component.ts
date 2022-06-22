@@ -20,13 +20,13 @@ export class AppMenuComponent implements OnInit {
                         icon: 'pi pi-fw pi-home',
                         routerLink: ['/'],
                     },
-                      {
-                          label: 'Banking',
-                          icon: 'pi pi-fw pi-image',
-                          routerLink: ['/dashboard-banking'],
+                    {
+                        label: 'Banking',
+                        icon: 'pi pi-fw pi-image',
+                        routerLink: ['/dashboard-banking'],
 
-                      },
-                      {
+                    },
+                    {
                         label: 'Analytics',
                         icon: 'pi pi-fw pi-image',
                         routerLink: ['/dashboard-analytics']
@@ -59,7 +59,7 @@ export class AppMenuComponent implements OnInit {
                     },
                     {
                         label: 'Mail',
-                        icon:'pi pi-envelope',
+                        icon: 'pi pi-envelope',
                         items: [
                             {
                                 label: 'Inbox',
@@ -80,7 +80,7 @@ export class AppMenuComponent implements OnInit {
                     },
                     {
                         label: 'Kanban',
-                        icon:'pi pi-envelope',
+                        icon: 'pi pi-envelope',
                         items: [
                             {
                                 label: 'Board',
@@ -167,7 +167,7 @@ export class AppMenuComponent implements OnInit {
                         label: 'Menu',
                         icon: 'pi pi-fw pi-bars',
                         routerLink: ['/uikit/menu'],
-                        routerLinkActiveOptions: {exact: false}
+                        routerLinkActiveOptions: { exact: false }
                     },
                     {
                         label: 'Message',
@@ -413,29 +413,29 @@ export class AppMenuComponent implements OnInit {
             },
             { separator: true },
             {
-              label: 'Blog',
-              icon: 'pi pi-fw pi-comment',
-              items: [
-                  {
-                      label: 'Blog List',
-                      icon: 'pi pi-fw pi-image',
-                      routerLink: ['blog/list'],
+                label: 'Blog',
+                icon: 'pi pi-fw pi-comment',
+                items: [
+                    {
+                        label: 'Blog List',
+                        icon: 'pi pi-fw pi-image',
+                        routerLink: ['blog/list'],
 
-                  },
-                  {
-                      label: 'Blog Detail',
-                      icon: 'pi pi-fw pi-list',
-                      routerLink: ['blog/detail'],
+                    },
+                    {
+                        label: 'Blog Detail',
+                        icon: 'pi pi-fw pi-list',
+                        routerLink: ['blog/detail'],
 
-                  },
-                  {
-                      label: 'Blog Edit',
-                      icon: 'pi pi-fw pi-pencil',
-                      routerLink: ['blog/edit'],
+                    },
+                    {
+                        label: 'Blog Edit',
+                        icon: 'pi pi-fw pi-pencil',
+                        routerLink: ['blog/edit'],
 
-                  }
-              ]
-          },
+                    }
+                ]
+            },
             {
                 label: 'Hierarchy',
                 icon: 'pi pi-fw pi-align-left',
