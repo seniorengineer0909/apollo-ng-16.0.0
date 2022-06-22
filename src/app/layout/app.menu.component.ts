@@ -362,6 +362,11 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['ecommerce/checkout'],
                     },
                     {
+                        label: 'Product List',
+                        icon: 'pi pi-fw pi-list',
+                        routerLink: ['ecommerce/product-list'],
+                    },
+                    {
                         label: 'New Product',
                         icon: 'pi pi-fw pi-plus',
                         routerLink: ['ecommerce/new-product'],
@@ -381,29 +386,6 @@ export class AppMenuComponent implements OnInit {
                         icon: 'pi pi-fw pi-pencil',
                         routerLink: ['ecommerce/edit-order'],
                     }
-                ]
-            },
-            { separator: true },
-            {
-                label: 'E-Commerce Admin',
-                icon: 'pi pi-fw pi-shield',
-                items: [
-                    {
-                        label: 'Product List',
-                        icon: 'pi pi-fw pi-list',
-                        routerLink: ['ecommerce-admin/productlist'],
-                    },
-                    {
-                        label: 'Orders',
-                        icon: 'pi pi-fw pi-dollar',
-                        routerLink: ['ecommerce-admin/orders'],
-                    },
-                    {
-                        label: 'Order Details',
-                        icon: 'pi pi-fw pi-align-left',
-                        routerLink: ['ecommerce-admin/orderdetails'],
-                    },
-
                 ]
             },
             { separator: true },

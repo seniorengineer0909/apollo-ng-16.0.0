@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
     {path: 'shop', data: {breadcrumb: 'Shop'}, loadChildren: () => import('./shop/app.shop.module').then(m => m.AppShopModule)},
     {path: 'shopping-cart', data: {breadcrumb: 'Shopping Cart'}, loadChildren: () => import('./shopping-cart/app.shopping-cart.module').then(m => m.AppShoppingCartModule)},
     {path: 'checkout', data: {breadcrumb: 'Checkout'}, loadChildren: () => import('./checkout/app.checkout.module').then(m => m.AppCheckoutModule)},
+    {path: 'product-list', data: {breadcrumb: 'Product List'}, loadChildren: () => import('./productlist/app.productlist.module').then(m => m.AppProductListModule)},
     {path: 'new-product', data: {breadcrumb: 'New Product'}, loadChildren: () => import('./newproduct/app.newproduct.module').then(m => m.AppNewProductModule)},
     {path: 'order-history', data: {breadcrumb: 'Order History'}, loadChildren: () => import('./orderhistory/app.orderhistory.module').then(m => m.AppOrderHistoryModule)},
     {path: 'order-summary', data: {breadcrumb: 'Order Summary'}, loadChildren: () => import('./ordersummary/app.ordersummary.module').then(m => m.AppOrderSummaryModule)},
