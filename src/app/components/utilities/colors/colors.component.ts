@@ -2,27 +2,7 @@ import { Component } from '@angular/core';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
-    templateUrl: './colors.component.html',
-    styles: [`
-        .color-stack {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .color-box {
-            width: 2.5rem;
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            width: 250px;
-            font-weight: bold;
-        }
-
-        .sample-layout {
-            width: 375px;
-        }
-        
-    `]
+    templateUrl: './colors.component.html'
 })
 export class ColorsComponent {
 

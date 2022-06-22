@@ -221,6 +221,11 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['utilities/icons'],
                     },
                     {
+                        label: 'Colors',
+                        icon: 'pi pi-fw pi-palette',
+                        routerLink: ['utilities/colors'],
+                    },
+                    {
                         label: 'PrimeFlex',
                         icon: 'pi pi-fw pi-desktop',
                         url: ['https://www.primefaces.org/primeflex/'],
