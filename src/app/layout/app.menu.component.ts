@@ -347,6 +347,16 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['ecommerce/product-overview'],
                     },
                     {
+                        label: 'Product List',
+                        icon: 'pi pi-fw pi-list',
+                        routerLink: ['ecommerce/product-list'],
+                    },
+                    {
+                        label: 'New Product',
+                        icon: 'pi pi-fw pi-plus',
+                        routerLink: ['ecommerce/new-product'],
+                    },
+                    {
                         label: 'Shop',
                         icon: 'pi pi-fw pi-shopping-bag',
                         routerLink: ['ecommerce/shop'],
@@ -360,16 +370,6 @@ export class AppMenuComponent implements OnInit {
                         label: 'Checkout',
                         icon: 'pi pi-fw pi-dollar',
                         routerLink: ['ecommerce/checkout'],
-                    },
-                    {
-                        label: 'Product List',
-                        icon: 'pi pi-fw pi-list',
-                        routerLink: ['ecommerce/product-list'],
-                    },
-                    {
-                        label: 'New Product',
-                        icon: 'pi pi-fw pi-plus',
-                        routerLink: ['ecommerce/new-product'],
                     },
                     {
                         label: 'Order History',
