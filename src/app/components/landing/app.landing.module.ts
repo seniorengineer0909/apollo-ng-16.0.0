@@ -8,14 +8,14 @@ import { StyleClassModule } from 'primeng/styleclass';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    AppLandingRoutingModule,
-    ButtonModule,
-    RouterModule,
-    StyleClassModule,
-    DragDropModule
-  ],
-  declarations: [AppLandingComponent]
+    imports: [
+        CommonModule,
+        AppLandingRoutingModule,
+        ButtonModule,
+        RouterModule,
+        StyleClassModule,
+        DragDropModule
+    ],
+    declarations: [AppLandingComponent]
 })
 export class AppLandingModule { }
