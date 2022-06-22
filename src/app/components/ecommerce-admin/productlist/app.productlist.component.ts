@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/api/product';
-import { ProductService } from 'src/app/service/product.service';
-import { MenuItem } from 'primeng/api';
 
 @Component({
     selector: 'app-app.productlist',
@@ -9,56 +6,63 @@ import { MenuItem } from 'primeng/api';
 })
 export class AppProductListComponent implements OnInit {
 
-    items: MenuItem[];
+    hoveredItem: number;
 
-    products: Product[];
+    color1: string = 'Bluegray';
+    
+    color2: string = 'Indigo';
+    
+    color3: string = 'Purple';
+    
+    color4: string = 'Cyan';
 
-    product: Product;
+    products =  [
+        {
+            price: '$140.00',
+            image: 'assets/demo/images/ecommerce/product-list/product-list-4-1.png'
+        },
+        {
+            price: '$82.00',
+            image: 'assets/demo/images/ecommerce/product-list/product-list-4-2.png'
+        },
+        {
+            price: '$54.00',
+            image: 'assets/demo/images/ecommerce/product-list/product-list-4-3.png'
+        },
+        {
+            price: '$72.00',
+            image: 'assets/demo/images/ecommerce/product-list/product-list-4-4.png'
+        },
+        {
+            price: '$99.00',
+            image: 'assets/demo/images/ecommerce/product-list/product-list-4-5.png'
+        },
+        {
+            price: '$89.00',
+            image: 'assets/demo/images/ecommerce/product-list/product-list-4-6.png'
+        }
+    ];
 
-    selectedProducts: Product[];
+    products2 =  [
+        {
+            color: 'Bluegray',
+            image:'assets/demo/images/ecommerce/product-list/product-list-2-1.png'
+        },
+        {
+            color: 'Indigo',
+            image:'assets/demo/images/ecommerce/product-list/product-list-2-2.png'
+        },
+        {
+            color: 'Purple',
+            image:'assets/demo/images/ecommerce/product-list/product-list-2-3.png'
+        },
+        {
+            color: 'Cyan',
+            image:'assets/demo/images/ecommerce/product-list/product-list-2-4.png'
+        },
+    ];
 
-    cols: any[];
+    constructor() {}
 
-    statuses: any[];
-
-    rowsPerPageOptions = [5, 10, 20];
-
-    constructor(private productService: ProductService) {}
-
-    ngOnInit(): void {
-      this.productService.getProducts().then(data => this.products = data);
-
-      this.items = [
-        {label: 'Edit', icon: 'pi pi-fw pi-pencil'},
-        {label: 'New Product', icon: 'pi pi-fw pi-plus'},
-        {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-      ];
-
-      this.cols = [
-        {field: 'porduct', header: 'Product'},
-        {field: 'price', header: 'Price'},
-        {field: 'rating', header: 'Rating'},
-        {field: 'trackingId', header: 'Tracking ID'},
-        {field: 'date', header: 'Date'},
-        {field: 'inventoryStatus', header: 'Status'}
-      ];
-
-      this.statuses = [
-        {label: 'INSTOCK', value: 'instock'},
-        {label: 'LOWSTOCK', value: 'lowstock'},
-        {label: 'OUTOFSTOCK', value: 'outofstock'}
-      ];
-    }
-
-    findIndexById(id: string): number {
-      let index = -1;
-      for (let i = 0; i < this.products.length; i++) {
-          if (this.products[i].id === id) {
-              index = i;
-              break;
-          }
-      }
-
-      return index;
-    }
+    ngOnInit(): void {}
 }
