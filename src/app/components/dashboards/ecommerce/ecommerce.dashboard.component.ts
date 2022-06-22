@@ -82,14 +82,14 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 {
                     data: [300, 50, 100],
                     backgroundColor: [
-                        documentStyle.getPropertyValue('--indigo-500'),
-                        documentStyle.getPropertyValue('--purple-500'),
-                        documentStyle.getPropertyValue('--teal-500')
+                        documentStyle.getPropertyValue('--primary-700'),
+                        documentStyle.getPropertyValue('--primary-400'),
+                        documentStyle.getPropertyValue('--primary-100')
                     ],
                     hoverBackgroundColor: [
-                        documentStyle.getPropertyValue('--indigo-400'),
-                        documentStyle.getPropertyValue('--purple-400'),
-                        documentStyle.getPropertyValue('--teal-400')
+                        documentStyle.getPropertyValue('--primary-600'),
+                        documentStyle.getPropertyValue('--primary-300'),
+                        documentStyle.getPropertyValue('--primary-200')
                     ]
                 }
             ]
@@ -139,7 +139,10 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 legend: {
                     labels: {
                         usePointStyle: true,
-                        color: textColor
+                        color: textColor,
+                        font: {
+                            weight: 700,
+                        }
                     }
                 }
             }
