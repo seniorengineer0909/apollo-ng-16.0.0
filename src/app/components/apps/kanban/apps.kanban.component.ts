@@ -80,4 +80,5 @@ export class AppsKanbanComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe();
         document.head.removeChild(this.style)
     }
+    
 }
