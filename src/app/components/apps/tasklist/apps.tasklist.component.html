@@ -3,7 +3,6 @@
         <span class="text-900 text-xl font-semibold">Task List</span>
         <button pButton class="p-button-primary p-button-outlined font-semibold" icon="pi pi-plus mr-2" label="Create Task" routerLink="/apps/tasklist/create-task"></button>
     </div>
-    <task-card [taskList]="upcoming" title="Upcoming"></task-card>
-    <task-card [taskList]="inProgress" title="In Progress"></task-card>
+    <task-card [taskList]="todo" title="ToDo"></task-card>
     <task-card [taskList]="completed" title="Completed"></task-card>
 </div>
