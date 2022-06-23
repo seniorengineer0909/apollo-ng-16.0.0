@@ -1,11 +1,11 @@
 <div class="flex justify-content-start align-items-center mt-8 mb-4">
     <span class="text-xl text-900 font-bold mr-4">Comments</span>
-    <div class="flex align-items-center justify-content-center px-3 py-2 font-bold  border-1 surface-border" style="border-radius: 6px;">{{comments.length}}</div>
+    <div class="flex align-items-center justify-content-center px-3 py-2 font-bold  border-1 surface-border border-round">{{comments.length}}</div>
 </div>
 <p-dataView #dv [value]="comments" [paginator]="true" [rows]="rowCount" filterBy="title" layout="grid">
     <ng-template let-comment pTemplate="gridItem">
         <div class="col-12 py-2">
-            <div class="flex p-3 mb-3 w-full  border-1 surface-border" style="border-radius: 6px">
+            <div class="flex p-3 mb-3 w-full  border-1 surface-border border-round">
                 <span class="inline-flex justify-content-center mr-3">
                     <img [src]="comment.image" class="w-3rem h-3rem" />
                 </span>
