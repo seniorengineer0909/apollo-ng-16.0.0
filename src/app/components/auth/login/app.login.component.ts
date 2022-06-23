@@ -1,28 +1,17 @@
-import {Component} from '@angular/core';
-
+import { Component } from '@angular/core';
+import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './app.login.component.html'
+	templateUrl: './app.login.component.html'
 })
 export class AppLoginComponent {
 
-  inputType: string = 'password';
+	rememberMe: boolean;
 
-  email: string;
+	constructor(private layoutService: LayoutService) {}
 
-  password: string;
-
-  val: any;
-
-  selectedValues: any[];
-
-  togglePassword(){
-    if (this.inputType === 'text') {
-      this.inputType = 'password';
-    } else {
-      this.inputType = 'text';
-    }
-  }
+	get dark(): boolean {
+		return this.layoutService.config.colorScheme !== 'light';
+	}
 
 }
