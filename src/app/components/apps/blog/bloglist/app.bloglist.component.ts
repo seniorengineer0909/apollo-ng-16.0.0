@@ -1,16 +1,6 @@
 import { Component } from '@angular/core';
 import { SelectItem } from 'primeng/api';
-
-interface Blog {
-    image: string;
-    profile: string;
-    title: string;
-    description: string;
-    comment: number;
-    share: number;
-    day: "09";
-    mounth: "October";
-}
+import { Blog } from 'src/app/api/blog';
 
 @Component({
     selector: 'app-app.bloglist',
@@ -33,124 +23,124 @@ export class AppBloglistComponent {
 
     totalBlogs: Blog[] = [
         {
-            image: "assets/demo/images/blog/blog-1.png",
+            coverImage: "assets/demo/images/blog/blog-1.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-1.png",
             title: "Blog",
             description: "Ornare egestas pellentesque facilisis in a ultrices erat diam metus integer sed",
             comment: 1,
             share: 3,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
         {
-            image: "assets/demo/images/blog/blog-2.png",
+            coverImage: "assets/demo/images/blog/blog-2.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-2.png",
             title: "Magazine",
             description: "Magna iaculis sagittis, amet faucibus scelerisque non ornare non in penatibus ",
             comment: 1,
             share: 3,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
         {
-            image: "assets/demo/images/blog/blog-3.png",
+            coverImage: "assets/demo/images/blog/blog-3.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-3.png",
             title: "Science",
             description: "Purus mattis mi, libero maecenas volutpat quis a morbi arcu pharetra, mollis",
             comment: 1,
             share: 4,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
         {
-            image: "assets/demo/images/blog/blog-4.png",
+            coverImage: "assets/demo/images/blog/blog-4.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-4.png",
             title: "Blog",
             description: "Curabitur vitae sit justo facilisi nec, sodales proin aliquet libero volutpat nunc",
             comment: 1,
             share: 3,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
         {
-            image: "assets/demo/images/blog/blog-5.png",
+            coverImage: "assets/demo/images/blog/blog-5.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-5.png",
             title: "Magazine",
             description: "Id eget arcu suspendisse ullamcorper dolor lobortis dui et morbi penatibus quam",
             comment: 1,
             share: 3,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
         {
-            image: "assets/demo/images/blog/blog-6.png",
+            coverImage: "assets/demo/images/blog/blog-6.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-6.png",
             title: "Science",
             description: "Sagittis hendrerit laoreet dignissim sed auctor sit pellentesque vel diam iaculis et",
             comment: 1,
             share: 3,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
         {
-            image: "assets/demo/images/blog/blog-1.png",
+            coverImage: "assets/demo/images/blog/blog-1.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-1.png",
             title: "Blog",
             description: "Ornare egestas pellentesque facilisis in a ultrices erat diam metus integer sed",
             comment: 1,
             share: 3,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
         {
-            image: "assets/demo/images/blog/blog-2.png",
+            coverImage: "assets/demo/images/blog/blog-2.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-3.png",
             title: "Magazine",
             description: "Magna iaculis sagittis, amet faucibus scelerisque non ornare non in penatibus ",
             comment: 1,
             share: 3,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
         {
-            image: "assets/demo/images/blog/blog-3.png",
+            coverImage: "assets/demo/images/blog/blog-3.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-2.png",
             title: "Science",
             description: "Purus mattis mi, libero maecenas volutpat quis a morbi arcu pharetra, mollis",
             comment: 1,
             share: 3,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
         {
-            image: "assets/demo/images/blog/blog-4.png",
+            coverImage: "assets/demo/images/blog/blog-4.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-4.png",
             title: "Blog",
             description: "Curabitur vitae sit justo facilisi nec, sodales proin aliquet libero volutpat nunc",
             comment: 1,
             share: 3,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
         {
-            image: "assets/demo/images/blog/blog-5.png",
+            coverImage: "assets/demo/images/blog/blog-5.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-2.png",
             title: "Magazine",
             description: "Id eget arcu suspendisse ullamcorper dolor lobortis dui et morbi penatibus quam",
             comment: 1,
             share: 3,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
         {
-            image: "assets/demo/images/blog/blog-6.png",
+            coverImage: "assets/demo/images/blog/blog-6.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-6.png",
             title: "Science",
             description: "Sagittis hendrerit laoreet dignissim sed auctor sit pellentesque vel diam iaculis et",
             comment: 1,
             share: 3,
             day: "09",
-            mounth: "October"
+            month: "October"
         },
     ];
 
