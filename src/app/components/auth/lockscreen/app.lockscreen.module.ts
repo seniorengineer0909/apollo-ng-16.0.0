@@ -8,14 +8,14 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    AppLockScreenRoutingModule,
-    InputTextModule,
-    ButtonModule,
-    RippleModule
-  ],
-  declarations: [AppLockScreenComponent],
+    imports: [
+        CommonModule,
+        FormsModule,
+        AppLockScreenRoutingModule,
+        InputTextModule,
+        ButtonModule,
+        RippleModule
+    ],
+    declarations: [AppLockScreenComponent]
 })
 export class AppLockScreenModule { }
