@@ -370,7 +370,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'Create',
                         icon: 'pi pi-fw pi-plus',
-                        routerLink: ['profile/edit'],
+                        routerLink: ['profile/create'],
                     },
                 ]
             },
