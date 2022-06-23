@@ -4,7 +4,7 @@
     </div>
     <div class="col-12 lg:col-3 p-2">
         <div class="card">
-            <div class="flex align-item-center justify-content-between">
+            <div class="flex flex-wrap align-item-center justify-content-between">
                 <span class="text-900 text-xl mt-2 font-semibold">Account Storage</span>
                 <button pButton pRipple type="button" label="Upgrade" class="p-button-outlined p-button-secondary"></button>
             </div>
@@ -13,7 +13,7 @@
                 <app-folder *ngFor="let account of accounts" [data]="account"></app-folder>
             </div>
         </div>
-        <app-upload-files></app-upload-files>
+        <app-uploader></app-uploader>
     </div>
     <div class="col-12 lg:col-9 p-2">
         <div class="card">
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="card">
-            <p class="text-900 text-xl font-semibold ">Recent Upload</p>
+            <p class="text-900 text-xl font-semibold">Recent Uploads</p>
             <p-table responsiveLayout="scroll" #dt [value]="files" [columns]="cols" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[10,20]" dataKey="file">
                 <ng-template pTemplate="header">
                     <tr>
@@ -39,7 +39,7 @@
                 </ng-template>
                 <ng-template pTemplate="body" let-file>
                     <tr>
-                        <td style="width:35%;height:5rem; min-width:15rem;">
+                        <td style="width:35%; height:5rem; min-width:15rem;">
                             <span class="p-column-title">Name</span>
                             <div class="flex align-items-center">
                                 <img [src]="file.image" [alt]="file.name" style="border-radius: 50px;"
@@ -55,7 +55,7 @@
                             <span class="p-column-title">File Size</span>
                             <span class="text-900 font-semibold">{{file.fileSize}}</span>
                         </td>
-                        <td style="width: 5%;">
+                        <td style="width:5%;">
                             <button class="flex" pButton pRipple icon="pi pi-ellipsis-v"
                                 class="p-button-text p-button-secondary"></button>
                         </td>

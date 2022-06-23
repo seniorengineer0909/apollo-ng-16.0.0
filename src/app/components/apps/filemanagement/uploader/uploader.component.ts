@@ -1,10 +1,12 @@
-import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { MessageService } from 'primeng/api';
 
 @Component({
-    selector: 'app-upload-files',
-    templateUrl: './upload-files.component.html',
+    selector: 'app-uploader',
+    templateUrl: './uploader.component.html',
+    providers: [MessageService]
 })
-export class UploadFilesComponent  {
+export class UploaderComponent {
 
     @ViewChildren('buttonEl') buttonEl: QueryList<ElementRef>;
 
@@ -12,11 +14,14 @@ export class UploadFilesComponent  {
 
     showRemove: boolean = false;
 
+    constructor(private messageService: MessageService) {}
 
     onUpload(event) {
         for (let file of event.files) {
             this.uploadedFiles.push(file);
         }
+
+        this.messageService.add({severity:'success', summary: 'Success', detail: 'File uploaded successfully'});
     }
 
     onImageMouseOver(file) {
@@ -31,7 +36,8 @@ export class UploadFilesComponent  {
         })
     }
 
-    removeImage(file) {
+    removeImage(event, file) {
+        event.stopPropagation();
         this.uploadedFiles = this.uploadedFiles.filter(i => i !== file);
     }
 

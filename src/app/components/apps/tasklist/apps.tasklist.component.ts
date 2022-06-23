@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Task } from 'src/app/api/task';
 import { TaskService } from './service/task.service';
-import { PrimeNGConfig } from 'primeng/api';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -16,7 +15,7 @@ export class AppsTaskListComponent implements OnDestroy {
 
     completed: Task[];
 
-    constructor(private taskService: TaskService, private config: PrimeNGConfig) {
+    constructor(private taskService: TaskService) {
         this.subscription = this.taskService.taskSource$.subscribe(data => this.categorize(data));
     }
 

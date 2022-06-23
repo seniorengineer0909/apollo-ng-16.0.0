@@ -9,7 +9,7 @@ import { FileManagementService } from './service/file-management.service';
     templateUrl: './apps.filemanagement.component.html',
     styleUrls: ['./apps.filemanagement.component.scss']
 })
-export class AppsFileManagementComponent {
+export class AppsFileManagementComponent implements OnInit {
 
     fileChart: any;
 

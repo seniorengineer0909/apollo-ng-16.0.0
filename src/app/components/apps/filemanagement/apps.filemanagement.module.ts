@@ -17,8 +17,9 @@ import { ChartModule } from 'primeng/chart';
 import { MenuModule } from 'primeng/menu';
 import { FolderComponent } from './folder/folder.component';
 import { CardComponent } from './card/card.component';
-import { UploadFilesComponent } from './upload-files/upload-files.component';
+import { UploaderComponent } from './uploader/uploader.component';
 import { FileManagementService } from './service/file-management.service';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
     imports: [
@@ -32,13 +33,14 @@ import { FileManagementService } from './service/file-management.service';
         InputTextModule,
         DropdownModule,
         RippleModule,
+        ToastModule,
         AvatarModule,
         TableModule,
         FileUploadModule,
         ChartModule,
         MenuModule
     ],
-    declarations: [AppsFileManagementComponent, FolderComponent, CardComponent, UploadFilesComponent],
+    declarations: [AppsFileManagementComponent, FolderComponent, CardComponent, UploaderComponent],
     providers: [FileManagementService]
 })
 export class AppsFileManagementModule { }
