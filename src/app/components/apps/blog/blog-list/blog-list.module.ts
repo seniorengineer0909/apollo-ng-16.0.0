@@ -25,10 +25,10 @@ import { SelectButtonModule } from "primeng/selectbutton";
 import { SliderModule } from "primeng/slider";
 import { TableModule } from "primeng/table";
 import { ToggleButtonModule } from "primeng/togglebutton";
-import { AppBlogListRoutingModule } from "./app.bloglist-routing.module";
-import { AppBloglistComponent } from "./app.bloglist.component";
 import { DataViewModule } from 'primeng/dataview';
-import { BloglistcardComponent } from "./bloglistcard/bloglistcard.component";
+import { BlogListCardComponent } from "./blog-list-card/blog-list-card.component";
+import { BlogListComponent } from "./blog-list.component";
+import { BlogListRoutingModule } from "./blog-list-routing.module";
 
 @NgModule({
     imports: [
@@ -57,10 +57,10 @@ import { BloglistcardComponent } from "./bloglistcard/bloglistcard.component";
         TableModule,
         RippleModule,
         MenuModule,
-        AppBlogListRoutingModule,
+        BlogListRoutingModule,
         PaginatorModule,
         DataViewModule
     ],
-    declarations: [AppBloglistComponent, BloglistcardComponent]
+    declarations: [BlogListComponent, BlogListCardComponent]
   })
-  export class AppBloglistModule { }
+  export class BlogListModule { }

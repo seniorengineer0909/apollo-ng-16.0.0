@@ -3,11 +3,11 @@ import { Comment } from 'src/app/api/blog';
 
 
 @Component({
-    selector: 'app-blog-comments-list',
-    templateUrl: './blog-comments-list.component.html',
+    selector: 'blog-comments',
+    templateUrl: './blog-comments.component.html',
     styleUrls:['../../bloglist/bloglist.component.scss']
 })
-export class BlogCommentsListComponent {
+export class BlogCommentsComponent {
 
     @Input() comments: Comment[] = [];
 
