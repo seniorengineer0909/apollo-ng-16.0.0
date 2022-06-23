@@ -59,37 +59,14 @@ export class AppMenuComponent implements OnInit {
                     },
                     {
                         label: 'Mail',
-                        icon: 'pi pi-envelope',
-                        items: [
-                            {
-                                label: 'Inbox',
-                                icon: 'pi pi-fw pi-inbox',
-                                routerLink: ['apps/mail/inbox']
-                            },
-                            {
-                                label: 'Compose',
-                                icon: 'pi pi-fw pi-pencil',
-                                routerLink: ['apps/mail/compose']
-                            },
-                            {
-                                label: 'Mail Detail',
-                                icon: 'pi pi-fw pi-comment',
-                                routerLink: ['apps/mail/detail/1000']
-                            },
-                        ]
+                        icon: 'pi pi-fw pi-envelope',
+                        routerLink: ['apps/mail/inbox']
                     },
                     {
                         label: 'Kanban',
-                        icon: 'pi pi-envelope',
-                        items: [
-                            {
-                                label: 'Board',
-                                icon: 'pi pi-fw pi-th-large',
-                                routerLink: ['apps/kanban']
-                            },
-                        ]
-                    },
-
+                        icon: 'pi pi-fw pi-sliders-v',
+                        routerLink: ['apps/kanban']
+                    }
                 ]
             },
             {
