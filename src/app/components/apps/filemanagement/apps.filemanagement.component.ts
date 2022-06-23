@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Folder } from 'src/app/api/folder';
-import { File} from 'src/app/api/file';
+import { File } from 'src/app/api/file';
 import { Metric } from 'src/app/api/metric';
 import { FileManagementService } from './service/file-management.service';
 
@@ -27,7 +27,7 @@ export class AppsFileManagementComponent {
 
     folders: Folder[];
 
-    constructor(private fileService: FileManagementService) {}
+    constructor(private fileService: FileManagementService) { }
 
     ngOnInit() {
         this.cols = [
@@ -41,13 +41,13 @@ export class AppsFileManagementComponent {
         this.fileService.getMetrics().then(data => this.metrics = data);
         this.fileService.getFoldersSmall().then(data => this.accounts = data);
         this.fileService.getFoldersLarge().then(data => this.folders = data);
-        
+
         this.initChart();
     }
 
     initChart() {
         this.chartPlugins = [{
-            beforeDraw: function(chart) {
+            beforeDraw: function (chart) {
 
                 let ctx = chart.ctx;
                 let width = chart.width;
