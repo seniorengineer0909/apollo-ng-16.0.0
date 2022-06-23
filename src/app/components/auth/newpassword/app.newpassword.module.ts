@@ -8,14 +8,14 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    AppNewPasswordRoutingModule,
-    FormsModule,
-    ButtonModule,
-    InputTextModule,
-    RippleModule
-  ],
-  declarations: [AppNewPasswordComponent],
+    imports: [
+        CommonModule,
+        AppNewPasswordRoutingModule,
+        FormsModule,
+        ButtonModule,
+        InputTextModule,
+        RippleModule
+    ],
+    declarations: [AppNewPasswordComponent]
 })
 export class AppNewPasswordModule { }
