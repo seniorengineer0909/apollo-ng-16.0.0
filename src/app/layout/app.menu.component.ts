@@ -93,16 +93,6 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             {
-                label: 'Landing',
-                items: [
-                    {
-                        label: 'Landing',
-                        icon: 'pi pi-fw pi-globe',
-                        routerLink: ['/landing'],
-                    }
-                ]
-            },
-            {
                 label: 'UI Kit',
                 icon: 'pi pi-fw pi-star-fill',
                 routerLink: ['/uikit'],
@@ -239,6 +229,11 @@ export class AppMenuComponent implements OnInit {
                 icon: 'pi pi-fw pi-briefcase',
                 routerLink: ['/pages'],
                 items: [
+                    {
+                        label: 'Landing',
+                        icon: 'pi pi-fw pi-globe',
+                        routerLink: ['/landing'],
+                    },
                     {
                         label: 'Crud',
                         icon: 'pi pi-fw pi-pencil',
