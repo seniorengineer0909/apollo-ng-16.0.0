@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-card',

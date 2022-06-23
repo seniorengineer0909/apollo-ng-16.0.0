@@ -2,8 +2,7 @@
     <div class="flex align-item-center justify-content-between mb-5">
         <span class="text-900 mb-1 text-xl font-semibold">{{card.title}}</span>
         <div>
-            <button pButton pRipple [icon]="card.icon" class="p-button-secondary p-button-text"
-                (click)="menu.toggle($event)"></button>
+            <button pButton pRipple [icon]="card.icon" class="p-button-secondary p-button-text" (click)="menu.toggle($event)"></button>
             <p-menu #menu [popup]="true" appendTo="body" [model]="card.items"></p-menu>
         </div>
     </div>
@@ -11,8 +10,8 @@
         <div [ngClass]="card.color" class="w-full mt-2" style="height: 7px; border-radius: 4px">
             <div [ngClass]="card.fieldColor" class="h-full" style="width:34%; border-radius: 4px"></div>
             <div class="flex align-item-center justify-content-between">
-                <span class="text-900 mt-3 text-md font-medium">{{card.files }}</span>
-                <span class="text-900 mt-3 text-md font-medium">{{card.fileSize }}</span>
+                <span class="text-900 mt-3 text-md font-medium">{{card.files}}</span>
+                <span class="text-900 mt-3 text-md font-medium">{{card.fileSize}}</span>
             </div>
         </div>
     </div>

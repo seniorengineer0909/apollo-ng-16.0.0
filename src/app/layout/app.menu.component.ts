@@ -38,9 +38,9 @@ export class AppMenuComponent implements OnInit {
                 icon: 'pi-th-large',
                 items: [
                     {
-                        label: 'File Managament',
+                        label: 'File Management',
                         icon: 'pi pi-fw pi-folder',
-                        routerLink: ['apps/file-managament']
+                        routerLink: ['apps/file-management']
                     },
                     {
                         label: 'Task List',

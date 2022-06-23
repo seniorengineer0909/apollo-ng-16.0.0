@@ -1,17 +1,16 @@
 <div class="grid">
-    <div *ngFor="let card of cards" class="col-12 lg:col-3 p-2">
-        <div>
-            <app-card [items]="items" [card]="card"></app-card>
-        </div>
+    <div *ngFor="let metric of metrics" class="col-12 lg:col-3 p-2">
+        <app-card [items]="items" [card]="metric"></app-card>
     </div>
     <div class="col-12 lg:col-3 p-2">
-        <div class="card ">
-            <div class="flex align-item-center justify-content-between ">
+        <div class="card">
+            <div class="flex align-item-center justify-content-between">
                 <span class="text-900 text-xl mt-2 font-semibold">Account Storage</span>
                 <button pButton pRipple type="button" label="Upgrade" class="p-button-outlined p-button-secondary"></button>
             </div>
-            <div>
-                <app-chart [accounts]="accounts"></app-chart>
+            <p-chart type="doughnut" [plugins]="chartPlugins" id="country-chart" [data]="fileChart" [options]="fileChartOptions" [style]="{'width': '75%'}"></p-chart>
+            <div  class="flex flex-column gap-4 mt-4">
+                <app-folder *ngFor="let account of accounts" [data]="account"></app-folder>
             </div>
         </div>
         <app-upload-files></app-upload-files>
@@ -21,8 +20,8 @@
             <p class="text-900 text-xl font-semibold">Folders</p>
             <div class="flex justify-content-center">
                 <div class="grid">
-                    <div *ngFor="let folder of folders" class="col-12 lg:col-4 cursor-pointer">
-                        <app-folder [folder]="folder"></app-folder>
+                    <div *ngFor="let folder of folders" class="col-12 lg:col-4">
+                        <app-folder [data]="folder"></app-folder>
                     </div>
                 </div>
             </div>

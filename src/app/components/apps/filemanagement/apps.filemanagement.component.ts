@@ -1,13 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Folder } from 'src/app/api/folder';
+import { File} from 'src/app/api/file';
+import { Metric } from 'src/app/api/metric';
+import { FileManagementService } from './service/file-management.service';
 
 @Component({
-    selector: 'app-chart',
-    templateUrl: './chart.component.html'
+    selector: 'app-apps.filemanagement',
+    templateUrl: './apps.filemanagement.component.html',
+    styleUrls: ['./apps.filemanagement.component.scss']
 })
-
-export class ChartComponent implements OnInit {
-
-    @Input() accounts:any;
+export class AppsFileManagementComponent {
 
     fileChart: any;
 
@@ -15,10 +17,35 @@ export class ChartComponent implements OnInit {
 
     chartPlugins: any;
 
-    constructor() { }
+    cols: any[];
+
+    files: File[];
+
+    metrics: Metric[];
+
+    accounts: Folder[];
+
+    folders: Folder[];
+
+    constructor(private fileService: FileManagementService) {}
 
     ngOnInit() {
+        this.cols = [
+            { field: 'name', header: 'Name' },
+            { field: 'date', header: 'Date' },
+            { field: 'file size', header: 'File Size' },
+            { field: 'status', header: 'Status' }
+        ];
 
+        this.fileService.getFiles().then(data => this.files = data);
+        this.fileService.getMetrics().then(data => this.metrics = data);
+        this.fileService.getFoldersSmall().then(data => this.accounts = data);
+        this.fileService.getFoldersLarge().then(data => this.folders = data);
+        
+        this.initChart();
+    }
+
+    initChart() {
         this.chartPlugins = [{
             beforeDraw: function(chart) {
 
@@ -78,5 +105,4 @@ export class ChartComponent implements OnInit {
             }
         };
     }
-
 }
