@@ -320,14 +320,9 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['/newpassword'],
                     },
                     {
-                        label: 'Email Verification',
+                        label: 'Verification',
                         icon: 'pi pi-fw pi-envelope',
-                        routerLink: ['/emailverification'],
-                    },
-                    {
-                        label: 'Two-Factor',
-                        icon: 'pi pi-fw pi-phone',
-                        routerLink: ['/twostepverification'],
+                        routerLink: ['/verification'],
                     },
                     {
                         label: 'Lock Screen',

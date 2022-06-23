@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
-    templateUrl: './app.emailverification.component.html'
+    templateUrl: './app.verification.component.html'
 })
-export class AppEmailVerificationComponent {
+export class AppVerificationComponent {
 
     val1: number;
     
