@@ -5,11 +5,11 @@ import { AppAccessdeniedComponent } from './app.accessdenied.component'
 import { ButtonModule } from 'primeng/button';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    AppAccessdeniedRoutingModule,
-    ButtonModule
-  ],
-  declarations: [AppAccessdeniedComponent]
+    imports: [
+        CommonModule,
+        AppAccessdeniedRoutingModule,
+        ButtonModule
+    ],
+    declarations: [AppAccessdeniedComponent]
 })
-export class AppAccessdeniedModule { }
+export class AppAccessdeniedModule {}

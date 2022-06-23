@@ -5,12 +5,11 @@ import { AppNotfoundComponent } from './app.notfound.component';
 import { ButtonModule } from 'primeng/button';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    AppNotfoundRoutingModule,
-    ButtonModule
-
-  ],
-  declarations: [AppNotfoundComponent]
+    imports: [
+        CommonModule,
+        AppNotfoundRoutingModule,
+        ButtonModule
+    ],
+    declarations: [AppNotfoundComponent]
 })
 export class AppNotfoundModule { }
