@@ -4,8 +4,8 @@
     <path [attr.fill]="dark ? 'var(--primary-700)' : 'var(--primary-300)'" d="M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z"/>
     <path [attr.fill]="dark ? 'var(--primary-600)' : 'var(--primary-200)'" d="M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z"/>
     <path [attr.fill]="dark ? 'var(--primary-500)' : 'var(--primary-100)'" d="M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z"/>
- </svg>
-<div class="px-5 h-screen flex justify-content-center align-items-center relative">
+</svg>
+<div class="px-5 h-screen flex justify-content-center align-items-center">
     <div class="border-1 surface-border surface-card border-round py-7 px-4 md:px-7 z-1">
     <div class="mb-4">
         <div class="text-900 text-xl font-bold mb-2">Log in</div>
@@ -27,7 +27,7 @@
                 </div>
                 <a class="text-600 cursor-pointer hover:text-primary cursor-pointer ml-auto">Reset password</a>
             </div>
-            <button pButton pRipple label="Log In" class="w-full"></button>
+            <button pButton pRipple label="Log In" class="w-full" [routerLink]="['/']"></button>
         </div>
     </div>
 </div>
