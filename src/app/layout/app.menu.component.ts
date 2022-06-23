@@ -60,12 +60,52 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'Mail',
                         icon: 'pi pi-fw pi-envelope',
-                        routerLink: ['apps/mail/inbox']
+                        items: [
+                            {
+                                label: 'Inbox',
+                                icon: 'pi pi-fw pi-inbox',
+                                routerLink: ['apps/mail/inbox']
+                            },
+                            {
+                                label: 'Compose',
+                                icon: 'pi pi-fw pi-pencil',
+                                routerLink: ['apps/mail/compose']
+                            },
+                            {
+                                label: 'Detail',
+                                icon: 'pi pi-fw pi-comment',
+                                routerLink: ['apps/mail/detail/1000']
+                            }
+                        ]
                     },
                     {
                         label: 'Kanban',
                         icon: 'pi pi-fw pi-sliders-v',
                         routerLink: ['apps/kanban']
+                    },
+                    {
+                        label: 'Blog',
+                        icon: 'pi pi-fw pi-comment',
+                        items: [
+                            {
+                                label: 'List',
+                                icon: 'pi pi-fw pi-image',
+                                routerLink: ['blog/list'],
+        
+                            },
+                            {
+                                label: 'Detail',
+                                icon: 'pi pi-fw pi-list',
+                                routerLink: ['blog/detail'],
+        
+                            },
+                            {
+                                label: 'Edit',
+                                icon: 'pi pi-fw pi-pencil',
+                                routerLink: ['blog/edit'],
+        
+                            }
+                        ]
                     }
                 ]
             },
@@ -176,7 +216,6 @@ export class AppMenuComponent implements OnInit {
                     },
                 ]
             },
-            { separator: true },
             {
                 label: 'Utilities',
                 icon: 'pi pi-fw pi-compass',
@@ -200,7 +239,6 @@ export class AppMenuComponent implements OnInit {
                     },
                 ]
             },
-            { separator: true },
             {
                 label: 'Pages',
                 icon: 'pi pi-fw pi-briefcase',
@@ -305,7 +343,6 @@ export class AppMenuComponent implements OnInit {
                     }
                 ]
             },
-            { separator: true },
             {
                 label: 'E-Commerce',
                 icon: 'pi pi-fw pi-wallet',
@@ -357,7 +394,6 @@ export class AppMenuComponent implements OnInit {
                     }
                 ]
             },
-            { separator: true },
             {
                 label: 'User Management',
                 icon: 'pi pi-fw pi-user',
@@ -372,31 +408,6 @@ export class AppMenuComponent implements OnInit {
                         icon: 'pi pi-fw pi-plus',
                         routerLink: ['profile/create'],
                     },
-                ]
-            },
-            { separator: true },
-            {
-                label: 'Blog',
-                icon: 'pi pi-fw pi-comment',
-                items: [
-                    {
-                        label: 'Blog List',
-                        icon: 'pi pi-fw pi-image',
-                        routerLink: ['blog/list'],
-
-                    },
-                    {
-                        label: 'Blog Detail',
-                        icon: 'pi pi-fw pi-list',
-                        routerLink: ['blog/detail'],
-
-                    },
-                    {
-                        label: 'Blog Edit',
-                        icon: 'pi pi-fw pi-pencil',
-                        routerLink: ['blog/edit'],
-
-                    }
                 ]
             },
             {
