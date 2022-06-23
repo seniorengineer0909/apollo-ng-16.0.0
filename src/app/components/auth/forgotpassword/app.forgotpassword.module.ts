@@ -6,12 +6,12 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ButtonModule,
-    InputTextModule,
-    AppForgotPasswordRoutingModule
-  ],
-  declarations: [AppForgotPasswordComponent]
+    imports: [
+        CommonModule,
+        ButtonModule,
+        InputTextModule,
+        AppForgotPasswordRoutingModule
+    ],
+    declarations: [AppForgotPasswordComponent]
 })
 export class AppForgotPasswordModule { }

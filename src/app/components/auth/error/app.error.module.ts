@@ -5,11 +5,11 @@ import { AppErrorComponent } from './app.error.component';
 import { ButtonModule } from 'primeng/button';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    AppErrorRoutingModule,
-    ButtonModule
-  ],
-  declarations: [AppErrorComponent]
+    imports: [
+        CommonModule,
+        AppErrorRoutingModule,
+        ButtonModule
+    ],
+    declarations: [AppErrorComponent]
 })
-export class AppErrorModule { }
+export class AppErrorModule {}

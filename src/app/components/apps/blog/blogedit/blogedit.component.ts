@@ -1,13 +1,5 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-
-interface blog {
-    name: string;
-    code: string;
-    status: string;
-    tags: string[];
-    description: string;
-    images: string[];
-}
+import { Blog } from 'src/app/api/blog';
 
 @Component({
     selector: 'app-blogedit',
@@ -21,13 +13,12 @@ export class BlogeditComponent {
 
     text: string;
 
-    blog: blog = {
+    blog: Blog = {
         name: '',
         code: '',
         description: '',
         status: '',
-        tags: ['Sports'],
-        images: []
+        tags: ['Sports']
     };
 
     uploadedFiles: any[] = [];
@@ -39,25 +30,14 @@ export class BlogeditComponent {
       }
 
     onUpload(event) {
-        for (let file of event.files) {
-            this.blog.images.push(file);
+        if(event && event.files.length > 0) {
+            this.blog.coverImage = event.files[0];
+            console.log(this.blog.coverImage)
         }
     }
 
-    onImageMouseOver(file) {
-        this.buttonEl.toArray().forEach(el => {
-            el.nativeElement.id === file.name ? el.nativeElement.style.display = 'flex' : null;
-        })
-    }
-
-    onImageMouseLeave(file) {
-        this.buttonEl.toArray().forEach(el => {
-            el.nativeElement.id === file.name ? el.nativeElement.style.display = 'none' : null;
-        })
-    }
-
-    removeImage(file) {
-        this.blog.images = this.blog.images.filter(i => i !== file);
+    removeImage() {
+        this.blog.coverImage = null;
     }
 
 }

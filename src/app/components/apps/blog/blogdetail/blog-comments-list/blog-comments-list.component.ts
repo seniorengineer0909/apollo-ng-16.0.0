@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Comment } from 'src/app/api/blog';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BlogCommentsListComponent {
 
-    @Input() comments = [];
+    @Input() comments: Comment[] = [];
 
     rowCount = 3;
 }

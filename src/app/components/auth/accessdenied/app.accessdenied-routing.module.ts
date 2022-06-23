@@ -3,9 +3,9 @@ import { RouterModule } from '@angular/router';
 import { AppAccessdeniedComponent } from './app.accessdenied.component';
 
 @NgModule({
-  imports: [RouterModule.forChild([
-    {path: '', component: AppAccessdeniedComponent}
-  ])],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild([
+        { path: '', component: AppAccessdeniedComponent }
+    ])],
+    exports: [RouterModule]
 })
-export class AppAccessdeniedRoutingModule { }
+export class AppAccessdeniedRoutingModule {}

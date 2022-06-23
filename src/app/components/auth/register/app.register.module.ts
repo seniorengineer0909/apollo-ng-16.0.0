@@ -8,7 +8,6 @@ import { RippleModule } from 'primeng/ripple';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 
-
 @NgModule({
   imports: [
     CommonModule,

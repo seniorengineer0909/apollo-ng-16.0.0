@@ -25,8 +25,7 @@ const routes: Routes = [
     { path: 'forgotpassword', loadChildren: () => import('./components/auth/forgotpassword/app.forgotpassword.module').then(m => m.AppForgotPasswordModule) },
     { path: 'register', loadChildren: () => import('./components/auth/register/app.register.module').then(m => m.AppRegisterModule) },
     { path: 'newpassword', loadChildren: () => import('./components/auth/newpassword/app.newpassword.module').then(m => m.AppNewPasswordModule) },
-    { path: 'emailverification', loadChildren: () => import('./components/auth/emailverification/app.emailverification.module').then(m => m.AppEmailverificationModule) },
-    { path: 'twostepverification', loadChildren: () => import('./components/auth/two-stepverification/app.twostepverification.module').then(m => m.AppTwoStepVerificationModule) },
+    { path: 'verification', loadChildren: () => import('./components/auth/verification/app.verification.module').then(m => m.AppVerificationModule) },
     { path: 'lockscreen', loadChildren: () => import('./components/auth/lockscreen/app.lockscreen.module').then(m => m.AppLockScreenModule) },
     { path: 'notfound', loadChildren: () => import('./components/auth/notfound/app.notfound.module').then(m => m.AppNotfoundModule) },
     { path: '**', redirectTo: '/notfound' }

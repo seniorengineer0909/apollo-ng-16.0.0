@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Blog } from 'src/app/api/blog';
 
 @Component({
     selector: 'bloglistcard',
@@ -7,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class BloglistcardComponent {
 
-    @Input() blog: any;
+    @Input() blog: Blog;
 
-    constructor(private router:Router){}
+    constructor(private router: Router) { }
 
     navigateToDetail(): void {
         this.router.navigateByUrl("/blog/detail");

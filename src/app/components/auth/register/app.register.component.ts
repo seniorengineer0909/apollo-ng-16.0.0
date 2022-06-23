@@ -1,27 +1,17 @@
 import { Component } from '@angular/core';
+import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
-    selector: 'app-app.register',
-    templateUrl: './app.register.component.html'
+	templateUrl: './app.register.component.html'
 })
 export class AppRegisterComponent {
 
-    inputType: string = 'password';
+	confirmed: boolean;
 
-    email: string;
+	constructor(private layoutService: LayoutService) {}
 
-    password: string;
-
-    val: any;
-
-    selectedValues: any[];
-
-    togglePassword(){
-      if (this.inputType === 'text') {
-        this.inputType = 'password';
-      } else {
-        this.inputType = 'text';
-      }
-    }
+	get dark(): boolean {
+		return this.layoutService.config.colorScheme !== 'light';
+	}
 
 }

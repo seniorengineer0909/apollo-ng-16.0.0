@@ -59,46 +59,13 @@ export class AppMenuComponent implements OnInit {
                     },
                     {
                         label: 'Mail',
-                        icon: 'pi pi-envelope',
-                        items: [
-                            {
-                                label: 'Inbox',
-                                icon: 'pi pi-fw pi-inbox',
-                                routerLink: ['apps/mail/inbox']
-                            },
-                            {
-                                label: 'Compose',
-                                icon: 'pi pi-fw pi-pencil',
-                                routerLink: ['apps/mail/compose']
-                            },
-                            {
-                                label: 'Mail Detail',
-                                icon: 'pi pi-fw pi-comment',
-                                routerLink: ['apps/mail/detail/1000']
-                            },
-                        ]
+                        icon: 'pi pi-fw pi-envelope',
+                        routerLink: ['apps/mail/inbox']
                     },
                     {
                         label: 'Kanban',
-                        icon: 'pi pi-envelope',
-                        items: [
-                            {
-                                label: 'Board',
-                                icon: 'pi pi-fw pi-th-large',
-                                routerLink: ['apps/kanban']
-                            },
-                        ]
-                    },
-
-                ]
-            },
-            {
-                label: 'Landing',
-                items: [
-                    {
-                        label: 'Landing',
-                        icon: 'pi pi-fw pi-globe',
-                        routerLink: ['/landing'],
+                        icon: 'pi pi-fw pi-sliders-v',
+                        routerLink: ['apps/kanban']
                     }
                 ]
             },
@@ -240,6 +207,11 @@ export class AppMenuComponent implements OnInit {
                 routerLink: ['/pages'],
                 items: [
                     {
+                        label: 'Landing',
+                        icon: 'pi pi-fw pi-globe',
+                        routerLink: ['/landing'],
+                    },
+                    {
                         label: 'Crud',
                         icon: 'pi pi-fw pi-pencil',
                         routerLink: ['/pages/crud'],
@@ -320,14 +292,9 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['/newpassword'],
                     },
                     {
-                        label: 'Email Verification',
+                        label: 'Verification',
                         icon: 'pi pi-fw pi-envelope',
-                        routerLink: ['/emailverification'],
-                    },
-                    {
-                        label: 'Two-Step Verification',
-                        icon: 'pi pi-fw pi-phone',
-                        routerLink: ['/twostepverification'],
+                        routerLink: ['/verification'],
                     },
                     {
                         label: 'Lock Screen',

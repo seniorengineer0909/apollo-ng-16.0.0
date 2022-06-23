@@ -1,22 +1,15 @@
 import { Component } from '@angular/core';
+import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
-    selector: 'app-app-lock-screen',
-    templateUrl: './app.lockscreen.component.html',
-    styleUrls: ['./app.lockscreen.component.scss']
+    templateUrl: './app.lockscreen.component.html'
 })
-export class AppLockScreenComponent {
-    inputType: string = 'password';
+export class AppLockScreenComponent { 
 
-    name: string = 'Amy Elsner';
+    constructor(private layoutService: LayoutService) {}
 
-    password: string;
+	get dark(): boolean {
+		return this.layoutService.config.colorScheme !== 'light';
+	}
 
-    togglePassword(){
-      if (this.inputType === 'text') {
-        this.inputType = 'password';
-      } else {
-        this.inputType = 'text';
-      }
-    }
 }

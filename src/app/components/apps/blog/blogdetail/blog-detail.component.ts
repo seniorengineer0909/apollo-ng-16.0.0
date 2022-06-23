@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-
+import { Comment } from 'src/app/api/blog';
 @Component({
     selector: 'app-blog-detail',
     templateUrl: './blog-detail.component.html'
 })
 export class BlogDetailComponent {
 
-    comments = [
+    comments: Comment[] = [
         {
             image: "/assets/demo/images/blog/blog-profile/blog-profile-3.png",
             name: "Courtney Henry",

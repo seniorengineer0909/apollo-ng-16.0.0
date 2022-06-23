@@ -8,29 +8,25 @@
 <div class="px-5 h-screen flex justify-content-center align-items-center">
     <div class="border-1 surface-border surface-card border-round py-7 px-4 md:px-7 z-1">
         <div class="mb-4">
-            <div class="text-900 text-xl font-bold mb-2">Register</div>
-            <span class="text-600 font-medium">Let's get started</span>
+            <div class="text-900 text-xl font-bold mb-2">Verification</div>
+            <span class="text-600 font-medium">We have sent code to you email:</span>
+            <div class="flex align-items-center mt-1">
+                <i class="pi pi-envelope text-600"></i>
+                <span class="text-900 font-bold ml-2">dm**@gmail.com</span>
+            </div>
         </div>
         <div class="flex flex-column">
-            <span class="p-input-icon-left w-full mb-4">
-                <i class="pi pi-user"></i>
-                <input id="username" type="text" pInputText class="w-full md:w-25rem" placeholder="Username">
-            </span>
-            <span class="p-input-icon-left w-full mb-4">
-                <i class="pi pi-envelope"></i>
-                <input id="email" type="text" pInputText class="w-full md:w-25rem" placeholder="Email">
-            </span>
-            <span class="p-input-icon-left w-full mb-4">
-                <i class="pi pi-lock"></i>
-                <input id="password" type="password" pInputText class="w-full md:w-25rem" placeholder="Password">
-            </span>
-            <div class="mb-4 flex flex-wrap">
-                <p-checkbox name="checkbox" value="val" [(ngModel)]="confirmed" styleClass="mr-2" [binary]="true"></p-checkbox>
-                <label for="checkbox" class="text-900 font-medium mr-2">I have read the</label>
-                <a class="text-600 cursor-pointer hover:text-primary cursor-pointer">Terms and Conditions</a>
+            <div class="flex justify-content-between w-full align-items-center mb-4 gap-3">
+                <p-inputNumber [(ngModel)]="val1" inputStyleClass="w-3rem text-center" maxlength="1"></p-inputNumber>
+                <p-inputNumber [(ngModel)]="val2" inputStyleClass="w-3rem text-center" maxlength="1"></p-inputNumber>
+                <p-inputNumber [(ngModel)]="val3" inputStyleClass="w-3rem text-center" maxlength="1"></p-inputNumber>
+                <p-inputNumber [(ngModel)]="val4" inputStyleClass="w-3rem text-center" maxlength="1"></p-inputNumber>
             </div>
-            <button pButton pRipple label="Sign Up" class="w-full mb-4" [routerLink]="['/']"></button>
-            <span class="font-medium text-600">Already have an account? <a class="font-semibold cursor-pointer text-900 hover:text-primary transition-colors transition-duration-300">Login</a></span>
+    
+            <div class="flex flex-wrap gap-2 justify-content-between">
+                <button pButton pRipple label="Cancel" class="flex-auto p-button-outlined" [routerLink]="['/']"></button>
+                <button pButton pRipple label="Verify" class="flex-auto" [routerLink]="['/']"></button>
+            </div>
         </div>
     </div>
 </div>
