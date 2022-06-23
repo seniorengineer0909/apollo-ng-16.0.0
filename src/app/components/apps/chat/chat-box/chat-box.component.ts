@@ -34,7 +34,8 @@ export class ChatBoxComponent implements OnInit {
     sendMessage() {
         if(this.textContent == '' || this.textContent === ' ') {
           return;
-        } else {
+        } 
+        else {
           let message = {
               text: this.textContent,
               ownerId: 123,
@@ -44,7 +45,6 @@ export class ChatBoxComponent implements OnInit {
           this.chatService.sendMessage(message)
           this.textContent = '';
         }
-
     }
 
     parseDate(timestamp) {

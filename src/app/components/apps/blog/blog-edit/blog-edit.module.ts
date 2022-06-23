@@ -9,8 +9,8 @@ import { FileUploadModule } from "primeng/fileupload";
 import { InputSwitchModule } from "primeng/inputswitch";
 import { InputTextModule } from "primeng/inputtext";
 import { RippleModule } from "primeng/ripple";
-import { BlogeditRoutingModule } from "./blogedit-routing.module";
-import { BlogeditComponent } from "./blogedit.component";
+import { BlogEditRoutingModule } from "./blog-edit-routing.module";
+import { BlogEditComponent } from "./blog-edit.component";
 
 
 @NgModule({
@@ -21,17 +21,16 @@ import { BlogeditComponent } from "./blogedit.component";
         DropdownModule,
         FormsModule,
         RippleModule,
-        BlogeditRoutingModule,
+        BlogEditRoutingModule,
         ChipModule,
         FileUploadModule,
         InputSwitchModule,
         EditorModule,
         ChipModule
-
     ],
-    declarations: [BlogeditComponent]
+    declarations: [BlogEditComponent]
   })
-  export class BlogeditModule { }
+  export class BlogEditModule { }
 
 
 

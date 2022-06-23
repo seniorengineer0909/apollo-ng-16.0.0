@@ -11,11 +11,10 @@ import { InputNumberModule } from "primeng/inputnumber";
 import { InputTextModule } from "primeng/inputtext";
 import { RippleModule } from "primeng/ripple";
 import { TableModule } from "primeng/table";
-import { BlogCommentsListComponent } from "./blog-comments-list/blog-comments-list.component";
 import { BlogCommentsComponent } from "./blog-comments/blog-comments.component";
+import { NewCommentComponent } from "./new-comment/new-comment.component";
 import { BlogDetailComponent } from "./blog-detail.component";
-import { BlogDetailRoutingModule } from "./blogdetail-routing.module";
-
+import { BlogDetailRoutingModule } from "./blog-detail-routing.module";
 
 @NgModule({
     imports: [
@@ -32,9 +31,8 @@ import { BlogDetailRoutingModule } from "./blogdetail-routing.module";
         DividerModule,
         AvatarModule,
         DataViewModule
-
     ],
-    declarations: [BlogCommentsComponent, BlogCommentsListComponent, BlogDetailComponent]
+    declarations: [BlogCommentsComponent, NewCommentComponent, BlogDetailComponent]
   })
   export class BlogDetailModule { }
 

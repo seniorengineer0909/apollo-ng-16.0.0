@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AppBloglistComponent } from './app.bloglist.component';
+import { BlogEditComponent } from './blog-edit.component';
+
 
 @NgModule({
     imports: [RouterModule.forChild([
-        { path: '', component: AppBloglistComponent }
-
+        { path: '', component: BlogEditComponent }
     ])],
     exports: [RouterModule]
 })
-export class AppBlogListRoutingModule { }
-
+export class BlogEditRoutingModule { }

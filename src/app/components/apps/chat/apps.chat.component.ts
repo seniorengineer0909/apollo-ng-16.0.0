@@ -5,8 +5,7 @@ import { ChatService } from './service/chat.service';
 
 @Component({
     selector: 'app-apps.chat',
-    templateUrl: './apps.chat.component.html',
-    styleUrls: ['./apps.chat.component.scss']
+    templateUrl: './apps.chat.component.html'
 })
 export class AppsChatComponent implements OnDestroy {
 

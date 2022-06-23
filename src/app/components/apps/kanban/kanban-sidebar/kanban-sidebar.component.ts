@@ -44,9 +44,9 @@ export class KanbanSidebarComponent implements OnInit, OnDestroy {
 
     listNameSubscription: Subscription;
 
-    @ViewChild('inputEl') inputEl: ElementRef;
+    @ViewChild('inputTitle') inputTitle: ElementRef;
 
-    @ViewChild('inputEl2') inputEl2: ElementRef;
+    @ViewChild('inputTaskListTitle') inputTaskListTitle: ElementRef;
 
     constructor(public parent: AppsKanbanComponent, private memberService: MemberService, private kanbanService: KanbanService) {
         this.memberService.getMembers().then(members => this.assignees = members);
@@ -137,10 +137,10 @@ export class KanbanSidebarComponent implements OnInit, OnDestroy {
 
     focus(arg) {
         if (arg == 1) {
-            this.timeout = setTimeout(() => this.inputEl.nativeElement.focus(), 1);
+            this.timeout = setTimeout(() => this.inputTitle.nativeElement.focus(), 1);
         }
         if (arg == 2) {
-            this.timeout = setTimeout(() => this.inputEl2.nativeElement.focus(), 1);
+            this.timeout = setTimeout(() => this.inputTaskListTitle.nativeElement.focus(), 1);
         }
     }
 

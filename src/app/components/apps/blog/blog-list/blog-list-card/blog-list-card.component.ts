@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 import { Blog } from 'src/app/api/blog';
 
 @Component({
-    selector: 'bloglistcard',
-    templateUrl: './bloglistcard.component.html',
+    selector: 'blog-list-card',
+    templateUrl: './blog-list-card.component.html',
 })
-export class BloglistcardComponent {
+export class BlogListCardComponent {
 
     @Input() blog: Blog;
 
