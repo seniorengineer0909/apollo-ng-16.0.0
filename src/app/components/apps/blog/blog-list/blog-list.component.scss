@@ -5,6 +5,7 @@
         border: 0 none;
     }
 }
+
 :host ::ng-deep .p-button-icon-only {
     height: 2.5rem;
 }
@@ -34,6 +35,7 @@
 :host ::ng-deep .p-paginator-pages > button {
     border: 1px solid var(--surface-border) !important;
 }
+
 .chip-remove-icon {
     width: 1.5rem;
     height: 1.5rem;
