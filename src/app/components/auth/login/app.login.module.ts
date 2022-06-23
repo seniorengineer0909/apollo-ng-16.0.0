@@ -8,14 +8,14 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    AppLoginRoutingModule,
-    ButtonModule,
-    InputTextModule,
-    CheckboxModule,
-    FormsModule
-  ],
-  declarations: [AppLoginComponent]
+    imports: [
+        CommonModule,
+        AppLoginRoutingModule,
+        ButtonModule,
+        InputTextModule,
+        CheckboxModule,
+        FormsModule
+    ],
+    declarations: [AppLoginComponent]
 })
 export class AppLoginModule { }
