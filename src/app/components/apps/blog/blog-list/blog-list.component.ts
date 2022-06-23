@@ -3,12 +3,11 @@ import { SelectItem } from 'primeng/api';
 import { Blog } from 'src/app/api/blog';
 
 @Component({
-    selector: 'app-app.bloglist',
-    templateUrl: './app.bloglist.component.html',
-    styleUrls: ['./bloglist.component.scss']
+    templateUrl: './blog-list.component.html',
+    styleUrls: ['./blog-list.component.scss']
 
 })
-export class AppBloglistComponent {
+export class BlogListComponent {
 
     rowCount = 6;
 

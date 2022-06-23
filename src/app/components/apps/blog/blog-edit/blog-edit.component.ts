@@ -1,13 +1,13 @@
-import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { Blog } from 'src/app/api/blog';
 
 @Component({
     selector: 'app-blogedit',
-    templateUrl: './blogedit.component.html',
-    styleUrls: ['../bloglist/bloglist.component.scss']
+    templateUrl: './blog-edit.component.html',
+    styleUrls: ['../blog-list/blog-list.component.scss']
 })
 
-export class BlogeditComponent {
+export class BlogEditComponent {
 
     @ViewChildren('buttonEl') buttonEl: QueryList<ElementRef>;
 
@@ -32,7 +32,6 @@ export class BlogeditComponent {
     onUpload(event) {
         if(event && event.files.length > 0) {
             this.blog.coverImage = event.files[0];
-            console.log(this.blog.coverImage)
         }
     }
 

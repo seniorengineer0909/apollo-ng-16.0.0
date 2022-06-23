@@ -1,7 +1,7 @@
 <div cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="dropList($event)" [cdkDropListData]="lists" class="grid grid-nogutter p-5 w-full flex-nowrap gap-5 overflow-y-hidden overflow-x-auto" style="height: 83vh">
     <kanban-list *ngFor="let list of lists; let i = index;" [list]="list" [listIds]="listIds" cdkDrag cdkDragHandle #listEl></kanban-list>
     <div class="px-3 mb-3 w-25rem flex-shrink-0">
-        <button pButton pRipple label="New List" icon="pi pi-plus font-semibold" class="py-3 justify-content-center font-semibold w-full" style="border-radius: 6px;" (click)="addList()"></button>
+        <button pButton pRipple label="New List" icon="pi pi-plus font-semibold" class="py-3 justify-content-center font-semibold w-full border-round" (click)="addList()"></button>
     </div>
     <kanban-sidebar></kanban-sidebar>
 </div>

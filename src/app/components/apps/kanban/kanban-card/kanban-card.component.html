@@ -10,7 +10,7 @@
     <p-progressBar *ngIf="card.taskList.tasks.length" [value]="card.progress" [showValue]="false"></p-progressBar>
     
     <div class="flex align-items-center justify-content-between">
-        <div class="avatar-group">
+        <div class="flex">
             <p-avatar *ngFor="let assignee of card.assignees | slice:0:3" image="assets/demo/images/avatar/{{assignee.image}}" shape="circle" styleClass="border-2 surface-border"></p-avatar>
             <p-avatar *ngIf="card.assignees.length > 3" label="+ {{card.assignees.length - 3}}" shape="circle" styleClass="border-2 surface-border"></p-avatar>
         </div>

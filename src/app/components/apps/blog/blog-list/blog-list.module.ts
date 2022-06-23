@@ -17,6 +17,7 @@ import { KnobModule } from "primeng/knob";
 import { ListboxModule } from "primeng/listbox";
 import { MenuModule } from "primeng/menu";
 import { MultiSelectModule } from "primeng/multiselect";
+import { PaginatorModule } from "primeng/paginator";
 import { RadioButtonModule } from "primeng/radiobutton";
 import { RatingModule } from "primeng/rating";
 import { RippleModule } from "primeng/ripple";
@@ -24,8 +25,10 @@ import { SelectButtonModule } from "primeng/selectbutton";
 import { SliderModule } from "primeng/slider";
 import { TableModule } from "primeng/table";
 import { ToggleButtonModule } from "primeng/togglebutton";
-import { AppProfileListRoutingModule } from "./app.profilelist-routing.module";
-import { AppProfileListComponent } from "./app.profilelist.component";
+import { DataViewModule } from 'primeng/dataview';
+import { BlogListCardComponent } from "./blog-list-card/blog-list-card.component";
+import { BlogListComponent } from "./blog-list.component";
+import { BlogListRoutingModule } from "./blog-list-routing.module";
 
 @NgModule({
     imports: [
@@ -54,8 +57,10 @@ import { AppProfileListComponent } from "./app.profilelist.component";
         TableModule,
         RippleModule,
         MenuModule,
-        AppProfileListRoutingModule
+        BlogListRoutingModule,
+        PaginatorModule,
+        DataViewModule
     ],
-    declarations: [AppProfileListComponent]
+    declarations: [BlogListComponent, BlogListCardComponent]
   })
-  export class AppProfileListModule { }
+  export class BlogListModule { }

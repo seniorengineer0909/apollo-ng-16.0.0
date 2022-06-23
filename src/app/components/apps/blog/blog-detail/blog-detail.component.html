@@ -60,8 +60,8 @@
         <button pButton pRipple icon="pi pi-fw pi-facebook" class="p-button-secondary" label="Facebook"></button>
         <button [routerLink]="['/blog/edit']" pButton pRipple icon="pi pi-fw pi-pencil" class="sm:ml-auto p-button-primary" label="Edit Post"></button>
     </div>
-    <app-blog-comments-list [comments]="comments"></app-blog-comments-list>
-    <app-blog-comments></app-blog-comments>
+    <blog-comments [comments]="comments"></blog-comments>
+    <new-comment></new-comment>
     <div class="flex w-full justify-content-end align-items-center">
         <button pButton pRipple label="Post Comment"></button>
     </div>
