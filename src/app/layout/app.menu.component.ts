@@ -212,6 +212,57 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['/landing'],
                     },
                     {
+                        label: 'Auth',
+                        icon: 'pi pi-fw pi-user',
+                        items: [
+                            {
+                                label: 'Login',
+                                icon: 'pi pi-fw pi-sign-in',
+                                routerLink: ['/login'],
+                            },
+                            {
+                                label: 'Error',
+                                icon: 'pi pi-fw pi-times-circle',
+                                routerLink: ['error'],
+                            },
+                            {
+                                label: 'Not Found',
+                                icon: 'pi pi-fw pi-exclamation-circle',
+                                routerLink: ['notfound'],
+                            },
+                            {
+                                label: 'Access Denied',
+                                icon: 'pi pi-fw pi-lock',
+                                routerLink: ['access'],
+                            },
+                            {
+                                label: 'Register',
+                                icon: 'pi pi-fw pi-user-plus',
+                                routerLink: ['/register'],
+                            },
+                            {
+                                label: 'Forgot Password',
+                                icon: 'pi pi-fw pi-question',
+                                routerLink: ['/forgotpassword'],
+                            },
+                            {
+                                label: 'New Password',
+                                icon: 'pi pi-fw pi-cog',
+                                routerLink: ['/newpassword'],
+                            },
+                            {
+                                label: 'Verification',
+                                icon: 'pi pi-fw pi-envelope',
+                                routerLink: ['/verification'],
+                            },
+                            {
+                                label: 'Lock Screen',
+                                icon: 'pi pi-fw pi-eye-slash',
+                                routerLink: ['/lockscreen'],
+                            }
+                        ]
+                    },
+                    {
                         label: 'Crud',
                         icon: 'pi pi-fw pi-pencil',
                         routerLink: ['/pages/crud'],
@@ -220,16 +271,6 @@ export class AppMenuComponent implements OnInit {
                         label: 'Timeline',
                         icon: 'pi pi-fw pi-calendar',
                         routerLink: ['/pages/timeline'],
-                    },
-                    {
-                        label: 'Landing',
-                        icon: 'pi pi-fw pi-globe',
-                        routerLink: ['/landing'],
-                    },
-                    {
-                        label: 'Login',
-                        icon: 'pi pi-fw pi-sign-in',
-                        routerLink: ['/login'],
                     },
                     {
                         label: 'Invoice',
@@ -246,21 +287,7 @@ export class AppMenuComponent implements OnInit {
                         icon: 'pi pi-fw pi-question-circle',
                         routerLink: ['/pages/help'],
                     },
-                    {
-                        label: 'Error',
-                        icon: 'pi pi-fw pi-times-circle',
-                        routerLink: ['error'],
-                    },
-                    {
-                        label: 'Not Found',
-                        icon: 'pi pi-fw pi-exclamation-circle',
-                        routerLink: ['notfound'],
-                    },
-                    {
-                        label: 'Access Denied',
-                        icon: 'pi pi-fw pi-lock',
-                        routerLink: ['access'],
-                    },
+                    
                     {
                         label: 'Empty',
                         icon: 'pi pi-fw pi-circle-off',
@@ -275,33 +302,8 @@ export class AppMenuComponent implements OnInit {
                         label: 'Contact Us',
                         icon: 'pi pi-fw pi-phone',
                         routerLink: ['/pages/contact'],
-                    },
-                    {
-                        label: 'Register',
-                        icon: 'pi pi-fw pi-user-plus',
-                        routerLink: ['/register'],
-                    },
-                    {
-                        label: 'Forgot Password',
-                        icon: 'pi pi-fw pi-question',
-                        routerLink: ['/forgotpassword'],
-                    },
-                    {
-                        label: 'New Password',
-                        icon: 'pi pi-fw pi-cog',
-                        routerLink: ['/newpassword'],
-                    },
-                    {
-                        label: 'Verification',
-                        icon: 'pi pi-fw pi-envelope',
-                        routerLink: ['/verification'],
-                    },
-                    {
-                        label: 'Lock Screen',
-                        icon: 'pi pi-fw pi-eye-slash',
-                        routerLink: ['/lockscreen'],
-                    },
-                ],
+                    }
+                ]
             },
             { separator: true },
             {
