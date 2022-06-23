@@ -5,18 +5,17 @@ import { AppEmailVerificationRoutingModule } from './app.emailverification-routi
 import { AppEmailVerificationComponent } from './app.emailverification.component';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ButtonModule } from 'primeng/button';
-import { RippleModule } from 'primeng/ripple'; 
-
+import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    AppEmailVerificationRoutingModule,
-    FormsModule,
-    InputNumberModule,
-    ButtonModule,
-    RippleModule
-  ],
-  declarations: [AppEmailVerificationComponent]
+    imports: [
+        CommonModule,
+        AppEmailVerificationRoutingModule,
+        FormsModule,
+        InputNumberModule,
+        ButtonModule,
+        RippleModule
+    ],
+    declarations: [AppEmailVerificationComponent]
 })
 export class AppEmailverificationModule { }
