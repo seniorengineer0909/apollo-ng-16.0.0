@@ -1,29 +1,48 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { Task } from 'src/app/api/task';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { DialogConfig, Task } from 'src/app/api/task';
 
 @Injectable()
 export class TaskService {
 
-    tasks:Task[] = [];
+    dialogConfig: DialogConfig = {
+        visible: false,
+        header: ''
+    };
+
+    tasks: Task[] = [];
 
     private taskSource = new BehaviorSubject<Task[]>(this.tasks);
 
+    private selectedTask = new Subject<Task>();
+
+    private dialogSource = new BehaviorSubject<DialogConfig>(this.dialogConfig);
+
     taskSource$ = this.taskSource.asObservable();
 
-    constructor(private http: HttpClient) { 
+    selectedTask$ = this.selectedTask.asObservable();
+
+    dialogSource$ = this.dialogSource.asObservable();
+
+    constructor(private http: HttpClient) {
         this.http.get<any>('assets/demo/data/tasks.json')
-        .toPromise()
-        .then(res => res.data as Task[])
-        .then(data => {
-            this.tasks = data;
-            this.taskSource.next(data);
-        });
+            .toPromise()
+            .then(res => res.data as Task[])
+            .then(data => {
+                this.tasks = data;
+                this.taskSource.next(data);
+            });
     }
 
-    addTask(task: Task){
-        this.tasks = [...this.tasks, task];
+    addTask(task: Task) {
+        if (this.tasks.includes(task)) {
+            this.tasks = this.tasks.map(t => t.id === task.id ? task : t);
+        }
+        else {
+            this.tasks = [...this.tasks, task];
+        }
+
         this.taskSource.next(this.tasks);
     }
 
@@ -31,4 +50,31 @@ export class TaskService {
         this.tasks = this.tasks.filter(t => t.id !== id);
         this.taskSource.next(this.tasks);
     }
+
+    onTaskSelect(task) {
+        this.selectedTask.next(task);
+    }
+
+    markAsCompleted(task) {
+        this.tasks = this.tasks.map(t => t.id === task.id ? task : t);
+        this.taskSource.next(this.tasks);
+    }
+
+    showDialog(header?: string) {
+        this.dialogConfig = {
+            visible: true,
+            header: header
+        };
+
+        this.dialogSource.next(this.dialogConfig);
+    }
+
+    closeDialog() {
+        this.dialogConfig = {
+            visible: false
+        }
+
+        this.dialogSource.next(this.dialogConfig);
+    }
+
 }

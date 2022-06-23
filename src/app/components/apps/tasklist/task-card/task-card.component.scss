@@ -9,6 +9,10 @@
         }
 
         .p-listbox-list {
+            .p-listbox-item:hover {
+                cursor: auto;
+            }
+            
             .p-listbox-item.p-highlight {
                 border-radius: 6px;
             }

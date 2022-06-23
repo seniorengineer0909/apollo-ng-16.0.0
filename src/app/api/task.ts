@@ -10,3 +10,8 @@ export interface Task {
     comments?: number;
     attachments?: number;
 }
+
+export interface DialogConfig {
+    visible: boolean;
+    header?: string;
+}

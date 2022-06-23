@@ -17,31 +17,31 @@ import { MenuModule } from 'primeng/menu';
 import { BadgeModule } from 'primeng/badge';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { CheckboxModule } from 'primeng/checkbox';
-import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
+import { DialogModule } from 'primeng/dialog';
 import { TaskCardComponent } from './task-card/task-card.component';
 import { TaskService } from './service/task.service';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    AppsTaskListRoutingModule,
-    ButtonModule,
-    InputTextModule,
-    EditorModule,
-    CalendarModule,
-    ChipsModule,
-    ToastModule,
-    AutoCompleteModule,
-    ListboxModule,
-    AvatarModule,
-    AvatarGroupModule,
-    CheckboxModule,
-    TriStateCheckboxModule,
-    MenuModule,
-    BadgeModule
-  ],
-  declarations: [AppsTaskListComponent, CreateTaskComponent, TaskCardComponent],
-  providers: [TaskService]
+    imports: [
+        CommonModule,
+        FormsModule,
+        AppsTaskListRoutingModule,
+        ButtonModule,
+        InputTextModule,
+        EditorModule,
+        CalendarModule,
+        ChipsModule,
+        ToastModule,
+        AutoCompleteModule,
+        ListboxModule,
+        AvatarModule,
+        AvatarGroupModule,
+        CheckboxModule,
+        MenuModule,
+        BadgeModule,
+        DialogModule
+    ],
+    declarations: [AppsTaskListComponent, CreateTaskComponent, TaskCardComponent],
+    providers: [TaskService]
 })
 export class AppsTaskListModule { }
