@@ -24,11 +24,11 @@ export class ChatSidebarComponent implements OnInit {
     }
 
     filter() {
-
         let filtered: User[] = [];
+
         for(let i = 0; i < this.users.length; i++) {
             let user = this.users[i];
-            if(user.name.toLowerCase().indexOf(this.searchValue.toLowerCase()) == 0){
+            if (user.name.toLowerCase().indexOf(this.searchValue.toLowerCase()) == 0) {
                 filtered.push(user)
             }
         }

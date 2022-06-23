@@ -22,7 +22,7 @@ import { ChatService } from './service/chat.service';
     InputTextModule,
     ButtonModule,
     BadgeModule,
-    MenuModule,
+    MenuModule
   ],
   declarations: [
     ChatSidebarComponent,
