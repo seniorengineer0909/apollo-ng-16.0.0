@@ -12,9 +12,7 @@ export class AppsTaskListComponent implements OnInit {
 
     subscription: Subscription;
 
-    upcoming: Task[];
-
-    inProgress: Task[];
+    todo: Task[];
 
     completed: Task[];
 
@@ -27,8 +25,7 @@ export class AppsTaskListComponent implements OnInit {
     }
 
     categorize(tasks) {
-        this.upcoming = tasks.filter(t => t.completed === null);
-        this.inProgress = tasks.filter(t => t.completed === false);
+        this.todo = tasks.filter(t => t.completed === null);
         this.completed = tasks.filter(t => t.completed);
     }
 
