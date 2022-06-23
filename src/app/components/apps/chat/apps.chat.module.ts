@@ -8,6 +8,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { BadgeModule } from 'primeng/badge';
 import { UserCardComponent } from './user-card/user-card.component';
 import { ChatBoxComponent } from './chat-box/chat-box.component';
@@ -23,6 +24,7 @@ import { ChatService } from './service/chat.service';
     ButtonModule,
     BadgeModule,
     MenuModule,
+    OverlayPanelModule
   ],
   declarations: [
     ChatSidebarComponent,

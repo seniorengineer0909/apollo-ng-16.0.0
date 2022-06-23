@@ -14,16 +14,24 @@ export class ChatBoxComponent implements OnInit {
 
     message: Message;
 
-    textContent: string;
+    textContent: string = '';
 
-    @Input() user: User; 
+    uploadedFiles: any[] = [];
 
-    constructor(private chatService: ChatService) {}
+    emojis = [
+        '😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '😇', '😉', '😊', '🙂', '🙃', '😋', '😌', '😍', '🥰', '😘', '😗', '😙', '😚', '🤪', '😜', '😝', '😛',
+        '🤑', '😎', '🤓', '🧐', '🤠', '🥳', '🤗', '🤡', '😏', '😶', '😐', '😑', '😒', '🙄', '🤨', '🤔', '🤫', '🤭', '🤥', '😳', '😞', '😟', '😠', '😡', '🤬', '😔',
+        '😟', '😠', '😡', '🤬', '😔', '😕', '🙁', '😬', '🥺', '😣', '😖', '😫', '😩', '🥱', '😤', '😮', '😱', '😨', '😰', '😯', '😦', '😧', '😢', '😥', '😪', '🤤'
+    ];
+
+    @Input() user: User;
+
+    constructor(private chatService: ChatService) { }
 
     setMessage() {
-        if(this.user) {
-          let filteredMessages = this.user.messages.filter(m => m.ownerId !== this.defaultUserId);
-          this.message = filteredMessages[filteredMessages.length -1];
+        if (this.user) {
+            let filteredMessages = this.user.messages.filter(m => m.ownerId !== this.defaultUserId);
+            this.message = filteredMessages[filteredMessages.length - 1];
         }
     }
 
@@ -32,23 +40,26 @@ export class ChatBoxComponent implements OnInit {
     }
 
     sendMessage() {
-        if(this.textContent == '' || this.textContent === ' ') {
-          return;
-        } else {
-          let message = {
-              text: this.textContent,
-              ownerId: 123,
-              createdAt: new Date().getTime(),
-          }
-  
-          this.chatService.sendMessage(message)
-          this.textContent = '';
+        if (this.textContent == '' || this.textContent === ' ') {
+            return;
         }
+        else {
+            let message = {
+                text: this.textContent,
+                ownerId: 123,
+                createdAt: new Date().getTime(),
+            }
 
+            this.chatService.sendMessage(message)
+            this.textContent = '';
+        }
+    }
+
+    onEmojiSelect(emoji) {
+        this.textContent += emoji;
     }
 
     parseDate(timestamp) {
-        return new Date(timestamp).toTimeString().split(':').slice(0,2).join(':');
+        return new Date(timestamp).toTimeString().split(':').slice(0, 2).join(':');
     }
-  
 }
