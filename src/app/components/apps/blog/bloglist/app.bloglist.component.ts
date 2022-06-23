@@ -41,7 +41,8 @@ export class AppBloglistComponent {
             share: 3,
             day: "09",
             mounth: "October"
-        }, {
+        },
+        {
             image: "assets/demo/images/blog/blog-2.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-2.png",
             title: "Magazine",
@@ -50,7 +51,8 @@ export class AppBloglistComponent {
             share: 3,
             day: "09",
             mounth: "October"
-        }, {
+        },
+        {
             image: "assets/demo/images/blog/blog-3.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-3.png",
             title: "Science",
@@ -59,7 +61,8 @@ export class AppBloglistComponent {
             share: 4,
             day: "09",
             mounth: "October"
-        }, {
+        },
+        {
             image: "assets/demo/images/blog/blog-4.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-4.png",
             title: "Blog",
@@ -68,7 +71,8 @@ export class AppBloglistComponent {
             share: 3,
             day: "09",
             mounth: "October"
-        }, {
+        },
+        {
             image: "assets/demo/images/blog/blog-5.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-5.png",
             title: "Magazine",
@@ -77,7 +81,8 @@ export class AppBloglistComponent {
             share: 3,
             day: "09",
             mounth: "October"
-        }, {
+        },
+        {
             image: "assets/demo/images/blog/blog-6.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-6.png",
             title: "Science",
@@ -86,7 +91,8 @@ export class AppBloglistComponent {
             share: 3,
             day: "09",
             mounth: "October"
-        }, {
+        },
+        {
             image: "assets/demo/images/blog/blog-1.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-1.png",
             title: "Blog",
@@ -95,7 +101,8 @@ export class AppBloglistComponent {
             share: 3,
             day: "09",
             mounth: "October"
-        }, {
+        },
+        {
             image: "assets/demo/images/blog/blog-2.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-3.png",
             title: "Magazine",
@@ -104,7 +111,8 @@ export class AppBloglistComponent {
             share: 3,
             day: "09",
             mounth: "October"
-        }, {
+        },
+        {
             image: "assets/demo/images/blog/blog-3.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-2.png",
             title: "Science",
@@ -113,7 +121,8 @@ export class AppBloglistComponent {
             share: 3,
             day: "09",
             mounth: "October"
-        }, {
+        },
+        {
             image: "assets/demo/images/blog/blog-4.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-4.png",
             title: "Blog",
@@ -122,7 +131,8 @@ export class AppBloglistComponent {
             share: 3,
             day: "09",
             mounth: "October"
-        }, {
+        },
+        {
             image: "assets/demo/images/blog/blog-5.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-2.png",
             title: "Magazine",
@@ -131,7 +141,8 @@ export class AppBloglistComponent {
             share: 3,
             day: "09",
             mounth: "October"
-        }, {
+        },
+        {
             image: "assets/demo/images/blog/blog-6.png",
             profile: "assets/demo/images/blog/blog-profile/blog-profile-6.png",
             title: "Science",
@@ -154,6 +165,4 @@ export class AppBloglistComponent {
             this.sortField = value;
         }
     }
-
-
 }
