@@ -4,7 +4,6 @@ import { User } from 'src/app/api/user';
 import { ChatService } from './service/chat.service';
 
 @Component({
-    selector: 'app-apps.chat',
     templateUrl: './apps.chat.component.html'
 })
 export class AppsChatComponent implements OnDestroy {
