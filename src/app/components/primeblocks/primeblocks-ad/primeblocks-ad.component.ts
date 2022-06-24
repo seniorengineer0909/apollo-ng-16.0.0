@@ -5,9 +5,9 @@ import { Subscription } from 'rxjs'
 
 @Component({
     selector: 'primeblocks-ad',
-    templateUrl: './app.primeblocks-ad.component.html',
+    templateUrl: './primeblocks-ad.component.html',
 })
-export class AppPrimeBlocksAdComponent implements OnDestroy {
+export class PrimeBlocksAdComponent implements OnDestroy {
 
     visible: boolean = false;
 

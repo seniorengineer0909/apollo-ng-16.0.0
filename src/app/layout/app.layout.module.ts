@@ -18,7 +18,7 @@ import { AppProfileSidebarComponent } from './app.profilesidebar.component';
 import { AppConfigComponent } from './app.config.component';
 import { AppMenuComponent } from './app.menu.component';
 import { AppMenuitemComponent } from './app.menuitem.component';
-import { AppPrimeBlocksAdComponent } from '../components/primeblocks/primeblocks-ad/app.primeblocks-ad.component';
+import { PrimeBlocksAdComponent } from '../components/primeblocks/primeblocks-ad/primeblocks-ad.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -31,7 +31,7 @@ import { RouterModule } from '@angular/router';
         AppConfigComponent,
         AppMenuComponent,
         AppMenuitemComponent,
-        AppPrimeBlocksAdComponent
+        PrimeBlocksAdComponent
     ],
     imports: [
         BrowserModule,
