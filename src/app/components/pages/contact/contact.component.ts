@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: './app.contact.component.html'
+    templateUrl: './contact.component.html'
 })
-export class AppContactComponent {
+export class ContactComponent {
     
     options: any;
 

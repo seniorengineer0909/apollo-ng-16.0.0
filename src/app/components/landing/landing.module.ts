@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppLandingRoutingModule } from './app.landing-routing.module';
-import { AppLandingComponent } from './app.landing.component';
+import { LandingRoutingModule } from './landing-routing.module';
+import { LandingComponent } from './landing.component';
 import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 import { StyleClassModule } from 'primeng/styleclass';
@@ -10,12 +10,12 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 @NgModule({
     imports: [
         CommonModule,
-        AppLandingRoutingModule,
+        LandingRoutingModule,
         ButtonModule,
         RouterModule,
         StyleClassModule,
         DragDropModule
     ],
-    declarations: [AppLandingComponent]
+    declarations: [LandingComponent]
 })
-export class AppLandingModule { }
+export class LandingModule { }

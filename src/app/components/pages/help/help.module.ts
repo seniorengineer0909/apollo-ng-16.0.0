@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppHelpRoutingModule } from './app.help-routing.module';
-import { AppHelpComponent } from './app.help.component';
+import { HelpRoutingModule } from './help-routing.module';
+import { HelpComponent } from './help.component';
 import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   imports: [
     CommonModule,
-    AppHelpRoutingModule,
+    HelpRoutingModule,
     InputTextModule
   ],
-  declarations: [AppHelpComponent]
+  declarations: [HelpComponent]
 })
-export class AppHelpModule { }
+export class HelpModule { }

@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 
 @Component({
-    templateUrl: './app.aboutus.component.html'
+    templateUrl: './aboutus.component.html'
 })
-export class AppAboutUsComponent {
+export class AboutUsComponent {
 
     visibleMember: number = null;
     

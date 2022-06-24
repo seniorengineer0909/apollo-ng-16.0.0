@@ -4,10 +4,10 @@ import {ProductService} from 'src/app/service/product.service';
 import {ConfirmationService, MessageService} from 'primeng/api';
 
 @Component({
-    templateUrl: './app.crud.component.html',
+    templateUrl: './crud.component.html',
     providers: [MessageService, ConfirmationService]
 })
-export class AppCrudComponent implements OnInit {
+export class CrudComponent implements OnInit {
 
     productDialog: boolean;
 

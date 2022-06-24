@@ -2,10 +2,10 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    templateUrl: './app.landing.component.html',
-    styleUrls: ['./app.landing.component.scss']
+    templateUrl: './landing.component.html',
+    styleUrls: ['./landing.component.scss']
 })
-export class AppLandingComponent {
+export class LandingComponent {
 
     startPos;
 

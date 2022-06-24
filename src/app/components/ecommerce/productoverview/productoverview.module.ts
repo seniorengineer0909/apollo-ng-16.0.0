@@ -19,4 +19,4 @@ import { RippleModule } from 'primeng/ripple';
   ],
   declarations: [ProductOverviewComponent]
 })
-export class AppProductoverviewModule { }
+export class ProductoverviewModule { }
