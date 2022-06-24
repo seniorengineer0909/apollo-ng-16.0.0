@@ -12,7 +12,6 @@ import { RippleModule } from "primeng/ripple";
 import { BlogEditRoutingModule } from "./blog-edit-routing.module";
 import { BlogEditComponent } from "./blog-edit.component";
 
-
 @NgModule({
     imports: [
         CommonModule,

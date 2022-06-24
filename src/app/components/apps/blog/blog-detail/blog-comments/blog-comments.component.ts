@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Comment } from 'src/app/api/blog';
-
 
 @Component({
     selector: 'blog-comments',
@@ -11,4 +10,5 @@ export class BlogCommentsComponent {
     @Input() comments: Comment[] = [];
 
     rowCount = 3;
+
 }
