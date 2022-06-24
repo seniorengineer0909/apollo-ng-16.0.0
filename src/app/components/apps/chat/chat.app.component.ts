@@ -4,9 +4,9 @@ import { User } from 'src/app/api/user';
 import { ChatService } from './service/chat.service';
 
 @Component({
-    templateUrl: './apps.chat.component.html'
+    templateUrl: './chat.app.component.html'
 })
-export class AppsChatComponent implements OnDestroy {
+export class ChatAppComponent implements OnDestroy {
 
     subscription: Subscription;
 

@@ -1,47 +1,48 @@
 <div class="flex flex-column h-full">
-    <div class="w-full flex align-items-center border-bottom-1 surface-border p-3 lg:p-6">
+    <div class="flex align-items-center border-bottom-1 surface-border p-3 lg:p-6">
         <div class="relative flex align-items-center mr-3">
-            <img src="assets/demo/images/avatar/{{user.image}}" alt="user.name" class="w-4rem h-4rem border-circle border-2 surface-border">
-            <span class="w-1rem h-1rem border-circle border-2 surface-border absolute right-0" [ngClass]="{'bg-green-400': user.status === 'active', 'bg-red-400': user.status === 'busy', 'bg-yellow-400': user.status === 'away'}" style="bottom: 0px;"></span>
+            <img src="assets/demo/images/avatar/{{user.image}}" alt="user.name" class="w-4rem h-4rem border-circle shadow-4">
+            <span class="w-1rem h-1rem border-circle border-2 surface-border absolute bottom-0 right-0" [ngClass]="{'bg-green-400': user.status === 'active', 'bg-red-400': user.status === 'busy', 'bg-yellow-400': user.status === 'away'}"></span>
         </div>
         <div class="mr-2">
             <span class="text-900 font-semibold block">{{user.name}}</span>
-            <span class="text-700 font-semibold">Last active 1 hour ago</span>
+            <span class="text-700">Last active 1 hour ago</span>
         </div>
         <div class="flex align-items-center ml-auto">
             <button pButton pRipple type="button" icon="pi pi-phone" class="p-button-rounded p-button-outlined p-button-secondary mr-3"></button>
             <button pButton pRipple type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-outlined p-button-secondary"></button>
         </div>
     </div>
-    <div class="w-full p-3 md:px-4 lg:px-6 lg:py-4 mt-2 overflow-y-auto" style="max-height: 55vh;" #chatWindow [scrollTop]="chatWindow.scrollHeight">
+    <div class="p-3 md:px-4 lg:px-6 lg:py-4 mt-2 overflow-y-auto" style="max-height: 55vh;" #chatWindow [scrollTop]="chatWindow.scrollHeight">
         <div *ngFor="let message of user.messages">
             <div *ngIf="message.ownerId !== 123" class="grid grid-nogutter mb-4">
                 <div class="mr-3 mt-1">
-                    <img src="assets/demo/images/avatar/{{user.image}}" alt="user.name" class="w-3rem h-3rem border-circle border-2 surface-border">
+                    <img src="assets/demo/images/avatar/{{user.image}}" alt="user.name" class="w-3rem h-3rem border-circle shadow-4">
                 </div>
                 <div class="col mt-3">
                     <p class="text-900 font-semibold mb-3">{{user.name}}</p>
-                    <span class="text-900 inline-block font-semibold border-1 surface-border p-3 white-space-normal border-round" style="word-break: break-word; max-width:80%;">{{message.text}}</span>
+                    <span class="text-700 inline-block font-medium border-1 surface-border p-3 white-space-normal border-round" style="word-break: break-word; max-width:80%;">{{message.text}}</span>
                     <p class="text-700 mt-3">{{parseDate(message.createdAt)}}<i class="pi pi-check ml-2 text-green-400"></i></p>
                 </div>
             </div>
 
             <div *ngIf="message.ownerId === defaultUserId" class="grid grid-nogutter mb-4">
                 <div class="col mt-3 text-right">
-                    <span class="text-900 inline-block text-left font-semibold border-1 surface-border surface-100 p-3 white-space-normal border-round" style="word-break: break-word; max-width:80%;">{{message.text}}</span>
+                    <span class="inline-block text-left font-medium border-1 surface-border bg-primary-100 text-primary-900 p-3 white-space-normal border-round" style="word-break: break-word; max-width:80%;">{{message.text}}</span>
                     <p class="text-700 mt-3">{{parseDate(message.createdAt)}} <i class="pi pi-check ml-2 text-green-400"></i></p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="p-3 md:p-4 lg:p-6 flex align-items-center mt-auto border-top-1 surface-border">
-        <input id="message" type="text" pInputText placeholder="Type a message" class="w-full px-3 text-900 font-semibold mr-2 md:mr-3 h-3rem border-round" [(ngModel)]="textContent" (keydown.enter)="sendMessage()"/>
-        <button  class="p-button p-button-secondary mr-2 md:mr-3 w-5rem h-3rem border-round text-2xl flex justify-content-center" (click)="op.toggle($event)">😀</button>
-        <p-overlayPanel #op styleClass="w-30rem">
-            <ng-template pTemplate>
-                <button *ngFor="let emoji of emojis;" pButton pRipple (click)="op.hide(); onEmojiSelect(emoji)" type="button" [label]="emoji" class="p-2 p-button-text text-2xl"></button>
-            </ng-template>
-        </p-overlayPanel>
-        <button pButton label="Send" icon="pi pi-send font-semibold text-sm md:text-base" class="w-10rem h-3rem font-semibold text-sm md:text-base border-round" (click)="sendMessage()"></button>
+    <div class="p-3 md:p-4 lg:p-6 flex align-items-center mt-auto border-top-1 surface-border gap-3">
+        <input id="message" type="text" pInputText placeholder="Type a message" class="flex-1 border-round" [(ngModel)]="textContent" (keydown.enter)="sendMessage()"/>
+        <button class="p-button p-button-secondary" (click)="op.toggle($event)">😀</button>
+        <button pButton label="Send" icon="pi pi-send" (click)="sendMessage()"></button>
     </div>
 </div>
+
+<p-overlayPanel #op styleClass="w-30rem">
+    <ng-template pTemplate>
+        <button *ngFor="let emoji of emojis;" pButton pRipple (click)="op.hide(); onEmojiSelect(emoji)" type="button" [label]="emoji" class="p-2 p-button-text text-2xl"></button>
+    </ng-template>
+</p-overlayPanel>
