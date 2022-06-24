@@ -18,16 +18,9 @@ const routes: Routes = [
             { path: 'apps', data: { breadcrumb: 'Apps' }, loadChildren: () => import('./components/apps/apps.module').then(m => m.AppsModule) }
         ]
     },
+    { path: 'auth', data: { breadcrumb: 'Auth' }, loadChildren: () => import('./components/auth/auth.module').then(m => m.AuthModule) },
     { path: 'landing', loadChildren: () => import('./components/landing/app.landing.module').then(m => m.AppLandingModule) },
-    { path: 'error', loadChildren: () => import('./components/auth/error/app.error.module').then(m => m.AppErrorModule) },
-    { path: 'access', loadChildren: () => import('./components/auth/accessdenied/app.accessdenied.module').then(m => m.AppAccessdeniedModule) },
-    { path: 'login', loadChildren: () => import('./components/auth/login/app.login.module').then(m => m.AppLoginModule) },
-    { path: 'forgotpassword', loadChildren: () => import('./components/auth/forgotpassword/app.forgotpassword.module').then(m => m.AppForgotPasswordModule) },
-    { path: 'register', loadChildren: () => import('./components/auth/register/app.register.module').then(m => m.AppRegisterModule) },
-    { path: 'newpassword', loadChildren: () => import('./components/auth/newpassword/app.newpassword.module').then(m => m.AppNewPasswordModule) },
-    { path: 'verification', loadChildren: () => import('./components/auth/verification/app.verification.module').then(m => m.AppVerificationModule) },
-    { path: 'lockscreen', loadChildren: () => import('./components/auth/lockscreen/app.lockscreen.module').then(m => m.AppLockScreenModule) },
-    { path: 'notfound', loadChildren: () => import('./components/auth/notfound/app.notfound.module').then(m => m.AppNotfoundModule) },
+    { path: 'notfound', loadChildren: () => import('./components/notfound/app.notfound.module').then(m => m.AppNotfoundModule) },
     { path: '**', redirectTo: '/notfound' }
 ];
 

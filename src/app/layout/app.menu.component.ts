@@ -224,19 +224,19 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'PrimeIcons',
                         icon: 'pi pi-fw pi-prime',
-                        routerLink: ['utilities/icons'],
+                        routerLink: ['utilities/icons']
                     },
                     {
                         label: 'Colors',
                         icon: 'pi pi-fw pi-palette',
-                        routerLink: ['utilities/colors'],
+                        routerLink: ['utilities/colors']
                     },
                     {
                         label: 'PrimeFlex',
                         icon: 'pi pi-fw pi-desktop',
                         url: ['https://www.primefaces.org/primeflex/'],
                         target: '_blank',
-                    },
+                    }
                 ]
             },
             {
@@ -247,7 +247,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'Landing',
                         icon: 'pi pi-fw pi-globe',
-                        routerLink: ['/landing'],
+                        routerLink: ['/landing']
                     },
                     {
                         label: 'Auth',
@@ -256,90 +256,89 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Login',
                                 icon: 'pi pi-fw pi-sign-in',
-                                routerLink: ['/login'],
+                                routerLink: ['/auth/login']
                             },
                             {
                                 label: 'Error',
                                 icon: 'pi pi-fw pi-times-circle',
-                                routerLink: ['error'],
-                            },
-                            {
-                                label: 'Not Found',
-                                icon: 'pi pi-fw pi-exclamation-circle',
-                                routerLink: ['notfound'],
+                                routerLink: ['/auth/error']
                             },
                             {
                                 label: 'Access Denied',
                                 icon: 'pi pi-fw pi-lock',
-                                routerLink: ['access'],
+                                routerLink: ['/auth/access']
                             },
                             {
                                 label: 'Register',
                                 icon: 'pi pi-fw pi-user-plus',
-                                routerLink: ['/register'],
+                                routerLink: ['/auth/register']
                             },
                             {
                                 label: 'Forgot Password',
                                 icon: 'pi pi-fw pi-question',
-                                routerLink: ['/forgotpassword'],
+                                routerLink: ['/auth/forgotpassword']
                             },
                             {
                                 label: 'New Password',
                                 icon: 'pi pi-fw pi-cog',
-                                routerLink: ['/newpassword'],
+                                routerLink: ['/auth/newpassword']
                             },
                             {
                                 label: 'Verification',
                                 icon: 'pi pi-fw pi-envelope',
-                                routerLink: ['/verification'],
+                                routerLink: ['/auth/verification']
                             },
                             {
                                 label: 'Lock Screen',
                                 icon: 'pi pi-fw pi-eye-slash',
-                                routerLink: ['/lockscreen'],
+                                routerLink: ['/auth/lockscreen']
                             }
                         ]
                     },
                     {
                         label: 'Crud',
                         icon: 'pi pi-fw pi-pencil',
-                        routerLink: ['/pages/crud'],
+                        routerLink: ['/pages/crud']
                     },
                     {
                         label: 'Timeline',
                         icon: 'pi pi-fw pi-calendar',
-                        routerLink: ['/pages/timeline'],
+                        routerLink: ['/pages/timeline']
                     },
                     {
                         label: 'Invoice',
                         icon: 'pi pi-fw pi-dollar',
-                        routerLink: ['/pages/invoice'],
+                        routerLink: ['/pages/invoice']
                     },
                     {
                         label: 'About Us',
                         icon: 'pi pi-fw pi-user',
-                        routerLink: ['/pages/aboutus'],
+                        routerLink: ['/pages/aboutus']
                     },
                     {
                         label: 'Help',
                         icon: 'pi pi-fw pi-question-circle',
-                        routerLink: ['/pages/help'],
+                        routerLink: ['/pages/help']
                     },
-                    
+                    {
+                        label: 'Not Found',
+                        icon: 'pi pi-fw pi-exclamation-circle',
+                        routerLink: ['/pages/notfound']
+                    },
                     {
                         label: 'Empty',
                         icon: 'pi pi-fw pi-circle-off',
-                        routerLink: ['/pages/empty'],
+                        routerLink: ['/pages/empty']
                     },
                     {
                         label: 'FAQ',
                         icon: 'pi pi-fw pi-question',
-                        routerLink: ['/pages/faq'],
+                        routerLink: ['/pages/faq']
                     },
                     {
                         label: 'Contact Us',
                         icon: 'pi pi-fw pi-phone',
-                        routerLink: ['/pages/contact'],
+                        routerLink: ['/pages/contact']
                     }
                 ]
             },
