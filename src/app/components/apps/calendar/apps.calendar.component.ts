@@ -3,7 +3,7 @@ import { EventService } from 'src/app/service/event.service';
 import { CalendarOptions } from '@fullcalendar/angular';
 
 @Component({
-    templateUrl: './calendar.component.html',
+    templateUrl: './apps.calendar.component.html',
     styles: [`
       :host ::ng-deep {
         .p-dialog-header {

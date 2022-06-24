@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AppsTaskListComponent } from './apps.tasklist.component';
-import { CreateTaskComponent } from './create-task/create-task.component';
 
 @NgModule({
     imports: [RouterModule.forChild([
-        { path: '', component: AppsTaskListComponent },
-        { path: 'create-task', data: { breadcrumb: 'Create Task' }, component: CreateTaskComponent }
+        { path: '', component: AppsTaskListComponent }
     ])],
     exports: [RouterModule]
 })

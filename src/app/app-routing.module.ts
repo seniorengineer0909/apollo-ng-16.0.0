@@ -13,7 +13,6 @@ const routes: Routes = [
             { path: 'profile', data: { breadcrumb: 'User Management' }, loadChildren: () => import('./components/profile/profile.module').then(m => m.ProfileModule) },
             { path: 'documentation', data: { breadcrumb: 'Documentation' }, loadChildren: () => import('./components/start/start.module').then(m => m.StartModule) },
             { path: 'blocks', data: { breadcrumb: 'Prime Blocks' }, loadChildren: () => import('./components/primeblocks/primeblocks.module').then(m => m.PrimeBlocksModule) },
-            { path: 'blog', data: { breadcrumb: 'Blog' }, loadChildren: () => import('./components/apps/blog/blog.module').then(m => m.BlogModule) },
             { path: 'ecommerce', data: { breadcrumb: 'E-Commerce' }, loadChildren: () => import('./components/ecommerce/app.ecommerce.module').then(m => m.AppEcommerceModule) },
             { path: 'apps', data: { breadcrumb: 'Apps' }, loadChildren: () => import('./components/apps/apps.module').then(m => m.AppsModule) }
         ]

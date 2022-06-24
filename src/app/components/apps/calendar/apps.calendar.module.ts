@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppsCalendarRoutingModule } from './calendar-routing.module';
-import { AppsCalendarComponent } from './calendar.component';
+import { AppsCalendarRoutingModule } from './apps.calendar-routing.module';
+import { AppsCalendarComponent } from './apps.calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarModule } from 'primeng/calendar';
 import { DialogModule } from 'primeng/dialog';

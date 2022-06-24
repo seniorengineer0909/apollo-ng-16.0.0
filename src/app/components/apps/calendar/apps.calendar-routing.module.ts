@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AppsCalendarComponent } from './calendar.component';
+import { AppsCalendarComponent } from './apps.calendar.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
