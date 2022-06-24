@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-app.orderhistory',
-    templateUrl: './app.orderhistory.component.html'
+    templateUrl: './orderhistory.component.html'
 })
-export class AppOrderHistoryComponent {
+export class OrderHistoryComponent {
 
     orders = [
         {

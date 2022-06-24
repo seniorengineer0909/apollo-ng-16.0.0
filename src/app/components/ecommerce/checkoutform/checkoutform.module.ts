@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppCheckoutFormComponent } from './app.checkoutform.component';
-import { AppCheckoutFormRoutingModule } from './app.checkoutform-routing.module';
+import { CheckoutFormComponent } from './checkoutform.component';
+import { CheckoutFormRoutingModule } from './checkoutform-routing.module';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -13,7 +13,7 @@ import { DropdownModule } from 'primeng/dropdown';
 @NgModule({
     imports: [
         CommonModule,
-        AppCheckoutFormRoutingModule,
+        CheckoutFormRoutingModule,
         FormsModule,
         CheckboxModule,
         DropdownModule,
@@ -22,6 +22,6 @@ import { DropdownModule } from 'primeng/dropdown';
         ButtonModule,
         RippleModule
     ],
-    declarations: [AppCheckoutFormComponent]
+    declarations: [CheckoutFormComponent]
 })
-export class AppCheckoutFormModule { }
+export class CheckoutFormModule { }

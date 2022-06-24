@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'app-filter',
+    selector: 'product-filter',
     templateUrl: './filter.component.html',
     styleUrls: ['./filter.component.scss']
 })

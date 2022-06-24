@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppProductOverviewComponent } from './app.productoverview.component';
-import { AppProductoverviewRoutingModule } from './app.productoverview-routing.module';
+import { ProductOverviewComponent } from './productoverview.component';
+import { ProductoverviewRoutingModule } from './productoverview-routing.module';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
@@ -15,8 +15,8 @@ import { RippleModule } from 'primeng/ripple';
     ButtonModule,
     RippleModule,
     TabViewModule,
-    AppProductoverviewRoutingModule
+    ProductoverviewRoutingModule
   ],
-  declarations: [AppProductOverviewComponent]
+  declarations: [ProductOverviewComponent]
 })
 export class AppProductoverviewModule { }

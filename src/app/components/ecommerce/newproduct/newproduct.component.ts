@@ -16,11 +16,10 @@ interface Product{
 }
 
 @Component({
-    selector: 'app-newproduct',
-    templateUrl: './app.newproduct.component.html',
-    styleUrls: ['./app.newproduct.component.scss']
+    templateUrl: './newproduct.component.html',
+    styleUrls: ['./newproduct.component.scss']
 })
-export class AppNewProductComponent {
+export class NewProductComponent {
 
     @ViewChildren('buttonEl') buttonEl: QueryList<ElementRef>;
 

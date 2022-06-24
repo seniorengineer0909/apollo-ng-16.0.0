@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppShoppingCartComponent } from './app.shopping-cart.component';
+import { ShoppingCartComponent } from './shopping-cart.component';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { RippleModule } from 'primeng/ripple';
-import { AppShoppingCartRoutingModule } from './app.shopping-cart-routing.module';
+import { ShoppingCartRoutingModule } from './shopping-cart-routing.module';
 
 @NgModule({
     imports: [
         CommonModule,
-        AppShoppingCartRoutingModule,
+        ShoppingCartRoutingModule,
         ButtonModule,
         RippleModule,
         DropdownModule,
     ],
-    declarations: [AppShoppingCartComponent],
+    declarations: [ShoppingCartComponent],
 })
-export class AppShoppingCartModule { }
+export class ShoppingCartModule { }

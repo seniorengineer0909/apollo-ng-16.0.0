@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-checkout',
-    templateUrl: './app.checkoutform.component.html',
+    templateUrl: './checkoutform.component.html',
 })
-export class AppCheckoutFormComponent {
+export class CheckoutFormComponent {
 
     quantities: number[] = [1, 1, 1];
 
