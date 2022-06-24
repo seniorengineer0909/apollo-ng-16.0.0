@@ -5,7 +5,6 @@ import { Metric } from 'src/app/api/metric';
 import { FileManagementService } from './service/file-management.service';
 
 @Component({
-    selector: 'app-apps.filemanagement',
     templateUrl: './apps.filemanagement.component.html',
     styleUrls: ['./apps.filemanagement.component.scss']
 })
