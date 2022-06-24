@@ -2,8 +2,7 @@ import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { Blog } from 'src/app/api/blog';
 
 @Component({
-    templateUrl: './blog-edit.component.html',
-    styleUrls: ['../blog-list/blog-list.component.scss']
+    templateUrl: './blog-edit.component.html'
 })
 
 export class BlogEditComponent {

@@ -40,22 +40,22 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'File Management',
                         icon: 'pi pi-fw pi-folder',
-                        routerLink: ['apps/file-management']
+                        routerLink: ['/apps/file-management']
                     },
                     {
                         label: 'Task List',
                         icon: 'pi pi-fw pi-check-square',
-                        routerLink: ['apps/tasklist']
+                        routerLink: ['/apps/tasklist']
                     },
                     {
                         label: 'Chat',
                         icon: 'pi pi-fw pi-comments',
-                        routerLink: ['apps/chat']
+                        routerLink: ['/apps/chat']
                     },
                     {
                         label: 'Calendar',
                         icon: 'pi pi-fw pi-calendar',
-                        routerLink: ['apps/calendar']
+                        routerLink: ['/apps/calendar']
                     },
                     {
                         label: 'Mail',
@@ -64,24 +64,24 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Inbox',
                                 icon: 'pi pi-fw pi-inbox',
-                                routerLink: ['apps/mail/inbox']
+                                routerLink: ['/apps/mail/inbox']
                             },
                             {
                                 label: 'Compose',
                                 icon: 'pi pi-fw pi-pencil',
-                                routerLink: ['apps/mail/compose']
+                                routerLink: ['/apps/mail/compose']
                             },
                             {
                                 label: 'Detail',
                                 icon: 'pi pi-fw pi-comment',
-                                routerLink: ['apps/mail/detail/1000']
+                                routerLink: ['/apps/mail/detail/1000']
                             }
                         ]
                     },
                     {
                         label: 'Kanban',
                         icon: 'pi pi-fw pi-sliders-v',
-                        routerLink: ['apps/kanban']
+                        routerLink: ['/apps/kanban']
                     },
                     {
                         label: 'Blog',
@@ -90,19 +90,19 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'List',
                                 icon: 'pi pi-fw pi-image',
-                                routerLink: ['apps/blog/list'],
+                                routerLink: ['/apps/blog/list'],
         
                             },
                             {
                                 label: 'Detail',
                                 icon: 'pi pi-fw pi-list',
-                                routerLink: ['apps/blog/detail'],
+                                routerLink: ['/apps/blog/detail'],
         
                             },
                             {
                                 label: 'Edit',
                                 icon: 'pi pi-fw pi-pencil',
-                                routerLink: ['apps/blog/edit'],
+                                routerLink: ['/apps/blog/edit'],
         
                             }
                         ]
