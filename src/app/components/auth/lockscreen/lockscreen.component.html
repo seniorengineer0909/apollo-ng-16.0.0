@@ -18,7 +18,9 @@
                 <i class="pi pi-lock"></i>
                 <input id="password" type="password" pInputText class="w-full md:w-25rem" placeholder="Password">
             </span>
-            <button pButton pRipple label="Unlock" class="w-full" [routerLink]="['/']"></button>
+            <button pButton pRipple icon="pi pi-lock-open" label="Unlock" class="w-full" [routerLink]="['/']"></button>
         </div>
     </div>
 </div>
+
+<app-config [minimal]="true"></app-config>

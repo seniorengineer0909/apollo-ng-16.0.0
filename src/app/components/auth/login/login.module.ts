@@ -6,6 +6,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
+import { AppConfigModule } from 'src/app/layout/config/app.config.module';
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
         ButtonModule,
         InputTextModule,
         CheckboxModule,
-        FormsModule
+        FormsModule,
+        AppConfigModule
     ],
     declarations: [LoginComponent]
 })

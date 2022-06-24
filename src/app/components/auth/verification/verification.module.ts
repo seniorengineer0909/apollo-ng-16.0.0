@@ -6,6 +6,7 @@ import { VerificationComponent } from './verification.component';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
+import { AppConfigModule } from 'src/app/layout/config/app.config.module';
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { RippleModule } from 'primeng/ripple';
         FormsModule,
         InputNumberModule,
         ButtonModule,
-        RippleModule
+        RippleModule,
+        AppConfigModule
     ],
     declarations: [VerificationComponent]
 })

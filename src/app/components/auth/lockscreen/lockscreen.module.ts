@@ -6,6 +6,7 @@ import { LockScreenComponent } from './lockscreen.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
+import { AppConfigModule } from 'src/app/layout/config/app.config.module';
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { RippleModule } from 'primeng/ripple';
         LockScreenRoutingModule,
         InputTextModule,
         ButtonModule,
-        RippleModule
+        RippleModule,
+        AppConfigModule
     ],
     declarations: [LockScreenComponent]
 })

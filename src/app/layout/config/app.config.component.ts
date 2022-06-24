@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuService } from './app.menu.service';
-import { LayoutService } from './service/app.layout.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { MenuService } from '../app.menu.service';
+import { LayoutService } from '../service/app.layout.service';
 
 @Component({
     selector: 'app-config',
     templateUrl: './app.config.component.html'
 })
 export class AppConfigComponent implements OnInit {
+
+    @Input() minimal: boolean;
 
     componentThemes: any[];
 

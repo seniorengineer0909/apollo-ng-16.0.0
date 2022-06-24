@@ -7,17 +7,19 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
+import { AppConfigModule } from 'src/app/layout/config/app.config.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RegisterRoutingModule,
-    FormsModule,
-    ButtonModule,
-    RippleModule,
-    InputTextModule,
-    CheckboxModule
-  ],
-  declarations: [RegisterComponent]
+    imports: [
+        CommonModule,
+        RegisterRoutingModule,
+        FormsModule,
+        ButtonModule,
+        RippleModule,
+        InputTextModule,
+        CheckboxModule,
+        AppConfigModule
+    ],
+    declarations: [RegisterComponent]
 })
 export class RegisterModule { }
