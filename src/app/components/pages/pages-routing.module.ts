@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
         { path: 'faq', data: { breadcrumb: 'FAQ' }, loadChildren: () => import('./faq/faq.module').then(m => m.AppFaqModule) },
         { path: 'help', data: { breadcrumb: 'Help' }, loadChildren: () => import('./help/app.help.module').then(m => m.AppHelpModule) },
         { path: 'invoice', data: { breadcrumb: 'Invoice' }, loadChildren: () => import('./invoice/app.invoice.module').then(m => m.AppInvoiceModule) },
-        { path: 'timeline', data: { breadcrumb: 'Timeline' }, loadChildren: () => import('./timeline/app.timelinedemo.module').then(m => m.AppTimelineDemoModule) }
+        { path: 'timeline', data: { breadcrumb: 'Timeline' }, loadChildren: () => import('./timeline/timelinedemo.module').then(m => m.TimelineDemoModule) }
     ])],
     exports: [RouterModule]
 })
