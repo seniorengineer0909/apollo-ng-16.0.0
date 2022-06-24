@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem, SelectItem } from 'primeng/api';
 
 @Component({
-    templateUrl: './app.shop.component.html',
-    styleUrls: ['./app.shop.component.scss']
+    templateUrl: './shop.component.html',
+    styleUrls: ['./shop.component.scss']
 })
-export class AppShopComponent implements OnInit {
+export class ShopComponent implements OnInit {
 
     products: any[];
 

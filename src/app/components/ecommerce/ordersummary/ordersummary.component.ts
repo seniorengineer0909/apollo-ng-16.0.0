@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: './app.ordersummary.component.html',
+    templateUrl: './ordersummary.component.html',
 })
-export class AppOrderSummaryComponent {
+export class OrderSummaryComponent {
 
     products = [
         {

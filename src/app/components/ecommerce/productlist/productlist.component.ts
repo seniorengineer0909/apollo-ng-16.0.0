@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: './app.productlist.component.html'
+    templateUrl: './productlist.component.html'
 })
-export class AppProductListComponent {
+export class ProductListComponent {
 
     color1: string = 'Bluegray';
 

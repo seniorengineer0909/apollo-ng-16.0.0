@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppOrderHistoryRoutingModule } from './app.orderhistory-routing.module';
-import { AppOrderHistoryComponent } from './app.orderhistory.component';
+import { OrderHistoryRoutingModule } from './orderhistory-routing.module';
+import { OrderHistoryComponent } from './orderhistory.component';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 import { RippleModule } from 'primeng/ripple';
@@ -9,11 +9,11 @@ import { RippleModule } from 'primeng/ripple';
 @NgModule({
     imports: [
         CommonModule,
-        AppOrderHistoryRoutingModule,
+        OrderHistoryRoutingModule,
         ButtonModule,
         DividerModule,
         RippleModule
     ],
-    declarations: [AppOrderHistoryComponent]
+    declarations: [OrderHistoryComponent]
 })
-export class AppOrderHistoryModule { }
+export class OrderHistoryModule { }

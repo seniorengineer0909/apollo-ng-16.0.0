@@ -3,9 +3,9 @@ import { Product } from 'src/app/api/product';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
-    templateUrl: './app.editorder.component.html'
+    templateUrl: './editorder.component.html'
 })
-export class AppEditOrderComponent implements OnInit {
+export class EditOrderComponent implements OnInit {
 
     products: Product[];
 

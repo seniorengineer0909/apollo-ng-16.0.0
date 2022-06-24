@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppShopComponent } from './app.shop.component';
-import { AppShopRoutingModule } from './app.shop-routing.module';
+import { ShopComponent } from './shop.component';
+import { ShopRoutingModule } from './shop-routing.module';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
@@ -14,7 +14,7 @@ import { FilterModule } from '../filter/filter.module';
 @NgModule({
   imports: [
     CommonModule,
-    AppShopRoutingModule,
+    ShopRoutingModule,
     InputTextModule,
     FormsModule,
     ButtonModule,
@@ -24,6 +24,6 @@ import { FilterModule } from '../filter/filter.module';
     RatingModule,
     RippleModule
   ],
-  declarations: [AppShopComponent]
+  declarations: [ShopComponent]
 })
-export class AppShopModule { }
+export class ShopModule { }

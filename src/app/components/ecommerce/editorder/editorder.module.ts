@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppEditOrderRoutingModule } from './app.editorder-routing.module';
-import { AppEditOrderComponent } from './app.editorder.component';
+import { EditOrderRoutingModule } from './editorder-routing.module';
+import { EditOrderComponent } from './editorder.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -15,7 +15,7 @@ import { DividerModule } from 'primeng/divider';
 @NgModule({
     imports: [
         CommonModule,
-        AppEditOrderRoutingModule,
+        EditOrderRoutingModule,
         InputTextModule,
         DropdownModule,
         InputNumberModule,
@@ -26,6 +26,6 @@ import { DividerModule } from 'primeng/divider';
         RippleModule,
         DividerModule
     ],
-    declarations: [AppEditOrderComponent]
+    declarations: [EditOrderComponent]
 })
-export class AppEditOrderModule { }
+export class EditOrderModule { }

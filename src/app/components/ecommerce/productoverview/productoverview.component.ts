@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    templateUrl: './app.productoverview.component.html',
+    templateUrl: './productoverview.component.html',
 })
-export class AppProductOverviewComponent implements OnInit {
+export class ProductOverviewComponent implements OnInit {
     
     color: string = 'bluegray';
 

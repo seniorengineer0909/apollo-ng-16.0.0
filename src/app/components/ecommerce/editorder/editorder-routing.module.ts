@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AppEditOrderComponent } from './app.editorder.component';
+import { EditOrderComponent } from './editorder.component';
 
 @NgModule({
     imports: [RouterModule.forChild([
-        { path: '', component: AppEditOrderComponent }
+        { path: '', component: EditOrderComponent }
     ])],
     exports: [RouterModule]
 })
-export class AppEditOrderRoutingModule { }
+export class EditOrderRoutingModule { }
