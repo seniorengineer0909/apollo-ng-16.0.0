@@ -3,23 +3,16 @@ import { EventService } from 'src/app/service/event.service';
 import { CalendarOptions } from '@fullcalendar/angular';
 
 @Component({
-    templateUrl: './apps.calendar.component.html',
-    styles: [`
-      :host ::ng-deep {
-        .p-dialog-header {
-          border-bottom: 1px solid var(--surface-border);
-        }
-      }
-    `]
+    templateUrl: './calendar.app.component.html'
 })
-export class AppsCalendarComponent implements OnInit {
+export class CalendarAppComponent implements OnInit {
 
     events: any[];
 
     today: string;
 
     calendarOptions: CalendarOptions = {
-      initialView: 'dayGridMonth'
+        initialView: 'dayGridMonth'
     };
 
     showDialog: boolean;
@@ -104,4 +97,5 @@ export class AppsCalendarComponent implements OnInit {
         this.calendarOptions = {...this.calendarOptions, ...{events: this.events}};
         this.showDialog = false;
     }
+
 }
