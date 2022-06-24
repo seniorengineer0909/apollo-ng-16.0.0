@@ -79,7 +79,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     constructor(public layoutService: LayoutService, private cd: ChangeDetectorRef, public router: Router, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(key => {
             Promise.resolve(null).then(() => {
-                this.active = key ? (key === this.key || key.indexOf(this.key) === 0) : false;
+                this.active = key ? (key === this.key || key.startsWith(this.key + '-')) : false;
             });
         });
 
