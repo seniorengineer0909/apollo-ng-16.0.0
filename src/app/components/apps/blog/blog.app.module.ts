@@ -1,12 +1,12 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { BlogRoutingModule } from "./blog-routing.module";
+import { BlogAppRoutingModule } from "./blog.app-routing.module";
 
 @NgModule({
     imports: [
         CommonModule,
-        BlogRoutingModule
+        BlogAppRoutingModule
     ],
     declarations: []
 })
-export class BlogModule { }
+export class BlogAppModule { }

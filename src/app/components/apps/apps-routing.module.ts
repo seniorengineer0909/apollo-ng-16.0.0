@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
         { path: 'file-management', data: { breadcrumb: 'File Management' }, loadChildren: () => import('./filemanagement/apps.filemanagement.module').then(m => m.AppsFileManagementModule) },
         { path: 'mail', data: { breadcrumb: 'Mail' }, loadChildren: () => import('./mail/apps.mail.module').then(m => m.AppsMailModule) },
         { path: 'kanban', data: { breadcrumb: 'Kanban' }, loadChildren: () => import('./kanban/apps.kanban.module').then(m => m.AppsKanbanModule) },
-        { path: 'blog', data: { breadcrumb: 'Blog' }, loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule) }
+        { path: 'blog', data: { breadcrumb: 'Blog' }, loadChildren: () => import('./blog/blog.app.module').then(m => m.BlogAppModule) }
     ])],
     exports: [RouterModule]
 })

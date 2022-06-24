@@ -38,14 +38,30 @@ export class AppMenuComponent implements OnInit {
                 icon: 'pi-th-large',
                 items: [
                     {
-                        label: 'File Management',
-                        icon: 'pi pi-fw pi-folder',
-                        routerLink: ['/apps/file-management']
+                        label: 'Blog',
+                        icon: 'pi pi-fw pi-comment',
+                        items: [
+                            {
+                                label: 'List',
+                                icon: 'pi pi-fw pi-image',
+                                routerLink: ['/apps/blog/list']
+                            },
+                            {
+                                label: 'Detail',
+                                icon: 'pi pi-fw pi-list',
+                                routerLink: ['/apps/blog/detail']
+                            },
+                            {
+                                label: 'Edit',
+                                icon: 'pi pi-fw pi-pencil',
+                                routerLink: ['/apps/blog/edit']
+                            }
+                        ]
                     },
                     {
-                        label: 'Task List',
-                        icon: 'pi pi-fw pi-check-square',
-                        routerLink: ['/apps/tasklist']
+                        label: 'Calendar',
+                        icon: 'pi pi-fw pi-calendar',
+                        routerLink: ['/apps/calendar']
                     },
                     {
                         label: 'Chat',
@@ -53,9 +69,14 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['/apps/chat']
                     },
                     {
-                        label: 'Calendar',
-                        icon: 'pi pi-fw pi-calendar',
-                        routerLink: ['/apps/calendar']
+                        label: 'Files',
+                        icon: 'pi pi-fw pi-folder',
+                        routerLink: ['/apps/file-management']
+                    },
+                    {
+                        label: 'Kanban',
+                        icon: 'pi pi-fw pi-sliders-v',
+                        routerLink: ['/apps/kanban']
                     },
                     {
                         label: 'Mail',
@@ -79,33 +100,9 @@ export class AppMenuComponent implements OnInit {
                         ]
                     },
                     {
-                        label: 'Kanban',
-                        icon: 'pi pi-fw pi-sliders-v',
-                        routerLink: ['/apps/kanban']
-                    },
-                    {
-                        label: 'Blog',
-                        icon: 'pi pi-fw pi-comment',
-                        items: [
-                            {
-                                label: 'List',
-                                icon: 'pi pi-fw pi-image',
-                                routerLink: ['/apps/blog/list'],
-        
-                            },
-                            {
-                                label: 'Detail',
-                                icon: 'pi pi-fw pi-list',
-                                routerLink: ['/apps/blog/detail'],
-        
-                            },
-                            {
-                                label: 'Edit',
-                                icon: 'pi pi-fw pi-pencil',
-                                routerLink: ['/apps/blog/edit'],
-        
-                            }
-                        ]
+                        label: 'Task List',
+                        icon: 'pi pi-fw pi-check-square',
+                        routerLink: ['/apps/tasklist']
                     }
                 ]
             },
