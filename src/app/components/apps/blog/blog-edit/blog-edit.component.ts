@@ -2,7 +2,6 @@ import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { Blog } from 'src/app/api/blog';
 
 @Component({
-    selector: 'app-blogedit',
     templateUrl: './blog-edit.component.html',
     styleUrls: ['../blog-list/blog-list.component.scss']
 })
