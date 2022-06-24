@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-productoverview',
     templateUrl: './app.productoverview.component.html',
 })
 export class AppProductOverviewComponent implements OnInit {

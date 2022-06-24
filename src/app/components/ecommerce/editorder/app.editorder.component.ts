@@ -3,7 +3,6 @@ import { Product } from 'src/app/api/product';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
-    selector: 'app-app.orderedit',
     templateUrl: './app.editorder.component.html'
 })
 export class AppEditOrderComponent implements OnInit {

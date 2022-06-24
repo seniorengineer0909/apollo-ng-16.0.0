@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-checkout',
     templateUrl: './app.checkoutform.component.html',
 })
 export class AppCheckoutFormComponent {

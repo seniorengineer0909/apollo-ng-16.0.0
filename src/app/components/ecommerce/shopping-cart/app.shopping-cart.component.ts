@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 
 @Component({
-    selector: 'app-shopping-cart',
     templateUrl: './app.shopping-cart.component.html'
 })
 export class AppShoppingCartComponent implements OnInit {

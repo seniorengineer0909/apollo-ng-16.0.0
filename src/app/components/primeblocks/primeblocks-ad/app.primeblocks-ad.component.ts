@@ -4,7 +4,7 @@ import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs'
 
 @Component({
-    selector: 'app-primeblocks-ad',
+    selector: 'primeblocks-ad',
     templateUrl: './app.primeblocks-ad.component.html',
 })
 export class AppPrimeBlocksAdComponent implements OnDestroy {

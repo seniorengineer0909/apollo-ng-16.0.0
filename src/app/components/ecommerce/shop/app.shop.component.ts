@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem, SelectItem } from 'primeng/api';
 
 @Component({
-    selector: 'app-shop',
     templateUrl: './app.shop.component.html',
     styleUrls: ['./app.shop.component.scss']
 })

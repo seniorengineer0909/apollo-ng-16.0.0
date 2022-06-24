@@ -16,7 +16,6 @@ interface Product{
 }
 
 @Component({
-    selector: 'app-newproduct',
     templateUrl: './app.newproduct.component.html',
     styleUrls: ['./app.newproduct.component.scss']
 })
