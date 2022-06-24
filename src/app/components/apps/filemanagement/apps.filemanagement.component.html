@@ -1,6 +1,6 @@
 <div class="grid">
     <div *ngFor="let metric of metrics" class="col-12 lg:col-3 p-2">
-        <app-card [items]="items" [card]="metric"></app-card>
+        <file-card [items]="items" [card]="metric"></file-card>
     </div>
     <div class="col-12 lg:col-3 p-2">
         <div class="card">
@@ -10,10 +10,10 @@
             </div>
             <p-chart type="doughnut" [plugins]="chartPlugins" id="country-chart" [data]="fileChart" [options]="fileChartOptions" [style]="{'width': '75%'}"></p-chart>
             <div  class="flex flex-column gap-4 mt-4">
-                <app-folder *ngFor="let account of accounts" [data]="account"></app-folder>
+                <file-folder *ngFor="let account of accounts" [data]="account"></file-folder>
             </div>
         </div>
-        <app-uploader></app-uploader>
+        <file-uploader></file-uploader>
     </div>
     <div class="col-12 lg:col-9 p-2">
         <div class="card">
@@ -21,7 +21,7 @@
             <div class="flex justify-content-center">
                 <div class="grid">
                     <div *ngFor="let folder of folders" class="col-12 lg:col-4">
-                        <app-folder [data]="folder"></app-folder>
+                        <file-folder [data]="folder"></file-folder>
                     </div>
                 </div>
             </div>

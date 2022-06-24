@@ -2,7 +2,7 @@ import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
 @Component({
-    selector: 'app-uploader',
+    selector: 'file-uploader',
     templateUrl: './uploader.component.html',
     providers: [MessageService]
 })

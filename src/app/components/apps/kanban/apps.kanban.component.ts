@@ -6,7 +6,6 @@ import { KanbanListComponent } from './kanban-list/kanban-list.component';
 import { KanbanService } from './service/kanban.service';
 
 @Component({
-    selector: 'app-apps.kanban',
     templateUrl: './apps.kanban.component.html',
     styleUrls: ['./apps.kanban.component.scss']
 })
