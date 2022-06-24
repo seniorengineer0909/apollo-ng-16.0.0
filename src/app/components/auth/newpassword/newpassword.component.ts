@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
-	templateUrl: './app.register.component.html'
+	templateUrl: './newpassword.component.html'
 })
-export class AppRegisterComponent {
+export class NewPasswordComponent {
 
-	confirmed: boolean;
+	rememberMe: boolean;
 
 	constructor(private layoutService: LayoutService) {}
 

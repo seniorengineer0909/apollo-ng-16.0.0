@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AppNewPasswordComponent } from './app.newpassword.component';
+import { ErrorComponent } from './error.component';
 
 @NgModule({
     imports: [RouterModule.forChild([
-        { path: '', component: AppNewPasswordComponent }
+        { path: '', component: ErrorComponent }
     ])],
     exports: [RouterModule]
 })
-export class AppNewPasswordRoutingModule { }
+export class ErrorRoutingModule { }

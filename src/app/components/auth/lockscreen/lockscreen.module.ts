@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppLockScreenRoutingModule } from './app.lockscreen-routing.module';
-import { AppLockScreenComponent } from './app.lockscreen.component';
+import { LockScreenRoutingModule } from './lockscreen-routing.module';
+import { LockScreenComponent } from './lockscreen.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
@@ -11,11 +11,11 @@ import { RippleModule } from 'primeng/ripple';
     imports: [
         CommonModule,
         FormsModule,
-        AppLockScreenRoutingModule,
+        LockScreenRoutingModule,
         InputTextModule,
         ButtonModule,
         RippleModule
     ],
-    declarations: [AppLockScreenComponent]
+    declarations: [LockScreenComponent]
 })
-export class AppLockScreenModule { }
+export class LockScreenModule { }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppForgotPasswordRoutingModule } from './app.forgotpassword-routing.module';
-import { AppForgotPasswordComponent } from './app.forgotpassword.component';
+import { ForgotPasswordRoutingModule } from './forgotpassword-routing.module';
+import { ForgotPasswordComponent } from './forgotpassword.component';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 
@@ -10,8 +10,8 @@ import { InputTextModule } from 'primeng/inputtext';
         CommonModule,
         ButtonModule,
         InputTextModule,
-        AppForgotPasswordRoutingModule
+        ForgotPasswordRoutingModule
     ],
-    declarations: [AppForgotPasswordComponent]
+    declarations: [ForgotPasswordComponent]
 })
-export class AppForgotPasswordModule { }
+export class ForgotPasswordModule { }

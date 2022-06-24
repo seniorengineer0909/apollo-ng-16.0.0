@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppNewPasswordComponent } from './app.newpassword.component';
-import { AppNewPasswordRoutingModule } from './app.newpassword-routing.module';
+import { VerificationRoutingModule } from './verification-routing.module';
+import { VerificationComponent } from './verification.component';
+import { InputNumberModule } from 'primeng/inputnumber';
 import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
     imports: [
         CommonModule,
-        AppNewPasswordRoutingModule,
+        VerificationRoutingModule,
         FormsModule,
+        InputNumberModule,
         ButtonModule,
-        InputTextModule,
         RippleModule
     ],
-    declarations: [AppNewPasswordComponent]
+    declarations: [VerificationComponent]
 })
-export class AppNewPasswordModule { }
+export class VerificationModule { }

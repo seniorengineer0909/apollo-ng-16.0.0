@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
-    templateUrl: './app.lockscreen.component.html'
+    templateUrl: './forgotpassword.component.html'
 })
-export class AppLockScreenComponent { 
+export class ForgotPasswordComponent { 
 
     constructor(private layoutService: LayoutService) {}
 

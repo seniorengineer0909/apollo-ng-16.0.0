@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AppAccessdeniedComponent } from './app.accessdenied.component';
+import { VerificationComponent } from './verification.component';
 
 @NgModule({
     imports: [RouterModule.forChild([
-        { path: '', component: AppAccessdeniedComponent }
+        { path: '', component: VerificationComponent }
     ])],
     exports: [RouterModule]
 })
-export class AppAccessdeniedRoutingModule {}
+export class VerificationRoutingModule { }
