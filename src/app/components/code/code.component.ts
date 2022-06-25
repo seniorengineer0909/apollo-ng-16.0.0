@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewInit, Input, NgModule, ViewChild } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, Input, NgModule, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
         <pre [ngClass]="'language-' + lang"><code #code><ng-content></ng-content>
 </code></pre>
     `,
+    styleUrls: ['./code.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class AppCodeComponent implements AfterViewInit {
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 enum BlockView {
   PREVIEW,
@@ -35,7 +35,8 @@ enum BlockView {
         </div>
     </div>
   `,
-  styleUrls: ['./blockviewer.component.scss']
+  styleUrls: ['./blockviewer.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BlockViewer {
   
