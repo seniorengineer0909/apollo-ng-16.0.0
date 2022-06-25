@@ -71,7 +71,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'Files',
                         icon: 'pi pi-fw pi-folder',
-                        routerLink: ['/apps/file-management']
+                        routerLink: ['/apps/files']
                     },
                     {
                         label: 'Kanban',

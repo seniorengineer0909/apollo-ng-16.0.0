@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Folder } from 'src/app/api/folder';
 import { File } from 'src/app/api/file';
 import { Metric } from 'src/app/api/metric';
-import { FileManagementService } from './service/file-management.service';
+import { FileAppService } from './service/file.app.service';
+import { MenuItem } from 'primeng/api';
+import { LayoutService } from 'src/app/layout/service/app.layout.service';
+import { Subscription } from 'rxjs';
 
 @Component({
-    templateUrl: './apps.filemanagement.component.html',
-    styleUrls: ['./apps.filemanagement.component.scss']
+    templateUrl: './file.app.component.html',
+    styleUrls: ['./file.app.component.scss']
 })
-export class AppsFileManagementComponent implements OnInit {
+export class FileAppComponent implements OnInit {
 
     fileChart: any;
 
@@ -16,38 +19,41 @@ export class AppsFileManagementComponent implements OnInit {
 
     chartPlugins: any;
 
-    cols: any[];
-
     files: File[];
 
     metrics: Metric[];
 
-    accounts: Folder[];
-
     folders: Folder[];
 
-    constructor(private fileService: FileManagementService) { }
+    menuitems: MenuItem[];
+
+    subscription: Subscription;
+
+    constructor(private fileService: FileAppService, private layoutService: LayoutService) { 
+        this.subscription = this.layoutService.configUpdate$.subscribe(config => {
+            this.initChart();
+        });
+    }
 
     ngOnInit() {
-        this.cols = [
-            { field: 'name', header: 'Name' },
-            { field: 'date', header: 'Date' },
-            { field: 'file size', header: 'File Size' },
-            { field: 'status', header: 'Status' }
-        ];
-
         this.fileService.getFiles().then(data => this.files = data);
         this.fileService.getMetrics().then(data => this.metrics = data);
-        this.fileService.getFoldersSmall().then(data => this.accounts = data);
         this.fileService.getFoldersLarge().then(data => this.folders = data);
 
         this.initChart();
+
+        this.menuitems = [
+            {label: 'View', icon: 'pi pi-search'},
+            {label: 'Refresh', icon: 'pi pi-refresh'}
+        ]
     }
 
     initChart() {
+        const documentStyle = getComputedStyle(document.documentElement);
+        const textColor = documentStyle.getPropertyValue('--text-color');
+
         this.chartPlugins = [{
             beforeDraw: function (chart) {
-
                 let ctx = chart.ctx;
                 let width = chart.width;
                 let height = chart.height;
@@ -75,17 +81,16 @@ export class AppsFileManagementComponent implements OnInit {
         }]
 
         this.fileChart = {
-
             datasets: [
                 {
                     data: [300, 100],
                     backgroundColor: [
-                        '#0F8BFD',
-                        '#545C6B'
+                        documentStyle.getPropertyValue('--primary-600'),
+                        documentStyle.getPropertyValue('--primary-100'),
                     ],
                     hoverBackgroundColor: [
-                        '#0F8BFD',
-                        '#545C6B',
+                        documentStyle.getPropertyValue('--primary-700'),
+                        documentStyle.getPropertyValue('--primary-200'),
                     ],
                     borderColor: 'transparent',
                     fill: true
@@ -94,11 +99,14 @@ export class AppsFileManagementComponent implements OnInit {
         };
 
         this.fileChartOptions = {
+            animation: {
+                duration: 0
+            },
             cutout: '90%',
             plugins: {
                 legend: {
                     labels: {
-                        color: '#ebedef'
+                        color: textColor
                     }
                 }
             }

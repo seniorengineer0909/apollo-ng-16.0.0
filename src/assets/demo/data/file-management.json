@@ -1,98 +1,92 @@
 {
     "files": [
         {
-            "name": "Jing Lee.jpeg",
-            "image": "assets/demo/images/avatar/elwinsharvill.png",
+            "name": "nature.jpeg",
+            "icon": "pi pi-image",
             "date": "29 Jul 2021",
             "fileSize": "12 MB"
         },
         {
-            "name": "Tableart.jpeg",
-            "image": "assets/demo/images/avatar/bernardodominic.png",
+            "name": "report.pdf",
+            "icon": "pi pi-image",
             "date": "29 Jul 2021",
             "fileSize": "6 MB"
         },
         {
-            "name": "Deeppassion.waw",
-            "image": "assets/demo/images/avatar/ionibowcher.png",
+            "name": "screenshot.jpeg",
+            "icon": "pi pi-image",
             "date": "29 Jul 2021",
             "fileSize": "32 MB"
         },
         {
-            "name": "Clock.png",
-            "image": "assets/demo/images/avatar/bernardodominic.png",
+            "name": "sales.xls",
+            "icon": "pi pi-file-excel",
             "date": "29 Jul 2021",
             "fileSize": "12 MB"
         },
         {
-            "name": "CV.pdf",
-            "image": "assets/demo/images/avatar/profile.jpg",
+            "name": "cv.pdf",
+            "icon": "pi pi-file-pdf",
             "date": "29 Jul 2021",
             "fileSize": "1.6 MB"
         },
         {
-            "name": "Abstract.png",
-            "image": "assets/demo/images/avatar/amyelsner.png",
+            "name": "product.png",
+            "icon": "pi pi-image",
             "date": "29 Jul 2021",
             "fileSize": "1.8 MB"
         },
         {
-            "name": "Jing Lee.jpeg",
-            "image": "assets/demo/images/avatar/elwinsharvill.png",
+            "name": "income.xls",
+            "icon": "pi pi-file-excel",
             "date": "29 Jul 2021",
             "fileSize": "12 MB"
         },
         {
-            "name": "Tableart.jpeg",
-            "image": "assets/demo/images/avatar/bernardodominic.png",
+            "name": "art.png",
+            "icon": "pi pi-image",
             "date": "29 Jul 2021",
             "fileSize": "6 MB"
         },
         {
-            "name": "Clock.png",
-            "image": "assets/demo/images/avatar/bernardodominic.png",
+            "name": "expenses.xls",
+            "icon": "pi pi-file-excel",
             "date": "29 Jul 2021",
             "fileSize": "12 MB"
         },
         {
-            "name": "CV.pdf",
-            "image": "assets/demo/images/avatar/profile.jpg",
+            "name": "cv-new.pdf",
+            "icon": "pi pi-file-pdf",
             "date": "29 Jul 2021",
             "fileSize": "1.6 MB"
         },
         {
-            "name": "Jing Lee.jpeg",
-            "image": "assets/demo/images/avatar/elwinsharvill.png",
+            "name": "revenue.xls",
+            "icon": "pi pi-file-excel",
             "date": "29 Jul 2021",
             "fileSize": "12 MB"
         },
         {
-            "name": "Tableart.jpeg",
-            "image": "assets/demo/images/avatar/bernardodominic.png",
+            "name": "payment-1.pdf",
+            "icon": "pi pi-file-pdf",
             "date": "29 Jul 2021",
             "fileSize": "6 MB"
         },
         {
-            "name": "Deeppassion.waw",
-            "image": "assets/demo/images/avatar/ionibowcher.png",
+            "name": "payment-2.pdf",
+            "icon": "pi pi-file-pdf",
             "date": "29 Jul 2021",
             "fileSize": "32 MB"
         },
         {
-            "name": "Deeppassion.waw",
-            "image": "assets/demo/images/avatar/ionibowcher.png",
-            "date": "29 Jul 2021",
-            "fileSize": "32 MB"
-        },
-        {
-            "name": "Clock.png",
-            "image": "assets/demo/images/avatar/bernardodominic.png",
+            "name": "invoices.xls",
+            "icon": "pi pi-file-excel",
             "date": "29 Jul 2021",
             "fileSize": "12 MB"
         },
         {
-            "name": "CV.pdf",
-            "image": "assets/demo/images/avatar/profile.jpg",
+            "name": "ads.pdf",
+            "icon": "pi pi-file-pdf",
             "date": "29 Jul 2021",
             "fileSize": "1.6 MB"
         }
@@ -104,44 +98,32 @@
             "icon": "pi pi-ellipsis-v",
             "fieldColor": "bg-yellow-500",
             "color": "bg-yellow-100",
-            "files": "123,232 Files",
-            "fileSize": "1.5GB",
-            "items": [
-                { "label": "Cloud Storage"}
-            ]
+            "files": "412 Files",
+            "fileSize": "1.5GB"
         },
         {
             "title": "Dropbox Storage",
             "icon": "pi pi-ellipsis-v",
             "fieldColor": "bg-pink-500",
             "color": "bg-pink-100",
-            "files": "123,232 Files",
-            "fileSize": "4.1GB",
-            "items": [
-                { "label": "Dropbox Storage"}
-            ]
+            "files": "200 Files",
+            "fileSize": "4.1GB"
         },
         {
             "title": "Google Drive Storage",
             "icon": "pi pi-ellipsis-v",
             "fieldColor": "bg-green-500",
             "color": "bg-green-100",
-            "files": "123,232 Files",
-            "fileSize": "1.3GB",
-            "items": [
-                {"label": "Google Drive Storage" }
-            ]
+            "files": "24 Files",
+            "fileSize": "1.3GB"
         },
         {
             "title": "Internal Storage",
             "icon": "pi pi-ellipsis-v",
             "fieldColor": "bg-indigo-500",
             "color": "bg-indigo-100",
-            "files": "123,232 Files",
-            "fileSize": "5.3GB",
-            "items": [
-                {"label": "Internal Storage"}
-            ]
+            "files": "82 Files",
+            "fileSize": "5.3GB"
         }
     ],
 

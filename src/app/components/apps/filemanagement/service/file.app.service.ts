@@ -5,7 +5,7 @@ import { Metric } from 'src/app/api/metric';
 import { Folder } from 'src/app/api/folder';
 
 @Injectable()
-export class FileManagementService {
+export class FileAppService {
 
     constructor(private http: HttpClient) { }
 
