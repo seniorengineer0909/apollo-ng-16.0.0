@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppsMailRoutingModule } from './apps.mail-routing.module';
-import { AppsMailComponent } from './apps.mail.component';
+import { MailAppRoutingModule } from './mail.app-routing.module';
+import { MailAppComponent } from './mail.app.component';
 import { MailInboxComponent } from './mail-inbox/mail-inbox.component';
 import { MailComposeComponent } from './mail-compose/mail-compose.component';
 import { MailDetailComponent } from './mail-detail/mail-detail.component';
@@ -24,25 +24,25 @@ import { MessageService } from 'primeng/api';
 import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    AppsMailRoutingModule,
-    MenuModule,
-    ButtonModule,
-    RippleModule,
-    TableModule,
-    ToolbarModule,
-    InputTextModule,
-    CheckboxModule,
-    RatingModule,
-    AvatarModule,
-    EditorModule,
-    ToastModule,
-    FileUploadModule,
-    DialogModule
-  ],
-  declarations: [AppsMailComponent, MailInboxComponent, MailComposeComponent, MailDetailComponent, MailSidebarComponent, MailReplyComponent],
-  providers: [MessageService]
+    imports: [
+        CommonModule,
+        FormsModule,
+        MailAppRoutingModule,
+        MenuModule,
+        ButtonModule,
+        RippleModule,
+        TableModule,
+        ToolbarModule,
+        InputTextModule,
+        CheckboxModule,
+        RatingModule,
+        AvatarModule,
+        EditorModule,
+        ToastModule,
+        FileUploadModule,
+        DialogModule
+    ],
+    declarations: [MailAppComponent, MailInboxComponent, MailComposeComponent, MailDetailComponent, MailSidebarComponent, MailReplyComponent],
+    providers: [MessageService]
 })
-export class AppsMailModule { }
+export class MailAppModule { }

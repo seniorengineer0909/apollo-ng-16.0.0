@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
 import { Mail } from 'src/app/api/mail';
@@ -6,8 +6,7 @@ import { MailService } from 'src/app/service/mail.service';
 
 @Component({
     selector: 'mail-inbox',
-    templateUrl: './mail-inbox.component.html',
-    styleUrls: ['./mail-inbox.component.scss']
+    templateUrl: './mail-inbox.component.html'
 })
 export class MailInboxComponent implements OnInit {
 
@@ -23,7 +22,7 @@ export class MailInboxComponent implements OnInit {
 
     dialogVisible: boolean = false;
 
-    constructor(private mailService: MailService, private router: Router, private messageService: MessageService, private cd: ChangeDetectorRef) {}
+    constructor(private mailService: MailService, private router: Router, private messageService: MessageService) {}
 
     ngOnInit(): void {
         this.mailService.getMails().then(data => this.mails = data);
@@ -40,12 +39,12 @@ export class MailInboxComponent implements OnInit {
         ];
     }
 
-
     toggleOptions(event, opt, date) {
         if (event.type === 'mouseenter') {
             opt.style.display = 'flex';
             date.style.display = 'none';
-        } else {
+        } 
+        else {
             opt.style.display = 'none';
             date.style.display = 'flex';
         }
@@ -55,20 +54,17 @@ export class MailInboxComponent implements OnInit {
         this.router.navigate(['/apps/mail/detail/', id])
     }
 
-    archive(event, id){
-        event.stopPropagation();
+    archive(id) {
         this.mails = this.mails.filter(m => m.id !== id);
         this.messageService.add({severity:'info', summary: 'Info', detail: 'Mail archived', life: 3000});
     }
 
-    delete(event, id){
-        event.stopPropagation();
+    delete(id) {
         this.mails = this.mails.filter(m => m.id !== id);
         this.messageService.add({severity:'info', summary: 'Info', detail: 'Mail deleted', life: 3000});
     }
 
-    reply(event, mail){
-        event.stopPropagation();
+    reply(mail) {
         this.mail = mail;
         this.dialogVisible = true;
     }

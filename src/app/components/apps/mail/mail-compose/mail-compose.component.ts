@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
 @Component({
-    selector: 'mail-compose',
-    templateUrl: './mail-compose.component.html',
-    styleUrls: ['./mail-compose.component.scss']
+    templateUrl: './mail-compose.component.html'
 })
 export class MailComposeComponent {
 
@@ -13,4 +11,5 @@ export class MailComposeComponent {
     sendMail() {
         this.messageService.add({severity:'success', summary: 'Success', detail: 'Mail sent'});
     }
+    
 }
