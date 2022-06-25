@@ -6,10 +6,10 @@ import { KanbanListComponent } from './kanban-list/kanban-list.component';
 import { KanbanService } from './service/kanban.service';
 
 @Component({
-    templateUrl: './apps.kanban.component.html',
-    styleUrls: ['./apps.kanban.component.scss']
+    templateUrl: './kanban.app.component.html',
+    styleUrls: ['./kanban.app.component.scss']
 })
-export class AppsKanbanComponent implements OnInit, OnDestroy {
+export class KanbanAppComponent implements OnInit, OnDestroy {
 
     sidebarVisible: boolean;
 

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { KanbanList } from 'src/app/api/kanban';
-import { AppsKanbanComponent } from '../apps.kanban.component';
+import { KanbanAppComponent } from '../kanban.app.component';
 import { KanbanService } from '../service/kanban.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
@@ -29,7 +29,7 @@ export class KanbanListComponent implements OnInit {
 
     @ViewChild('listEl') listEl: ElementRef;
 
-    constructor(public parent: AppsKanbanComponent, private kanbanService: KanbanService) {}
+    constructor(public parent: KanbanAppComponent, private kanbanService: KanbanService) {}
 
     ngOnInit(): void {
         this.menuItems = [

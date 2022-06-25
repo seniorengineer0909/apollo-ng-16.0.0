@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { KanbanCard, Comment, ListName, Task } from 'src/app/api/kanban';
 import { Member } from 'src/app/api/member';
-import { AppsKanbanComponent } from '../apps.kanban.component';
+import { KanbanAppComponent } from '../kanban.app.component';
 import { MemberService } from 'src/app/service/member.service';
 import { Subscription } from 'rxjs';
 import { MenuItem } from 'primeng/api';
@@ -48,7 +48,7 @@ export class KanbanSidebarComponent implements OnInit, OnDestroy {
 
     @ViewChild('inputTaskListTitle') inputTaskListTitle: ElementRef;
 
-    constructor(public parent: AppsKanbanComponent, private memberService: MemberService, private kanbanService: KanbanService) {
+    constructor(public parent: KanbanAppComponent, private memberService: MemberService, private kanbanService: KanbanService) {
         this.memberService.getMembers().then(members => this.assignees = members);
 
         this.cardSubscription = this.kanbanService.selectedCard$.subscribe(data => this.card = data);
