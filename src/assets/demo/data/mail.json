@@ -7,9 +7,12 @@
             "image": "ionibowcher.png",
             "title": "Apply These 7 Secret Techniques To Improve Event  Apply These",
             "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "date": "30 May 2022",
+            "date": "May 30 2022",
             "important": true,
-            "starred": false
+            "starred": false,
+            "trash": false,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1001,
@@ -18,9 +21,12 @@
             "image": "amyelsner.png",
             "title": "Nullam purus metus, cras adipiscing magna et, aliquam gravida",
             "message": "Iaculis nunc sed augue lacus viverra vitae. Amet porttitor eget dolor morbi non arcu. Adipiscing commodo elit at imperdiet. Scelerisque viverra mauris in aliquam. Non diam phasellus vestibulum lorem sed risus. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit. Curabitur vitae nunc sed velit dignissim sodales ut eu. Posuere morbi leo urna molestie at elementum eu facilisis. Commodo odio aenean sed adipiscing diam. Arcu non odio euismod lacinia at quis. Viverra suspendisse potenti nullam ac tortor vitae purus. Viverra mauris in aliquam sem fringilla ut morbi. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Tristique senectus et netus et malesuada.",
-            "date": "30 May 2022",
+            "date": "May 30 2022",
             "important": false,
-            "starred": false
+            "starred": false,
+            "trash": true,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1002,
@@ -29,9 +35,12 @@
             "image": "asiyajavayant.png",
             "title": "Consectetur sed dis viverra lorem. Augue felis sed elit rhoncus non",
             "message": "In tellus integer feugiat scelerisque varius. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Elit pellentesque habitant morbi tristique senectus et netus. Sodales ut etiam sit amet nisl purus in. Ullamcorper morbi tincidunt ornare massa eget egestas purus. Quam vulputate dignissim suspendisse in est ante in nibh. Turpis egestas sed tempus urna et pharetra. Non curabitur gravida arcu ac tortor. Integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Varius duis at consectetur lorem. Ultricies leo integer malesuada nunc vel. Blandit massa enim nec dui. Blandit massa enim nec dui nunc mattis enim. Arcu vitae elementum curabitur vitae nunc sed velit dignissim.",
-            "date": "28 May 2022",
+            "date": "May 28 2022",
             "important": false,
-            "starred": false
+            "starred": false,
+            "trash": false,
+            "spam": true,
+            "archived": false
         },
         {
             "id": 1003,
@@ -40,9 +49,12 @@
             "image": "xuxuefeng.png",
             "title": "Eget ipsum quam eu a, sit pellentesque molestie tristique.",
             "message": "Euismod lacinia at quis risus. Quis commodo odio aenean sed adipiscing diam donec adipiscing tristique. Risus commodo viverra maecenas accumsan. ",
-            "date": "28 May 2022",
+            "date": "May 28 2022",
             "important": false,
-            "starred": true
+            "starred": true,
+            "trash": false,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1004,
@@ -51,9 +63,12 @@
             "image": "ivanmagalhaes.png",
             "title": "Tincidunt sed vel, ipsum in tincidunt. Scelerisque lectus dolor cras",
             "message": "Cursus mattis molestie a iaculis at erat. Nisi quis eleifend quam adipiscing vitae proin sagittis. Risus quis varius quam quisque id diam vel. Egestas sed sed risus pretium quam vulputate dignissim suspendisse. Dolor morbi non arcu risus quis varius quam quisque id. Eros donec ac odio tempor orci dapibus ultrices in.",
-            "date": "27 May 2022",
+            "date": "May 27 2022",
             "important": false,
-            "starred": false
+            "starred": false,
+            "trash": true,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1005,
@@ -62,9 +77,12 @@
             "image": "ivanmagalhaes.png",
             "title": "Consequat sed nibh laoreet ultrices at elit tellus, nunc. Neque,",
             "message": "Tellus integer feugiat scelerisque varius. Tincidunt vitae semper quis lectus nulla. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Donec massa sapien faucibus et molestie ac. Nibh sit amet commodo nulla. ",
-            "date": "26 May 2022",
+            "date": "May 26 2022",
             "important": false,
-            "starred": true
+            "starred": true,
+            "trash": false,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1006,
@@ -73,9 +91,12 @@
             "image": "onyamalimba.png",
             "title": "Hendrerit pharetra eu eget phasellus orci. Enim mi sed sem",
             "message": " Nullam non nisi est sit amet. Vivamus at augue eget arcu dictum varius duis at consectetur. Dignissim convallis aenean et tortor at risus viverra adipiscing at. A erat nam at lectus urna duis convallis. Cras ornare arcu dui vivamus arcu felis bibendum ut tristique.",
-            "date": "26 May 2022",
+            "date": "May 26 2022",
             "important": false,
-            "starred": false
+            "starred": false,
+            "trash": false,
+            "spam": false,
+            "archived": true
         },
         {
             "id": 1007,
@@ -84,9 +105,12 @@
             "image": "ivanmagalhaes.png",
             "title": "Consectetur sed dis viverra lorem. Augue felis sed elit rhoncus non ",
             "message": "Dolor purus non enim praesent elementum facilisis leo. Euismod nisi porta lorem mollis aliquam ut. Nec ultrices dui sapien eget mi proin sed libero enim. Morbi tristique senectus et netus et.",
-            "date": "24 May 2022",
+            "date": "May 24 2022",
             "important": false,
-            "starred": false
+            "starred": false,
+            "trash": false,
+            "spam": false,
+            "archived": true
         },
         {
             "id": 1008,
@@ -95,9 +119,12 @@
             "image": "amyelsner.png",
             "title": "Nullam purus metus, cras adipiscing magna et, aliquam gravida",
             "message": "Iaculis nunc sed augue lacus viverra vitae. Amet porttitor eget dolor morbi non arcu. Adipiscing commodo elit at imperdiet. Scelerisque viverra mauris in aliquam. Non diam phasellus vestibulum lorem sed risus. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit. Curabitur vitae nunc sed velit dignissim sodales ut eu. Posuere morbi leo urna molestie at elementum eu facilisis. Commodo odio aenean sed adipiscing diam. Arcu non odio euismod lacinia at quis. Viverra suspendisse potenti nullam ac tortor vitae purus. Viverra mauris in aliquam sem fringilla ut morbi. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Tristique senectus et netus et malesuada.",
-            "date": "30 May 2022",
+            "date": "May 30 2022",
             "important": false,
-            "starred": false
+            "starred": false,
+            "trash": true,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1009,
@@ -106,9 +133,12 @@
             "image": "asiyajavayant.png",
             "title": "Consectetur sed dis viverra lorem. Augue felis sed elit rhoncus non",
             "message": "In tellus integer feugiat scelerisque varius. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Elit pellentesque habitant morbi tristique senectus et netus. Sodales ut etiam sit amet nisl purus in. Ullamcorper morbi tincidunt ornare massa eget egestas purus. Quam vulputate dignissim suspendisse in est ante in nibh. Turpis egestas sed tempus urna et pharetra. Non curabitur gravida arcu ac tortor. Integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Varius duis at consectetur lorem. Ultricies leo integer malesuada nunc vel. Blandit massa enim nec dui. Blandit massa enim nec dui nunc mattis enim. Arcu vitae elementum curabitur vitae nunc sed velit dignissim.",
-            "date": "28 May 2022",
-            "important": false,
-            "starred": false
+            "date": "May 28 2022",
+            "important": true,
+            "starred": false,
+            "trash": false,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1010,
@@ -117,9 +147,12 @@
             "image": "xuxuefeng.png",
             "title": "Eget ipsum quam eu a, sit pellentesque molestie tristique.",
             "message": "Euismod lacinia at quis risus. Quis commodo odio aenean sed adipiscing diam donec adipiscing tristique. Risus commodo viverra maecenas accumsan. ",
-            "date": "28 May 2022",
+            "date": "May 28 2022",
             "important": false,
-            "starred": true
+            "starred": true,
+            "trash": false,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1011,
@@ -128,9 +161,12 @@
             "image": "ivanmagalhaes.png",
             "title": "Tincidunt sed vel, ipsum in tincidunt. Scelerisque lectus dolor cras",
             "message": "Cursus mattis molestie a iaculis at erat. Nisi quis eleifend quam adipiscing vitae proin sagittis. Risus quis varius quam quisque id diam vel. Egestas sed sed risus pretium quam vulputate dignissim suspendisse. Dolor morbi non arcu risus quis varius quam quisque id. Eros donec ac odio tempor orci dapibus ultrices in.",
-            "date": "27 May 2022",
+            "date": "May 27 2022",
             "important": false,
-            "starred": false
+            "starred": false,
+            "trash": false,
+            "spam": false,
+            "archived": true
         },
         {
             "id": 1012,
@@ -139,9 +175,12 @@
             "image": "ivanmagalhaes.png",
             "title": "Consequat sed nibh laoreet ultrices at elit tellus, nunc. Neque,",
             "message": "Tellus integer feugiat scelerisque varius. Tincidunt vitae semper quis lectus nulla. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Donec massa sapien faucibus et molestie ac. Nibh sit amet commodo nulla. ",
-            "date": "26 May 2022",
-            "important": false,
-            "starred": true
+            "date": "May 26 2022",
+            "important": true,
+            "starred": true,
+            "trash": false,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1013,
@@ -150,9 +189,12 @@
             "image": "onyamalimba.png",
             "title": "Hendrerit pharetra eu eget phasellus orci. Enim mi sed sem",
             "message": " Nullam non nisi est sit amet. Vivamus at augue eget arcu dictum varius duis at consectetur. Dignissim convallis aenean et tortor at risus viverra adipiscing at. A erat nam at lectus urna duis convallis. Cras ornare arcu dui vivamus arcu felis bibendum ut tristique.",
-            "date": "26 May 2022",
+            "date": "May 26 2022",
             "important": false,
-            "starred": false
+            "starred": false,
+            "trash": false,
+            "spam": false,
+            "archived": true
         },
         {
             "id": 1014,
@@ -161,9 +203,12 @@
             "image": "ivanmagalhaes.png",
             "title": "Consectetur sed dis viverra lorem. Augue felis sed elit rhoncus non ",
             "message": "Dolor purus non enim praesent elementum facilisis leo. Euismod nisi porta lorem mollis aliquam ut. Nec ultrices dui sapien eget mi proin sed libero enim. Morbi tristique senectus et netus et.",
-            "date": "24 May 2022",
+            "date": "May 24 2022",
             "important": false,
-            "starred": false
+            "starred": true,
+            "trash": false,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1015,
@@ -172,9 +217,12 @@
             "image": "amyelsner.png",
             "title": "Nullam purus metus, cras adipiscing magna et, aliquam gravida",
             "message": "Iaculis nunc sed augue lacus viverra vitae. Amet porttitor eget dolor morbi non arcu. Adipiscing commodo elit at imperdiet. Scelerisque viverra mauris in aliquam. Non diam phasellus vestibulum lorem sed risus. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit. Curabitur vitae nunc sed velit dignissim sodales ut eu. Posuere morbi leo urna molestie at elementum eu facilisis. Commodo odio aenean sed adipiscing diam. Arcu non odio euismod lacinia at quis. Viverra suspendisse potenti nullam ac tortor vitae purus. Viverra mauris in aliquam sem fringilla ut morbi. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Tristique senectus et netus et malesuada.",
-            "date": "30 May 2022",
-            "important": false,
-            "starred": false
+            "date": "May 30 2022",
+            "important": true,
+            "starred": false,
+            "trash": false,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1016,
@@ -183,9 +231,12 @@
             "image": "asiyajavayant.png",
             "title": "Consectetur sed dis viverra lorem. Augue felis sed elit rhoncus non",
             "message": "In tellus integer feugiat scelerisque varius. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Elit pellentesque habitant morbi tristique senectus et netus. Sodales ut etiam sit amet nisl purus in. Ullamcorper morbi tincidunt ornare massa eget egestas purus. Quam vulputate dignissim suspendisse in est ante in nibh. Turpis egestas sed tempus urna et pharetra. Non curabitur gravida arcu ac tortor. Integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Varius duis at consectetur lorem. Ultricies leo integer malesuada nunc vel. Blandit massa enim nec dui. Blandit massa enim nec dui nunc mattis enim. Arcu vitae elementum curabitur vitae nunc sed velit dignissim.",
-            "date": "28 May 2022",
+            "date": "May 28 2022",
             "important": false,
-            "starred": false
+            "starred": false,
+            "trash": false,
+            "spam": false,
+            "archived": true
         },
         {
             "id": 1017,
@@ -194,9 +245,12 @@
             "image": "xuxuefeng.png",
             "title": "Eget ipsum quam eu a, sit pellentesque molestie tristique.",
             "message": "Euismod lacinia at quis risus. Quis commodo odio aenean sed adipiscing diam donec adipiscing tristique. Risus commodo viverra maecenas accumsan. ",
-            "date": "28 May 2022",
+            "date": "May 28 2022",
             "important": false,
-            "starred": true
+            "starred": false,
+            "trash": false,
+            "spam": true,
+            "archived": false
         },
         {
             "id": 1018,
@@ -205,9 +259,12 @@
             "image": "ivanmagalhaes.png",
             "title": "Tincidunt sed vel, ipsum in tincidunt. Scelerisque lectus dolor cras",
             "message": "Cursus mattis molestie a iaculis at erat. Nisi quis eleifend quam adipiscing vitae proin sagittis. Risus quis varius quam quisque id diam vel. Egestas sed sed risus pretium quam vulputate dignissim suspendisse. Dolor morbi non arcu risus quis varius quam quisque id. Eros donec ac odio tempor orci dapibus ultrices in.",
-            "date": "27 May 2022",
+            "date": "May 27 2022",
             "important": false,
-            "starred": false
+            "starred": false,
+            "trash": true,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1019,
@@ -216,9 +273,12 @@
             "image": "ivanmagalhaes.png",
             "title": "Consequat sed nibh laoreet ultrices at elit tellus, nunc. Neque,",
             "message": "Tellus integer feugiat scelerisque varius. Tincidunt vitae semper quis lectus nulla. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Donec massa sapien faucibus et molestie ac. Nibh sit amet commodo nulla. ",
-            "date": "26 May 2022",
+            "date": "May 26 2022",
             "important": false,
-            "starred": true
+            "starred": true,
+            "trash": false,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1020,
@@ -227,9 +287,12 @@
             "image": "onyamalimba.png",
             "title": "Hendrerit pharetra eu eget phasellus orci. Enim mi sed sem",
             "message": " Nullam non nisi est sit amet. Vivamus at augue eget arcu dictum varius duis at consectetur. Dignissim convallis aenean et tortor at risus viverra adipiscing at. A erat nam at lectus urna duis convallis. Cras ornare arcu dui vivamus arcu felis bibendum ut tristique.",
-            "date": "26 May 2022",
+            "date": "May 26 2022",
             "important": false,
-            "starred": false
+            "starred": false,
+            "trash": false,
+            "spam": true,
+            "archived": false
         },
         {
             "id": 1021,
@@ -238,9 +301,12 @@
             "image": "ivanmagalhaes.png",
             "title": "Consectetur sed dis viverra lorem. Augue felis sed elit rhoncus non ",
             "message": "Dolor purus non enim praesent elementum facilisis leo. Euismod nisi porta lorem mollis aliquam ut. Nec ultrices dui sapien eget mi proin sed libero enim. Morbi tristique senectus et netus et.",
-            "date": "24 May 2022",
-            "important": false,
-            "starred": false
+            "date": "May 24 2022",
+            "important": true,
+            "starred": true,
+            "trash": false,
+            "spam": false,
+            "archived": false
         },
         {
             "id": 1022,
@@ -249,9 +315,51 @@
             "image": "onyamalimba.png",
             "title": "Nullam purus metus, cras adipiscing magna et, aliquam gravida",
             "message": "Sed turpis tincidunt id aliquet risus feugiat in ante metus. Id semper risus in hendrerit. Placerat duis ultricies lacus sed. Non tellus orci ac auctor augue mauris augue.",
-            "date": "15 May 2022",
-            "important": true,
-            "starred": false
+            "date": "May 15 2022",
+            "important": false,
+            "starred": false,
+            "trash": false,
+            "spam": false,
+            "archived": true
+        },
+        {
+            "id": 2000,
+            "to": "Ioni Bowcher",
+            "email":"ionibowcher@gmail.com",
+            "image": "ionibowcher.png",
+            "title": "Apply These 7 Secret Techniques To Improve Event  Apply These",
+            "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "date": "May 30 2022",
+            "starred": false,
+            "trash": false,
+            "archived": false,
+            "sent" : true
+        },
+        {
+            "id": 2001,
+            "to": "Amy Elsner",
+            "email":"amyelsner@gmail.com",
+            "image": "amyelsner.png",
+            "title": "Nullam purus metus, cras adipiscing magna et, aliquam gravida",
+            "message": "Iaculis nunc sed augue lacus viverra vitae. Amet porttitor eget dolor morbi non arcu. Adipiscing commodo elit at imperdiet. Scelerisque viverra mauris in aliquam. Non diam phasellus vestibulum lorem sed risus. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit. Curabitur vitae nunc sed velit dignissim sodales ut eu. Posuere morbi leo urna molestie at elementum eu facilisis. Commodo odio aenean sed adipiscing diam. Arcu non odio euismod lacinia at quis. Viverra suspendisse potenti nullam ac tortor vitae purus. Viverra mauris in aliquam sem fringilla ut morbi. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Tristique senectus et netus et malesuada.",
+            "date": "May 30 2022",
+            "starred": true,
+            "trash": false,
+            "archived": false,
+            "sent" : true
+        },
+        {
+            "id": 2002,
+            "to": "Asiya Javayant",
+            "email":"asiyajavayant@gmail.com",
+            "image": "asiyajavayant.png",
+            "title": "Consectetur sed dis viverra lorem. Augue felis sed elit rhoncus non",
+            "message": "In tellus integer feugiat scelerisque varius. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Elit pellentesque habitant morbi tristique senectus et netus. Sodales ut etiam sit amet nisl purus in. Ullamcorper morbi tincidunt ornare massa eget egestas purus. Quam vulputate dignissim suspendisse in est ante in nibh. Turpis egestas sed tempus urna et pharetra. Non curabitur gravida arcu ac tortor. Integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Varius duis at consectetur lorem. Ultricies leo integer malesuada nunc vel. Blandit massa enim nec dui. Blandit massa enim nec dui nunc mattis enim. Arcu vitae elementum curabitur vitae nunc sed velit dignissim.",
+            "date": "May 28 2022",
+            "starred": false,
+            "trash": false,
+            "archived": false,
+            "sent" : true
         }
     ]
 }

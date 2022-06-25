@@ -1,6 +1,7 @@
 export interface Mail {
-    id?: number;
+    id?: any;
     from?: string;
+    to?: string;
     email?:string;
     image?: string;
     date?: string;
@@ -8,4 +9,8 @@ export interface Mail {
     title?: string;
     important?: boolean;
     starred?: boolean;
+    trash?: boolean;
+    archived?: boolean;
+    spam?: boolean;
+    sent?: boolean;
 }

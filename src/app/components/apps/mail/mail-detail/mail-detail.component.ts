@@ -1,28 +1,36 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Mail } from 'src/app/api/mail';
-import { MailService } from 'src/app/service/mail.service';
+import { MailService } from '../service/mail.service';
 
 @Component({
-    selector: 'mail-detail',
     templateUrl: './mail-detail.component.html'
 })
-export class MailDetailComponent implements OnInit, OnDestroy {
+export class MailDetailComponent implements OnDestroy {
 
     subscription: Subscription;
 
     mail: Mail;
 
-    constructor(private route: ActivatedRoute, private mailService: MailService) { }
+    id: any;
 
-    ngOnInit(): void {
+    constructor(private route: ActivatedRoute, private mailService: MailService, private location: Location) {
         this.subscription = this.route.params.pipe(
-          switchMap(params => {
-            return this.mailService.getMail(params['id'])
-          })
-        ).subscribe(d => this.mail = d);
+            switchMap(params => {
+                this.id = params['id'];
+                return this.mailService.mails$
+            })
+        ).subscribe(data => {
+            this.mail = data.filter(d => d.id == this.id)[0];
+
+        });
+    }
+
+    goBack() {
+        this.location.back();
     }
 
     ngOnDestroy() {
