@@ -9,7 +9,6 @@ import { Subscription } from 'rxjs';
 @Component({
     selector: 'create-task',
     templateUrl: './create-task.component.html',
-    styleUrls: ['./create-task.component.scss'],
     providers: [MessageService]
 })
 export class CreateTaskComponent implements OnInit, OnDestroy {
@@ -66,4 +65,5 @@ export class CreateTaskComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
+    
 }

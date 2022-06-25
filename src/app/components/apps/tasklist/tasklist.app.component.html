@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="flex justify-content-between align-items-center mb-5">
+        <span class="text-900 text-xl font-semibold">Task List</span>
+        <button pButton class="p-button-outlined font-semibold" icon="pi pi-plus" label="Create Task" (click)="showDialog()"></button>
+    </div>
+    <task-card [taskList]="todo" title="ToDo"></task-card>
+    <task-card [taskList]="completed" title="Completed"></task-card>
+</div>
+
+<create-task></create-task>

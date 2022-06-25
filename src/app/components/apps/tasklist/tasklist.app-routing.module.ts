@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
-import { AppsTaskListComponent } from './apps.tasklist.component';
+import { TaskListAppComponent } from './tasklist.app.component';
 
 @NgModule({
     imports: [RouterModule.forChild([
-        { path: '', component: AppsTaskListComponent }
+        { path: '', component: TaskListAppComponent }
     ])],
     exports: [RouterModule]
 })
-export class AppsTaskListRoutingModule { }
+export class TaskListAppRoutingModule { }

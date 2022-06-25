@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppsTaskListRoutingModule } from './apps.tasklist-routing.module';
-import { AppsTaskListComponent } from './apps.tasklist.component';
+import { TaskListAppRoutingModule } from './tasklist.app-routing.module';
+import { TaskListAppComponent } from './tasklist.app.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -25,7 +25,7 @@ import { TaskService } from './service/task.service';
     imports: [
         CommonModule,
         FormsModule,
-        AppsTaskListRoutingModule,
+        TaskListAppRoutingModule,
         ButtonModule,
         InputTextModule,
         EditorModule,
@@ -41,7 +41,7 @@ import { TaskService } from './service/task.service';
         BadgeModule,
         DialogModule
     ],
-    declarations: [AppsTaskListComponent, CreateTaskComponent, TaskCardComponent],
+    declarations: [TaskListAppComponent, CreateTaskComponent, TaskCardComponent],
     providers: [TaskService]
 })
-export class AppsTaskListModule { }
+export class TaskListAppModule { }

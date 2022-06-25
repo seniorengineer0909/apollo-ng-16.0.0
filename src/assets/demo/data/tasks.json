@@ -18,10 +18,6 @@
                 {
                     "name": "Asiya Javayant",
                     "image": "asiyajavayant.png"
-                },
-                {
-                    "name": "Xuxue Feng",
-                    "image": "xuxuefeng.png"
                 }
             ],
             "completed": false,
@@ -43,14 +39,6 @@
                 {
                     "name": "Ivan Magalhaes",
                     "image": "ivanmagalhaes.png"
-                },
-                {
-                    "name": "Asiya Javayant",
-                    "image": "asiyajavayant.png"
-                },
-                {
-                    "name": "Anna Fali",
-                    "image": "annafali.png"
                 }
             ],
             "completed": false,
@@ -76,10 +64,6 @@
                 {
                     "name": "Asiya Javayant",
                     "image": "asiyajavayant.png"
-                },
-                {
-                    "name": "Xuxue Feng",
-                    "image": "xuxuefeng.png"
                 }
             ],
             "completed": null,
@@ -101,14 +85,6 @@
                 {
                     "name": "Ivan Magalhaes",
                     "image": "ivanmagalhaes.png"
-                },
-                {
-                    "name": "Asiya Javayant",
-                    "image": "asiyajavayant.png"
-                },
-                {
-                    "name": "Anna Fali",
-                    "image": "annafali.png"
                 }
             ],
             "completed": null,
@@ -130,14 +106,6 @@
                 {
                     "name": "Amy Elsner",
                     "image": "amyelsner.png"
-                },
-                {
-                    "name": "Asiya Javayant",
-                    "image": "asiyajavayant.png"
-                },
-                {
-                    "name": "Xuxue Feng",
-                    "image": "xuxuefeng.png"
                 }
             ],
             "completed": false,
@@ -159,14 +127,6 @@
                 {
                     "name": "Ivan Magalhaes",
                     "image": "ivanmagalhaes.png"
-                },
-                {
-                    "name": "Asiya Javayant",
-                    "image": "asiyajavayant.png"
-                },
-                {
-                    "name": "Anna Fali",
-                    "image": "annafali.png"
                 }
             ],
             "completed": null,
@@ -184,10 +144,6 @@
                 {
                     "name": "Ioni Bowcher",
                     "image": "ionibowcher.png"
-                },
-                {
-                    "name": "Amy Elsner",
-                    "image": "amyelsner.png"
                 },
                 {
                     "name": "Asiya Javayant",
@@ -213,18 +169,6 @@
                 {
                     "name": "Ioni Bowcher",
                     "image": "ionibowcher.png"
-                },
-                {
-                    "name": "Amy Elsner",
-                    "image": "amyelsner.png"
-                },
-                {
-                    "name": "Asiya Javayant",
-                    "image": "asiyajavayant.png"
-                },
-                {
-                    "name": "Xuxue Feng",
-                    "image": "xuxuefeng.png"
                 }
             ],
             "completed": true,
@@ -250,10 +194,6 @@
                 {
                     "name": "Asiya Javayant",
                     "image": "asiyajavayant.png"
-                },
-                {
-                    "name": "Anna Fali",
-                    "image": "annafali.png"
                 }
             ],
             "completed": true,
