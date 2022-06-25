@@ -73,14 +73,14 @@ export class MailTableComponent implements OnInit {
     }
 
     onSpamMultiple() {
-        if (this.selectedMails &&  this.selectedMails.length > 0) {
+        if (this.selectedMails && this.selectedMails.length > 0) {
             this.mailService.onSpamMultiple(this.selectedMails);
             this.messageService.add({ severity: 'info', summary: 'Info', detail: 'Moved to spam', life: 3000 });
         }
     }
 
     onArchiveMultiple() {
-        if (this.selectedMails &&  this.selectedMails.length > 0) {
+        if (this.selectedMails && this.selectedMails.length > 0) {
             this.mailService.onArchiveMultiple(this.selectedMails);
             this.messageService.add({ severity: 'info', summary: 'Info', detail: 'Moved to archive', life: 3000 });
         }

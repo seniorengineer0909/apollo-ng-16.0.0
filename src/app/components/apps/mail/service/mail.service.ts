@@ -112,6 +112,6 @@ export class MailService {
     }
 
     generateDate() {
-        return new Date().toDateString().split(' ').slice(1,4).join(' ');
+        return new Date().toDateString().split(' ').slice(1, 4).join(' ');
     }
 }

@@ -14,7 +14,7 @@ export class MailComposeComponent {
     newMail: Mail = {
         id: '',
         to: '',
-        email:'',
+        email: '',
         image: '',
         title: '',
         message: '',
