@@ -36,7 +36,6 @@ export class MailReplyComponent{
     sendMail() {
         let { image, from, title } = this.content
         this.newMail = {...this.newMail, to: from, title: title, image: image};
-        console.log(this.newMail);
         this.mailService.onSend(this.newMail);
         this.messageService.add({severity:'success', summary: 'Success', detail: 'Mail sent'});
         this.hide.emit();
