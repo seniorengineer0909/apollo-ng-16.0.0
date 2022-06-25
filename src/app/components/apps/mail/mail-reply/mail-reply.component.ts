@@ -7,12 +7,12 @@ import { MailService } from '../service/mail.service';
     selector: 'mail-reply',
     templateUrl: './mail-reply.component.html',
 })
-export class MailReplyComponent{
+export class MailReplyComponent {
 
     newMail: Mail = {
         id: '',
         to: '',
-        email:'',
+        email: '',
         image: '',
         title: '',
         message: '',
@@ -23,7 +23,7 @@ export class MailReplyComponent{
         spam: false,
         archived: false,
         sent: true
-    };
+    }
 
     displayMessage: boolean = false;
 
@@ -31,13 +31,13 @@ export class MailReplyComponent{
 
     @Output() hide: EventEmitter<any> = new EventEmitter();
 
-    constructor(private messageService: MessageService, private mailService: MailService) {}
+    constructor(private messageService: MessageService, private mailService: MailService) { }
 
     sendMail() {
         let { image, from, title } = this.content
-        this.newMail = {...this.newMail, to: from, title: title, image: image};
+        this.newMail = { ...this.newMail, to: from, title: title, image: image };
         this.mailService.onSend(this.newMail);
-        this.messageService.add({severity:'success', summary: 'Success', detail: 'Mail sent'});
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Mail sent' });
         this.hide.emit();
     }
 
