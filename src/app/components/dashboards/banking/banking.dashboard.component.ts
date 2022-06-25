@@ -50,6 +50,9 @@ export class BankingDashboardComponent {
 	};
 
 	barOptions = {
+		animation: {
+			duration: 0
+		},
 		plugins: {
 			legend: {
 				labels: {
