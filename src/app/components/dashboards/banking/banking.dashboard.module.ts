@@ -6,6 +6,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { ChartModule } from 'primeng/chart';
 import { RippleModule } from 'primeng/ripple';
 import { TagModule } from 'primeng/tag';
+import { TooltipModule } from 'primeng/tooltip';
 import { BankingDashboardComponent } from './banking.dashboard.component';
 import { BankingDashboardRoutingModule } from './banking.dashboard-routing.module';
 
@@ -15,6 +16,7 @@ import { BankingDashboardRoutingModule } from './banking.dashboard-routing.modul
         ButtonModule,
         RippleModule,
         TagModule,
+        TooltipModule,
         TableModule,
         InputNumberModule,
         ChartModule,
