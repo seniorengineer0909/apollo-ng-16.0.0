@@ -5,7 +5,6 @@ import { BlogListComponent } from './blog-list.component';
 @NgModule({
     imports: [RouterModule.forChild([
         { path: '', component: BlogListComponent }
-
     ])],
     exports: [RouterModule]
 })

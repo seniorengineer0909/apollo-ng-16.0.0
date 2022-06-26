@@ -11,8 +11,6 @@ import { filter, Subscription } from 'rxjs';
 })
 export class MailSidebarComponent implements OnDestroy {
 
-    activeIndex: number = 0;
-
     items: MenuItem[];
 
     badgeValues: any;
@@ -31,8 +29,7 @@ export class MailSidebarComponent implements OnDestroy {
         });
     }
 
-    navigate(item, index) {
-        this.activeIndex = index;
+    navigate(item) {
         if (item.routerLink) {
             this.router.navigate([item.routerLink]);
         }

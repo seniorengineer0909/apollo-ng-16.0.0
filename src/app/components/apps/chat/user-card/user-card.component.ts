@@ -20,7 +20,7 @@ export class UserCardComponent implements OnInit {
         this.lastMessage = filtered[filtered.length - 1];
     }
 
-    changeView(user){
+    changeView(user) {
         this.chatService.changeActiveChat(user);
     }
 }

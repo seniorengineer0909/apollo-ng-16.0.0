@@ -13,6 +13,6 @@ export class BlogListCardComponent {
     constructor(private router: Router) { }
 
     navigateToDetail(): void {
-        this.router.navigateByUrl("/blog/detail");
+        this.router.navigateByUrl("/apps/blog/detail");
     }
 }

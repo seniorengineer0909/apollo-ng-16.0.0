@@ -1,20 +1,14 @@
-<div class="flex justify-content-start align-items-center mt-8 mb-4">
-    <span class="text-xl text-900 font-bold mr-4">Comments</span>
-    <div class="flex align-items-center justify-content-center px-3 py-2 font-bold  border-1 surface-border border-round">{{comments.length}}</div>
+<div class="flex align-items-center mb-4 font-bold">
+    <span class="text-xl text-900 mr-4">Comments</span>
+    <span class="inline-flex align-items-center justify-content-center w-2rem h-2rem border-1 surface-border border-round">{{comments.length}}</span>
 </div>
-<p-dataView #dv [value]="comments" [paginator]="true" [rows]="rowCount" filterBy="title" layout="grid">
-    <ng-template let-comment pTemplate="gridItem">
-        <div class="col-12 py-2">
-            <div class="flex p-3 mb-3 w-full  border-1 surface-border border-round">
-                <span class="inline-flex justify-content-center mr-3">
-                    <img [src]="comment.image" class="w-3rem h-3rem" />
-                </span>
-                <div>
-                    <span class="font-semibold text-900">{{comment.name}}</span>
-                    <p class="font-semibold text-600 mt-0 text-sm">{{comment.date}}</p>
-                    <p class="font-semibold text-900 mb-0">{{comment.description}}</p>
-                </div>
-            </div>
+<ul class="list-none p-0 m-0">
+    <li *ngFor="let comment of comments" class="flex p-3 mb-3 border-1 surface-border border-round">
+        <img [src]="comment.image" class="w-3rem h-3rem mr-3 flex-shrink-0" />
+        <div>
+            <span class="font-semibold text-900">{{comment.name}}</span>
+            <p class="font-semibold text-600 m-0 text-sm">{{comment.date}}</p>
+            <p class="line-height-3 mb-0 my-3">{{comment.description}}</p>
         </div>
-    </ng-template>
-</p-dataView>
+    </li>
+</ul>

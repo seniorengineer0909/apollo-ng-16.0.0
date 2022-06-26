@@ -14,4 +14,4 @@ import { RippleModule } from 'primeng/ripple';
     ],
     declarations: [FaqComponent]
 })
-export class AppFaqModule { }
+export class FaqModule { }

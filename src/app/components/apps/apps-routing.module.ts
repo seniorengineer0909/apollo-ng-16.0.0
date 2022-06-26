@@ -3,12 +3,13 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
     imports: [RouterModule.forChild([
-        { path: 'calendar', data: { breadcrumb: 'Calendar' }, loadChildren: () => import('./calendar/apps.calendar.module').then(m => m.AppsCalendarModule) },
-        { path: 'tasklist', data: { breadcrumb: 'Task List' }, loadChildren: () => import('./tasklist/apps.tasklist.module').then(m => m.AppsTaskListModule) },
-        { path: 'chat', data: { breadcrumb: 'Chat' }, loadChildren: () => import('./chat/apps.chat.module').then(m => m.AppsChatModule) },
-        { path: 'file-management', data: { breadcrumb: 'File Management' }, loadChildren: () => import('./filemanagement/apps.filemanagement.module').then(m => m.AppsFileManagementModule) },
+        { path: 'calendar', data: { breadcrumb: 'Calendar' }, loadChildren: () => import('./calendar/calendar.app.module').then(m => m.CalendarAppModule) },
+        { path: 'tasklist', data: { breadcrumb: 'Task List' }, loadChildren: () => import('./tasklist/tasklist.app.module').then(m => m.TaskListAppModule) },
+        { path: 'chat', data: { breadcrumb: 'Chat' }, loadChildren: () => import('./chat/chat.app.module').then(m => m.ChatAppModule) },
+        { path: 'files', data: { breadcrumb: 'Files' }, loadChildren: () => import('./file/file.app.module').then(m => m.FileAppModule) },
         { path: 'mail', data: { breadcrumb: 'Mail' }, loadChildren: () => import('./mail/mail.app.module').then(m => m.MailAppModule) },
-        { path: 'kanban', data: { breadcrumb: 'Kanban' }, loadChildren: () => import('./kanban/apps.kanban.module').then(m => m.AppsKanbanModule) }
+        { path: 'kanban', data: { breadcrumb: 'Kanban' }, loadChildren: () => import('./kanban/kanban.app.module').then(m => m.KanbanAppModule) },
+        { path: 'blog', data: { breadcrumb: 'Blog' }, loadChildren: () => import('./blog/blog.app.module').then(m => m.BlogAppModule) }
     ])],
     exports: [RouterModule]
 })

@@ -1,15 +1,15 @@
-<p-sidebar *ngIf="card" #sidebar [(visible)]="parent.sidebarVisible" position="right" [baseZIndex]="10000" styleClass="w-full md:w-6 lg:w-4" [showCloseIcon]="false">
+<p-sidebar *ngIf="card" #sidebar [(visible)]="parent.sidebarVisible" position="right" [baseZIndex]="10000" styleClass="w-full md:w-8 lg:w-6 xl:w-5" [showCloseIcon]="false">
     <ng-template pTemplate="content">
         <div class="px-4 py-6 border-bottom-1 surface-border flex align-items-center justify-content-between h-4rem">
-            <p-inplace #inplace closable="closable" closeIcon="pi pi-check" styleClass="h-3rem" (onActivate)="focus(1)">
+            <p-inplace #inplace closable="closable" closeIcon="pi pi-check" styleClass="h-3rem" (onActivate)="focus(1)" styleClass="white-space-nowrap">
                 <ng-template pTemplate="display">
-                    <span class="block text-900 font-semibold text-lg mt-4 pl-2" pTooltip="Click to edit">{{card.title ? card.title : 'Untitled'}}</span>
+                    <span class="block text-900 font-semibold text-lg pl-2" pTooltip="Click to edit">{{card.title ? card.title : 'Untitled'}}</span>
                 </ng-template>
                 <ng-template pTemplate="content">
-                    <input #inputTitle type="text" [(ngModel)]="card.title" pInputText class="w-20rem h-3rem text-900 text-lg" (keydown.enter)="inplace.deactivate()">
+                    <input #inputTitle type="text" [(ngModel)]="card.title" pInputText class="w-18rem h-3rem text-900 text-lg" (keydown.enter)="inplace.deactivate()">
                 </ng-template>
             </p-inplace>
-            <div class="relative">
+            <div>
                 <button pButton pRipple type="button" icon="pi pi-cog" class="p-button-rounded p-button-text p-button-secondary" pTooltip="Card actions" tooltipPosition="left" (click)="op.toggle($event)"></button>
                 <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-text p-button-secondary" (click)="close()"></button>
                 <p-overlayPanel #op>
@@ -17,11 +17,11 @@
                         <div class="grid grid-nogutter flex-column gap-5 w-15rem">
                             <div class="col-12 flex flex-column">
                                 <span class="text-900 font-semibold block w-full border-bottom-1 surface-border pb-3 mb-2">Move to...</span>
-                                <span pRipple class="text-700 block font-semibold p-2 cursor-pointer hover:surface-ground select-none" *ngFor="let list of listNames" (click)="onMove(list.listId)" style="border-radius:6px;">{{list.title}}</span>
+                                <span pRipple class="text-700 block font-semibold p-2 cursor-pointer hover:surface-ground select-none border-round" *ngFor="let list of listNames" (click)="onMove(list.listId)">{{list.title}}</span>
                             </div>
                             <div class="col-12 flex flex-column">
                                 <span class="text-900 font-semibold block w-full border-bottom-1 surface-border pb-3 mb-2">Tasks</span>
-                                <span pRipple class="text-700 block font-semibold p-2 cursor-pointer hover:surface-ground select-none" (click)="addTaskList()" style="border-radius:6px;">Create a tasklist</span>
+                                <span pRipple class="text-700 block font-semibold p-2 cursor-pointer hover:surface-ground select-none border-round" (click)="addTaskList()">Create a tasklist</span>
                             </div>
                         </div>
                     </ng-template>
@@ -60,9 +60,9 @@
     
             <div *ngIf="card.taskList.tasks.length || showTaskContainer" class="col-12 flex flex-column px-5">
                 <div class="h-4rem -mb-4">
-                    <p-inplace #inplace2 closable="closable" closeIcon="pi pi-check" styleClass="h-3rem" (onActivate)="focus(2)">
+                    <p-inplace #inplace2 closable="closable" closeIcon="pi pi-check" styleClass="h-4rem" (onActivate)="focus(2)">
                         <ng-template pTemplate="display">
-                            <span class="block text-900 font-semibold text-lg mt-4" pTooltip="Click to edit" tooltipPosition="left">{{card.taskList.title ? card.taskList.title : 'Untitled Task List'}}</span>
+                            <span class="block text-900 font-semibold text-lg mt-3" pTooltip="Click to edit" tooltipPosition="left">{{card.taskList.title ? card.taskList.title : 'Untitled Task List'}}</span>
                         </ng-template>
                         <ng-template pTemplate="content">
                             <input #inputTaskListTitle type="text" [(ngModel)]="card.taskList.title" pInputText class="w-20rem h-3rem text-900 mt-2 text-lg" (keydown.enter)="inplace2.deactivate()">
@@ -71,7 +71,7 @@
                 </div>
                 <textarea type="text" pInputTextarea [(ngModel)]="taskContent" style="resize: none" class="w-full mt-4" placeholder="Add a task" (keydown.enter)="addTask($event)"></textarea>
     
-                <ul *ngIf="card.taskList.tasks.length != 0" class="list-none p-4 flex flex-column gap-3 surface-ground surface-border border-1" style="border-radius: 6px;">
+                <ul *ngIf="card.taskList.tasks.length != 0" class="list-none p-4 flex flex-column gap-3 surface-ground surface-border border-1 border-round">
                     <li *ngFor="let task of card.taskList.tasks">
                         <p-checkbox [(ngModel)]="task.completed" [binary]="true" [inputId]="task.text" (onChange)="calculateProgress()"></p-checkbox>
                         <span class="font-semibold ml-3" style="word-break: break-all;" [ngClass]="{'text-600 line-through': task.completed, 'text-900': !task.completed}">
@@ -85,13 +85,13 @@
                 <label for="assignees" class="block text-900 font-semibold mb-3">Assignees</label>
                 <p-autoComplete [appendTo]="sidebar" [(ngModel)]="card.assignees" [suggestions]="filteredAssignees" (completeMethod)="filterAssignees($event)" field="name" [multiple]="true" [showEmptyMessage]="true" emptyMessage="No results found" placeholder="Choose assignees" [inputStyle]="{'height': '2.5rem'}">
                     <ng-template let-assignee pTemplate="selectedItem">
-                        <div class="flex align-items-center gap-3" style="border-radius: 6px;">
+                        <div class="flex align-items-center gap-3 border-round">
                             <img src="assets/demo/images/avatar/{{assignee.image}}" [alt]="assignee.name" class="h-2rem w-2rem border-2 border-circle surface-border mr-2">
                             <span class="text-900 font-semibold">{{assignee.name}}</span>
                         </div>
                     </ng-template>
                     <ng-template let-assignee pTemplate="item">
-                        <div class="flex align-items-center" style="border-radius: 6px;">
+                        <div class="flex align-items-center border-round">
                             <img src="assets/demo/images/avatar/{{assignee.image}}" [alt]="assignee.name" class="h-2rem w-2rem border-2 border-circle surface-border mr-2">
                             <span class="text-900 font-semibold">{{assignee.name}}</span>
                         </div>
@@ -105,7 +105,7 @@
                     <p-avatar icon="pi pi-user" class="mr-3" shape="circle" size="large"></p-avatar>
                     <textarea type="text" pInputTextarea [(ngModel)]="comment" style="resize: none" class="w-full" placeholder="Write a comment..." (keydown.enter)="onComment($event)"></textarea>
                 </div>
-                <div *ngFor="let comment of card.comments" class="flex align-items-center" style="border-radius: 6px;">
+                <div *ngFor="let comment of card.comments" class="flex align-items-center border-round">
                     <p-avatar *ngIf="comment.image" image="assets/demo/images/avatar/{{comment.image}}" class="mb-4" shape="circle" size="large"></p-avatar>
                     <p-avatar *ngIf="!comment.image" icon="pi pi-user" class="mb-4" shape="circle" size="large"></p-avatar>
                     <div class="ml-3 w-full">
@@ -113,7 +113,7 @@
                             <span class="block text-900 font-semibold">{{comment.name}}</span>
                             <span class="block text-700 font-semibold">1 Jun 17:58 pm</span>
                         </div>
-                        <span class="block text-900 font-semibold border-1 surface-ground surface-border p-2" style="border-radius: 6px; word-break: break-all;">{{comment.text}}</span>
+                        <span class="block text-900 font-semibold border-1 surface-ground surface-border p-2 border-round" style="word-break: break-all;">{{comment.text}}</span>
                     </div>
                 </div>
             </div>

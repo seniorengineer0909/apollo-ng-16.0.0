@@ -1,0 +1,8 @@
+<div class="flex flex-column md:flex-row gap-5" style="min-height: 81vh">
+    <div class="md:w-25rem border-1 surface-border surface-card border-round">
+        <chat-sidebar></chat-sidebar>
+    </div>
+    <div class="flex-1 border-1 surface-border surface-card border-round">
+        <chat-box [user]="activeUser"></chat-box>
+    </div>
+</div>

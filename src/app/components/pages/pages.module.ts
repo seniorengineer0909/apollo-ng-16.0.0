@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { PagesRoutingModule } from './pages-routing.module';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    PagesRoutingModule
-  ]
+    declarations: [],
+    imports: [
+        CommonModule,
+        PagesRoutingModule
+    ]
 })
 export class PagesModule { }

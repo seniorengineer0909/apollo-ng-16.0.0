@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { Mail } from 'src/app/api/mail';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-    providedIn: 'root',
-})
+@Injectable()
 export class MailService {
 
     private _mails: Mail[] = [];

@@ -132,4 +132,9 @@ export class KanbanService {
 
         return text;
     }
+
+    isMobileDevice() {
+        return (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window['MSStream']) || (/(android)/i.test(navigator.userAgent));
+    }
+
 }

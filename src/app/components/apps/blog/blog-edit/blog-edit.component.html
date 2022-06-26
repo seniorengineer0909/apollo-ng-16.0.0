@@ -1,86 +1,58 @@
-<div class="surface-section px-6 py-6 surface-border border-1" style="border-radius: 6px">
+<div class="card">
     <span class="block text-900 font-bold text-xl mb-4">Create a new post</span>
-    <div class="grid grid-nogutter flex-wrap gap-4">
+    <div class="grid">
         <div class="col-12 lg:col-8">
-            <div class="grid gap-4 formgrid">
-                <div class="col-12">
-                    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" [customUpload]="true"
-                        (onSelect)="onUpload($event)" accept="image/*" [showUploadButton]="true" [showCancelButton]="false" 
-                        [auto]="true" styleClass="border-1 surface-border p-1 surface-card border-round">
-                        <ng-template pTemplate="content">
-                            <div class="h-15rem overflow-y-auto py-3">
-                                <div *ngIf="!blog.coverImage"
-                                    class="flex flex-column w-full h-full justify-content-center align-items-center">
-                                    <i class="pi pi-fw pi-cloud-upload  text-4xl text-primary font-bold"></i>
-                                    <span class="block font-bold text-900 text-xl mt-3">Post Cover</span>
-                                    <span class="block font-semibold text-600 text-md mt-3">Drop or Select File</span>
-                                </div>
-                                <div class="flex flex-wrap gap-4" *ngIf="blog.coverImage">
-                                    <div class="h-full relative border-3 p-1 border-transparent border-round hover:bg-primary" (mouseenter)="showRemove = true" (mouseleave)="showRemove = false">
-                                        <img [src]="blog.coverImage.objectURL" class="w-full h-full" [alt]="blog.coverImage.name" style="border-radius: 3px;">
-                                        <button #buttonEl pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-primary text-sm absolute justify-content-center align-items-center" style="top: -10px; right: -10px;" [ngStyle]="{'display': showRemove ? 'flex' : 'none'}" (click)="removeImage(file)"></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </ng-template>
-                    </p-fileUpload>
+            <p-fileUpload name="demo[]" url="./upload.php" [customUpload]="true" accept="image/*" [showUploadButton]="true" [showCancelButton]="false" styleClass="mb-4">
+               
+            </p-fileUpload>
+            <div class="flex flex-column p-fluid">
+                <div class="mb-4">
+                    <input type="text" pInputText placeholder="Title" />
                 </div>
-                <div class="col flex flex-column gap-4">
-                        <span class="p-input-icon-left h-4rem w-full">
-                            <i class="pi pi-user" style="left: 1.5rem"></i>
-                            <input type="text" pInputText placeholder="Post Title" class="w-full pl-7 text-900 font-semibold h-4rem" />
-                        </span>
-                        <textarea rows="7" pInputText placeholder="You can write a description."
-                            class="w-full text-900 font-semibold h-full"></textarea>
-                        <p-editor [(ngModel)]="blog.description" [style]="{'height':'250px'}"></p-editor>
+                <div class="mb-4">
+                    <textarea rows="6" pInputTextarea placeholder="Content" [autoResize]="true"></textarea>
                 </div>
+                <p-editor [style]="{'height':'250px'}"></p-editor>
+            </div>
         </div>
-    </div>
-        <div class="col flex flex-column gap-4">
-            <div class="border-1 surface-border border-round">
-                <span class="text-900 font-bold block border-bottom-1 surface-border p-4">Publish</span>
+        <div class="col-12 lg:col-4">
+            <div class="border-1 surface-border border-round mb-4">
+                <span class="text-900 font-bold block border-bottom-1 surface-border p-3">Publish</span>
                 <div class="p-3">
-                    <div class="bg-gray-100 py-2 px-3 flex align-items-center border-round">
-                        <span class="text-black-alpha-90 font-bold mr-3">Status:</span>
-                        <span class="text-black-alpha-60 font-semibold">Draft</span>
-                        <button pButton pRipple type="button" icon="pi pi-fw pi-pencil"
-                            class="p-button-rounded p-button-text text-black-alpha-60 ml-auto"></button>
+                    <div class="surface-100 p-3 flex align-items-center border-round">
+                        <span class="text-900 font-semibold mr-3">Status:</span>
+                        <span class="font-medium">Draft</span>
+                        <button pButton pRipple type="button" icon="pi pi-fw pi-pencil" class="p-button-rounded p-button-text ml-auto"></button>
                     </div>
                 </div>
                 <div class="p-3">
-                    <div class="bg-gray-100 py-2 px-3 flex align-items-center border-round">
-                        <span class="text-black-alpha-90 font-bold mr-3">Visibility:</span>
-                        <span class="text-black-alpha-60 font-semibold">Public</span>
-                        <button pButton pRipple type="button" icon="pi pi-fw pi-pencil"
-                            class="p-button-rounded p-button-text text-black-alpha-60 ml-auto"></button>
+                    <div class="surface-100 p-3 flex align-items-center border-round">
+                        <span class="text-900 font-semibold mr-3">Visibility:</span>
+                        <span class="font-medium">Private</span>
+                        <button pButton pRipple type="button" icon="pi pi-fw pi-pencil" class="p-button-rounded p-button-text ml-auto"></button>
                     </div>
                 </div>
             </div>
-            <div class="border-1 surface-border border-round">
-                <span class="text-900 font-bold block border-bottom-1 surface-border p-4">Tags</span>
-                <div class="p-3 flex" style="gap: 0.5rem;">
-                    <p-chip *ngFor="let tag of blog.tags; let i = index;" styleClass="mr-2 py-2 px-3 text-900 font-bold surface-card border-1 surface-border" [style]="{'border-radius':'20px'}">
-                        <span class="mr-3">{{tag}}</span>
-                        <span class="chip-remove-icon flex align-items-center justify-content-center border-1 surface-border bg-gray-100 border-circle cursor-pointer" (click)="onChipRemove(tag)">
-                            <i class="pi pi-fw pi-times text-black-alpha-60"></i>
-                        </span>
-                    </p-chip>
+            <div class="border-1 surface-border border-round mb-4">
+                <span class="text-900 font-bold block border-bottom-1 surface-border p-3">Tags</span>
+                <div class="p-3 flex gap-2">
+                    <p-chip *ngFor="let tag of tags; let i = index;" [label]="tag"></p-chip>
                 </div>
             </div>
-            <div class="border-1 surface-border border-round">
-                <span class="text-900 font-bold block border-bottom-1 surface-border p-4">Meta</span>
+            <div class="border-1 surface-border border-round p-fluid mb-4">
+                <span class="text-900 font-bold block border-bottom-1 surface-border p-3">Meta</span>
                 <div class="p-3">
-                    <div class="flex align-items-center">
-                        <input type="text" pInputText placeholder="Meta Title" class="w-full text-900 font-semibold h-3rem pl-3" />
+                    <div class="mb-4">
+                        <input type="text" pInputText placeholder="Title" />
+                    </div>
+                    <div>
+                        <textarea rows="6" pInputTextarea placeholder="Description" [autoResize]="true"></textarea>
                     </div>
                 </div>
-                <div class="p-3">
-                    <textarea rows="7" pInputText placeholder="Meta Description" class="w-full text-900 font-semibold h-full"></textarea>
-                </div>
             </div>
-            <div class="flex justify-content-between align-items-center py-2">
-                <button pButton pRipple class="p-button-secondary flex-1 p-button-outlined mr-3 border-round" label="Delete Post" icon="pi pi-fw pi-trash"></button>
-                <button pButton pRipple class="p-button-primary flex-1 border-round" label="Publish"></button>
+            <div class="flex justify-content-between gap-3">
+                <button pButton pRipple class="p-button-danger flex-1 p-button-outlined" label="Discard" icon="pi pi-fw pi-trash"></button>
+                <button pButton pRipple class="p-button-primary flex-1" label="Publish" icon="pi pi-fw pi-check"></button>
             </div>
         </div>
     </div>

@@ -1,16 +1,17 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { KanbanList } from 'src/app/api/kanban';
-import { AppsKanbanComponent } from '../apps.kanban.component';
+import { KanbanAppComponent } from '../kanban.app.component';
 import { KanbanService } from '../service/kanban.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { HttpEventType } from '@angular/common/http';
 
 @Component({
     selector: 'kanban-list',
     templateUrl: './kanban-list.component.html',
     styleUrls: ['./kanban-list.component.scss'],
     host: {
-        'class' : 'p-kanban-list'
+        'class': 'p-kanban-list'
     }
 })
 export class KanbanListComponent implements OnInit {
@@ -25,21 +26,27 @@ export class KanbanListComponent implements OnInit {
 
     timeout = null;
 
+    isMobileDevice;
+
     @ViewChild('inputEl') inputEl: ElementRef;
 
     @ViewChild('listEl') listEl: ElementRef;
 
-    constructor(public parent: AppsKanbanComponent, private kanbanService: KanbanService) {}
+    constructor(public parent: KanbanAppComponent, private kanbanService: KanbanService) { }
 
     ngOnInit(): void {
+        this.isMobileDevice = this.kanbanService.isMobileDevice();
+
         this.menuItems = [
-            {label:'List actions',  items: [
-                {separator: true},
-                {label:'Copy list',  command: () => this.onCopy(this.list)},
-                {label:'Remove list', command: () => this.onDelete(this.list.listId)},
-            ]}
+            {
+                label: 'List actions', items: [
+                    { separator: true },
+                    { label: 'Copy list', command: () => this.onCopy(this.list) },
+                    { label: 'Remove list', command: () => this.onDelete(this.list.listId) },
+                ]
+            }
         ];
-    };
+    }
 
     toggleSidebar() {
         this.parent.sidebarVisible = true;
@@ -64,7 +71,7 @@ export class KanbanListComponent implements OnInit {
 
     dropCard(event: CdkDragDrop<string[]>): void {
         if (event.previousContainer === event.container) {
-          moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+            moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
         } else {
             transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
         }
@@ -73,4 +80,13 @@ export class KanbanListComponent implements OnInit {
     focus() {
         this.timeout = setTimeout(() => this.inputEl.nativeElement.focus(), 1);
     }
+
+    insertHeight(event) {
+        event.container.element.nativeElement.style.minHeight = '10rem';
+    }
+
+    removeHeight(event) {
+        event.container.element.nativeElement.style.minHeight = '2rem';
+    }
+
 }

@@ -39,5 +39,5 @@ export class MailComposeComponent {
     goBack() {
         this.location.back();
     }
-
+    
 }

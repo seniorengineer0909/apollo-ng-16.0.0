@@ -1,25 +1,26 @@
-<p-listbox [options]="taskList" [readonly]="true" [metaKeySelection]="false" [multiple]="true" optionLabel="name" [showToggleAll]="false" [style]="{'width':'100%'}" styleClass="z-1 mt-5 border-round" listStyleClass="p-0 md:p-2">
-    <ng-template pTemplate="header">
-        <span class="text-900 font-semibold text-xl py-3 select-none">{{title}}</span>
-    </ng-template>
-    <ng-template let-task pTemplate="item">
-        <div class="flex gap-4 flex-wrap md:flex-nowrap md:flex-row justify-content-center md:justify-content-between align-items-center w-full">
-            <div class="w-full sm:w-5 md:w-7 lg:flex text-center md:text-left justify-content-start align-items-center mr-3 md:mr-0">
-                <p-checkbox [value]="task.completed" [binary]="true" [name]="task.name" [label]="task.name" (onChange)="onCheckboxChange($event, task)" [(ngModel)]="task.completed" [inputId]="task.id" styleClass="z-3" labelStyleClass="font-semibold text-lg text-900 white-space-nowrap cursor-pointer"></p-checkbox>
+<div>
+    <div class="text-900 font-semibold text-lg mt-5 mb-3 border-bottom-1 surface-border py-3">{{title}}</div>
+    <ul class="list-none p-0 m-0">
+        <li *ngFor="let task of taskList" class="flex flex-column gap-3 md:flex-row md:align-items-center p-2 border-bottom-1 surface-border">
+            <div class="flex align-items-center flex-1">
+                <p-checkbox [binary]="true" (onChange)="onCheckboxChange($event, task)" [(ngModel)]="task.completed" [inputId]="task.id"></p-checkbox>
+                <label for="task.id" class="font-medium white-space-nowrap ml-2" [ngClass]="{'line-through': task.completed}">{{task.name}}</label>
             </div>
-            <div class="md:w-5 md:w-3 lg:w-2 flex flex-order-2 md:flex-order-1 justify-content-center md:ml-auto align-items-center mr-0 md:mr-3">
-                <span *ngIf="task.comments" class="flex align-items-center text-700 font-bold mr-3"><i class="pi pi-comment mr-2"></i>{{task.comments}}</span>
-                <span *ngIf="task.attachments" class="flex align-items-center text-700 font-bold mr-3"><i class="pi pi-paperclip mr-2"></i>{{task.attachments}}</span>
-                <span class="flex align-items-center text-700 font-bold white-space-nowrap"><i class="pi pi-clock mr-2"></i>{{parseDate(task.startDate)}}</span>
+            <div class="flex flex-1 gap-3 flex-column sm:flex-row sm:justify-content-between">
+                <div class="flex align-items-center">
+                    <span *ngIf="task.comments" class="flex align-items-center font-semibold mr-3"><i class="pi pi-comment mr-2"></i>{{task.comments}}</span>
+                    <span *ngIf="task.attachments" class="flex align-items-center font-semibold mr-3"><i class="pi pi-paperclip mr-2"></i>{{task.attachments}}</span>
+                    <span class="flex align-items-center font-semibold white-space-nowrap"><i class="pi pi-clock mr-2"></i>{{parseDate(task.startDate)}}</span>
+                </div>
+                <div class="flex align-items-center sm:justify-content-end">
+                    <p-avatarGroup styleClass="mr-3">
+                        <p-avatar *ngFor="let member of task.members | slice:0:4" image="assets/demo/images/avatar/{{member.image}}" size="large" shape="circle"></p-avatar>
+                        <p-avatar *ngIf="task.members.length > 4" label="+ {{task.members.length - 4}}" shape="circle" size="large" [style]="{'background-color':'#ffffff', 'color': '#212121', 'border':'2px solid var(--surface-border)'}"></p-avatar>
+                    </p-avatarGroup>
+                    <button pButton pRipple type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-text z-3 ml-auto sm:ml-0" (click)="toggleMenu($event, task)"></button>
+                    <p-menu [appendTo]="listbox" #menu [popup]="true" [model]="menuItems" styleClass="w-8rem"></p-menu>
+                </div>
             </div>
-            <div class="w-full sm:w-5 md:w-3 flex-order-1 md:flex-order-2 flex justify-content-center md:justify-content-end align-items-center ml-4 md:ml-0">
-                <p-avatarGroup styleClass="mr-3">
-                    <p-avatar *ngFor="let member of task.members | slice:0:4" image="assets/demo/images/avatar/{{member.image}}" size="large" shape="circle"></p-avatar>
-                    <p-avatar *ngIf="task.members.length > 4" label="+ {{task.members.length - 4}}" shape="circle" size="large" [style]="{'background-color':'#ffffff', 'color': '#212121', 'border':'2px solid var(--surface-border)'}"></p-avatar>
-                </p-avatarGroup>
-                <button pButton pRipple type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-text z-3" (click)="toggleMenu($event, task)"></button>
-                <p-menu [appendTo]="listbox" #menu [popup]="true" [model]="menuItems" styleClass="w-8rem"></p-menu>
-            </div>
-        </div>
-    </ng-template>
-</p-listbox>
+        </li>
+    </ul>
+</div>

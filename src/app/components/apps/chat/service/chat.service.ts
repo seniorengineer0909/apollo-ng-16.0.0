@@ -40,12 +40,12 @@ export class ChatService {
 
     getChatData() {
         return this.http.get<any>('assets/demo/data/chat.json')
-        .toPromise()
-        .then(res => res.data as any[])
-        .then(data => data);
+            .toPromise()
+            .then(res => res.data as any[])
+            .then(data => data);
     }
 
-    changeActiveChat(user){
+    changeActiveChat(user) {
         this._activeUser = user;
         this.activeUser.next(user);
     }

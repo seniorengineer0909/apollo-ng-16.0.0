@@ -9,9 +9,13 @@
         max-height: 70vh;
     }
 
-    .p-inplace {
-        .p-inplace-content {
-            padding-left: 0.5rem;
+    .cdk-drag {
+        .p-progressbar {
+            height: 0.5rem;
+            
+            .p-progressbar-value {
+                border-radius: 6px;
+            }
         }
     }
 }
@@ -40,7 +44,7 @@
 }
   
 .cdk-drag-placeholder {
-    opacity: 0;
+    opacity: 0.25;
 }
 
 .cdk-drag-animating {

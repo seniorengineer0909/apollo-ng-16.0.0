@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { KanbanCard } from 'src/app/api/kanban';
 import { KanbanService } from '../service/kanban.service';
@@ -6,10 +6,9 @@ import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'kanban-card',
-    templateUrl: './kanban-card.component.html',
-    styleUrls: ['./kanban-card.component.scss']
+    templateUrl: './kanban-card.component.html'
 })
-export class KanbanCardComponent implements OnDestroy{
+export class KanbanCardComponent implements OnDestroy {
 
     @Input() card: KanbanCard;
 
@@ -19,15 +18,15 @@ export class KanbanCardComponent implements OnDestroy{
 
     subscription: Subscription;
 
-    constructor(private kanbanService: KanbanService) { 
+    constructor(private kanbanService: KanbanService) {
         this.subscription = this.kanbanService.lists$.subscribe(data => {
-            let subMenu = data.map(d => ({id: d.listId, label: d.title, command: () => this.onMove(d.listId)}));
+            let subMenu = data.map(d => ({ id: d.listId, label: d.title, command: () => this.onMove(d.listId) }));
             this.generateMenu(subMenu);
         })
     }
 
     parseDate(timestamp) {
-        return new Date(timestamp).toDateString().split(' ').slice(1,3).join(' ');
+        return new Date(timestamp).toDateString().split(' ').slice(1, 3).join(' ');
     }
 
     onDelete() {
@@ -45,11 +44,11 @@ export class KanbanCardComponent implements OnDestroy{
     generateMenu(subMenu) {
         this.menuItems = [
             {
-                label:'Card actions',  
+                label: 'Card actions',
                 items: [
-                    {label:'Copy card', command: () => this.onCopy()},
-                    {label:'Move to another list', items: subMenu },
-                    {label:'Delete card', command: () => this.onDelete()}
+                    { label: 'Copy card', command: () => this.onCopy() },
+                    { label: 'Move to another list', items: subMenu },
+                    { label: 'Delete card', command: () => this.onDelete() }
                 ]
             }
         ];

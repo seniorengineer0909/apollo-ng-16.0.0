@@ -96,6 +96,9 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
         };
 
         this.barOptions = {
+            animation: {
+                duration: 0
+            },
             plugins: {
                 legend: {
                     labels: {
@@ -135,6 +138,9 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
         };
 
         this.pieOptions = {
+            animation: {
+                duration: 0
+            },
             plugins: {
                 legend: {
                     labels: {

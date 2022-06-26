@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { KanbanCard, Comment, ListName, Task } from 'src/app/api/kanban';
 import { Member } from 'src/app/api/member';
-import { AppsKanbanComponent } from '../apps.kanban.component';
+import { KanbanAppComponent } from '../kanban.app.component';
 import { MemberService } from 'src/app/service/member.service';
 import { Subscription } from 'rxjs';
 import { MenuItem } from 'primeng/api';
@@ -48,7 +48,7 @@ export class KanbanSidebarComponent implements OnInit, OnDestroy {
 
     @ViewChild('inputTaskListTitle') inputTaskListTitle: ElementRef;
 
-    constructor(public parent: AppsKanbanComponent, private memberService: MemberService, private kanbanService: KanbanService) {
+    constructor(public parent: KanbanAppComponent, private memberService: MemberService, private kanbanService: KanbanService) {
         this.memberService.getMembers().then(members => this.assignees = members);
 
         this.cardSubscription = this.kanbanService.selectedCard$.subscribe(data => this.card = data);
@@ -76,7 +76,7 @@ export class KanbanSidebarComponent implements OnInit, OnDestroy {
         clearTimeout(this.timeout);
     }
 
-    close(){
+    close() {
         this.parent.sidebarVisible = false;
     }
 
@@ -84,7 +84,7 @@ export class KanbanSidebarComponent implements OnInit, OnDestroy {
         let filtered: Member[] = [];
         let query = event.query;
 
-        for(let i = 0; i < this.assignees.length; i++) {
+        for (let i = 0; i < this.assignees.length; i++) {
             let assignee = this.assignees[i];
             if (assignee.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
                 filtered.push(assignee);
@@ -94,7 +94,7 @@ export class KanbanSidebarComponent implements OnInit, OnDestroy {
         this.filteredAssignees = filtered;
     }
 
-    onComment(event){
+    onComment(event) {
         event.preventDefault();
         this.newComment.text = this.comment;
         this.card.comments.unshift(this.newComment);
@@ -122,7 +122,7 @@ export class KanbanSidebarComponent implements OnInit, OnDestroy {
         }
         else if (!this.card.taskList) {
             let id = this.kanbanService.generateId();
-            this.card = {...this.card, taskList: {id: id, tasks:[]}};
+            this.card = { ...this.card, taskList: { id: id, tasks: [] } };
         }
     }
 
@@ -144,7 +144,7 @@ export class KanbanSidebarComponent implements OnInit, OnDestroy {
         }
     }
 
-    calculateProgress(){
+    calculateProgress() {
         let completed = this.card.taskList.tasks.filter(t => t.completed).length;
         this.card.progress = Math.round(100 * (completed / this.card.taskList.tasks.length));
     }

@@ -1,32 +1,28 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
 import { ButtonModule } from "primeng/button";
 import { ChipModule } from "primeng/chip";
-import { DropdownModule } from "primeng/dropdown";
 import { EditorModule } from "primeng/editor";
 import { FileUploadModule } from "primeng/fileupload";
-import { InputSwitchModule } from "primeng/inputswitch";
 import { InputTextModule } from "primeng/inputtext";
+import { InputTextareaModule } from "primeng/inputtextarea";
 import { RippleModule } from "primeng/ripple";
 import { BlogEditRoutingModule } from "./blog-edit-routing.module";
 import { BlogEditComponent } from "./blog-edit.component";
-
 
 @NgModule({
     imports: [
         CommonModule,
         ButtonModule,
         InputTextModule,
-        DropdownModule,
-        FormsModule,
+        InputTextareaModule,
+        FileUploadModule,
         RippleModule,
-        BlogEditRoutingModule,
         ChipModule,
         FileUploadModule,
-        InputSwitchModule,
         EditorModule,
-        ChipModule
+        ChipModule,
+        BlogEditRoutingModule
     ],
     declarations: [BlogEditComponent]
   })
