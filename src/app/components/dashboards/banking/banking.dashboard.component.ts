@@ -1,169 +1,124 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
-interface File {
-	name: string;
-	image: string;
-	date: string;
-	amount: string;
-	label: string;
+interface MonthlyPayment {
+    name?: string;
+    amount?: number;
+    paid?: boolean;
+    date?: string;
 }
 
 @Component({
 	templateUrl: './banking.dashboard.component.html'
 })
+export class BankingDashboardComponent implements OnInit, OnDestroy {
 
-export class BankingDashboardComponent {
-	selectedDate: number;
+	chartData: any;
 
-	mounths: any[];
+	chartOptions: any;
 
-	selectedMounths: any;
+    payments: MonthlyPayment[];
 
-	selectedWeek: any;
+	subscription: Subscription;
 
-	week: any[];
+	constructor( private layoutService: LayoutService) {
+        this.subscription = this.layoutService.configUpdate$.subscribe(config => {
+            this.initChart();
+        });
+    }
 
-	days: any[];
+	ngOnInit() {
+		this.initChart();
 
-	selectedDay: any;
-
-	barData = {
-		labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
-		datasets: [
-			{
-				label: 'Income',
-				backgroundColor: '#3157DE',
-				borderColor: 'rgb(255, 99, 132)',
-				barThickness: 12,
-				borderRadius: Number.MAX_VALUE,
-				data: [65, 59, 80, 81, 56, 55, 40],
-			},
-			{
-				label: 'Expense',
-				backgroundColor: '#AFC1FF',
-				barThickness: 12,
-				borderColor: 'rgb(54, 162, 235)',
-				borderRadius: Number.MAX_VALUE,
-				data: [28, 48, 40, 19, 86, 27, 90],
-			},
-		],
-	};
-
-	barOptions = {
-		animation: {
-			duration: 0
-		},
-		plugins: {
-			legend: {
-				labels: {
-					fontColor: '#A0A7B5',
-					usePointStyle: true,
-					font: {
-						weight: 700,
-					},
-					padding: 30,
-				},
-				position: 'bottom',
-			},
-			tooltip: {
-				backgroundColor: '#1F2ED0',
-				titleFont: {
-					weight: 'bold',
-				},
-				bodyFont: {
-					weight: 'bold',
-				},
-				displayColors: false,
-				padding: {
-					left: 40,
-					right: 40,
-					top: 10,
-					bottom: 10,
-				},
-				callbacks: {
-					label: function (tooltipItem) {
-						return `$ ${tooltipItem.raw}`;
-					},
-				},
-			},
-		},
-		scales: {
-			x: {
-				ticks: {
-					font: {
-						weight: 500,
-					},
-				},
-				grid: {
-					display: false,
-					drawBorder: false,
-				},
-			},
-			y: {
-				ticks: {
-					display: false,
-				},
-				grid: {
-					borderDash: [3, 6],
-					color: '#E4EAFF',
-					drawBorder: false,
-					drawTicks: false,
-				},
-			},
-		},
-	};
-
-	constructor() {
-		this.days = [
-			{ name: 'Sunday' },
-			{ name: 'Monday' },
-			{ name: 'Tuesday' },
-			{ name: 'Wednesday' },
-			{ name: 'Thursday' },
-			{ name: 'Friday' },
-			{ name: 'Saturday' },
-		];
-
-		this.week = [{ name: 'Week 1' }, { name: 'Week 2' }];
+        this.payments = [
+            {name: 'Electric Bill', amount: 75.60, paid: true, date: '06/04/2022'},
+            {name: 'Water Bill', amount: 45.50, paid: true, date: '07/04/2022'},
+            {name: 'Gas Bill', amount: 45.20, paid: false, date: '12/04/2022'},
+            {name: 'Internet Bill', amount: 25.90, paid: true, date: '17/04/2022'},
+            {name: 'Streaming', amount: 40.90, paid: false, date: '20/04/2022'}
+        ]
 	}
 
-	files: File[] = [
-		{
-			name: "29 Jul 2021",
-			image: "assets/demo/images/avatar/elwinsharvill.png",
-			date: "29 Jul 2021",
-			amount: "$920.34",
-			label: "Complate"
-		},
-		{
-			name: "Courtney Henry",
-			image: "assets/demo/images/avatar/bernardodominic.png",
-			date: "29 Jul 2021",
-			amount: "$834.12",
-			label: "In progress"
-		},
-		{
-			name: "Theresa Webb",
-			image: "assets/demo/images/avatar/ionibowcher.png",
-			date: "29 Jul 2021",
-			amount: "$340.20",
-			label: "Failed"
-		},
-		{
-			name: "Theresa Webb",
-			image: "assets/demo/images/avatar/bernardodominic.png",
-			date: "29 Jul 2021",
-			amount: "$920.34",
-			label: "Complate"
-		}
+	initChart() {
+		const documentStyle = getComputedStyle(document.documentElement);
+		const textColor = documentStyle.getPropertyValue('--text-color');
+		const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
+        const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
-	];
-	cols = [
-		{ field: 'name', header: 'Name' },
-		{ field: 'date', header: 'Date' },
-		{ field: 'amount', header: 'Amount' },
-		{ field: 'status', header: 'Status' },
-	];
+		this.chartData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [
+                {
+                    label: 'Income',
+                    data: [6500, 5900, 8000, 8100, 5600, 5500, 4000],
+                    fill: false,
+                    tension: .4,
+                    borderColor: documentStyle.getPropertyValue('--green-500')
+                },
+                {
+                    label: 'Expenses',
+                    data: [1200, 5100, 6200, 3300, 2100, 6200, 4500],
+                    fill: true,
+                    borderColor: '#6366f1',
+                    tension: .4,
+                    backgroundColor: 'rgba(99,102,220,0.2)'
+                }
+            ]
+        };
 
+		this.chartOptions = {
+			animation: {
+                duration: 0
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: textColor
+                    }
+                },
+				tooltip: {
+					callbacks: {
+						label: function(context) {
+							let label = context.dataset.label || '';
+	
+							if (label) {
+								label += ': ';
+							}
+
+							if (context.parsed.y !== null) {
+								label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+							}
+							return label;
+						}
+					}
+				}
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: textColorSecondary
+                    },
+                    grid: {
+                        color: surfaceBorder
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: textColorSecondary
+                    },
+                    grid: {
+                        color: surfaceBorder
+                    }
+                }
+            }
+        };
+	}
+
+	ngOnDestroy(): void {
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
+    }
 
 }
