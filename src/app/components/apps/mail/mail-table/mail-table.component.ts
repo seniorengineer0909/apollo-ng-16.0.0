@@ -6,8 +6,7 @@ import { MailService } from 'src/app/components/apps/mail/service/mail.service';
 
 @Component({
     selector: 'mail-table',
-    templateUrl: './mail-table.component.html',
-    styleUrls: ['./mail-table.component.scss'],
+    templateUrl: './mail-table.component.html'
 })
 export class MailTableComponent implements OnInit {
 

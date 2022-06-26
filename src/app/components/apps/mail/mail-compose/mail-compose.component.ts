@@ -6,8 +6,7 @@ import { Mail } from 'src/app/api/mail';
 import { MailService } from '../service/mail.service';
 
 @Component({
-    templateUrl: './mail-compose.component.html',
-    styleUrls: ['./mail-compose.component.scss']
+    templateUrl: './mail-compose.component.html'
 })
 export class MailComposeComponent {
 
@@ -30,9 +29,11 @@ export class MailComposeComponent {
     constructor(private messageService: MessageService, private location: Location, private router: Router, private mailService: MailService) { }
 
     sendMail() {
-        this.mailService.onSend(this.newMail);
-        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Mail sent' });
-        this.router.navigate(['apps/mail/inbox']);
+        if (this.newMail.message) {
+            this.mailService.onSend(this.newMail);
+            this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Mail sent' });
+            this.router.navigate(['apps/mail/inbox']);
+        }
     }
 
     goBack() {

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppsMailRoutingModule } from './apps.mail-routing.module';
-import { AppsMailComponent } from './apps.mail.component';
+import { MailAppRoutingModule } from './mail.app-routing.module';
+import { MailAppComponent } from './mail.app.component';
 import { MailInboxComponent } from './mail-inbox/mail-inbox.component';
 import { MailArchiveComponent } from './mail-archive/mail-archive.component';
 import { MailImportantComponent } from './mail-important/mail-important.component';
@@ -35,7 +35,7 @@ import { MailTableComponent } from './mail-table/mail-table.component';
     imports: [
         CommonModule,
         FormsModule,
-        AppsMailRoutingModule,
+        MailAppRoutingModule,
         MenuModule,
         ButtonModule,
         RippleModule,
@@ -51,7 +51,7 @@ import { MailTableComponent } from './mail-table/mail-table.component';
         DialogModule,
         TooltipModule
     ],
-    declarations: [AppsMailComponent, MailInboxComponent, MailComposeComponent, MailDetailComponent, MailSidebarComponent, MailReplyComponent, MailArchiveComponent, MailImportantComponent, MailStarredComponent, MailTrashComponent, MailSpamComponent, MailSentComponent, MailTableComponent],
+    declarations: [MailAppComponent, MailInboxComponent, MailComposeComponent, MailDetailComponent, MailSidebarComponent, MailReplyComponent, MailArchiveComponent, MailImportantComponent, MailStarredComponent, MailTrashComponent, MailSpamComponent, MailSentComponent, MailTableComponent],
     providers: [MessageService]
 })
-export class AppsMailModule { }
+export class MailAppModule { }

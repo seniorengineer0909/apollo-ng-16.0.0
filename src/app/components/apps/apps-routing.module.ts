@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
         { path: 'tasklist', data: { breadcrumb: 'Task List' }, loadChildren: () => import('./tasklist/apps.tasklist.module').then(m => m.AppsTaskListModule) },
         { path: 'chat', data: { breadcrumb: 'Chat' }, loadChildren: () => import('./chat/apps.chat.module').then(m => m.AppsChatModule) },
         { path: 'file-management', data: { breadcrumb: 'File Management' }, loadChildren: () => import('./filemanagement/apps.filemanagement.module').then(m => m.AppsFileManagementModule) },
-        { path: 'mail', data: { breadcrumb: 'Mail' }, loadChildren: () => import('./mail/apps.mail.module').then(m => m.AppsMailModule) },
+        { path: 'mail', data: { breadcrumb: 'Mail' }, loadChildren: () => import('./mail/mail.app.module').then(m => m.MailAppModule) },
         { path: 'kanban', data: { breadcrumb: 'Kanban' }, loadChildren: () => import('./kanban/apps.kanban.module').then(m => m.AppsKanbanModule) }
     ])],
     exports: [RouterModule]

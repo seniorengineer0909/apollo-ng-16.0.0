@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
-import { AppsMailComponent } from './apps.mail.component';
+import { MailAppComponent } from './mail.app.component';
 import { MailInboxComponent } from './mail-inbox/mail-inbox.component';
 import { MailComposeComponent } from './mail-compose/mail-compose.component';
 import { MailDetailComponent } from './mail-detail/mail-detail.component';
@@ -15,7 +14,7 @@ import { MailArchiveComponent } from './mail-archive/mail-archive.component';
 @NgModule({
     imports: [RouterModule.forChild([
         {
-            path: '', component: AppsMailComponent, children: [
+            path: '', component: MailAppComponent, children: [
                 { path: '', redirectTo: 'inbox', pathMatch: 'full' },
                 { path: 'inbox', data: { breadcrumb: 'Inbox' }, component: MailInboxComponent },
                 { path: 'detail/:id', data: { breadcrumb: 'Detail' }, component: MailDetailComponent },
@@ -31,4 +30,4 @@ import { MailArchiveComponent } from './mail-archive/mail-archive.component';
     ])],
     exports: [RouterModule]
 })
-export class AppsMailRoutingModule { }
+export class MailAppRoutingModule { }
