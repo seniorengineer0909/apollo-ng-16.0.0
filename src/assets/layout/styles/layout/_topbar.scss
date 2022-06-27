@@ -64,6 +64,9 @@
         li {
             &.topbar-profile {
                 margin-left: 1.5rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
                 
                 img {
                     width: 2rem;
@@ -86,7 +89,7 @@
                 .p-inputtext {
                     padding-top: .5rem;
                     padding-bottom: .5rem;
-                    border-radius: 1rem;
+                    border-radius: 2rem;
                 }
             }
         }

@@ -5,7 +5,7 @@
     }
 }
 
-@media screen and (min-width: $tabletBreakpoint + 1) {
+@media screen and (min-width: $breakpoint) {
     .layout-container {
         &.layout-static {
             .layout-sidebar {
@@ -48,7 +48,7 @@
     }
 }
 
-@media screen and (max-width: $tabletBreakpoint) {
+@media screen and (max-width: ($breakpoint - 1)) {
     .blocked-scroll {
         overflow: hidden;
     }
