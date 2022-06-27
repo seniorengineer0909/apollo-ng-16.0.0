@@ -15,15 +15,15 @@ $colors: (
 
 //reused color variables
 $shade000:#ffffff !default;    //surface
-$shade100:#f8f9fa !default;    //header background
-$shade200:#e9ecef !default;    //hover background
-$shade300:#dee2e6 !default;    //border, divider
-$shade400:#ced4da !default;    //input border
-$shade500:#adb5bd !default;    //input icon
-$shade600:#6c757d !default;    //text secondary color
-$shade700:#495057 !default;    //text color
-$shade800:#343a40 !default;    //unused
-$shade900:#212529 !default;    //unused
+$shade100:#f8fafc !default;    //header background
+$shade200:#f1f5f9 !default;    //hover background
+$shade300:#e2e8f0 !default;    //border, divider
+$shade400:#cbd5e1 !default;    //input border
+$shade500:#94a3b8 !default;    //input icon
+$shade600:#64748b !default;    //text secondary color
+$shade700:#475569 !default;    //text color
+$shade800:#334155 !default;    //unused
+$shade900:#1e293b !default;    //unused
 
 //global
 $fontFamily: 'Poppins', sans-serif !default;
