@@ -45,6 +45,10 @@
                 }
             }
         }
+
+        .content-breadcrumb {
+            display: none;
+        } 
     }
 }
 
@@ -84,6 +88,16 @@
             height: 100%;
             background-color: var(--maskbg);
         }
+
+        .topbar-breadcrumb {
+            display: none;
+        }
+
+        .content-breadcrumb {
+            display: block;
+        }
+
+
     }
     
 }
