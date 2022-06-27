@@ -1,6 +1,6 @@
-<div class="surface-section px-6 py-6 surface-border border-1" style="border-radius: 6px;">
+<div class="surface-section px-6 py-6 surface-border border-1 border-round">
     <span class="block text-900 font-bold text-xl mb-4">Create Product</span>
-    <div class="grid grid-nogutter flex-wrap" style="column-gap: 1rem; row-gap: 1rem;">
+    <div class="grid grid-nogutter flex-wrap gap-3">
         <div class="col-12 lg:col-8">
             <div class="grid formgrid">
                 <div class="col-12 field">
@@ -19,17 +19,17 @@
                     <p-editor [(ngModel)]="product.description" [style]="{'height':'250px'}"></p-editor>
                 </div>
                 <div class="col-12 field">
-                    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" [customUpload]="true" multiple="multiple" (onSelect)="onUpload($event)" accept="image/*" [showUploadButton]="true" [showCancelButton]="false" [auto]="true" styleClass="border-1 surface-border p-1 surface-card" [style]="{'border-radius': '6px'}">
+                    <p-fileUpload #fileUploader name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" [customUpload]="true" multiple="true" (onSelect)="onUpload($event)" accept="image/*" [showUploadButton]="true" [showCancelButton]="false" [auto]="true" styleClass="border-1 surface-border surface-card border-round">
                         <ng-template pTemplate="content">
-                            <div class="h-15rem overflow-y-auto py-3">
+                            <div class="h-15rem overflow-y-auto py-3 border-round" style="cursor: copy" (click)="fileUploader.advancedFileInput.nativeElement.click()">
                                 <div *ngIf="!product.images.length" class="flex flex-column w-full h-full justify-content-center align-items-center">
-                                    <i class="pi pi-fw pi-file text-4xl text-primary font-bold"></i>
-                                    <span class="block font-bold text-900 text-xl mt-3">Drop or select files</span>
+                                    <i class="pi pi-file text-4xl text-primary"></i>
+                                    <span class="block font-semibold text-900 text-lg mt-3">Drop or select images</span>
                                 </div>
-                                <div class="flex flex-wrap" *ngIf="product.images.length" style="column-gap: 1rem; row-gap: 1rem;">
-                                    <div *ngFor="let file of product.images; let i = index;" class="h-full relative w-7rem h-7rem border-3 border-transparent hover:bg-primary" (mouseenter)="onImageMouseOver(file)" (mouseleave)="onImageMouseLeave(file)" style="border-radius: 6px; padding: 1px;">
-                                        <img [src]="file.objectURL" class="w-full h-full" [alt]="file.name" style="border-radius: 3px;">
-                                        <button [id]="file.name" #buttonEl pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-primary text-sm absolute justify-content-center align-items-center" style="top: -10px; right: -10px; display: none;" (click)="removeImage(file)"></button>
+                                <div class="flex flex-wrap gap-3 border-round" *ngIf="product.images.length">
+                                    <div *ngFor="let file of product.images; let i = index;" class="h-full relative w-7rem h-7rem border-3 border-transparent border-round hover:bg-primary transition-duration-100" (mouseenter)="onImageMouseOver(file)" (mouseleave)="onImageMouseLeave(file)" style="padding: 1px;">
+                                        <img [src]="file.objectURL" class="w-full h-full border-round shadow-2" [alt]="file.name">
+                                        <button [id]="file.name" #buttonEl pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-primary text-sm absolute justify-content-center align-items-center" style="top: -10px; right: -10px; display: none;" (click)="$event.stopPropagation(); removeImage(file)"></button>
                                     </div>
                                 </div>
                             </div>
@@ -39,11 +39,11 @@
             </div>
         </div>
 
-        <div class="col flex flex-column" style="row-gap: 1rem;">
-            <div class="border-1 surface-border" style="border-radius: 6px;">
+        <div class="col flex flex-column row-gap-3">
+            <div class="border-1 surface-border border-round">
                 <span class="text-900 font-bold block border-bottom-1 surface-border p-3">Publish</span>
                 <div class="p-3">
-                    <div class="bg-gray-100 py-2 px-3 flex align-items-center" style="border-radius: 6px;">
+                    <div class="bg-gray-100 py-2 px-3 flex align-items-center border-round">
                         <span class="text-black-alpha-90 font-bold mr-3">Status:</span>
                         <span class="text-black-alpha-60 font-semibold">{{product.status}}</span>
                         <button pButton pRipple type="button" icon="pi pi-fw pi-pencil" class="p-button-rounded p-button-text text-black-alpha-60 ml-auto"></button>
@@ -51,9 +51,9 @@
                 </div>
             </div>
 
-            <div class="border-1 surface-border" style="border-radius: 6px;">
+            <div class="border-1 surface-border border-round">
                 <span class="text-900 font-bold block border-bottom-1 surface-border p-3">Tags</span>
-                <div class="p-3 flex" style="gap: 0.5rem;">
+                <div class="p-3 flex gap-1">
                     <p-chip *ngFor="let tag of product.tags; let i = index;" styleClass="mr-2 py-2 px-3 text-900 font-bold surface-card border-1 surface-border" [style]="{'border-radius':'20px'}">
                         <span class="mr-3">{{tag}}</span>
                         <span class="chip-remove-icon flex align-items-center justify-content-center border-1 surface-border bg-gray-100 border-circle cursor-pointer" (click)="onChipRemove(tag)">
@@ -63,14 +63,14 @@
                 </div>
             </div>
 
-            <div class="border-1 surface-border" style="border-radius: 6px;">
+            <div class="border-1 surface-border border-round">
                 <span class="text-900 font-bold block border-bottom-1 surface-border p-3">Category</span>
                 <div class="p-3">
                     <p-dropdown [options]="categoryOptions" [(ngModel)]="product.category" placeholder="Select a category" styleClass="w-full py-2 px-3 font-semibold"></p-dropdown>
                 </div>
             </div>
 
-            <div class="border-1 surface-border" style="border-radius: 6px;">
+            <div class="border-1 surface-border border-round">
                 <span class="text-900 font-bold block border-bottom-1 surface-border p-3">Colors</span>
                 <div class="p-3 flex">
                     <div *ngFor="let color of colorOptions" class="w-2rem h-2rem mr-2 border-1 surface-border border-circle cursor-pointer flex justify-content-center align-items-center" [class]="color.background" (click)="onColorSelect(color.name)">
@@ -79,21 +79,21 @@
                 </div>
             </div>
 
-            <div class="border-1 surface-border" style="border-radius: 6px;">
+            <div class="border-1 surface-border border-round">
                 <span class="text-900 font-bold block border-bottom-1 surface-border p-3">Stock</span>
                 <div class="p-3">
                     <p-dropdown [options]="categoryOptions" [(ngModel)]="product.stock" placeholder="Select stock" styleClass="w-full py-2 px-3 font-semibold"></p-dropdown>
                 </div>
             </div>
 
-            <div class="border-1 surface-border flex justify-content-between align-items-center py-2 px-3" style="border-radius: 6px;">
+            <div class="border-1 surface-border flex justify-content-between align-items-center py-2 px-3 border-round">
                 <span class="text-900 font-bold p-3">In stock</span>
                 <p-inputSwitch [(ngModel)]="product.inStock"></p-inputSwitch>
             </div>
 
             <div class="flex justify-content-between align-items-center py-2">
-                <button pButton pRipple class="p-button-secondary flex-1 p-button-outlined mr-3" label="Delete Product" icon="pi pi-fw pi-trash" style="border-radius: 6px;"></button>
-                <button pButton pRipple class="p-button-primary flex-1" label="Create Product" style="border-radius: 6px;"></button>
+                <button pButton pRipple class="p-button-secondary flex-1 p-button-outlined mr-3 border-round" label="Delete Product" icon="pi pi-fw pi-trash"></button>
+                <button pButton pRipple class="p-button-primary flex-1 border-round" label="Create Product"></button>
             </div>
         </div>
     </div>

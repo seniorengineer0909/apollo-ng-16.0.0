@@ -1,6 +1,6 @@
 import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
 
-interface Product{
+interface Product {
     name: string;
     price: string;
     code: string;
@@ -28,24 +28,24 @@ export class NewProductComponent {
     categoryOptions = ['Sneakers', 'Apparel', 'Socks'];
 
     colorOptions: any[] = [
-      {name: 'Black', background: "bg-gray-900"},
-      {name: 'Orange', background: "bg-orange-500"},
-      {name: 'Navy', background: "bg-blue-500"}
+        { name: 'Black', background: "bg-gray-900" },
+        { name: 'Orange', background: "bg-orange-500" },
+        { name: 'Navy', background: "bg-blue-500" }
     ];
 
     product: Product = {
-      name: '',
-      price: '',
-      code: '',
-      sku: '',
-      status: 'Draft',
-      tags: ['Nike', 'Sneaker'],
-      category: 'Sneakers',
-      colors: ['Blue'],
-      stock: 'Sneakers',
-      inStock: true,
-      description: '',
-      images: []
+        name: '',
+        price: '',
+        code: '',
+        sku: '',
+        status: 'Draft',
+        tags: ['Nike', 'Sneaker'],
+        category: 'Sneakers',
+        colors: ['Blue'],
+        stock: 'Sneakers',
+        inStock: true,
+        description: '',
+        images: []
     };
 
     uploadedFiles: any[] = [];
@@ -53,33 +53,33 @@ export class NewProductComponent {
     showRemove: boolean = false;
 
     onChipRemove(item) {
-      this.product.tags = this.product.tags.filter(i => i !== item);
+        this.product.tags = this.product.tags.filter(i => i !== item);
     }
 
     onColorSelect(color) {
-      this.product.colors.indexOf(color) == -1 ? this.product.colors.push(color) : this.product.colors.splice(this.product.colors.indexOf(color), 1);
+        this.product.colors.indexOf(color) == -1 ? this.product.colors.push(color) : this.product.colors.splice(this.product.colors.indexOf(color), 1);
     }
 
     onUpload(event) {
-      for(let file of event.files) {
-        this.product.images.push(file);
-      }
+        for (let file of event.files) {
+            this.product.images.push(file);
+        }
     }
 
     onImageMouseOver(file) {
-      this.buttonEl.toArray().forEach(el => {
-        el.nativeElement.id === file.name ? el.nativeElement.style.display = 'flex' : null;
-      })
+        this.buttonEl.toArray().forEach(el => {
+            el.nativeElement.id === file.name ? el.nativeElement.style.display = 'flex' : null;
+        })
     }
 
     onImageMouseLeave(file) {
-      this.buttonEl.toArray().forEach(el => {
-        el.nativeElement.id === file.name ? el.nativeElement.style.display = 'none' : null;
-      })
+        this.buttonEl.toArray().forEach(el => {
+            el.nativeElement.id === file.name ? el.nativeElement.style.display = 'none' : null;
+        })
     }
 
     removeImage(file) {
-      this.product.images = this.product.images.filter(i => i !== file);
+        this.product.images = this.product.images.filter(i => i !== file);
     }
 
 }
