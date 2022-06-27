@@ -5,7 +5,7 @@ import { filter } from 'rxjs/operators';
 
 interface Breadcrumb {
     label: string;
-    url?: string; 
+    url?: string;
 }
 
 @Component({
@@ -33,7 +33,7 @@ export class AppBreadcrumbComponent {
             const routeUrl = parentUrl.concat(route.url.map(url => url.path));
             const breadcrumb = route.data['breadcrumb'];
             const parentBreadcrumb = route.parent && route.parent.data ? route.parent.data['breadcrumb'] : null;
-            
+
             if (breadcrumb && breadcrumb !== parentBreadcrumb) {
                 breadcrumbs.push({
                     label: route.data['breadcrumb'],

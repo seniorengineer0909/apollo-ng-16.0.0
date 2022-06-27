@@ -38,7 +38,7 @@ export class LayoutService {
     private configUpdate = new Subject<AppConfig>();
 
     private overlayOpen = new Subject<any>();
-    
+
     configUpdate$ = this.configUpdate.asObservable();
 
     overlayOpen$ = this.overlayOpen.asObservable();
@@ -49,12 +49,12 @@ export class LayoutService {
 
             if (this.state.overlayMenuActive) {
                 this.overlayOpen.next(null);
-            } 
+            }
         }
 
         if (this.isDesktop()) {
             this.state.staticMenuDesktopInactive = !this.state.staticMenuDesktopInactive;
-        } 
+        }
         else {
             this.state.staticMenuMobileActive = !this.state.staticMenuMobileActive;
 

@@ -10,7 +10,7 @@ export class AppTopbarComponent {
 
     items: MenuItem[];
 
-    constructor(public layoutService: LayoutService) {}
+    constructor(public layoutService: LayoutService) { }
 
     onMenuButtonClick() {
         this.layoutService.onMenuToggle();

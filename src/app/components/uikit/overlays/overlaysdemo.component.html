@@ -45,7 +45,7 @@
                                 <ng-template pTemplate="body" let-rowData let-product>
                                     <tr [pSelectableRow]="rowData">
                                         <td style="min-width: 10rem;">{{product.name}}</td>
-                                        <td style="min-width: 10rem;"><img src="assets/demo/images/product/{{product.image}}" [alt]="product.image" width="100" class="shadow-2"/></td>
+                                        <td style="min-width: 5rem;"><img src="assets/demo/images/product/{{product.image}}" [alt]="product.image" width="50" class="shadow-2"/></td>
                                         <td style="min-width: 12rem;">{{formatCurrency(product.price)}}</td>
                                     </tr>
                                 </ng-template>

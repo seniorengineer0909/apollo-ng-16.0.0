@@ -8,8 +8,8 @@ export class EventService {
 
     getEvents() {
         return this.http.get<any>('assets/demo/data/scheduleevents.json')
-          .toPromise()
-          .then(res => res.data as any[])
-          .then(data => data);
+            .toPromise()
+            .then(res => res.data as any[])
+            .then(data => data);
     }
 }

@@ -109,8 +109,8 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     }
 
     updateActiveStateFromRoute() {
-        let activeRoute = this.router.isActive(this.item.routerLink[0], {paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored'});
-        
+        let activeRoute = this.router.isActive(this.item.routerLink[0], { paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' });
+
         if (activeRoute) {
             this.menuService.onMenuStateChange(this.key);
         }
@@ -130,7 +130,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
         // execute command
         if (this.item.command) {
-            this.item.command({originalEvent: event, item: this.item});
+            this.item.command({ originalEvent: event, item: this.item });
         }
 
         // toggle active state
@@ -143,7 +143,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             if (this.root && this.active && (this.isSlim || this.isHorizontal)) {
                 this.layoutService.onOverlaySubmenuOpen();
             }
-        } 
+        }
         else {
             this.menuService.onMenuStateChange(this.key);
 
@@ -166,7 +166,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             }
         }
     }
-    
+
     get submenuAnimation() {
         if (this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim()))
             return this.active ? 'visible' : 'hidden';

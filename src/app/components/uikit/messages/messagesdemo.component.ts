@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {Message, MessageService} from 'primeng/api';
+import { Component } from '@angular/core';
+import { Message, MessageService } from 'primeng/api';
 
 @Component({
     templateUrl: './messagesdemo.component.html',
@@ -18,14 +18,14 @@ export class MessagesDemoComponent {
 
     msgs: Message[] = [];
 
-    constructor(private service: MessageService) {}
+    constructor(private service: MessageService) { }
 
     showInfoViaToast() {
-        this.service.add({key: 'tst', severity: 'info', summary: 'Info Message', detail: 'PrimeNG rocks'});
+        this.service.add({ key: 'tst', severity: 'info', summary: 'Info Message', detail: 'PrimeNG rocks' });
     }
 
     showWarnViaToast() {
-        this.service.add({key: 'tst', severity: 'warn', summary: 'Warn Message', detail: 'There are unsaved changes'});
+        this.service.add({ key: 'tst', severity: 'warn', summary: 'Warn Message', detail: 'There are unsaved changes' });
     }
 
     showErrorViaToast() {

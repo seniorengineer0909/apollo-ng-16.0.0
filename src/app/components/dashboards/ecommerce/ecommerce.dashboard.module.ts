@@ -14,20 +14,20 @@ import { RatingModule } from 'primeng/rating';
 import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    EcommerceDashboardRoutigModule,
-    ButtonModule,
-    RippleModule,
-    DropdownModule,
-    FormsModule,
-    TableModule,
-    InputTextModule,
-    InputTextareaModule,
-    ChartModule,
-    RatingModule,
-    KnobModule
-  ],
-  declarations: [EcommerceDashboardComponent]
+	imports: [
+		CommonModule,
+		EcommerceDashboardRoutigModule,
+		ButtonModule,
+		RippleModule,
+		DropdownModule,
+		FormsModule,
+		TableModule,
+		InputTextModule,
+		InputTextareaModule,
+		ChartModule,
+		RatingModule,
+		KnobModule
+	],
+	declarations: [EcommerceDashboardComponent]
 })
 export class EcommerceDashboardModule { }

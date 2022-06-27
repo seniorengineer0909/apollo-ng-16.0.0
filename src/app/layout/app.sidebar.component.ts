@@ -7,10 +7,10 @@ import { LayoutService } from './service/app.layout.service';
 })
 export class AppSidebarComponent {
 
-    constructor(public layoutService: LayoutService, public el: ElementRef) {}
+    constructor(public layoutService: LayoutService, public el: ElementRef) { }
 
     get smallLogo(): boolean {
-        return (this.layoutService.isSlim() || this.layoutService.isHorizontal()); 
+        return (this.layoutService.isSlim() || this.layoutService.isHorizontal());
     }
 
 }

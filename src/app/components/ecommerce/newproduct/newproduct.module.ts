@@ -13,19 +13,19 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { EditorModule } from 'primeng/editor';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    NewProductRoutingModule,
-    InputTextModule,
-    ChipModule,
-    DropdownModule,
-    FormsModule,
-    FileUploadModule,
-    ButtonModule,
-    RippleModule,
-    InputSwitchModule,
-    EditorModule
-  ],
-  declarations: [NewProductComponent],
+	imports: [
+		CommonModule,
+		NewProductRoutingModule,
+		InputTextModule,
+		ChipModule,
+		DropdownModule,
+		FormsModule,
+		FileUploadModule,
+		ButtonModule,
+		RippleModule,
+		InputSwitchModule,
+		EditorModule
+	],
+	declarations: [NewProductComponent],
 })
 export class NewProductModule { }
