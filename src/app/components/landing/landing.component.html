@@ -52,7 +52,7 @@
             <div id="hero" #hero class="grid grid-nogutter justify-content-between align-items-center my-6 py-6 md:my-8 md:py-8">
                 <div class="col-12 md:col-4 flex flex-column gap-4 flex-order-1 md:flex-order-0 align-items-center md:align-items-start text-center md:text-left">
                     <span class="block text-900 font-bold text-4xl">Modern, stylish and clean</span>
-                    <span class="block text-700 text-lg">The ultimate collection of design-agnostic, flexible and accessible React UI Components.</span>
+                    <span class="block text-700 text-lg">The ultimate collection of design-agnostic, flexible and accessible UI Components.</span>
                     <ul class="flex gap-5 list-none p-0">
                         <li class="flex align-items-center">
                             <div class="p-1 border-circle bg-green-400 inline-block mr-2"></div>
@@ -64,14 +64,14 @@
                         </li>
                         <li class="flex align-items-center">
                             <div class="p-1 border-circle bg-green-400 inline-block mr-2"></div>
-                            <span class="text-900 font-semibold">Figma</span>
+                            <span class="text-900 font-semibold">Angular</span>
                         </li>
                     </ul>
                     <button pButton pRipple type="button" label="Live Preview" icon="pi pi-arrow-right" iconPos="right" class="w-12rem p-button-outlined"></button>
                 </div>
 
                 <div id="image-container" class="col-12 md:col-7 flex-order-0 md:flex-order-1 mb-6 md:mb-0 border-round">
-                    <img src="/assets/demo/images/landing/{{darkMode ? 'dashboard-dark' : 'dashboard-light'}}.png" alt="" class="w-full h-full border-round shadow-2">
+                    <img animateEnter="moveinright" src="/assets/demo/images/landing/{{darkMode ? 'dashboard-dark' : 'dashboard-light'}}.png" alt="" class="w-full h-full border-round shadow-2 animation-duration-1000 animation-ease-out">
                 </div>
             </div>
             
@@ -81,15 +81,15 @@
         
                 <div class="flex flex-column lg:flex-row align-items-center justify-content-between mt-8 gap-5">
                     <div class="flex flex-column align-items-center">
-                        <img src="/assets/demo/images/landing/{{darkMode ? 'chat' : 'chat'}}.png" alt="chat" class="w-full h-full border-round surface-border shadow-2">
+                        <img animateEnter="scalein" src="/assets/demo/images/landing/{{darkMode ? 'chat' : 'chat'}}.png" alt="chat" class="w-full h-full border-round surface-border shadow-2 animation-duration-500 origin-top">
                         <span class="block text-900 text-lg font-semibold mt-4">Chat</span>
                     </div>
                     <div class="flex flex-column align-items-center">
-                        <img src="/assets/demo/images/landing/{{darkMode ? 'chat' : 'chat'}}.png" alt="chat" class="w-full h-full border-round surface-border shadow-2">
+                        <img animateEnter="scalein" src="/assets/demo/images/landing/{{darkMode ? 'chat' : 'chat'}}.png" alt="chat" class="w-full h-full border-round surface-border shadow-2 animation-duration-500 origin-top">
                         <span class="block text-900 text-lg font-semibold mt-4">Mail</span>
                     </div>
                     <div class="flex flex-column align-items-center">
-                        <img src="/assets/demo/images/landing/{{darkMode ? 'chat' : 'chat'}}.png" alt="chat" class="w-full h-full border-round surface-border shadow-2">
+                        <img animateEnter="scalein" src="/assets/demo/images/landing/{{darkMode ? 'chat' : 'chat'}}.png" alt="chat" class="w-full h-full border-round surface-border shadow-2 animation-duration-500 origin-top">
                         <span class="block text-900 text-lg font-semibold mt-4">Kanban</span>
                     </div>
                 </div>    

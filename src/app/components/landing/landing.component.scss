@@ -7,3 +7,23 @@
     opacity: 0.25;
     z-index: -1;
 }
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
+.moveinright {
+    animation: moveinright .15s linear;
+}
+
+@keyframes moveinright {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: transform .12s cubic-bezier(0, 0, 0.2, 1), opacity .12s cubic-bezier(0, 0, 0.2, 1);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
