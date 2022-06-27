@@ -149,7 +149,7 @@
 			<p-multiSelect [options]="countries" [(ngModel)]="selectedMulti" defaultLabel="Select a Country" optionLabel="name" class="multiselect-custom">
 				<ng-template let-value pTemplate="selectedItems">
 					<div class="country-item country-item-value" *ngFor="let option of selectedMulti">
-						<img src="assets/demo/flags/flag_placeholder.png" [class]="'flag flag-' + option.code.toLowerCase()" />
+						<img src="assets/demo/images/flag/flag_placeholder.png" [class]="'flag flag-' + option.code.toLowerCase()" />
 						<div>{{option.name}}</div>
 					</div>
 					<div *ngIf="!selectedMulti || selectedMulti.length === 0" class="country-placeholder">
@@ -158,7 +158,7 @@
 				</ng-template>
 				<ng-template let-country pTemplate="item">
 					<div class="country-item">
-						<img src="assets/demo/flags/flag_placeholder.png" [class]="'flag flag-' + country.code.toLowerCase()" />
+						<img src="assets/demo/images/flag/flag_placeholder.png" [class]="'flag flag-' + country.code.toLowerCase()" />
 						<div>{{country.name}}</div>
 					</div>
 				</ng-template>
