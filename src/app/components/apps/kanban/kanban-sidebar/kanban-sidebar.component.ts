@@ -96,9 +96,11 @@ export class KanbanSidebarComponent implements OnInit, OnDestroy {
 
     onComment(event) {
         event.preventDefault();
-        this.newComment.text = this.comment;
-        this.card.comments.unshift(this.newComment);
-        this.comment = null;
+        if (this.comment.trim().length > 0) {
+            this.newComment.text = this.comment;
+            this.card.comments.unshift(this.newComment);
+            this.comment = null;
+        }
     }
 
     onSave() {
@@ -128,11 +130,12 @@ export class KanbanSidebarComponent implements OnInit, OnDestroy {
 
     addTask(event) {
         event.preventDefault();
-        this.newTask = { text: this.taskContent, completed: false };
-        this.card.taskList.tasks.unshift(this.newTask);
-        this.taskContent = null;
-
-        this.calculateProgress();
+        if (this.taskContent.trim().length > 0) {
+            this.newTask = { text: this.taskContent, completed: false };
+            this.card.taskList.tasks.unshift(this.newTask);
+            this.taskContent = null;
+            this.calculateProgress();
+        }
     }
 
     focus(arg) {
