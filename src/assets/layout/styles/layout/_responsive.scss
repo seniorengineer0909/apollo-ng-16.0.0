@@ -66,6 +66,7 @@
             z-index: 999;
             transform: translateX(-100%);
             transition: transform $transitionDuration;
+            box-shadow: none;
         }
 
         &.layout-mobile-active {
