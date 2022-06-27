@@ -19,7 +19,7 @@
             <li *ngFor="let product of products; let i = index;" class="p-3 surface-border flex align-items-start sm:align-items-center" [ngClass]="{'border-bottom-1' : i !== products.length-1}">
                 <img [src]="product.image" class="w-3rem sm:w-8rem flex-shrink-0 mr-3 shadow-2" />
                 <div class="flex flex-column">
-                    <span class="text-900 font-medium text-xl mb-2">{{product.name}}</span>
+                    <span class="text-900 font-semibold text-xl mb-2">{{product.name}}</span>
                     <span class="text-700 font-medium mb-3">{{product.color}} | {{product.size}}</span>
                     <span class="text-900 font-medium">Quantity: {{product.quantity}}</span>
                 </div>
