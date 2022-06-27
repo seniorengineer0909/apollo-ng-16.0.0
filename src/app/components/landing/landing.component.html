@@ -2,7 +2,7 @@
     <div class="bg-circle opacity-50" style="top: -200px; left: -700px;"></div>
     <div class="bg-circle hidden lg:flex" style="top: 50px; right:-800px; transform: rotate(60deg)"></div>
 
-    <div id="home" class="landing-wrapper py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 z-5">
+    <div class="landing-wrapper py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 z-5">
         <div class="flex align-items-center justify-content-between relative lg:static">
             <a class="cursor-pointer" href="#">
                 <svg width="124" height="22" viewBox="0 0 124 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,17 +23,17 @@
             <div class="align-items-center flex-grow-1 hidden lg:flex fixed lg:static w-full md:w-18rem py-3 px-3 lg:px-0 z-5 shadow-2 surface-card md:surface-ground md:shadow-none min-h-screen md:min-h-full md:h-auto" style="top:5%; right: 0%;">
                 <ul class="list-none p-0 m-0 ml-auto flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
                     <li>
-                        <a pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                        <a (click)="router.navigate(['/landing'], {fragment: 'hero'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
                             <span>Home</span>
                         </a>
                     </li>
                     <li>
-                        <a pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
-                            <span>Docs</span>
+                        <a (click)="router.navigate(['/landing'], {fragment: 'apps'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                            <span>Apps</span>
                         </a>
                     </li>
                     <li>
-                        <a pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                        <a (click)="router.navigate(['/landing'], {fragment: 'features'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3" >
                             <span>Features</span>
                         </a>
                     </li>
@@ -49,7 +49,7 @@
             </div>
         </div>
     
-        <div id="hero" class="grid grid-nogutter justify-content-between align-items-center my-6 py-6 md:my-8 md:py-8">
+        <div id="hero" #hero class="grid grid-nogutter justify-content-between align-items-center my-6 py-6 md:my-8 md:py-8">
             <div class="col-12 md:col-4 flex flex-column gap-4 flex-order-1 md:flex-order-0 align-items-center md:align-items-start text-center md:text-left">
                 <span class="block text-900 font-bold text-4xl">Modern, stylish and clean</span>
                 <span class="block text-700 text-lg">The ultimate collection of design-agnostic, flexible and accessible React UI Components.</span>
@@ -69,16 +69,9 @@
                 </ul>
                 <button pButton pRipple type="button" label="Live Preview" icon="pi pi-arrow-right" iconPos="right" class="w-12rem p-button-outlined"></button>
             </div>
-            <div id="image-container" class="col-12 md:col-7 flex-order-0 md:flex-order-1 mb-6 md:mb-0 relative select-none shadow-2 border-1 surface-border border-round" cdkDropListOrientation="horizontal" style="height: 45rem;">
-                <div #splitter class="absolute z-3 flex justify-content-center align-items-center" [ngStyle]="{'height': '100%', 'cursor': 'pointer'}" cdkDrag cdkDragHandle cdkDragLockAxis="x" cdkDragBoundary="#image-container" (cdkDragStarted)="dragStart()" (cdkDragEnded)="dragEnd()" (cdkDragMoved)="move($event)" (mousedown)="onMouseDown($event)">
-                    <div class="relative h-full w-full border-none">
-                        <div class="w-4rem h-4rem border-circle flex justify-content-center align-items-center absolute surface-card border-3 border-primary-100" style="left: -28px; top: 45%;" >
-                            <i class="pi pi-code text-3xl text-900 font-bold"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="h-full w-full border-1 border-round surface-border z-2 bg-no-repeat" style="background-image: url('/assets/demo/images/landing/dashboard-light.png');"></div>
-                <div class="h-full border-1 border-round surface-border absolute top-0 z-2 bg-no-repeat" [ngStyle]="{'width': width, 'background-image': 'url(/assets/demo/images/landing/dashboard-dark.png)'}"></div>
+
+            <div id="image-container" class="col-12 md:col-7 flex-order-0 md:flex-order-1 mb-6 md:mb-0 border-round">
+                <img src="/assets/demo/images/landing/{{darkMode ? 'dashboard-dark' : 'dashboard-light'}}.png" alt="" class="w-full h-full border-round shadow-2">
             </div>
         </div>
         
@@ -86,17 +79,17 @@
             <span class="text-900 block font-bold text-5xl mb-4 text-center">Apps</span>
             <span class="text-700 block text-xl mb-8 text-center line-height-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos.</span>
     
-            <div class="flex flex-column lg:flex-row align-items-center justify-content-between mt-8 gap-5 lg:gap-0">
+            <div class="flex flex-column lg:flex-row align-items-center justify-content-between mt-8 gap-5">
                 <div class="flex flex-column align-items-center">
-                    <img src="/assets/demo/images/landing/chat.png" alt="chat" class="w-full h-full border-round surface-border shadow-2">
+                    <img src="/assets/demo/images/landing/{{darkMode ? 'chat' : 'chat'}}.png" alt="chat" class="w-full h-full border-round surface-border shadow-2">
                     <span class="block text-900 text-lg font-semibold mt-4">Chat</span>
                 </div>
                 <div class="flex flex-column align-items-center">
-                    <img src="/assets/demo/images/landing/chat.png" alt="chat" class="w-full h-full border-round surface-border shadow-2">
+                    <img src="/assets/demo/images/landing/{{darkMode ? 'chat' : 'chat'}}.png" alt="chat" class="w-full h-full border-round surface-border shadow-2">
                     <span class="block text-900 text-lg font-semibold mt-4">Mail</span>
                 </div>
                 <div class="flex flex-column align-items-center">
-                    <img src="/assets/demo/images/landing/chat.png" alt="chat" class="w-full h-full border-round surface-border shadow-2">
+                    <img src="/assets/demo/images/landing/{{darkMode ? 'chat' : 'chat'}}.png" alt="chat" class="w-full h-full border-round surface-border shadow-2">
                     <span class="block text-900 text-lg font-semibold mt-4">Kanban</span>
                 </div>
             </div>    
@@ -107,7 +100,7 @@
             <div class="text-700 text-xl mb-8 text-center line-height-3">Choose a plan that works best for you and your team.</div>
         
             <div class="grid grid-nogutter justify-content-center mt-8">
-                <div class="col-12 lg:col-4">
+                <div class="col-12 lg:col-6 xl:col-4">
                     <div class="p-3 h-full">
                         <div class="shadow-2 p-6 h-full flex flex-column surface-card" style="border-radius: 6px">
                             <span class="text-900 block font-medium text-xl mb-2 text-center">Basic Licence</span>
@@ -137,7 +130,7 @@
                     </div>
                 </div>
     
-                <div class="col-12 lg:col-4">
+                <div class="col-12 lg:col-6 xl:col-4">
                     <div class="p-3 h-full">
                         <div class="shadow-2 p-6 h-full flex flex-column surface-card" style="border-radius: 6px">
                             <span class="text-900 block font-medium text-xl mb-2 text-center">Extended Licence</span>
@@ -169,7 +162,7 @@
             </div>
         </div>
         
-        <div id="features" class="my-6 py-6 md:my-8 md:py-8">
+        <div #features id="features" class="my-6 py-6 md:my-8 md:py-8">
             <span class="text-900 block font-bold text-5xl mb-4 text-center">Features</span>
             <span class="text-700 block text-xl mb-8 text-center line-height-3">PrimeTek Informatics is the author of PrimeReact, a UI Component vendor with well known vastly popular projects including PrimeFaces, PrimeNG and PrimeVue.</span>
     
@@ -233,7 +226,7 @@
             </div>
         </div>
     
-        <div class="grid justify-content-between my-4 pt-4 md:my-8 md:pt-8">
+        <div class="grid justify-content-between my-4 pt-4 md:my-8">
             <div class="col-12 md:col-2 text-center md:text-left">
                 <a class="cursor-pointer" href="#">
                     <svg width="124" height="22" viewBox="0 0 124 22" fill="none" xmlns="http://www.w3.org/2000/svg">
