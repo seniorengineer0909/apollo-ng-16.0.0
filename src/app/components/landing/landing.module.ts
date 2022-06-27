@@ -5,7 +5,6 @@ import { LandingComponent } from './landing.component';
 import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 import { StyleClassModule } from 'primeng/styleclass';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppConfigModule } from 'src/app/layout/config/app.config.module';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { AppConfigModule } from 'src/app/layout/config/app.config.module';
         ButtonModule,
         RouterModule,
         StyleClassModule,
-        DragDropModule,
         AppConfigModule
     ],
     declarations: [LandingComponent]
