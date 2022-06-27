@@ -12,7 +12,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast'
-import { ColorPickerModule } from 'primeng/colorpicker'
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction'
@@ -37,7 +36,6 @@ FullCalendarModule.registerPlugins([
         InputTextModule,
         DropdownModule,
         ToastModule,
-        ColorPickerModule,
         RippleModule
     ],
     declarations: [CalendarAppComponent],

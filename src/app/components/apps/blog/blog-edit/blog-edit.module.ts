@@ -19,9 +19,7 @@ import { BlogEditComponent } from "./blog-edit.component";
         FileUploadModule,
         RippleModule,
         ChipModule,
-        FileUploadModule,
         EditorModule,
-        ChipModule,
         BlogEditRoutingModule
     ],
     declarations: [BlogEditComponent]

@@ -19,10 +19,8 @@ import { MenuModule } from 'primeng/menu';
 import { ButtonModule } from 'primeng/button'
 import { RippleModule } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
-import { ToolbarModule } from 'primeng/toolbar';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
-import { RatingModule } from 'primeng/rating';
 import { AvatarModule } from 'primeng/avatar';
 import { EditorModule } from 'primeng/editor';
 import { FileUploadModule } from 'primeng/fileupload';
@@ -40,10 +38,8 @@ import { MailService } from './service/mail.service';
         ButtonModule,
         RippleModule,
         TableModule,
-        ToolbarModule,
         InputTextModule,
         CheckboxModule,
-        RatingModule,
         AvatarModule,
         EditorModule,
         ToastModule,

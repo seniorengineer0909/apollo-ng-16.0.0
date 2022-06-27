@@ -8,13 +8,10 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { EditorModule } from 'primeng/editor'
 import { CalendarModule } from 'primeng/calendar';
-import { ChipsModule } from 'primeng/chips';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ToastModule } from 'primeng/toast';
-import { ListboxModule } from 'primeng/listbox';
 import { AvatarModule } from 'primeng/avatar';
 import { MenuModule } from 'primeng/menu';
-import { BadgeModule } from 'primeng/badge';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DialogModule } from 'primeng/dialog';
@@ -30,15 +27,12 @@ import { TaskService } from './service/task.service';
         InputTextModule,
         EditorModule,
         CalendarModule,
-        ChipsModule,
         ToastModule,
         AutoCompleteModule,
-        ListboxModule,
         AvatarModule,
         AvatarGroupModule,
         CheckboxModule,
         MenuModule,
-        BadgeModule,
         DialogModule
     ],
     declarations: [TaskListAppComponent, CreateTaskComponent, TaskCardComponent],

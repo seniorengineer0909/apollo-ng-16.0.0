@@ -1,7 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ButtonModule } from "primeng/button";
-import { DataViewModule } from "primeng/dataview";
 import { InputTextModule } from "primeng/inputtext";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { BlogCommentsComponent } from "./blog-comments/blog-comments.component";
@@ -14,7 +13,6 @@ import { BlogDetailRoutingModule } from "./blog-detail-routing.module";
         CommonModule,
         BlogDetailRoutingModule,
         ButtonModule,
-        DataViewModule,
         InputTextModule,
         InputTextareaModule
     ],
