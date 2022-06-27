@@ -1,10 +1,10 @@
-import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
-import {Customer, Representative} from 'src/app/api/customer';
-import {CustomerService} from 'src/app/service/customer.service';
-import {Product} from 'src/app/api/product';
-import {ProductService} from 'src/app/service/product.service';
-import {Table} from 'primeng/table';
-import {MessageService, ConfirmationService} from 'primeng/api';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Customer, Representative } from 'src/app/api/customer';
+import { CustomerService } from 'src/app/service/customer.service';
+import { Product } from 'src/app/api/product';
+import { ProductService } from 'src/app/service/product.service';
+import { Table } from 'primeng/table';
+import { MessageService, ConfirmationService } from 'primeng/api';
 
 @Component({
     templateUrl: './tabledemo.component.html',
@@ -51,13 +51,13 @@ export class TableDemoComponent implements OnInit {
 
     idFrozen: boolean = false;
 
-    loading:boolean = true;
+    loading: boolean = true;
 
     @ViewChild('dt') table: Table;
 
     @ViewChild('filter') filter: ElementRef;
-    
-    constructor(private customerService: CustomerService, private productService: ProductService) {} 
+
+    constructor(private customerService: CustomerService, private productService: ProductService) { }
 
     ngOnInit() {
         this.customerService.getCustomersLarge().then(customers => {
@@ -72,25 +72,25 @@ export class TableDemoComponent implements OnInit {
         this.productService.getProductsWithOrdersSmall().then(data => this.products = data);
 
         this.representatives = [
-            {name: 'Amy Elsner', image: 'amyelsner.png'},
-            {name: 'Anna Fali', image: 'annafali.png'},
-            {name: 'Asiya Javayant', image: 'asiyajavayant.png'},
-            {name: 'Bernardo Dominic', image: 'bernardodominic.png'},
-            {name: 'Elwin Sharvill', image: 'elwinsharvill.png'},
-            {name: 'Ioni Bowcher', image: 'ionibowcher.png'},
-            {name: 'Ivan Magalhaes', image: 'ivanmagalhaes.png'},
-            {name: 'Onyama Limba', image: 'onyamalimba.png'},
-            {name: 'Stephen Shaw', image: 'stephenshaw.png'},
-            {name: 'XuXue Feng', image: 'xuxuefeng.png'}
+            { name: 'Amy Elsner', image: 'amyelsner.png' },
+            { name: 'Anna Fali', image: 'annafali.png' },
+            { name: 'Asiya Javayant', image: 'asiyajavayant.png' },
+            { name: 'Bernardo Dominic', image: 'bernardodominic.png' },
+            { name: 'Elwin Sharvill', image: 'elwinsharvill.png' },
+            { name: 'Ioni Bowcher', image: 'ionibowcher.png' },
+            { name: 'Ivan Magalhaes', image: 'ivanmagalhaes.png' },
+            { name: 'Onyama Limba', image: 'onyamalimba.png' },
+            { name: 'Stephen Shaw', image: 'stephenshaw.png' },
+            { name: 'XuXue Feng', image: 'xuxuefeng.png' }
         ];
 
         this.statuses = [
-            {label: 'Unqualified', value: 'unqualified'},
-            {label: 'Qualified', value: 'qualified'},
-            {label: 'New', value: 'new'},
-            {label: 'Negotiation', value: 'negotiation'},
-            {label: 'Renewal', value: 'renewal'},
-            {label: 'Proposal', value: 'proposal'}
+            { label: 'Unqualified', value: 'unqualified' },
+            { label: 'Qualified', value: 'qualified' },
+            { label: 'New', value: 'new' },
+            { label: 'Negotiation', value: 'negotiation' },
+            { label: 'Renewal', value: 'renewal' },
+            { label: 'Proposal', value: 'proposal' }
         ];
     }
 
@@ -124,17 +124,17 @@ export class TableDemoComponent implements OnInit {
     }
 
     expandAll() {
-        if(!this.isExpanded){
-          this.products.forEach(product => this.expandedRows[product.name] = true);
+        if (!this.isExpanded) {
+            this.products.forEach(product => this.expandedRows[product.name] = true);
 
         } else {
-          this.expandedRows={};
+            this.expandedRows = {};
         }
         this.isExpanded = !this.isExpanded;
     }
 
     formatCurrency(value) {
-        return value.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+        return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     }
 
     clear(table: Table) {

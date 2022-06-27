@@ -7,14 +7,14 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ButtonModule,
-    ContactRoutingModule,
-    InputTextModule,
-    InputTextareaModule
-  ],
-  declarations: [ContactComponent]
+	imports: [
+		CommonModule,
+		FormsModule,
+		ButtonModule,
+		ContactRoutingModule,
+		InputTextModule,
+		InputTextareaModule
+	],
+	declarations: [ContactComponent]
 })
 export class ContactModule { }

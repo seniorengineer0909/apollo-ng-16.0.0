@@ -10,17 +10,17 @@ import { SidebarModule } from 'primeng/sidebar';
 import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    InputTextModule,
-    SliderModule,
-    ButtonModule,
-    InputNumberModule,
-    SidebarModule,
-    CheckboxModule
-  ],
-  exports: [FilterComponent],
-  declarations: [FilterComponent],
+	imports: [
+		CommonModule,
+		FormsModule,
+		InputTextModule,
+		SliderModule,
+		ButtonModule,
+		InputNumberModule,
+		SidebarModule,
+		CheckboxModule
+	],
+	exports: [FilterComponent],
+	declarations: [FilterComponent],
 })
 export class FilterModule { }

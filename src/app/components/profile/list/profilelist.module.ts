@@ -9,15 +9,15 @@ import { ProfileListComponent } from './profilelist.component';
 import { ProfileListRoutingModule } from './profilelist-routing.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ProfileListRoutingModule,
-    RippleModule,
-    ButtonModule,
-    InputTextModule,
-    TableModule,
-    ProgressBarModule
-  ],
-  declarations: [ProfileListComponent]
+	imports: [
+		CommonModule,
+		ProfileListRoutingModule,
+		RippleModule,
+		ButtonModule,
+		InputTextModule,
+		TableModule,
+		ProgressBarModule
+	],
+	declarations: [ProfileListComponent]
 })
 export class ProfileListModule { }

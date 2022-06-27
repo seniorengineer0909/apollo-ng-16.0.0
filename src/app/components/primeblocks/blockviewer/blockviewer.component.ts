@@ -1,13 +1,13 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 enum BlockView {
-  PREVIEW,
-  CODE
+	PREVIEW,
+	CODE
 }
 
 @Component({
-  selector: 'block-viewer',
-  template: `
+	selector: 'block-viewer',
+	template: `
     <div class="block-section">
         <div class="block-header">
             <span class="block-title">
@@ -35,36 +35,36 @@ enum BlockView {
         </div>
     </div>
   `,
-  styleUrls: ['./blockviewer.component.scss'],
-  encapsulation: ViewEncapsulation.None
+	styleUrls: ['./blockviewer.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class BlockViewer {
-  
-  @Input() header: string;
 
-  @Input() code: string;
+	@Input() header: string;
 
-  @Input() containerClass: string;
+	@Input() code: string;
 
-  @Input() previewStyle: string;
+	@Input() containerClass: string;
 
-  @Input() free: boolean = true;
+	@Input() previewStyle: string;
 
-  @Input() new: boolean = false;
+	@Input() free: boolean = true;
 
-  BlockView = BlockView;
+	@Input() new: boolean = false;
 
-  blockView: BlockView = BlockView.PREVIEW;
+	BlockView = BlockView;
 
-  activateView(event: Event, blockView: BlockView) {
+	blockView: BlockView = BlockView.PREVIEW;
 
-    this.blockView = blockView;  
-    event.preventDefault();
-  }
+	activateView(event: Event, blockView: BlockView) {
 
-  async copyCode(event: Event) {
-    await navigator.clipboard.writeText(this.code);
-    event.preventDefault();
-  }
+		this.blockView = blockView;
+		event.preventDefault();
+	}
+
+	async copyCode(event: Event) {
+		await navigator.clipboard.writeText(this.code);
+		event.preventDefault();
+	}
 
 }

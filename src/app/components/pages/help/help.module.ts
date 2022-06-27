@@ -5,11 +5,11 @@ import { HelpComponent } from './help.component';
 import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HelpRoutingModule,
-    InputTextModule
-  ],
-  declarations: [HelpComponent]
+	imports: [
+		CommonModule,
+		HelpRoutingModule,
+		InputTextModule
+	],
+	declarations: [HelpComponent]
 })
 export class HelpModule { }

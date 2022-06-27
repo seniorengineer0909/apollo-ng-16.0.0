@@ -12,7 +12,7 @@ export class AppConfigComponent implements OnInit {
 
     componentThemes: any[];
 
-    constructor(public layoutService: LayoutService, public menuService: MenuService) {}
+    constructor(public layoutService: LayoutService, public menuService: MenuService) { }
 
     get visible(): boolean {
         return this.layoutService.state.configSidebarVisible;
@@ -67,14 +67,14 @@ export class AppConfigComponent implements OnInit {
 
     ngOnInit() {
         this.componentThemes = [
-            {name: 'indigo', color: '#6366F1'},
-            {name: 'blue', color: '#3B82F6'},
-            {name: 'purple', color: '#8B5CF6'},
-            {name: 'teal', color: '#14B8A6'},
-            {name: 'cyan', color: '#06b6d4'},
-            {name: 'green', color: '#10b981'},
-            {name: 'orange', color: '#f59e0b'},
-            {name: 'pink', color: '#d946ef'}
+            { name: 'indigo', color: '#6366F1' },
+            { name: 'blue', color: '#3B82F6' },
+            { name: 'purple', color: '#8B5CF6' },
+            { name: 'teal', color: '#14B8A6' },
+            { name: 'cyan', color: '#06b6d4' },
+            { name: 'green', color: '#10b981' },
+            { name: 'orange', color: '#f59e0b' },
+            { name: 'pink', color: '#d946ef' }
         ];
     }
 
@@ -83,7 +83,7 @@ export class AppConfigComponent implements OnInit {
     }
 
     changeColorScheme(colorScheme: string) {
-        const themeLink = <HTMLLinkElement> document.getElementById('theme-link');
+        const themeLink = <HTMLLinkElement>document.getElementById('theme-link');
         const themeLinkHref = themeLink.getAttribute('href');
         const currentColorScheme = 'theme-' + this.layoutService.config.colorScheme;
         const newColorScheme = 'theme-' + colorScheme;
@@ -95,7 +95,7 @@ export class AppConfigComponent implements OnInit {
     }
 
     changeTheme(theme: string) {
-        const themeLink = <HTMLLinkElement> document.getElementById('theme-link');
+        const themeLink = <HTMLLinkElement>document.getElementById('theme-link');
         const newHref = themeLink.getAttribute('href').replace(this.layoutService.config.theme, theme);
         this.replaceThemeLink(newHref, () => {
             this.layoutService.config.theme = theme;
@@ -105,8 +105,8 @@ export class AppConfigComponent implements OnInit {
 
     replaceThemeLink(href: string, onComplete: Function) {
         const id = 'theme-link';
-        const themeLink = <HTMLLinkElement> document.getElementById('theme-link');
-        const cloneLinkElement = <HTMLLinkElement> themeLink.cloneNode(true);
+        const themeLink = <HTMLLinkElement>document.getElementById('theme-link');
+        const cloneLinkElement = <HTMLLinkElement>themeLink.cloneNode(true);
 
         cloneLinkElement.setAttribute('href', href);
         cloneLinkElement.setAttribute('id', id + '-clone');
