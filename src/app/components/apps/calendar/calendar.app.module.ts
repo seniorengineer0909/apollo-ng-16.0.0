@@ -16,6 +16,7 @@ import { ColorPickerModule } from 'primeng/colorpicker'
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction'
+import { EventService } from 'src/app/service/event.service';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -39,6 +40,7 @@ FullCalendarModule.registerPlugins([
         ColorPickerModule,
         RippleModule
     ],
-    declarations: [CalendarAppComponent]
+    declarations: [CalendarAppComponent],
+    providers: [EventService]
 })
 export class CalendarAppModule { }
