@@ -97,7 +97,7 @@
                 <div class="inline-flex align-items-center">
                     <span class="p-input-icon-left flex-auto">
                         <i class="pi pi-search"></i>
-                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search" class="w-full"/>
+                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search" class="w-full" style="border-radius: 2rem"/>
                     </span>
                     <button pButton pRipple icon="pi pi-upload" class="p-button-rounded mx-3" (click)="dt.exportCSV()"></button>
                 </div>
