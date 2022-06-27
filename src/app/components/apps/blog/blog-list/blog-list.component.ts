@@ -10,7 +10,7 @@ export class BlogListComponent {
     sortOptions: SelectItem[] = [
         { label: 'Most Shared', value: 'share' },
         { label: 'Most Commented', value: 'comment' }
-    ];;
+    ];
 
     sortField: string;
 

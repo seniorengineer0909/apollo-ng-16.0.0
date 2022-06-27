@@ -25,8 +25,5 @@ import { BlogEditComponent } from "./blog-edit.component";
         BlogEditRoutingModule
     ],
     declarations: [BlogEditComponent]
-  })
-  export class BlogEditModule { }
-
-
-
+})
+export class BlogEditModule { }

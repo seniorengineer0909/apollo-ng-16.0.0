@@ -6,7 +6,6 @@ import { BlogAppRoutingModule } from "./blog.app-routing.module";
     imports: [
         CommonModule,
         BlogAppRoutingModule
-    ],
-    declarations: []
+    ]
 })
 export class BlogAppModule { }

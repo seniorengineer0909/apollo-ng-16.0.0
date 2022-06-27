@@ -19,6 +19,5 @@ import { BlogDetailRoutingModule } from "./blog-detail-routing.module";
         InputTextareaModule
     ],
     declarations: [BlogCommentsComponent, NewCommentComponent, BlogDetailComponent]
-  })
-  export class BlogDetailModule { }
-
+})
+export class BlogDetailModule { }

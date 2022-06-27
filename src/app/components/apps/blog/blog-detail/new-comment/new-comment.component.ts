@@ -5,4 +5,3 @@ import { Component } from '@angular/core';
     templateUrl: './new-comment.component.html'
 })
 export class NewCommentComponent { }
-

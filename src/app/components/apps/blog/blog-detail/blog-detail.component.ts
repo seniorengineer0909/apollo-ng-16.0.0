@@ -32,5 +32,5 @@ export class BlogDetailComponent {
             description: "How likely are you to recommend our company to your friends and family ?"
         }
     ];
-    
+
 }
