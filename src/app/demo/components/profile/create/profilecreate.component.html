@@ -28,7 +28,7 @@
                     <p-dropdown inputId="country" [options]="countries" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Country">
                         <ng-template let-country pTemplate="item">
                             <div class="flex align-items-center">
-                                <img src="assets/images/blocks/flag/flag_placeholder.png" [class]="'mr-2 flag flag-' + country.code.toLowerCase()" style="width:18px"/>
+                                <img src="assets/demo/images/flag/flag_placeholder.png" [class]="'mr-2 flag flag-' + country.code.toLowerCase()" style="width:18px"/>
                                 <div>{{country.name}}</div>
                             </div>
                         </ng-template>
