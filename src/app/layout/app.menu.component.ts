@@ -29,7 +29,7 @@ export class AppMenuComponent implements OnInit {
             },
             {
                 label: 'Apps',
-                icon: 'pi-th-large',
+                icon: 'pi pi-th-large',
                 items: [
                     {
                         label: 'Blog',
