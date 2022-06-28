@@ -15,7 +15,7 @@ const routes: Routes = [
             { path: 'utilities', data: { breadcrumb: 'Utilities' }, loadChildren: () => import('./components/utilities/utilities.module').then(m => m.UtilitiesModule) },
             { path: 'pages', data: { breadcrumb: 'Pages' }, loadChildren: () => import('./components/pages/pages.module').then(m => m.PagesModule) },
             { path: 'profile', data: { breadcrumb: 'User Management' }, loadChildren: () => import('./components/profile/profile.module').then(m => m.ProfileModule) },
-            { path: 'documentation', data: { breadcrumb: 'Documentation' }, loadChildren: () => import('./components/start/start.module').then(m => m.StartModule) },
+            { path: 'documentation', data: { breadcrumb: 'Documentation' }, loadChildren: () => import('./components/documentation/documentation.module').then(m => m.DocumentationModule) },
             { path: 'blocks', data: { breadcrumb: 'Prime Blocks' }, loadChildren: () => import('./components/primeblocks/primeblocks.module').then(m => m.PrimeBlocksModule) },
             { path: 'ecommerce', data: { breadcrumb: 'E-Commerce' }, loadChildren: () => import('./components/ecommerce/ecommerce.module').then(m => m.EcommerceModule) },
             { path: 'apps', data: { breadcrumb: 'Apps' }, loadChildren: () => import('./components/apps/apps.module').then(m => m.AppsModule) }

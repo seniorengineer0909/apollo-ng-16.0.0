@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DocumentationComponent } from './documentation/documentation.component';
+import { DocumentationComponent } from './documentation.component';
 
 @NgModule({
 	imports: [RouterModule.forChild([
@@ -8,4 +8,4 @@ import { DocumentationComponent } from './documentation/documentation.component'
 	])],
 	exports: [RouterModule]
 })
-export class StartRoutingModule { }
+export class DocumentationRoutingModule { }
