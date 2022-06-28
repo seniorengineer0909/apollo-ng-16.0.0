@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/api/user';
+import { User } from 'src/app/components/api/user';
 import { ChatService } from '../service/chat.service';
 
 @Component({

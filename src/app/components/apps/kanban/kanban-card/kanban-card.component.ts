@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { KanbanCard } from 'src/app/api/kanban';
+import { KanbanCard } from 'src/app/components/api/kanban';
 import { KanbanService } from '../service/kanban.service';
 import { Subscription } from 'rxjs';
 

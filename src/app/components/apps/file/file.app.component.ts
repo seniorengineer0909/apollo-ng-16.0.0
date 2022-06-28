@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Folder } from 'src/app/api/folder';
-import { File } from 'src/app/api/file';
-import { Metric } from 'src/app/api/metric';
+import { Folder } from 'src/app/components/api/folder';
+import { File } from 'src/app/components/api/file';
+import { Metric } from 'src/app/components/api/metric';
 import { FileAppService } from './service/file.app.service';
 import { MenuItem } from 'primeng/api';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';

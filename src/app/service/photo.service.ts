@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Image } from 'src/app/api/image';
+import { Image } from 'src/app/components/api/image';
 
 @Injectable({
 	providedIn: 'root',

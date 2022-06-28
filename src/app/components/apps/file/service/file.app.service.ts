@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { File } from 'src/app/api/file';
-import { Metric } from 'src/app/api/metric';
-import { Folder } from 'src/app/api/folder';
+import { File } from 'src/app/components/api/file';
+import { Metric } from 'src/app/components/api/metric';
+import { Folder } from 'src/app/components/api/folder';
 
 @Injectable()
 export class FileAppService {

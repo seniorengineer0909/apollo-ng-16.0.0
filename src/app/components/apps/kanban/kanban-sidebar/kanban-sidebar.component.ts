@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
-import { KanbanCard, Comment, ListName, Task } from 'src/app/api/kanban';
-import { Member } from 'src/app/api/member';
+import { KanbanCard, Comment, ListName, Task } from 'src/app/components/api/kanban';
+import { Member } from 'src/app/components/api/member';
 import { KanbanAppComponent } from '../kanban.app.component';
 import { MemberService } from 'src/app/service/member.service';
 import { Subscription } from 'rxjs';

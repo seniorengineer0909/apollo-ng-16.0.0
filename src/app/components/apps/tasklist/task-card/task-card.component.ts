@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Menu } from 'primeng/menu';
-import { Task } from 'src/app/api/task';
+import { Task } from 'src/app/components/api/task';
 import { TaskService } from '../service/task.service';
 
 @Component({

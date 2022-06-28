@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { Mail } from 'src/app/api/mail';
+import { Mail } from 'src/app/components/api/mail';
 import { MailService } from '../service/mail.service';
 import { MessageService } from 'primeng/api';
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Mail } from 'src/app/api/mail';
+import { Mail } from 'src/app/components/api/mail';
 import { MailService } from 'src/app/components/apps/mail/service/mail.service';
 
 @Component({

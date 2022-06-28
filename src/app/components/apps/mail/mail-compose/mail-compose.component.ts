@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
-import { Mail } from 'src/app/api/mail';
+import { Mail } from 'src/app/components/api/mail';
 import { MailService } from '../service/mail.service';
 
 @Component({
