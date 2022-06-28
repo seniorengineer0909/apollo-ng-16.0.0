@@ -14,7 +14,7 @@
     border-bottom-left-radius: var(--border-radius);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    transition: background-color $transitionDuration;
+    transition: background-color var(--transition-duration);
     overflow: hidden;
     cursor: pointer;
     z-index: 999;

@@ -31,7 +31,7 @@
                         padding: .5rem 0;
                         cursor: pointer;
                         outline: none;
-                        transition: background-color $transitionDuration;
+                        transition: background-color var(--transition-duration);
                         width: 2rem;
                         height: 2rem;
                         margin: 0 auto .5rem auto;

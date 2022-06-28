@@ -17,12 +17,12 @@
             width: 2.5rem;
             height: 2.5rem;
             flex-shrink: 0;
-            transition: background-color $transitionDuration;
+            transition: background-color var(--transition-duration);
 
             i {
                 font-size: 1.25rem;
                 color: var(--text-color);
-                transition: color $transitionDuration;
+                transition: color var(--transition-duration);
             }
 
             &:hover {
@@ -58,7 +58,7 @@
                     border-radius: 50%;
                     width: 2rem;
                     height: 2rem;
-                    transition: box-shadow $transitionDuration;
+                    transition: box-shadow var(--transition-duration);
 
                     &:focus {
                         box-shadow: var(--focus-ring);

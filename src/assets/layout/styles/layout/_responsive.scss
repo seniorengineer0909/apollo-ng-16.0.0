@@ -2,12 +2,12 @@
     .layout-container {
         &.layout-static {
             .layout-sidebar {
-                transition: transform $transitionDuration;
+                transition: transform var(--transition-duration);
             }
             
             .layout-content-wrapper {
                 margin-left: 16rem;
-                transition: margin-left $transitionDuration;
+                transition: margin-left var(--transition-duration);
             }
         }
         
@@ -29,7 +29,7 @@
             .layout-sidebar {
                 z-index: 999;
                 transform: translateX(-100%);
-                transition: transform $transitionDuration;
+                transition: transform var(--transition-duration);
             }
 
             &.layout-overlay-active {
@@ -58,7 +58,7 @@
         .layout-sidebar {
             z-index: 999;
             transform: translateX(-100%);
-            transition: transform $transitionDuration;
+            transition: transform var(--transition-duration);
             box-shadow: none;
         }
 
