@@ -1,4 +1,4 @@
-import {  Directive, ElementRef, AfterViewInit, OnDestroy, Renderer2, Input } from '@angular/core';
+import {  Directive, ElementRef, OnDestroy, Renderer2, Input, OnInit } from '@angular/core';
 
 @Directive({
     selector: '[animateEnter]',
@@ -6,17 +6,33 @@ import {  Directive, ElementRef, AfterViewInit, OnDestroy, Renderer2, Input } fr
         '[class.visibility-hidden]': 'true'
     }
 })
-export class AnimateEnter implements AfterViewInit, OnDestroy {
+export class AnimateEnter implements OnInit, OnDestroy {
 
     @Input('animateEnter') animation: string;
 
     documentScrollListener: Function;
 
+    loadListener: Function;
+
     entered: boolean;
 
     constructor(public el: ElementRef, public renderer: Renderer2) { }
 
+    ngOnInit() {
+        if (this.isImage()) {
+            this.loadListener = this.renderer.listen(this.el.nativeElement, 'load', () => {
+                this.bind();
+            });
+        }
+    }
+
     ngAfterViewInit() {
+        if (!this.isImage()) {
+            this.bind();
+        }
+    }
+
+    bind(): void {
         if (this.isInViewPort()) {
             this.enter();
         }
@@ -37,11 +53,59 @@ export class AnimateEnter implements AfterViewInit, OnDestroy {
     }
 
     isInViewPort() {
-        let rect = this.el.nativeElement.getBoundingClientRect();
+        let rect = this.el.nativeElement.parentElement.parentElement.parentElement.getBoundingClientRect();
         let docElement = document.documentElement;
         let winHeight = docElement.clientHeight;
 
-        return winHeight >= (rect.top + 100);
+        return rect.top >= 0 && winHeight >= rect.top;
+    }
+
+    enter(): void {
+        this.el.nativeElement.classList.add('hidden', this.animation);
+        this.el.nativeElement.classList.remove('visibility-hidden', 'hidden');
+        this.entered = true;
+    }
+
+    isImage(): boolean {
+        return this.el.nativeElement.tagName === 'IMG';
+    }
+
+    ngOnDestroy() {
+        if (this.documentScrollListener) {
+            this.documentScrollListener();
+        }
+
+        if (this.loadListener) {
+            this.loadListener();
+        }
+    }
+
+    /*ngAfterViewInit() {
+        if (this.isInViewPort()) {
+            this.enter();
+        }
+
+        if (!this.entered) {
+            this.documentScrollListener = this.renderer.listen('window', 'scroll', () => {
+                if (this.isInViewPort()) {
+                    this.enter();
+                    this.documentScrollListener();
+                    this.documentScrollListener = null;
+                }
+            });
+        }
+    }
+
+    shouldEnter(): boolean {
+        return this.entered ? false: this.isInViewPort();
+    }
+
+    isInViewPort() {
+        let rect = this.el.nativeElement.parentElement.parentElement.parentElement.getBoundingClientRect();
+        let docElement = document.documentElement;
+        let winHeight = docElement.clientHeight;
+
+        return rect.top >= 0 && winHeight >= rect.top;
     }
 
     enter(): void {
@@ -54,5 +118,5 @@ export class AnimateEnter implements AfterViewInit, OnDestroy {
         if (this.documentScrollListener) {
             this.documentScrollListener();
         }
-    }
+    }*/
 }
