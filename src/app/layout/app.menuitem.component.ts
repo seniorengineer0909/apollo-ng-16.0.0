@@ -62,11 +62,11 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     @Input() item: any;
 
-    @Input() index: number;
+    @Input() index!: number;
 
-    @Input() root: boolean;
+    @Input() root!: boolean;
 
-    @Input() parentKey: string;
+    @Input() parentKey!: string;
 
     active = false;
 
@@ -74,7 +74,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     menuResetSubscription: Subscription;
 
-    key: string;
+    key: string = "";
 
     constructor(public layoutService: LayoutService, private cd: ChangeDetectorRef, public router: Router, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(key => {
@@ -140,7 +140,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             if (this.active)
                 this.menuService.onMenuStateChange(this.key);
             else
-                this.menuService.onMenuStateChange(null);
+                this.menuService.onMenuStateChange("");
                 
             if (this.root && this.active && (this.isSlim || this.isHorizontal)) {
                 this.layoutService.onOverlaySubmenuOpen();

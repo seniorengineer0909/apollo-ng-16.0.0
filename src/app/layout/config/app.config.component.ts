@@ -8,9 +8,9 @@ import { LayoutService } from '../service/app.layout.service';
 })
 export class AppConfigComponent implements OnInit {
 
-    @Input() minimal: boolean;
+    @Input() minimal: boolean = false;
 
-    componentThemes: any[];
+    componentThemes: any[] = [];
 
     scales: number[] = [12,13,14,15,16];
 
@@ -38,8 +38,8 @@ export class AppConfigComponent implements OnInit {
 
     set menuMode(_val: string) {
         this.layoutService.config.menuMode = _val;
-        if (this.layoutService.isSlim || this.layoutService.isHorizontal) {
-            this.menuService.onMenuStateChange(null);
+        if (this.layoutService.isSlim() || this.layoutService.isHorizontal()) {
+            this.menuService.onMenuStateChange("");
         }
     }
 
@@ -97,7 +97,7 @@ export class AppConfigComponent implements OnInit {
         const themeLinkHref = themeLink.getAttribute('href');
         const currentColorScheme = 'theme-' + this.layoutService.config.colorScheme;
         const newColorScheme = 'theme-' + colorScheme;
-        const newHref = themeLinkHref.replace(currentColorScheme, newColorScheme);
+        const newHref = themeLinkHref!.replace(currentColorScheme, newColorScheme);
         this.replaceThemeLink(newHref, () => {
             this.layoutService.config.colorScheme = colorScheme;
             this.layoutService.onConfigUpdate();
@@ -106,7 +106,7 @@ export class AppConfigComponent implements OnInit {
 
     changeTheme(theme: string) {
         const themeLink = <HTMLLinkElement>document.getElementById('theme-link');
-        const newHref = themeLink.getAttribute('href').replace(this.layoutService.config.theme, theme);
+        const newHref = themeLink.getAttribute('href')!.replace(this.layoutService.config.theme, theme);
         this.replaceThemeLink(newHref, () => {
             this.layoutService.config.theme = theme;
             this.layoutService.onConfigUpdate();
@@ -121,7 +121,7 @@ export class AppConfigComponent implements OnInit {
         cloneLinkElement.setAttribute('href', href);
         cloneLinkElement.setAttribute('id', id + '-clone');
 
-        themeLink.parentNode.insertBefore(cloneLinkElement, themeLink.nextSibling);
+        themeLink.parentNode!.insertBefore(cloneLinkElement, themeLink.nextSibling);
 
         cloneLinkElement.addEventListener('load', () => {
             themeLink.remove();

@@ -2,22 +2,22 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 export interface AppConfig {
-    inputStyle?: string;
-    colorScheme?: string;
-    theme?: string;
-    ripple?: boolean;
-    menuMode?: string;
-    transparentMenu?: boolean;
-    scale?: number;
+    inputStyle: string;
+    colorScheme: string;
+    theme: string;
+    ripple: boolean;
+    menuMode: string;
+    transparentMenu: boolean;
+    scale: number;
 }
 
 interface LayoutState {
-    staticMenuDesktopInactive?: boolean;
-    overlayMenuActive?: boolean;
-    profileSidebarVisible?: boolean;
-    configSidebarVisible?: boolean;
-    staticMenuMobileActive?: boolean;
-    menuHoverActive?: boolean;
+    staticMenuDesktopInactive: boolean;
+    overlayMenuActive: boolean;
+    profileSidebarVisible: boolean;
+    configSidebarVisible: boolean;
+    staticMenuMobileActive: boolean;
+    menuHoverActive: boolean;
 }
 
 @Injectable({

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppMenuComponent implements OnInit {
 
-    model: any[];
+    model: any[] = [];
 
     ngOnInit() {
         this.model = [

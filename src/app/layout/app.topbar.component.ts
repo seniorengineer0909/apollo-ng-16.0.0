@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MenuItem } from 'primeng/api';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
@@ -7,8 +6,6 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
     templateUrl: './app.topbar.component.html'
 })
 export class AppTopbarComponent {
-
-    items: MenuItem[];
 
     constructor(public layoutService: LayoutService) { }
 
