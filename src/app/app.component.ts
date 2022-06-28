@@ -18,7 +18,8 @@ export class AppComponent implements OnInit {
             menuMode: 'static',
             colorScheme: 'light',
             theme: 'indigo',
-            transparentMenu: false
+            transparentMenu: false,
+            scale: 14
         };
     }
 

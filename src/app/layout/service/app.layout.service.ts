@@ -8,6 +8,7 @@ export interface AppConfig {
     ripple?: boolean;
     menuMode?: string;
     transparentMenu?: boolean;
+    scale?: number;
 }
 
 interface LayoutState {
@@ -24,7 +25,15 @@ interface LayoutState {
 })
 export class LayoutService {
 
-    config: AppConfig;
+    config: AppConfig = {
+        ripple: false,
+        inputStyle: 'outlined',
+        menuMode: 'static',
+        colorScheme: 'light',
+        theme: 'indigo',
+        transparentMenu: false,
+        scale: 14
+    };
 
     state: LayoutState = {
         staticMenuDesktopInactive: false,
