@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IconService } from 'src/app/service/icon.service';
+import { IconService } from 'src/app/components/service/icon.service';
 
 @Component({
     templateUrl: './icons.component.html',

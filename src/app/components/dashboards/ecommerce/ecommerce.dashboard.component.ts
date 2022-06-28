@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Product } from 'src/app/components/api/product';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
-import { ProductService } from 'src/app/service/product.service';
+import { ProductService } from 'src/app/components/service/product.service';
 
 @Component({
     templateUrl: './ecommerce.dashboard.component.html'

@@ -15,7 +15,7 @@ import { ToastModule } from 'primeng/toast'
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction'
-import { EventService } from 'src/app/service/event.service';
+import { EventService } from 'src/app/components/service/event.service';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,

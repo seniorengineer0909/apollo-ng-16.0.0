@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SelectItem, PrimeIcons} from 'primeng/api';
 import {Product} from 'src/app/components/api/product';
-import {ProductService} from 'src/app/service/product.service';
+import {ProductService} from 'src/app/components/service/product.service';
 
 @Component({
     templateUrl: './listdemo.component.html'

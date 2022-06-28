@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/components/api/customer';
-import { CustomerService } from 'src/app/service/customer.service';
+import { CustomerService } from 'src/app/components/service/customer.service';
 
 @Component({
     templateUrl: './profilelist.component.html'
