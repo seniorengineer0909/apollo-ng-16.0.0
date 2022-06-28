@@ -4,7 +4,7 @@
     <div class="bg-circle hidden lg:flex" style="top: 50px; right:-800px; transform: rotate(60deg)"></div>
     <div class="landing-wrapper">
         <div class="flex align-items-center justify-content-between relative lg:static py-4 px-4 mx-0 md:px-7 lg:px-8 lg:py-4 lg:mx-8">
-            <a class="cursor-pointer" href="#">
+            <a class="cursor-pointer" (click)="router.navigate(['/landing'])">
                 <svg width="124" height="22" viewBox="0 0 124 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.4851 0L0 20.9465H3.53702L10.4856 6.07843L17.2944 20.9465H20.9715L10.4851 0Z" fill="var(--primary-color)"/>
                     <path d="M13.84 15.7927L16.2077 21.0016H11.7682L13.84 15.7927Z" fill="var(--primary-color)"/>
@@ -23,7 +23,7 @@
             <div class="align-items-center flex-grow-1 hidden md:flex absolute md:static w-full md:px-0 z-3 shadow-2 md:shadow-none fadein" style="top:55px; right: 0%;">
                 <ul class="list-none p-3 md:p-0 m-0 ml-auto flex md:align-items-center select-none flex-column md:flex-row cursor-pointer surface-card md:surface-ground">
                     <li>
-                        <a (click)="router.navigate(['/landing'], {fragment: 'hero'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                        <a (click)="router.navigate(['/landing'], {fragment: 'home'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
                             <span>Home</span>
                         </a>
                     </li>
@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 z-2">
-            <div id="hero" class="grid grid-nogutter justify-content-between align-items-center my-6 py-6 md:my-8 md:py-8">
+            <div id="home" class="grid grid-nogutter justify-content-between align-items-center my-6 py-6 md:my-8 md:py-8">
                 <div class="col-12 md:col-4 flex flex-column gap-4 flex-order-1 md:flex-order-0 align-items-center md:align-items-start text-center md:text-left">
                     <span class="block text-900 font-bold text-4xl">Modern, stylish and clean</span>
                     <span class="block text-700 text-lg">The ultimate collection of design-agnostic, flexible and accessible UI Components.</span>
