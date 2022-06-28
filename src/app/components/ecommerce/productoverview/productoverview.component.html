@@ -1,13 +1,13 @@
 
-<div class="surface-section px-6 py-6 border-1 surface-border" style="border-radius: 6px;">
+<div class="surface-section px-6 py-6 border-1 surface-border border-round">
     <div class="grid mb-7">
         <div class="col-12 lg:col-7">
             <div class="flex">
                 <div class="flex flex-column w-2 justify-content-between" style="row-gap: 1rem;">
-                    <img *ngFor="let image of images; let i = index" [ngClass]="{'border-primary': selectedImageIndex === i}" src="assets/demo/images/ecommerce/productoverview/{{image}}" class="w-full cursor-pointer border-2 border-transparent transition-colors transition-duration-150" style="border-radius: 6px;" (click)="selectedImageIndex = i"/>
+                    <img *ngFor="let image of images; let i = index" [ngClass]="{'border-primary': selectedImageIndex === i}" src="assets/demo/images/ecommerce/productoverview/{{image}}" class="w-full cursor-pointer border-2 border-transparent transition-colors transition-duration-150 border-round" (click)="selectedImageIndex = i"/>
                 </div>
                 <div class="pl-3 w-10 flex">
-                    <img src="assets/demo/images/ecommerce/productoverview/{{images[selectedImageIndex]}}" class="w-full border-2 border-transparent" style="border-radius: 6px;"/>
+                    <img src="assets/demo/images/ecommerce/productoverview/{{images[selectedImageIndex]}}" class="w-full border-2 border-transparent border-round"/>
                 </div>
             </div>
         </div>
