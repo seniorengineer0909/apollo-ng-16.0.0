@@ -13,13 +13,13 @@ import { Subscription } from 'rxjs';
 })
 export class CreateTaskComponent implements OnInit, OnDestroy {
 
-    task: Task;
+    task!: Task;
 
-    members: Member[];
+    members: Member[] = [];
 
-    filteredMembers: Member[];
+    filteredMembers: Member[] = [];
 
-    dialogConfig: DialogConfig;
+    dialogConfig: DialogConfig = {header: '', visible: false};
 
     subscription: Subscription;
 
@@ -35,13 +35,13 @@ export class CreateTaskComponent implements OnInit, OnDestroy {
         this.resetTask();
     }
 
-    filterMembers(event) {
+    filterMembers(event: any) {
         let filtered: Member[] = [];
         let query = event.query;
 
         for (let i = 0; i < this.members.length; i++) {
             let member = this.members[i];
-            if (member.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+            if (member.name?.toLowerCase().indexOf(query.toLowerCase()) == 0) {
                 filtered.push(member);
             }
         }
@@ -59,7 +59,7 @@ export class CreateTaskComponent implements OnInit, OnDestroy {
     }
 
     resetTask() {
-        this.task = { id: null, name: '', description: '', startDate: null, endDate: null, members: [], completed: null, status: 'Waiting' };
+        this.task = { id: this.task.id ? this.task.id : Math.floor(Math.random() * 1000), status: 'Waiting' };
     }
 
     ngOnDestroy() {

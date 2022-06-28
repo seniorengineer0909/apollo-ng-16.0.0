@@ -51,11 +51,11 @@ export class TaskService {
         this.taskSource.next(this.tasks);
     }
 
-    onTaskSelect(task) {
+    onTaskSelect(task: Task) {
         this.selectedTask.next(task);
     }
 
-    markAsCompleted(task) {
+    markAsCompleted(task: Task) {
         this.tasks = this.tasks.map(t => t.id === task.id ? task : t);
         this.taskSource.next(this.tasks);
     }

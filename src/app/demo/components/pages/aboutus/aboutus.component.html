@@ -30,7 +30,7 @@
         <div class="text-center text-lg line-height-3 mb-6">Faucibus ornare suspendisse sed nisi. Nisl rhoncus mattis rhoncus urna neque viverra justo nec.</div>
         <div class="grid">
             <div class="col-12 md:col-6 lg:col-3 p-3">
-                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 0" (mouseleave)="visibleMember = null">
+                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 0" (mouseleave)="visibleMember = -1">
                     <img src="assets/demo/images/blocks/team/team-1.png" class="w-full block" />
                     <div class="absolute top-0 left-0 h-full w-full border-round fadein animation-duration-300 select-none" style="background-color: rgba(0,0,0,0.7)" *ngIf="visibleMember === 0" >
                         <div class="flex flex-column p-5 h-full">
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="col-12 md:col-6 lg:col-3 p-3">
-                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 1" (mouseleave)="visibleMember = null">
+                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 1" (mouseleave)="visibleMember = -1">
                     <img src="assets/demo/images/blocks/team/team-2.png" class="w-full block" />
                     <div class="absolute top-0 left-0 h-full w-full border-round fadein animation-duration-300 select-none" style="background-color: rgba(0,0,0,0.7)" *ngIf="visibleMember === 1" >
                         <div class="flex flex-column p-5 h-full">
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="col-12 md:col-6 lg:col-3 p-3">
-                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 2" (mouseleave)="visibleMember = null">
+                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 2" (mouseleave)="visibleMember = -1">
                     <img src="assets/demo/images/blocks/team/team-3.png" class="w-full block" />
                     <div class="absolute top-0 left-0 h-full w-full border-round fadein animation-duration-300 select-none" style="background-color: rgba(0,0,0,0.7)" *ngIf="visibleMember === 2" >
                         <div class="flex flex-column p-5 h-full">
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="col-12 md:col-6 lg:col-3 p-3">
-                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 3" (mouseleave)="visibleMember = null">
+                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 3" (mouseleave)="visibleMember = -1">
                     <img src="assets/demo/images/blocks/team/team-4.png" class="w-full block" />
                     <div class="absolute top-0 left-0 h-full w-full border-round fadein animation-duration-300 select-none" style="background-color: rgba(0,0,0,0.7)" *ngIf="visibleMember === 3" >
                         <div class="flex flex-column p-5 h-full">

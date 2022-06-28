@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { Product } from 'src/app/demo/api/product';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 import { ProductService } from 'src/app/demo/service/product.service';
+import { Table } from 'primeng/table';
 
 @Component({
     templateUrl: './ecommerce.dashboard.component.html'
@@ -13,7 +14,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
 
     selectedWeek: any;
 
-    weeks: any[];
+    weeks: any[] = [];
 
     barData: any;
 
@@ -23,11 +24,11 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
 
     pieOptions: any;
 
-    products: Product[];
+    products: Product[] = [];
 
     subscription: Subscription;
 
-    cols: any[];
+    cols: any[] = [];
 
     constructor(private productService: ProductService, private layoutService: LayoutService) {
         this.subscription = this.layoutService.configUpdate$.subscribe(config => {
@@ -169,6 +170,10 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
         newBarData.datasets[0].data = this.selectedWeek.data[0];
         newBarData.datasets[1].data = this.selectedWeek.data[1];
         this.barData = newBarData;
+    }
+    
+    onGlobalFilter(table: Table, event: Event) {
+        table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
     }
 
     ngOnDestroy(): void {

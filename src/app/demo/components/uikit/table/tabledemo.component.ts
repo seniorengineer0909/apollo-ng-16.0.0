@@ -6,6 +6,10 @@ import { ProductService } from 'src/app/demo/service/product.service';
 import { Table } from 'primeng/table';
 import { MessageService, ConfirmationService } from 'primeng/api';
 
+interface expandedRows {
+    [key: string]: boolean;
+}
+
 @Component({
     templateUrl: './tabledemo.component.html',
     providers: [MessageService, ConfirmationService],
@@ -25,25 +29,25 @@ import { MessageService, ConfirmationService } from 'primeng/api';
 })
 export class TableDemoComponent implements OnInit {
 
-    customers1: Customer[];
+    customers1: Customer[] = [];
 
-    customers2: Customer[];
+    customers2: Customer[] = [];
 
-    customers3: Customer[];
+    customers3: Customer[] = [];
 
-    selectedCustomers1: Customer[];
+    selectedCustomers1: Customer[] = [];
 
-    selectedCustomer: Customer;
+    selectedCustomer: Customer = {};
 
-    representatives: Representative[];
+    representatives: Representative[] = [];
 
-    statuses: any[];
+    statuses: any[] = [];
 
-    products: Product[];
+    products: Product[] = [];
 
     rowGroupMetadata: any;
 
-    expandedRows = {};
+    expandedRows: expandedRows = {};
 
     activityValues: number[] = [0, 100];
 
@@ -53,9 +57,7 @@ export class TableDemoComponent implements OnInit {
 
     loading: boolean = true;
 
-    @ViewChild('dt') table: Table;
-
-    @ViewChild('filter') filter: ElementRef;
+    @ViewChild('filter') filter!: ElementRef;
 
     constructor(private customerService: CustomerService, private productService: ProductService) { }
 
@@ -104,14 +106,14 @@ export class TableDemoComponent implements OnInit {
         if (this.customers3) {
             for (let i = 0; i < this.customers3.length; i++) {
                 const rowData = this.customers3[i];
-                const representativeName = rowData.representative.name;
+                const representativeName = rowData?.representative?.name || '';
 
                 if (i === 0) {
                     this.rowGroupMetadata[representativeName] = { index: 0, size: 1 };
                 }
                 else {
                     const previousRowData = this.customers3[i - 1];
-                    const previousRowGroup = previousRowData.representative.name;
+                    const previousRowGroup = previousRowData?.representative?.name;
                     if (representativeName === previousRowGroup) {
                         this.rowGroupMetadata[representativeName].size++;
                     }
@@ -125,7 +127,7 @@ export class TableDemoComponent implements OnInit {
 
     expandAll() {
         if (!this.isExpanded) {
-            this.products.forEach(product => this.expandedRows[product.name] = true);
+            this.products.forEach(product => product && product.name ? this.expandedRows[product.name] = true : '');
 
         } else {
             this.expandedRows = {};
@@ -133,8 +135,12 @@ export class TableDemoComponent implements OnInit {
         this.isExpanded = !this.isExpanded;
     }
 
-    formatCurrency(value) {
+    formatCurrency(value: number) {
         return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    }
+
+    onGlobalFilter(table: Table, event: Event) {
+        table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
     }
 
     clear(table: Table) {

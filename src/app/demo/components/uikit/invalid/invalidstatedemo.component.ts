@@ -6,11 +6,11 @@ import { CountryService } from 'src/app/demo/service/country.service';
 })
 export class InvalidStateDemoComponent implements OnInit {
 
-    countries: any[];
+    countries: any[] = [];
 
     cities: any[];
 
-    filteredCountries: any[];
+    filteredCountries: any[] = [];
 
     value1: any;
 
@@ -48,7 +48,7 @@ export class InvalidStateDemoComponent implements OnInit {
         });
     }
 
-    searchCountry(event) {
+    searchCountry(event: any) {
         // in a real application, make a request to a remote url with the query and return filtered results,
         // for demo we filter at client side
         const filtered: any[] = [];

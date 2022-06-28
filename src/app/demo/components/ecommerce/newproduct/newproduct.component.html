@@ -19,7 +19,7 @@
                     <p-editor [(ngModel)]="product.description" [style]="{'height':'250px'}"></p-editor>
                 </div>
                 <div class="col-12 field">
-                    <p-fileUpload #fileUploader name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" [customUpload]="true" multiple="true" (onSelect)="onUpload($event)" accept="image/*" [showUploadButton]="true" [showCancelButton]="false" [auto]="true" styleClass="border-1 surface-border surface-card border-round">
+                    <p-fileUpload #fileUploader name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" [customUpload]="true" [multiple]="true" (onSelect)="onUpload($event)" accept="image/*" [showUploadButton]="true" [showCancelButton]="false" [auto]="true" styleClass="border-1 surface-border surface-card border-round">
                         <ng-template pTemplate="content">
                             <div class="h-15rem overflow-y-auto py-3 border-round" style="cursor: copy" (click)="fileUploader.advancedFileInput.nativeElement.click()">
                                 <div *ngIf="!product.images.length" class="flex flex-column w-full h-full justify-content-center align-items-center">

@@ -5,25 +5,25 @@ import { MegaMenuItem, MenuItem } from 'primeng/api';
 })
 export class MenusComponent implements OnInit {
 
-    breadcrumbItems: MenuItem[];
+    breadcrumbItems: MenuItem[] = [];
 
-    tieredItems: MenuItem[];
+    tieredItems: MenuItem[] = [];
 
-    items: MenuItem[];
+    items: MenuItem[] = [];
 
-    routeItems: MenuItem[];
+    routeItems: MenuItem[] = [];
 
-    megaMenuItems: MegaMenuItem[];
+    megaMenuItems: MegaMenuItem[] = [];
 
-    panelMenuItems: MenuItem[];
+    panelMenuItems: MenuItem[] = [];
 
-    stepsItems: MenuItem[];
+    stepsItems: MenuItem[] = [];
 
-    slideItems: MenuItem[];
+    slideItems: MenuItem[] = [];
 
-    menuItems: MenuItem[];
+    menuItems: MenuItem[] = [];
 
-    plainMenuItems: MenuItem[];
+    plainMenuItems: MenuItem[] = [];
 
     pageIndex: number = 0;
 

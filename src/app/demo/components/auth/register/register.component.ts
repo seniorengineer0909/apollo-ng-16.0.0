@@ -6,7 +6,7 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
 })
 export class RegisterComponent {
 
-	confirmed: boolean;
+	confirmed: boolean = false;
 
 	constructor(private layoutService: LayoutService) {}
 

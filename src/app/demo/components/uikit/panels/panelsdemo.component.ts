@@ -6,9 +6,9 @@ import { MenuItem } from 'primeng/api';
 })
 export class PanelsDemoComponent implements OnInit {
 
-    items: MenuItem[];
+    items: MenuItem[] = [];
 
-    cardMenu: MenuItem[];
+    cardMenu: MenuItem[] = [];
 
     ngOnInit() {
         this.items = [

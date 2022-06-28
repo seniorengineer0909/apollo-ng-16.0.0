@@ -6,7 +6,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class ButtonDemoComponent implements OnInit {
 
-    items: MenuItem[];
+    items: MenuItem[] = [];
 
     loading = [false, false, false, false];
 
@@ -20,7 +20,7 @@ export class ButtonDemoComponent implements OnInit {
         ];
     }
 
-    load(index) {
+    load(index: number) {
         this.loading[index] = true;
         setTimeout(() => this.loading[index] = false, 1000);
     }

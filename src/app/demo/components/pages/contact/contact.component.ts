@@ -8,23 +8,23 @@ export class ContactComponent {
     
     options: any;
 
-    overlays: any[];
+    overlays: any[] = [];
 
-    dialogVisible: boolean;
+    dialogVisible: boolean = false;
 
-    markerTitle: string;
+    markerTitle: string = '';
 
     selectedPosition: any;
 
     infoWindow: any;
 
-    draggable: boolean;
+    draggable: boolean = false;
 
-    name: string;
+    name: string = '';
 
-    email: string;
+    email: string = '';
 
-    message: string;
+    message: string = '';
 
     content: any[] = [
         {icon: 'pi pi-fw pi-phone', title: 'Phone', info:'1 (833) 597-7538'},

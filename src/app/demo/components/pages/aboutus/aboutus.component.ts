@@ -5,6 +5,6 @@ import {Component} from '@angular/core';
 })
 export class AboutUsComponent {
 
-    visibleMember: number = null;
+    visibleMember: number = -1;
     
 }

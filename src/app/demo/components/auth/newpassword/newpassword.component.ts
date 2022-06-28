@@ -6,7 +6,7 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
 })
 export class NewPasswordComponent {
 
-	rememberMe: boolean;
+	rememberMe: boolean = false;
 
 	constructor(private layoutService: LayoutService) {}
 

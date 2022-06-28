@@ -9,23 +9,23 @@ import { ProductService } from 'src/app/demo/service/product.service';
 })
 export class OverlaysDemoComponent implements OnInit {
 
-    images: any[];
+    images: any[] = [];
 
-    display: boolean;
+    display: boolean = false;
 
-    products: Product[];
+    products: Product[] = [];
 
-    selectedProduct: Product;
+    selectedProduct: Product = {};
 
-    visibleSidebar1;
+    visibleSidebar1: boolean = false;
 
-    visibleSidebar2;
+    visibleSidebar2: boolean = false;
 
-    visibleSidebar3;
+    visibleSidebar3: boolean = false;
 
-    visibleSidebar4;
+    visibleSidebar4: boolean = false;
 
-    visibleSidebar5;
+    visibleSidebar5: boolean = false;
 
     constructor(private productService: ProductService, private confirmationService: ConfirmationService, private messageService: MessageService) { }
 
@@ -61,7 +61,7 @@ export class OverlaysDemoComponent implements OnInit {
     confirm2(event: Event) {
         this.confirmationService.confirm({
             key: 'confirm2',
-            target: event.target,
+            target: event.target || new EventTarget,
             message: 'Are you sure that you want to proceed?',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
@@ -73,7 +73,7 @@ export class OverlaysDemoComponent implements OnInit {
         });
     }
 
-    formatCurrency(value) {
+    formatCurrency(value: number) {
         return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     }
 }

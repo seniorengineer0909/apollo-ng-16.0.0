@@ -10,15 +10,15 @@ export class TaskListAppComponent implements OnDestroy {
 
     subscription: Subscription;
 
-    todo: Task[];
+    todo: Task[] = [];
 
-    completed: Task[];
+    completed: Task[] = [];
 
     constructor(private taskService: TaskService) {
         this.subscription = this.taskService.taskSource$.subscribe(data => this.categorize(data));
     }
 
-    categorize(tasks) {
+    categorize(tasks: Task[]) {
         this.todo = tasks.filter(t => t.completed !== true);
         this.completed = tasks.filter(t => t.completed);
     }

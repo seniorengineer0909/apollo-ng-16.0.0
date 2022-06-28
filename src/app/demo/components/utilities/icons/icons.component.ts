@@ -6,9 +6,9 @@ import { IconService } from 'src/app/demo/service/icon.service';
 })
 export class IconsComponent implements OnInit {
 
-    icons: any[];
+    icons: any[] = [];
 
-    filteredIcons: any[];
+    filteredIcons: any[] = [];
 
     selectedIcon: any;
 
@@ -35,7 +35,7 @@ export class IconsComponent implements OnInit {
         });
     }
 
-    onFilter(event: KeyboardEvent): void {
+    onFilter(event: Event): void {
         const searchText = (event.target as HTMLInputElement).value;
 
         if (!searchText) {

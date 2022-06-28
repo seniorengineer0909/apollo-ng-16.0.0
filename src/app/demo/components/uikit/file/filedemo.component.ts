@@ -11,7 +11,7 @@ export class FileDemoComponent {
 
     constructor(private messageService: MessageService) {}
 
-    onUpload(event) {
+    onUpload(event: any) {
         for (const file of event.files) {
             this.uploadedFiles.push(file);
         }
@@ -19,7 +19,7 @@ export class FileDemoComponent {
         this.messageService.add({severity: 'info', summary: 'Success', detail: 'File Uploaded'});
     }
 
-    onBasicUpload(event) {
+    onBasicUpload() {
         this.messageService.add({severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode'});
     }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/demo/api/product';
 import { ProductService } from 'src/app/demo/service/product.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { Table } from 'primeng/table';
 
 @Component({
     templateUrl: './crud.component.html',
@@ -9,23 +10,23 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 })
 export class CrudComponent implements OnInit {
 
-    productDialog: boolean;
+    productDialog: boolean = false;
 
     deleteProductDialog: boolean = false;
 
     deleteProductsDialog: boolean = false;
 
-    products: Product[];
+    products: Product[] = [];
 
-    product: Product;
+    product: Product = {};
 
-    selectedProducts: Product[];
+    selectedProducts: Product[] = [];
 
-    submitted: boolean;
+    submitted: boolean = false;
 
-    cols: any[];
+    cols: any[] = [];
 
-    statuses: any[];
+    statuses: any[] = [];
 
     rowsPerPageOptions = [5, 10, 20];
 
@@ -73,7 +74,7 @@ export class CrudComponent implements OnInit {
         this.deleteProductsDialog = false;
         this.products = this.products.filter(val => !this.selectedProducts.includes(val));
         this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
-        this.selectedProducts = null;
+        this.selectedProducts = [];
     }
 
     confirmDelete() {
@@ -91,7 +92,7 @@ export class CrudComponent implements OnInit {
     saveProduct() {
         this.submitted = true;
 
-        if (this.product.name.trim()) {
+        if (this.product.name?.trim()) {
             if (this.product.id) {
                 // @ts-ignore
                 this.product.inventoryStatus = this.product.inventoryStatus.value ? this.product.inventoryStatus.value : this.product.inventoryStatus;
@@ -132,5 +133,9 @@ export class CrudComponent implements OnInit {
             id += chars.charAt(Math.floor(Math.random() * chars.length));
         }
         return id;
+    }
+
+    onGlobalFilter(table: Table, event: Event) {
+        table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
     }
 }

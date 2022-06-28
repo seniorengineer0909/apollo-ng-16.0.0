@@ -97,7 +97,7 @@
                 <div class="inline-flex align-items-center">
                     <span class="p-input-icon-left flex-auto">
                         <i class="pi pi-search"></i>
-                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search" class="w-full" style="border-radius: 2rem"/>
+                        <input pInputText type="text" (input)="onGlobalFilter(dt, $event)" placeholder="Search" class="w-full" style="border-radius: 2rem"/>
                     </span>
                     <button pButton pRipple icon="pi pi-upload" class="p-button-rounded mx-3" (click)="dt.exportCSV()"></button>
                 </div>
@@ -150,7 +150,7 @@
                         <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.name" width="75" class="shadow-2 flex-shrink-0" />
                         <div class="flex flex-column ml-3">
                             <span class="font-medium text-lg mb-1">{{product.name}}</span>
-                            <p-rating [ngModel]="product.rating" readonly="true" [cancel]="false" [iconOnStyle]="{'fontSize':'12px'}"  [iconOffStyle]="{'fontSize':'12px'}"></p-rating>
+                            <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false" [iconOnStyle]="{'fontSize':'12px'}"  [iconOffStyle]="{'fontSize':'12px'}"></p-rating>
                         </div>
                     </div>
                     <span class="ml-auto font-semibold text-xl p-text-secondary">${{product.price}}</span>

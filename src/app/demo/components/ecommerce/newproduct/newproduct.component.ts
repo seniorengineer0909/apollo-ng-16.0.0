@@ -12,7 +12,12 @@ interface Product {
     stock: string;
     inStock: boolean;
     description: string;
-    images: string[];
+    images: image[];
+}
+
+interface image {
+    name: string;
+    objectURL: string;
 }
 
 @Component({
@@ -21,9 +26,9 @@ interface Product {
 })
 export class NewProductComponent {
 
-    @ViewChildren('buttonEl') buttonEl: QueryList<ElementRef>;
+    @ViewChildren('buttonEl') buttonEl!: QueryList<ElementRef>;
 
-    text: string;
+    text: string = '';
 
     categoryOptions = ['Sneakers', 'Apparel', 'Socks'];
 
@@ -52,33 +57,33 @@ export class NewProductComponent {
 
     showRemove: boolean = false;
 
-    onChipRemove(item) {
+    onChipRemove(item: string) {
         this.product.tags = this.product.tags.filter(i => i !== item);
     }
 
-    onColorSelect(color) {
+    onColorSelect(color: string) {
         this.product.colors.indexOf(color) == -1 ? this.product.colors.push(color) : this.product.colors.splice(this.product.colors.indexOf(color), 1);
     }
 
-    onUpload(event) {
+    onUpload(event: any) {
         for (let file of event.files) {
             this.product.images.push(file);
         }
     }
 
-    onImageMouseOver(file) {
+    onImageMouseOver(file: image) {
         this.buttonEl.toArray().forEach(el => {
             el.nativeElement.id === file.name ? el.nativeElement.style.display = 'flex' : null;
         })
     }
 
-    onImageMouseLeave(file) {
+    onImageMouseLeave(file: image) {
         this.buttonEl.toArray().forEach(el => {
             el.nativeElement.id === file.name ? el.nativeElement.style.display = 'none' : null;
         })
     }
 
-    removeImage(file) {
+    removeImage(file: image) {
         this.product.images = this.product.images.filter(i => i !== file);
     }
 

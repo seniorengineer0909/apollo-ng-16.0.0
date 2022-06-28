@@ -8,9 +8,9 @@ import { Product } from 'src/app/demo/api/product';
 })
 export class MediaDemoComponent implements OnInit {
 
-    products: Product[];
+    products: Product[] = [];
 
-    images: any[];
+    images: any[] = [];
 
     galleriaResponsiveOptions: any[] = [
         {

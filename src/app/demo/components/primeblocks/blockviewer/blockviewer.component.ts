@@ -40,13 +40,13 @@ enum BlockView {
 })
 export class BlockViewer {
 
-	@Input() header: string;
+	@Input() header!: string;
 
-	@Input() code: string;
+	@Input() code!: string;
 
-	@Input() containerClass: string;
+	@Input() containerClass!: string;
 
-	@Input() previewStyle: string;
+	@Input() previewStyle!: object;
 
 	@Input() free: boolean = true;
 

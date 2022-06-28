@@ -18,7 +18,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
 
 	chartOptions: any;
 
-    payments: MonthlyPayment[];
+    payments: MonthlyPayment[] = [];
 
 	subscription: Subscription;
 
@@ -79,7 +79,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 },
 				tooltip: {
 					callbacks: {
-						label: function(context) {
+						label: function(context: any) {
 							let label = context.dataset.label || '';
 	
 							if (label) {

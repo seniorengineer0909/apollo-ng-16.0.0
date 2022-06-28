@@ -51,37 +51,37 @@ import { SelectItem } from 'primeng/api';
     `]
 })
 export class InputDemoComponent implements OnInit {
-    countries: any[];
+    countries: any[] = [];
 
-    filteredCountries: any[];
+    filteredCountries: any[] = [];
 
-    selectedCountryAdvanced: any[];
+    selectedCountryAdvanced: any[] = [];
 
     valSlider = 50;
 
     valColor = '#424242';
 
-    valRadio: string;
+    valRadio: string = '';
 
     valCheck: string[] = [];
 
-    valSwitch: boolean;
+    valSwitch: boolean = false;
 
-    cities: SelectItem[];
+    cities: SelectItem[] = [];
 
-    selectedList: SelectItem;
+    selectedList: SelectItem = { value: '' };
 
-    selectedDrop: SelectItem;
+    selectedDrop: SelectItem = { value: '' };
 
-    selectedMulti: string[] = [];
+    selectedMulti: any[] = [];
 
     valToggle = false;
 
-    paymentOptions: any[];
+    paymentOptions: any[] = [];
 
-    valSelect1: string;
+    valSelect1: string = "";
 
-    valSelect2: string;
+    valSelect2: string = "";
 
     valueKnob = 20;
 
@@ -107,7 +107,7 @@ export class InputDemoComponent implements OnInit {
         ];
     }
 
-    filterCountry(event) {
+    filterCountry(event: any) {
         const filtered: any[] = [];
         const query = event.query;
         for (let i = 0; i < this.countries.length; i++) {

@@ -7,9 +7,9 @@ import { PrimeIcons } from 'primeng/api';
 })
 export class TimelineDemoComponent {
 
-    events1: any[];
+    events1: any[] = [];
 
-    events2: any[];
+    events2: any[] = [];
 
     ngOnInit() {
         this.events1 = [

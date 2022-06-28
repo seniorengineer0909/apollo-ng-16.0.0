@@ -8,13 +8,13 @@ import {  Directive, ElementRef, OnDestroy, Renderer2, Input, OnInit } from '@an
 })
 export class AnimateEnter implements OnInit, OnDestroy {
 
-    @Input('animateEnter') animation: string;
+    @Input('animateEnter') animation!: string;
 
-    documentScrollListener: Function;
+    documentScrollListener: Function | null = null;
 
-    loadListener: Function;
+    loadListener: Function = () => { };
 
-    entered: boolean;
+    entered: boolean = false;
 
     constructor(public el: ElementRef, public renderer: Renderer2) { }
 
@@ -39,7 +39,7 @@ export class AnimateEnter implements OnInit, OnDestroy {
 
         if (!this.entered) {
             this.documentScrollListener = this.renderer.listen('window', 'scroll', () => {
-                if (this.isInViewPort()) {
+                if (this.isInViewPort() && this.documentScrollListener) {
                     this.enter();
                     this.documentScrollListener();
                     this.documentScrollListener = null;

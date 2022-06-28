@@ -11,15 +11,15 @@ import { TaskService } from '../service/task.service';
 })
 export class TaskCardComponent implements OnInit {
 
-    @Input() taskList: Task[];
+    @Input() taskList!: Task[];
 
-    @Input() title: string;
+    @Input() title!: string;
 
-    @ViewChild('menu') menu: Menu;
+    @ViewChild('menu') menu!: Menu;
 
-    menuItems: MenuItem[];
+    menuItems: MenuItem[] = [];
 
-    clickedTask: Task;
+    clickedTask!: Task;
 
     constructor(private taskService: TaskService) { }
 
@@ -30,7 +30,7 @@ export class TaskCardComponent implements OnInit {
         ];
     }
 
-    parseDate(date) {
+    parseDate(date: Date) {
         let d = new Date(date);
         return d.toUTCString().split(' ').slice(1, 3).join(' ');
     }
@@ -49,7 +49,7 @@ export class TaskCardComponent implements OnInit {
         this.taskService.showDialog('Edit Task');
     }
 
-    onCheckboxChange(event, task) {
+    onCheckboxChange(event: any, task: Task) {
         event.originalEvent.stopPropagation();
         task.completed = event.checked;
         this.taskService.markAsCompleted(task);

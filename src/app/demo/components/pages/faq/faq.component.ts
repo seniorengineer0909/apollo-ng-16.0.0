@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaqComponent implements OnInit {
 
-    items: any[];
+    items: any[] = [];
 
     activeIndex: number = 0;
 

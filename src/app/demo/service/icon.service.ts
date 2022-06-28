@@ -9,7 +9,7 @@ export class IconService {
 
     constructor(private http: HttpClient) { }
 
-    icons: any[];
+    icons: any[] = [];
 
     selectedIcon: any;
 

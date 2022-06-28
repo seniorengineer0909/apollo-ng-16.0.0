@@ -5,10 +5,10 @@
 			<p-dataView #dv [value]="products" [paginator]="true" [rows]="9" filterBy="name" [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
 				<ng-template pTemplate="header">
 					<div class="grid grid-nogutter flex-column md:flex-row justify-content-between">
-						<p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Price" (onChange)="onSortChange($event)"></p-dropdown>
+						<p-dropdown [options]="sortOptions" placeholder="Sort By Price" (onChange)="onSortChange($event)"></p-dropdown>
 						<span class="p-input-icon-left mb-2 md:mb-0">
                             <i class="pi pi-search"></i>
-                            <input type="search" pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
+                            <input type="search" pInputText placeholder="Search by Name" (input)="onFilter(dv, $event)">
                         </span>	
 						<p-dataViewLayoutOptions></p-dataViewLayoutOptions>
 					</div>
@@ -66,7 +66,7 @@
 	<div class="col-12 lg:col-8">
 		<div class="card">
 			<h5>PickList</h5>
-			<p-pickList [source]="sourceCities" [target]="targetCities" sourceHeader="From" targetHeader="To" dragdrop="true"
+			<p-pickList [source]="sourceCities" [target]="targetCities" sourceHeader="From" targetHeader="To" [dragdrop]="true"
 						[responsive]="true" [sourceStyle]="{'height':'250px'}" [targetStyle]="{'height':'250px'}">
 				<ng-template let-city pTemplate="item">
 					<div>{{city.name}}</div>
@@ -78,7 +78,7 @@
 	<div class="col-12 lg:col-4">
 		<div class="card">
 			<h5>OrderList</h5>
-			<p-orderList [value]="orderCities" header="Cities" dragdrop="true" [listStyle]="{'height':'250px'}">
+			<p-orderList [value]="orderCities" header="Cities" [dragdrop]="true" [listStyle]="{'height':'250px'}">
 				<ng-template let-city pTemplate="item">
 					<div>{{city.name}}</div>
 				</ng-template>

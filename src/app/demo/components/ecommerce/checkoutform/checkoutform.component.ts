@@ -7,7 +7,7 @@ export class CheckoutFormComponent {
 
     quantities: number[] = [1, 1, 1];
 
-    value: string;
+    value: string = '';
 
     checked: boolean = true;
 
@@ -21,6 +21,6 @@ export class CheckoutFormComponent {
         { name: 'Paris', code: 'PRS' }
     ];
 
-    selectedCity: string;
+    selectedCity: string = '';
 
 }

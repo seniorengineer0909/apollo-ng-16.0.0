@@ -9,9 +9,9 @@ export class ProductOverviewComponent implements OnInit {
 
     size: string = 'M';
 
-    liked: boolean;
+    liked: boolean = false;
 
-    images: string[];
+    images: string[] = [];
 
     selectedImageIndex: number = 0;
 

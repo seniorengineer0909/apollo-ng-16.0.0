@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 })
 export class ProfileCreateComponent { 
 
-    countries: any[];
+    countries: any[] = [];
 
     ngOnInit() {
         this.countries = [
