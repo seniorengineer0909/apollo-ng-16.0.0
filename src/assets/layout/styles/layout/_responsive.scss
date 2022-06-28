@@ -99,6 +99,13 @@
 @media screen and (min-width: 1729px) {
     .layout-content, .landing-wrapper {
         width: 1504px;
-        margin: 0 auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .layout-topbar {
+        width: 1504px;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }

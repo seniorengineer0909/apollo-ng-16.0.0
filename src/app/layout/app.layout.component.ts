@@ -23,7 +23,6 @@ export class AppLayoutComponent implements OnDestroy {
                 this.menuOutsideClickListener = this.renderer.listen('document', 'click', event => {
                     const isOutsideClicked = !(this.appSidebar.el.nativeElement.isSameNode(event.target) || this.appSidebar.el.nativeElement.contains(event.target)
                         || event.target.classList.contains('p-trigger') || event.target.parentNode.classList.contains('p-trigger'));
-
                     if (isOutsideClicked) {
                         this.layoutService.state.overlayMenuActive = false;
                         this.layoutService.state.staticMenuMobileActive = false;
