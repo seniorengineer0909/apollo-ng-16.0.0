@@ -38,8 +38,8 @@
                         </a>
                     </li>
                     <li>
-                        <a pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
-                            <span>Support</span>
+                        <a (click)="router.navigate(['/landing'], {fragment: 'pricing'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                            <span>Pricing</span>
                         </a>
                     </li>
                     <li>
@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 z-2">
-            <div id="hero" #hero class="grid grid-nogutter justify-content-between align-items-center my-6 py-6 md:my-8 md:py-8">
+            <div id="hero" class="grid grid-nogutter justify-content-between align-items-center my-6 py-6 md:my-8 md:py-8">
                 <div class="col-12 md:col-4 flex flex-column gap-4 flex-order-1 md:flex-order-0 align-items-center md:align-items-start text-center md:text-left">
                     <span class="block text-900 font-bold text-4xl">Modern, stylish and clean</span>
                     <span class="block text-700 text-lg">The ultimate collection of design-agnostic, flexible and accessible UI Components.</span>
