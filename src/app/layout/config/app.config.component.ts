@@ -12,6 +12,8 @@ export class AppConfigComponent implements OnInit {
 
     componentThemes: any[];
 
+    scales: number[] = [12,13,14,15,16];
+
     constructor(public layoutService: LayoutService, public menuService: MenuService) { }
 
     get visible(): boolean {
@@ -20,6 +22,14 @@ export class AppConfigComponent implements OnInit {
 
     set visible(_val: boolean) {
         this.layoutService.state.configSidebarVisible = _val;
+    }
+
+    get scale(): number {
+        return this.layoutService.config.scale;
+    }
+
+    set scale(_val: number) {
+        this.layoutService.config.scale = _val;
     }
 
     get menuMode(): string {
@@ -119,4 +129,19 @@ export class AppConfigComponent implements OnInit {
             onComplete();
         });
     }
+
+    decrementScale() {
+        this.scale--;
+        this.applyScale();
+    }
+
+    incrementScale() {
+        this.scale++;
+        this.applyScale();
+    }
+
+    applyScale() {
+        document.documentElement.style.fontSize = this.scale + 'px';
+    }
+    
 }
