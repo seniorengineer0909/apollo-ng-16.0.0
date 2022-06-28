@@ -53,7 +53,7 @@ import { LayoutService } from './service/app.layout.service';
             })),
             state('visible', style({
                 display: 'block',
-                zIndex: 1
+                zIndex: 2
             })),
             transition('collapsed <=> expanded', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)'))
         ])
