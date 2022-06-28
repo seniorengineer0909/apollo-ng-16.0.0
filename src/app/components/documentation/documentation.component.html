@@ -1,0 +1,133 @@
+<div>
+    <h2>Documentation</h2>
+    <h4>Getting Started</h4>
+    <p>Diamond is an application template for Angular and is distributed as a CLI project. Current versions is Angular v13 with PrimeNG v13. In case CLI is not installed already, use the command below to set it up.</p>
+
+<app-code  ngPreserveWhitespaces ngNonBindable lang="markup">
+npm install -g @angular/cli
+</app-code>
+
+    <p>Once CLI is ready in your system, extract the contents of the zip file distribution, cd to the directory,
+        install the libraries from npm and then execute "ng serve" to run the application in your local environment.</p>
+
+<app-code ngPreserveWhitespaces ngNonBindable lang="markup">
+cd diamond
+npm install
+ng serve
+</app-code>
+
+    <p>The application should run at <span class="font-semibold">http://localhost:4200/</span>, you may now start with the development of your application.</p>
+
+    <h5>Important CLI Commands</h5>
+    <p>Following commands are derived from CLI.</p>
+<app-code ngPreserveWhitespaces ngNonBindable lang="markup">
+Run 'ng serve' for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Run 'ng generate component component-name' to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+
+Run 'ng build' to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+Run 'ng test' to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+Run 'ng e2e' to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+Run 'ng help' for more options.
+</app-code>
+
+    <h4>Structure</h4>
+    <p>Diamond consists of 3 main parts; the application layout, layout assets and PrimeNG component theme assets. Layout is placed inside the <span class="text-primary font-medium">src/app/layout</span> folder,
+        and the assets are in the <span class="text-primary font-medium">src/assets/layout</span> folder.
+    </p>
+
+    <h5>Menu</h5>
+    <p>Menu is a separate component defined in <span class="text-primary font-medium">src/app/layout/app.menu.component.ts</span> file and based on PrimeNG MenuModel API. In order to define the menuitems,
+        navigate to this file and define your own model as a nested structure.</p>
+
+<app-code ngPreserveWhitespaces ngNonBindable lang="javascript">
+import &#123; OnInit &#125; from '@angular/core';
+import &#123; Component &#125; from '@angular/core';
+
+@Component(&#123;
+    selector: 'app-menu',
+    templateUrl: './app.menu.component.html'
+&#125;)
+export class AppMenuComponent implements OnInit &#123;
+
+    model: any[];
+
+    ngOnInit() &#123;
+        this.model = [
+            &#123;
+                label: 'Dashboards',
+                icon: 'pi pi-home',
+                items: [
+                    &#123;
+                        label: 'E-Commerce',
+                        icon: 'pi pi-fw pi-home',
+                        routerLink: ['/']
+                    &#125;,
+                    &#123;
+                        label: 'Banking',
+                        icon: 'pi pi-fw pi-image',
+                        routerLink: ['/dashboard-banking']
+                    &#125;
+                ]
+            &#125;,
+            //...
+        ];
+    &#125;
+&#125;
+</app-code>
+
+    <h4>Theme</h4>
+    <p>Apollo provides 24 PrimeNG themes out of the box. Setup of a theme is simple by including the css of theme
+        to your bundle that are located inside <span class="text-primary font-medium">assets/layout/styles/theme/</span> 
+        folder such as <span class="text-primary font-medium">assets/layout/styles/theme/theme-light/blue/theme.css</span>.</p>
+
+    <p>A custom theme can be developed by the following steps.</p>
+    <ul>
+        <li class="line-height-4">Choose a custom theme name such as "mytheme".</li>
+        <li class="line-height-4">Create a folder named "mytheme" under <span class="font-semibold">assets/layouts/styles/theme-light/</span> folder.</li>
+        <li class="line-height-4">Create a file such as theme.scss inside your "mytheme" folder.</li>
+        <li class="line-height-4">Define the variables listed below in your file and import the dependencies.</li>
+        <li class="line-height-4">Include the theme.scss to your application.</li>
+    </ul>
+
+    <p>Here are the variables required to create a theme.</p>
+<app-code ngPreserveWhitespaces ngNonBindable lang="css">
+$primaryColor: #3B82F6 !default;
+$primaryLightColor: #BFDBFE !default;
+$primaryDarkColor: #2563eb !default;
+$primaryDarkerColor: #1D4ED8 !default;
+$primaryTextColor: #ffffff !default;
+$primary500:#3B82F6 !default;
+
+$highlightBg: #EFF6FF !default;
+$highlightTextColor: $primaryDarkerColor !default;
+
+@import '../_variables';
+@import '../../designer/_components';
+@import '../_extensions';
+</app-code>
+
+    <h5>Theme Switcher</h5>
+    <p>Dynamic theming is built-in to the template and implemented by including the theme via a link tag instead of bundling the theme along with a configurator component to switch it. 
+        In order to switch your theme dynamically as well, it needs to be compiled to css. An example sass command to compile the css would be;
+    </p>
+
+<app-code ngPreserveWhitespaces ngNonBindable lang="markup">
+sass --update src/assets/theme/mytheme/theme.scss:src/assets/theme/mytheme/theme.css
+</app-code>
+
+    <p>Another alternative would be creating dynamic bundles, please see the <a href="https://www.youtube.com/watch?v=5VOuUdDXRsE" class="font-medium text-primary hover:underline">video tutorial</a> for an example.</p>
+
+    <h5>Theme Designer</h5>
+    <p>Apollo includes a simplified version of the <a href="">PrimeNG Theme Designer</a> that only includes the main SASS structure. Full list of SASS variables to customize the components further is available at the 
+        <a href="https://www.primefaces.org/designer/api/primeng/13.2.0/" class="font-medium text-primary hover:underline">SASS API</a> docs.
+    </p>
+
+    <h4>Migration Guide</h4>
+    <p>Every important change is included in <b>CHANGELOG.md</b> file at the root folder of the distribution along with the instructions to update. Whenever a major version of Angular is released, a new version of the template
+    is provided that mainly brings compatibility support to the PrimeNG component theming. If there are no compatibility issues on component theming e.g. new components or new functionality to PrimeNG, 
+    you may still update your application to the latest Angular and PrimeNG without the need to waiting for an update.</p>
+</div>
