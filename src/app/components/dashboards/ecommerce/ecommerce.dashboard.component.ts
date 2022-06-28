@@ -27,6 +27,8 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
 
     subscription: Subscription;
 
+    cols: any[];
+
     constructor(private productService: ProductService, private layoutService: LayoutService) {
         this.subscription = this.layoutService.configUpdate$.subscribe(config => {
             this.initCharts();
@@ -48,6 +50,13 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
         this.selectedWeek = this.weeks[0];
         this.initCharts();
         this.productService.getProductsSmall().then(data => this.products = data);
+
+        this.cols = [
+            {header: 'Name', field: 'name'},
+            {header: 'Category', field: 'category'},
+            {header: 'Price', field: 'price'},
+            {header: 'Status', field: 'inventoryStatus'}
+        ]
     }
 
     initCharts() {

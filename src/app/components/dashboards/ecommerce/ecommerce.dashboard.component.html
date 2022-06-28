@@ -102,7 +102,7 @@
                     <button pButton pRipple icon="pi pi-upload" class="p-button-rounded mx-3" (click)="dt.exportCSV()"></button>
                 </div>
             </div>
-            <p-table #dt [value]="products" [paginator]="true" [rows]="5" responsiveLayout="scroll" [globalFilterFields]="['name','category','inventoryStatus']">
+            <p-table #dt [value]="products" [columns]="cols" [paginator]="true" [rows]="5" responsiveLayout="scroll" [globalFilterFields]="['name','category','inventoryStatus']">
                 <ng-template pTemplate="header">
                     <tr>
                         <th pSortableColumn="name" style="min-width:12rem" class="white-space-nowrap">Name
