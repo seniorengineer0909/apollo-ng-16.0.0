@@ -135,11 +135,13 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
         // toggle active state
         if (this.item.items) {
-            if (this.active)
-                this.menuService.onMenuStateChange(null);
-            else
-                this.menuService.onMenuStateChange(this.key);
+            this.active = !this.active;
 
+            if (this.active)
+                this.menuService.onMenuStateChange(this.key);
+            else
+                this.menuService.onMenuStateChange(null);
+                
             if (this.root && this.active && (this.isSlim || this.isHorizontal)) {
                 this.layoutService.onOverlaySubmenuOpen();
             }
