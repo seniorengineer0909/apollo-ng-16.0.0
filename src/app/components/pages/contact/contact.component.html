@@ -2,12 +2,12 @@
     <div class="col-12">
         <p class="text-900 font-bold">Contact Us</p>
     </div>
-    <div class="col-12 mt-3 h-20rem border-1 surface-border p-0 w-full bg-cover" style="border-radius: 6px;" [ngStyle]="mapStyle">
+    <div class="col-12 mt-3 h-20rem border-1 surface-border p-0 w-full bg-cover border-round" [ngStyle]="mapStyle">
         
     </div>
     <div class="col-12 mt-5">
         <div class="grid grid-nogutter px-2 flex-column md:flex-row" style="column-gap: 2rem; row-gap: 2rem;">
-            <div *ngFor="let item of content" class="col flex flex-column justify-content-center text-center align-items-center border-1 surface-border py-5 px-4" style="border-radius: 6px;">
+            <div *ngFor="let item of content" class="col flex flex-column justify-content-center text-center align-items-center border-1 surface-border py-5 px-4 border-round">
                 <i class="pi pi-fw text-2xl text-primary" [class]="item.icon"></i>
                 <span class="text-900 font-bold mt-4 mb-1">{{item.title}}</span>
                 <span class="text-500">{{item.info}}</span>
@@ -36,8 +36,8 @@
 
             <div class="field col-12 flex flex-column">
                 <label for="message" class="block text-indigo-300 font-bold">Message</label>
-                <textarea id="message" rows="5" pInputTextarea class="w-full surface-border p-4 text-900 font-semibold" style="border-radius: 6px;" [autoResize]="true" [(ngModel)]="message"></textarea>
-                <button pButton class="p-button-primary ml-auto mt-3" label="Send Message" style="border-radius: 6px;"></button>
+                <textarea id="message" rows="5" pInputTextarea class="w-full surface-border p-4 text-900 font-semibold border-round" [autoResize]="true" [(ngModel)]="message"></textarea>
+                <button pButton class="p-button-primary ml-auto mt-3 border-round" label="Send Message"></button>
             </div>
         </div>
     </div>
