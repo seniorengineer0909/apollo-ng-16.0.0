@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Blog } from 'src/app/demo/components/api/blog';
+import { Blog } from 'src/app/demo/api/blog';
 
 @Component({
     selector: 'blog-list-card',

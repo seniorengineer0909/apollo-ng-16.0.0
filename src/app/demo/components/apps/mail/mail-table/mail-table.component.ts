@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
-import { Mail } from 'src/app/demo/components/api/mail';
+import { Mail } from 'src/app/demo/api/mail';
 import { MailService } from 'src/app/demo/components/apps/mail/service/mail.service';
 
 @Component({

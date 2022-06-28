@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Message } from 'src/app/demo/components/api/message';
-import { User } from 'src/app/demo/components/api/user';
+import { Message } from 'src/app/demo/api/message';
+import { User } from 'src/app/demo/api/user';
 
 @Injectable()
 export class ChatService {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Comment } from 'src/app/demo/components/api/blog';
+import { Comment } from 'src/app/demo/api/blog';
 
 @Component({
     templateUrl: './blog-detail.component.html'

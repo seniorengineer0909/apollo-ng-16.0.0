@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { KanbanList } from 'src/app/demo/components/api/kanban';
+import { KanbanList } from 'src/app/demo/api/kanban';
 import { Subscription } from 'rxjs';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { KanbanService } from './service/kanban.service';

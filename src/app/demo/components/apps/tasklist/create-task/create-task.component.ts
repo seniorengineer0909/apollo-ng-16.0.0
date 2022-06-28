@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { Member } from 'src/app/demo/components/api/member';
-import { DialogConfig, Task } from 'src/app/demo/components/api/task';
+import { Member } from 'src/app/demo/api/member';
+import { DialogConfig, Task } from 'src/app/demo/api/task';
 import { TaskService } from '../service/task.service';
-import { MemberService } from 'src/app/demo/components/service/member.service';
+import { MemberService } from 'src/app/demo/service/member.service';
 import { Subscription } from 'rxjs';
 
 @Component({

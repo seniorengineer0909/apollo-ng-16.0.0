@@ -1,6 +1,6 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { Mail } from 'src/app/demo/components/api/mail';
+import { Mail } from 'src/app/demo/api/mail';
 import { MailService } from '../service/mail.service';
 
 @Component({

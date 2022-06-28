@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SelectItem } from 'primeng/api';
-import { Blog } from 'src/app/demo/components/api/blog';
+import { Blog } from 'src/app/demo/api/blog';
 
 @Component({
     templateUrl: './blog-list.component.html'

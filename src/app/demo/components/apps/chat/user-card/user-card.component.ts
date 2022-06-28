@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Message } from 'src/app/demo/components/api/message';
-import { User } from 'src/app/demo/components/api/user';
+import { Message } from 'src/app/demo/api/message';
+import { User } from 'src/app/demo/api/user';
 import { ChatService } from '../service/chat.service';
 
 @Component({

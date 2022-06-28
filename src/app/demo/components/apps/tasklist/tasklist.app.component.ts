@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Task } from 'src/app/demo/components/api/task';
+import { Task } from 'src/app/demo/api/task';
 import { TaskService } from './service/task.service';
 import { Subscription } from 'rxjs';
 

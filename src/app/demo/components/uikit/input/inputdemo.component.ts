@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CountryService } from 'src/app/demo/components/service/country.service';
+import { CountryService } from 'src/app/demo/service/country.service';
 import { SelectItem } from 'primeng/api';
 
 @Component({

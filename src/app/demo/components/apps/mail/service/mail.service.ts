@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Mail } from 'src/app/demo/components/api/mail';
+import { Mail } from 'src/app/demo/api/mail';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable()

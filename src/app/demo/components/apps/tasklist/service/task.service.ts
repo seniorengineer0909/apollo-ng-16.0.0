@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { DialogConfig, Task } from 'src/app/demo/components/api/task';
+import { DialogConfig, Task } from 'src/app/demo/api/task';
 
 @Injectable()
 export class TaskService {
