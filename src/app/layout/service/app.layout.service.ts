@@ -90,7 +90,7 @@ export class LayoutService {
     }
 
     isDesktop() {
-        return window.innerWidth > 1091;
+        return window.innerWidth > 991;
     }
 
     isSlim() {
