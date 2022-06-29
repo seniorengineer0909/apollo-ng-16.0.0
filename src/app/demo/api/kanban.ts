@@ -1,26 +1,26 @@
 export interface KanbanCard {
-    id?: string;
+    id: string;
     title?: string;
     description?: string;
     progress?: number;
-    assignees?: Object[];
+    assignees?: Assignee[];
     attachments?: number;
-    comments?: Object[];
+    comments?: Comment[];
     startDate?: string;
     dueDate?: string;
     completed?: boolean;
     priority?: Object;
-    taskList?: TaskList;
+    taskList: TaskList;
 }
 
 export interface KanbanList {
-    listId?: string;
+    listId: string;
     title?: string;
-    cards?: KanbanCard[];
+    cards: KanbanCard[];
 }
 
 export interface Comment {
-    id: string;
+    id?: string;
     name: string;
     image?: string;
     text: string;
@@ -33,11 +33,16 @@ export interface ListName {
 
 export interface TaskList {
     id?: string;
-    title?: string;
+    title: string;
     tasks: Task[];
 }
 
 export interface Task {
     text: string;
     completed: boolean;
+}
+
+export interface Assignee {
+    name: string;
+    image: string;
 }

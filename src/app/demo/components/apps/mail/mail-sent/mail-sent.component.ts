@@ -8,7 +8,7 @@ import { MailService } from 'src/app/demo/components/apps/mail/service/mail.serv
 })
 export class MailSentComponent {
 
-    sentMails: Mail[];
+    sentMails: Mail[] = [];
 
     subscription: Subscription;
 

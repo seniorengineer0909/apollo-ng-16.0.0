@@ -9,9 +9,9 @@ import { ChatService } from '../service/chat.service';
 })
 export class UserCardComponent implements OnInit {
 
-    @Input() user: User;
+    @Input() user!: User;
 
-    lastMessage: Message;
+    lastMessage!: Message;
 
     constructor(private chatService: ChatService) { }
 
@@ -20,7 +20,7 @@ export class UserCardComponent implements OnInit {
         this.lastMessage = filtered[filtered.length - 1];
     }
 
-    changeView(user) {
+    changeView(user: User) {
         this.chatService.changeActiveChat(user);
     }
 }

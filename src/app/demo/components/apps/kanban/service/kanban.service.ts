@@ -33,7 +33,7 @@ export class KanbanService {
         });
     }
 
-    private updateLists(data) {
+    private updateLists(data: any[]) {
         this._lists = data;
         let small = data.map(l => ({listId: l.listId, title: l.title}));
 
@@ -54,12 +54,13 @@ export class KanbanService {
         this.lists.next(this._lists);
     }
 
-    addCard(listId) {
+    addCard(listId: string) {
         const cardId = this.generateId();
         const title = "Untitled card";
         const newCard = {id: cardId, title: title, description: '', progress: '', assignees: [], attachments: 0, comments: [], startDate: '', dueDate: '', completed: false, taskList: {tasks: []}};
 
-        let lists = this._lists.map(l => l.listId === listId ? ({...l, cards: [...l.cards, newCard]}) : l);
+        let lists = [];
+        lists = this._lists.map(l => l.listId === listId ? ({...l, cards: [...l.cards || [], newCard]}) : l);
         this.updateLists(lists);
     }
 
@@ -68,7 +69,7 @@ export class KanbanService {
         this.lists.next(this._lists);
     }
 
-    copyList(list) {
+    copyList(list: KanbanList) {
         let newId = this.generateId();
         let newList = {...list, listId: newId};
 
@@ -76,13 +77,13 @@ export class KanbanService {
         this.lists.next(this._lists);
     }
 
-    deleteCard(cardId, listId) {
+    deleteCard(cardId: string, listId: string) {
         let lists = [];
 
         for (let i = 0; i < this._lists.length; i++) {
             let list = this._lists[i];
 
-            if (list.listId === listId) {
+            if (list.listId === listId && list.cards) {
                 list.cards = list.cards.filter(c => c.id !== cardId);
             }
 
@@ -92,13 +93,13 @@ export class KanbanService {
         this.updateLists(lists);
     }
 
-    copyCard(card, listId) {
+    copyCard(card: KanbanCard, listId: string) {
         let lists = [];
 
         for (let i = 0; i < this._lists.length; i++) {
             let list = this._lists[i];
 
-            if (list.listId === listId) {
+            if (list.listId === listId && list.cards) {
                 let cardIndex = list.cards.indexOf(card);
                 let newId = this.generateId();
                 let newCard = {...card, id: newId};
@@ -111,13 +112,15 @@ export class KanbanService {
         this.updateLists(lists);
     }
 
-    moveCard(card, targetListId, sourceListId) {
-        this.deleteCard(card.id, sourceListId);
-        let lists = this._lists.map(l => l.listId === targetListId ? ({...l, cards: [...l.cards, card]}) : l);
-        this.updateLists(lists);
+    moveCard(card: KanbanCard, targetListId: string, sourceListId: string) {
+        if (card.id) {
+            this.deleteCard(card.id, sourceListId);
+            let lists = this._lists.map(l => l.listId === targetListId ? ({...l, cards: [...l.cards || [], card]}) : l);
+            this.updateLists(lists);
+        }
     }
 
-    onCardSelect(card, listId) {
+    onCardSelect(card: KanbanCard, listId: string) {
         this.selectedCard.next(card);
         this.selectedListId.next(listId);
     }
@@ -134,7 +137,7 @@ export class KanbanService {
     }
 
     isMobileDevice() {
-        return (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window['MSStream']) || (/(android)/i.test(navigator.userAgent));
+        return (/iPad|iPhone|iPod/.test(navigator.userAgent)) || (/(android)/i.test(navigator.userAgent));
     }
 
 }

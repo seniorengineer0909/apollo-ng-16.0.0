@@ -1,10 +1,9 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { KanbanList } from 'src/app/demo/api/kanban';
+import { KanbanCard, KanbanList } from 'src/app/demo/api/kanban';
 import { KanbanAppComponent } from '../kanban.app.component';
 import { KanbanService } from '../service/kanban.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { HttpEventType } from '@angular/common/http';
 
 @Component({
     selector: 'kanban-list',
@@ -16,21 +15,21 @@ import { HttpEventType } from '@angular/common/http';
 })
 export class KanbanListComponent implements OnInit {
 
-    @Input() list: KanbanList;
+    @Input() list!: KanbanList;
 
-    @Input() listIds: string[];
+    @Input() listIds!: string[];
 
-    menuItems: MenuItem[];
+    menuItems: MenuItem[] = [];
 
-    title: string;
+    title: string = '';
 
-    timeout = null;
+    timeout: any = null;
 
-    isMobileDevice;
+    isMobileDevice: boolean = false;
 
-    @ViewChild('inputEl') inputEl: ElementRef;
+    @ViewChild('inputEl') inputEl!: ElementRef;
 
-    @ViewChild('listEl') listEl: ElementRef;
+    @ViewChild('listEl') listEl!: ElementRef;
 
     constructor(public parent: KanbanAppComponent, private kanbanService: KanbanService) { }
 
@@ -42,7 +41,11 @@ export class KanbanListComponent implements OnInit {
                 label: 'List actions', items: [
                     { separator: true },
                     { label: 'Copy list', command: () => this.onCopy(this.list) },
-                    { label: 'Remove list', command: () => this.onDelete(this.list.listId) },
+                    { label: 'Remove list', command: () =>  {
+                        if (this.list.listId) {
+                            this.onDelete(this.list.listId)
+                        }
+                    }},
                 ]
             }
         ];
@@ -52,24 +55,29 @@ export class KanbanListComponent implements OnInit {
         this.parent.sidebarVisible = true;
     }
 
-    onDelete(id) {
+    onDelete(id: string) {
         this.kanbanService.deleteList(id);
     }
 
-    onCopy(list) {
+    onCopy(list: KanbanList) {
         this.kanbanService.copyList(list);
     }
 
-    onCardClick(card) {
-        this.kanbanService.onCardSelect(card, this.list.listId);
+    onCardClick(card: KanbanCard) {
+        if (this.list.listId) {
+            this.kanbanService.onCardSelect(card, this.list.listId);
+        }
+
         this.parent.sidebarVisible = true;
     }
 
     insertCard() {
-        this.kanbanService.addCard(this.list.listId);
+        if (this.list.listId) {
+            this.kanbanService.addCard(this.list.listId);
+        }
     }
 
-    dropCard(event: CdkDragDrop<string[]>): void {
+    dropCard(event: CdkDragDrop<KanbanCard[]>): void {
         if (event.previousContainer === event.container) {
             moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
         } else {
@@ -81,11 +89,11 @@ export class KanbanListComponent implements OnInit {
         this.timeout = setTimeout(() => this.inputEl.nativeElement.focus(), 1);
     }
 
-    insertHeight(event) {
+    insertHeight(event: any) {
         event.container.element.nativeElement.style.minHeight = '10rem';
     }
 
-    removeHeight(event) {
+    removeHeight(event: any) {
         event.container.element.nativeElement.style.minHeight = '2rem';
     }
 

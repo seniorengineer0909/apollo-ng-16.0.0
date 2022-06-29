@@ -19,13 +19,13 @@ export class FileAppComponent implements OnInit {
 
     chartPlugins: any;
 
-    files: File[];
+    files: File[] = [];
 
-    metrics: Metric[];
+    metrics: Metric[] = [];
 
-    folders: Folder[];
+    folders: Folder[] = [];
 
-    menuitems: MenuItem[];
+    menuitems: MenuItem[] = [];
 
     subscription: Subscription;
 
@@ -53,7 +53,7 @@ export class FileAppComponent implements OnInit {
         const textColor = documentStyle.getPropertyValue('--text-color');
 
         this.chartPlugins = [{
-            beforeDraw: function (chart) {
+            beforeDraw: function (chart: any) {
                 let ctx = chart.ctx;
                 let width = chart.width;
                 let height = chart.height;

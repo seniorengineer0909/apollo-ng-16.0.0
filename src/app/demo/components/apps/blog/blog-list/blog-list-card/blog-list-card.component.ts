@@ -8,7 +8,7 @@ import { Blog } from 'src/app/demo/api/blog';
 })
 export class BlogListCardComponent {
 
-    @Input() blog: Blog;
+    @Input() blog!: Blog;
 
     constructor(private router: Router) { }
 

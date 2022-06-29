@@ -12,7 +12,7 @@ export class ChatBoxComponent implements OnInit {
 
     defaultUserId: number = 123;
 
-    message: Message;
+    message!: Message;
 
     textContent: string = '';
 
@@ -24,7 +24,7 @@ export class ChatBoxComponent implements OnInit {
         '😟', '😠', '😡', '🤬', '😔', '😕', '🙁', '😬', '🥺', '😣', '😖', '😫', '😩', '🥱', '😤', '😮', '😱', '😨', '😰', '😯', '😦', '😧', '😢', '😥', '😪', '🤤'
     ];
 
-    @Input() user: User;
+    @Input() user!: User;
 
     constructor(private chatService: ChatService) { }
 
@@ -55,11 +55,11 @@ export class ChatBoxComponent implements OnInit {
         }
     }
 
-    onEmojiSelect(emoji) {
+    onEmojiSelect(emoji: string) {
         this.textContent += emoji;
     }
 
-    parseDate(timestamp) {
+    parseDate(timestamp: number) {
         return new Date(timestamp).toTimeString().split(':').slice(0, 2).join(':');
     }
 }

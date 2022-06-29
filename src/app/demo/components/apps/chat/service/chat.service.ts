@@ -45,7 +45,7 @@ export class ChatService {
             .then(data => data);
     }
 
-    changeActiveChat(user) {
+    changeActiveChat(user: User) {
         this._activeUser = user;
         this.activeUser.next(user);
     }

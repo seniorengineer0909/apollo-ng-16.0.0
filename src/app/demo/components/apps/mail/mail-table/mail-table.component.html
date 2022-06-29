@@ -10,7 +10,7 @@
             
             <span class="p-input-icon-left">
                 <i class="pi pi-search"></i>
-                <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search Mail" />
+                <input pInputText type="text" (input)="onGlobalFilter(dt, $event)" placeholder="Search Mail" />
             </span>
         </div>
     </ng-template>

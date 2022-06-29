@@ -1,7 +1,7 @@
 <p-toast key="fu"></p-toast>
 <div class="card cursor-pointer">
     <p-fileUpload #fileUploader name="demo[]" url="./upload.php" accept="image/*" (onUpload)="onUpload($event)" [customUpload]="true"
-        multiple="multiple" (onSelect)="onUpload($event)" [showUploadButton]="true"
+        [multiple]="true" (onSelect)="onUpload($event)" [showUploadButton]="true"
         [showCancelButton]="false" [auto]="true" class="w-full">
         <ng-template pTemplate="content">
             <div class="w-full py-3 cursor-pointer" (click)="fileUploader.advancedFileInput.nativeElement.click()">

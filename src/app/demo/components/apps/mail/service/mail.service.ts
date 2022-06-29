@@ -21,7 +21,7 @@ export class MailService {
             });
     }
 
-    updateMails(data) {
+    updateMails(data: Mail[]) {
         this._mails = data;
         this.mails.next(data);
     }
@@ -82,7 +82,7 @@ export class MailService {
         this.mails.next(this._mails);
     }
 
-    onTrash(id) {
+    onTrash(id: number) {
         this._mails = this._mails.map(m => m.id === id ? ({ ...m, trash: true }) : m);
         this.mails.next(this._mails);
     }

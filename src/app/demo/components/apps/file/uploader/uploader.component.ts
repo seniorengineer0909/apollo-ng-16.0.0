@@ -8,11 +8,11 @@ import { MessageService } from 'primeng/api';
 })
 export class UploaderComponent {
 
-    uploadedFiles = [];
+    uploadedFiles: any[] = [];
 
     constructor(private messageService: MessageService) {}
 
-    onUpload(event) {
+    onUpload(event: any) {
         for (let file of event.files) {
             this.uploadedFiles.push(file);
         }
@@ -20,7 +20,7 @@ export class UploaderComponent {
         this.messageService.add({severity:'success', summary: 'Success', detail: 'File uploaded successfully'});
     }
 
-    removeImage(event, file) {
+    removeImage(event: Event, file: any) {
         event.stopPropagation();
         this.uploadedFiles = this.uploadedFiles.filter(i => i !== file);
     }
