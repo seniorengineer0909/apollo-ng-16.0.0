@@ -12,15 +12,6 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {
         this.primengConfig.ripple = true;
-        this.layoutService.config = {
-            ripple: false,
-            inputStyle: 'outlined',
-            menuMode: 'static',
-            colorScheme: 'light',
-            theme: 'indigo',
-            transparentMenu: false,
-            scale: 14
-        };
     }
 
 }
