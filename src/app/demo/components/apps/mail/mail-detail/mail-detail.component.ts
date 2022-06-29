@@ -52,6 +52,9 @@ export class MailDetailComponent implements OnDestroy {
 
     sendMail() {
         if (this.newMail.message) {
+            this.newMail.to = this.mail.from ? this.mail.from : this.mail.to;
+            this.newMail.image = this.mail.image;
+            
             this.mailService.onSend(this.newMail);
             this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Mail sent' });
             this.router.navigate(['apps/mail/inbox']);

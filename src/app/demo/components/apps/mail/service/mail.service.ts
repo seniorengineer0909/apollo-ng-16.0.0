@@ -91,6 +91,9 @@ export class MailService {
         if (!mail.id) {
             mail.id = this.generateId();
         }
+        if (!mail.title) {
+            mail.title = 'Untitled';
+        }
 
         mail.date = this.generateDate();
         this._mails.push(mail);
