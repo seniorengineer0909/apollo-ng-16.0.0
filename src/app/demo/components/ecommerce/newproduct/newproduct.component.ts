@@ -12,10 +12,10 @@ interface Product {
     stock: string;
     inStock: boolean;
     description: string;
-    images: image[];
+    images: Image[];
 }
 
-interface image {
+interface Image {
     name: string;
     objectURL: string;
 }
@@ -71,19 +71,19 @@ export class NewProductComponent {
         }
     }
 
-    onImageMouseOver(file: image) {
+    onImageMouseOver(file: Image) {
         this.buttonEl.toArray().forEach(el => {
             el.nativeElement.id === file.name ? el.nativeElement.style.display = 'flex' : null;
         })
     }
 
-    onImageMouseLeave(file: image) {
+    onImageMouseLeave(file: Image) {
         this.buttonEl.toArray().forEach(el => {
             el.nativeElement.id === file.name ? el.nativeElement.style.display = 'none' : null;
         })
     }
 
-    removeImage(file: image) {
+    removeImage(file: Image) {
         this.product.images = this.product.images.filter(i => i !== file);
     }
 
