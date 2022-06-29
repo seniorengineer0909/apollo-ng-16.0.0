@@ -49,7 +49,7 @@
                         display: flex;
                         align-items: center;
                         padding: .75rem;
-                        border-radius: var(--border-radius);
+                        border-radius: 0;
                         cursor: pointer;
                         outline: none;
                         color: var(--menuitem-text-color);
@@ -95,6 +95,7 @@
                         a {
                             padding-right: .5rem;
                             color: var(--popup-submenu-item-text-color);
+                            border-radius: var(--border-radius);
 
                             .layout-menuitem-icon {
                                 color: var(--popup-submenu-item-icon-color);
