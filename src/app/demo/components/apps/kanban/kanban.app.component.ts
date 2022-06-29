@@ -52,8 +52,11 @@ export class KanbanAppComponent implements OnInit, OnDestroy {
         this.style = document.createElement('style');
         this.style.innerHTML = `
                 .layout-content {
-                        margin: auto;
-                        width: 100%;
+                    width: 100%;
+                }
+                
+                .layout-topbar {
+                    width: 100%;
                 }
             `;
         document.head.appendChild(this.style);

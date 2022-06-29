@@ -16,8 +16,13 @@
         .p-sidebar-header {
             display: none;
         }
+        
         .p-sidebar-content {
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
     }
 }
