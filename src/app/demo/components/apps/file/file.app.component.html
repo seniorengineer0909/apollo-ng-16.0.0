@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="col-12 lg:col-3">
+    <div class="col-12 md:col-5 xl:col-3">
         <div class="card">
             <div class="text-900 text-xl font-semibold mb-3">Account Storage</div>
             <p-chart type="doughnut" [plugins]="chartPlugins" id="country-chart" [data]="fileChart" [options]="fileChartOptions" [style]="{'width': '75%'}"></p-chart>
@@ -60,11 +60,11 @@
             <file-uploader></file-uploader>
         </div>
     </div>
-    <div class="col-12 lg:col-9">
+    <div class="col-12 md:col-7 xl:col-9">
         <div class="card">
             <div class="text-900 text-xl font-semibold mb-3">Folders</div>
             <div class="grid">
-                <div *ngFor="let folder of folders" class="col-12 lg:col-4">
+                <div *ngFor="let folder of folders" class="col-12 md:col-6 xl:col-4">
                     <div class="p-3 border-1 surface-border flex align-items-center justify-content-between hover:surface-100 cursor-pointer border-round">
                         <div class="flex align-items-center">
                             <i [ngClass]="folder.icon" class="text-2xl mr-3"></i>
