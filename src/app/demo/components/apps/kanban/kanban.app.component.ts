@@ -18,7 +18,7 @@ export class KanbanAppComponent implements OnInit, OnDestroy {
 
     subscription = new Subscription();
 
-    style: HTMLStyleElement = new HTMLStyleElement;
+    style!: HTMLStyleElement;
 
     isMobileDevice: boolean = false;
 
