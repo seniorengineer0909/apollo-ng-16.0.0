@@ -21,6 +21,6 @@
         <p-editor [style]="{'height':'250px'}" [(ngModel)]="newMail.message"></p-editor>
     </div>
     <div class="col-12 flex column-gap-3 justify-content-end">
-        <button pButton pRipple type="button" class="p-button-primary h-3rem" icon="pi pi-send" label="Send Message" (click)="sendMail()" [disabled]="!newMail.message?.length"></button>
+        <button pButton pRipple type="button" class="p-button-primary h-3rem w-full sm:w-auto" icon="pi pi-send" label="Send Message" (click)="sendMail()"></button>
     </div>
 </div>
