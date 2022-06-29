@@ -17,11 +17,11 @@
                         <div class="grid grid-nogutter flex-column gap-5 w-15rem">
                             <div class="col-12 flex flex-column">
                                 <span class="text-900 font-semibold block w-full border-bottom-1 surface-border pb-3 mb-2">Move to...</span>
-                                <span pRipple class="text-700 block pt-2 cursor-pointer hover:surface-ground select-none border-round" *ngFor="let list of listNames" (click)="onMove(list.listId || '')">{{list.title}}</span>
+                                <span pRipple class="text-700 block p-2 cursor-pointer hover:surface-ground select-none border-round" *ngFor="let list of listNames" (click)="onMove(list.listId || '')">{{list.title}}</span>
                             </div>
                             <div class="col-12 flex flex-column">
                                 <span class="text-900 font-semibold block w-full border-bottom-1 surface-border pb-3 mb-2">Tasks</span>
-                                <span pRipple class="text-700 block pt-2 cursor-pointer hover:surface-ground select-none border-round" (click)="addTaskList()">Create a tasklist</span>
+                                <span pRipple class="text-700 block p-2 cursor-pointer hover:surface-ground select-none border-round" (click)="addTaskList()">Create a tasklist</span>
                             </div>
                         </div>
                     </ng-template>
