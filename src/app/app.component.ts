@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
         this.layoutService.config = {
             ripple: false,
             inputStyle: 'outlined',
-            menuMode: 'static',
+            menuMode: 'slim',
             colorScheme: 'light',
             theme: 'indigo',
             transparentMenu: false,
