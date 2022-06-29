@@ -17,15 +17,15 @@
     <ng-template pTemplate="body" let-mail>
         <tr (mouseenter)="toggleOptions($event, options, date)" (mouseleave)="toggleOptions($event, options, date)" (click)="onRowSelect(mail.id)" class="cursor-pointer">
             <td style="width: 4rem" class="pl-3">
-                <p-tableCheckbox [value]="mail" (click)="$event.stopPropagation()"></p-tableCheckbox>
+                <p-tableCheckbox [value]="mail" (click)="$event.stopPropagation()" (touchstart)="$event.stopPropagation()"></p-tableCheckbox>
             </td>
             <td *ngIf="!mail.trash && !mail.spam" style="width: 4rem">
-                <span (click)="$event.stopPropagation(); onStar(mail.id)" class="cursor-pointer">
+                <span (click)="$event.stopPropagation(); onStar(mail.id)" (touchstart)="$event.stopPropagation(); onStar(mail.id)" class="cursor-pointer">
                     <i class="pi pi-fw text-xl" [ngClass]="{'pi-star-fill': mail.starred, 'pi-star': !mail.starred}"></i>
                 </span>
             </td>
             <td *ngIf="!mail.trash && !mail.spam" style="width: 4rem">
-                <span (click)="$event.stopPropagation(); onBookmark(mail.id)" class="cursor-pointer">
+                <span (click)="$event.stopPropagation(); onBookmark(mail.id)" (touchstart)="$event.stopPropagation(); onBookmark(mail.id)" class="cursor-pointer">
                     <i class="pi pi-fw text-xl" [ngClass]="{'pi-bookmark-fill': mail.important, 'pi-bookmark': !mail.important}"></i>
                 </span>
             </td>
@@ -56,6 +56,6 @@
     </ng-template>
 </p-table>
 
-<p-dialog [(visible)]="dialogVisible" (onHide)="dialogVisible = false" [closable]="true" header="New Message" [modal]="true" styleClass="sm:w-full md:w-8 lg:w-6" contentStyleClass="border-round-bottom border-top-1 surface-border p-0">
+<p-dialog [(visible)]="dialogVisible" (onHide)="dialogVisible = false" [closable]="true" header="New Message" [modal]="true" styleClass="mx-3 sm:mx-0 sm:w-full md:w-8 lg:w-6" contentStyleClass="border-round-bottom border-top-1 surface-border p-0">
     <mail-reply [content]="mail" (hide)="dialogVisible = false"></mail-reply>
 </p-dialog>
