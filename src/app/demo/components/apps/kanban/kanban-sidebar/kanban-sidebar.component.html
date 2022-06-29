@@ -6,7 +6,7 @@
                     <span class="block text-900 font-semibold text-lg pl-2" pTooltip="Click to edit">{{card.title ? card.title : 'Untitled'}}</span>
                 </ng-template>
                 <ng-template pTemplate="content">
-                    <input #inputTitle type="text" [(ngModel)]="card.title" pInputText class="w-18rem h-3rem text-900 text-lg" (keydown.enter)="inplace.deactivate()">
+                    <input #inputTitle type="text" [(ngModel)]="card.title" pInputText class="w-13rem sm:w-18rem h-3rem text-900 text-lg" (keydown.enter)="inplace.deactivate()">
                 </ng-template>
             </p-inplace>
             <div class="flex">

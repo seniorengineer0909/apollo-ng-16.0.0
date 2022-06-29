@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <div class="col flex flex-column row-gap-3">
+        <div class="flex-1 w-full lg:w-3 xl:w-4 flex flex-column row-gap-3">
             <div class="border-1 surface-border border-round">
                 <span class="text-900 font-bold block border-bottom-1 surface-border p-3">Publish</span>
                 <div class="p-3">
@@ -53,7 +53,7 @@
 
             <div class="border-1 surface-border border-round">
                 <span class="text-900 font-bold block border-bottom-1 surface-border p-3">Tags</span>
-                <div class="p-3 flex gap-1">
+                <div class="p-3 flex flex-wrap gap-1">
                     <p-chip *ngFor="let tag of product.tags; let i = index;" styleClass="mr-2 py-2 px-3 text-900 font-bold surface-card border-1 surface-border" [style]="{'border-radius':'20px'}">
                         <span class="mr-3">{{tag}}</span>
                         <span class="chip-remove-icon flex align-items-center justify-content-center border-1 surface-border bg-gray-100 border-circle cursor-pointer" (click)="onChipRemove(tag)">
@@ -91,9 +91,9 @@
                 <p-inputSwitch [(ngModel)]="product.inStock"></p-inputSwitch>
             </div>
 
-            <div class="flex justify-content-between align-items-center py-2">
-                <button pButton pRipple class="p-button-secondary flex-1 p-button-outlined mr-3 border-round" label="Delete Product" icon="pi pi-fw pi-trash"></button>
-                <button pButton pRipple class="p-button-primary flex-1 border-round" label="Create Product"></button>
+            <div class="flex flex-column sm:flex-row justify-content-between align-items-center gap-3 py-2">
+                <button pButton pRipple class="p-button-danger flex-1 p-button-outlined" label="Discard" icon="pi pi-fw pi-trash"></button>
+                <button pButton pRipple class="p-button-primary flex-1 border-round" label="Save" icon="pi pi-fw pi-check"></button>
             </div>
         </div>
     </div>

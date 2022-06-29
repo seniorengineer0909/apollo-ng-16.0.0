@@ -5,7 +5,7 @@
                 <span class="block text-900 font-semibold mt-4 pl-2 text-lg"  pTooltip="Click to edit" tooltipPosition="top">{{list.title}}</span>
             </ng-template>
             <ng-template pTemplate="content">
-                <input #inputEl type="text" [value]="list.title" [(ngModel)]="list.title" pInputText class="w-15rem h-3rem text-900 text-lg" (keydown.enter)="inplace.deactivate()">
+                <input #inputEl type="text" [value]="list.title" [(ngModel)]="list.title" pInputText class="w-10rem sm:w-15rem h-3rem text-900 text-lg" (keydown.enter)="inplace.deactivate()">
             </ng-template>
         </p-inplace>
         <div>

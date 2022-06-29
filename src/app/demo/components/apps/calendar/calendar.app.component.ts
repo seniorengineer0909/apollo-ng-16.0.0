@@ -3,7 +3,8 @@ import { EventService } from 'src/app/demo/service/event.service';
 import { CalendarOptions } from '@fullcalendar/angular';
 
 @Component({
-    templateUrl: './calendar.app.component.html'
+    templateUrl: './calendar.app.component.html',
+    styleUrls: ['./calendar.app.component.scss']
 })
 export class CalendarAppComponent implements OnInit {
 
