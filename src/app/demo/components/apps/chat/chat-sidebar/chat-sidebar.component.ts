@@ -10,7 +10,7 @@ export class ChatSidebarComponent implements OnInit {
 
     searchValue: string = '';
 
-    users: User[];
+    users: User[] = [];
 
     filteredUsers: User[] = [];
 

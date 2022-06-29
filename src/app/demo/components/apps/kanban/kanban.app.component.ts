@@ -10,24 +10,22 @@ import { KanbanService } from './service/kanban.service';
 })
 export class KanbanAppComponent implements OnInit, OnDestroy {
 
-    sidebarVisible: boolean;
+    sidebarVisible: boolean = false;
 
-    lists: KanbanList[];
+    lists: KanbanList[] = [];
 
-    listIds: string[];
+    listIds: string[] = [];
 
     subscription = new Subscription();
 
-    listElements;
+    style: HTMLStyleElement = new HTMLStyleElement;
 
-    style: HTMLStyleElement;
-
-    isMobileDevice;
+    isMobileDevice: boolean = false;
 
     constructor(private kanbanService: KanbanService) {
         this.subscription = this.kanbanService.lists$.subscribe(data => {
-            this.lists = data
-            this.listIds = data.map(l => l.listId);
+            this.lists = data;
+            this.listIds = this.lists.map(l => l.listId || '');
         });
     }
 

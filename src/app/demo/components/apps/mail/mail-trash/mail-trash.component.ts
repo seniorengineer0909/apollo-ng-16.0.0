@@ -8,7 +8,7 @@ import { MailService } from 'src/app/demo/components/apps/mail/service/mail.serv
 })
 export class MailTrashComponent implements OnDestroy {
 
-    trashMails: Mail[];
+    trashMails: Mail[] = [];
 
     subscription: Subscription;
 

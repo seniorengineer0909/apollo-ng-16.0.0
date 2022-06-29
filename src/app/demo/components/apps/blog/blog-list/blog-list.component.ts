@@ -12,7 +12,7 @@ export class BlogListComponent {
         { label: 'Most Commented', value: 'comment' }
     ];
 
-    sortField: string;
+    sortField: string = '';
 
     totalBlogs: Blog[] = [
         {

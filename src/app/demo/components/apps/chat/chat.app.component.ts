@@ -10,7 +10,7 @@ export class ChatAppComponent implements OnDestroy {
 
     subscription: Subscription;
 
-    activeUser: User;
+    activeUser!: User;
     
     constructor(private chatService: ChatService) { 
         this.subscription = this.chatService.activeUser$.subscribe(data => this.activeUser = data);

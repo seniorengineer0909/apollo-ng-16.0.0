@@ -9,7 +9,7 @@ import { MailService } from 'src/app/demo/components/apps/mail/service/mail.serv
 })
 export class MailInboxComponent implements OnDestroy {
 
-    mails: Mail[];
+    mails: Mail[] = [];
 
     subscription: Subscription;
 

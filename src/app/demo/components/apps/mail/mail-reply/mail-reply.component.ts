@@ -27,7 +27,7 @@ export class MailReplyComponent {
 
     displayMessage: boolean = false;
 
-    @Input() content: Mail;
+    @Input() content: Mail = {};
 
     @Output() hide: EventEmitter<any> = new EventEmitter();
 

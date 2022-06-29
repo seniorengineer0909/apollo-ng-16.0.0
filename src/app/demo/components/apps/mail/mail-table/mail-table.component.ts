@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
+import { Table } from 'primeng/table';
 import { Mail } from 'src/app/demo/api/mail';
 import { MailService } from 'src/app/demo/components/apps/mail/service/mail.service';
 
@@ -10,13 +11,13 @@ import { MailService } from 'src/app/demo/components/apps/mail/service/mail.serv
 })
 export class MailTableComponent implements OnInit {
 
-    @Input() mails: Mail[];
+    @Input() mails!: Mail[];
 
-    menuItems: MenuItem[];
+    menuItems: MenuItem[] = [];
 
-    selectedMails: Mail[];
+    selectedMails: Mail[] = [];
 
-    mail: Mail;
+    mail: Mail = {};
 
     dialogVisible: boolean = false;
 
@@ -31,7 +32,7 @@ export class MailTableComponent implements OnInit {
         ];
     }
 
-    toggleOptions(event, opt, date) {
+    toggleOptions(event: Event, opt: HTMLElement, date: HTMLElement) {
         if (event.type === 'mouseenter') {
             opt.style.display = 'flex';
             date.style.display = 'none';
@@ -41,25 +42,25 @@ export class MailTableComponent implements OnInit {
         }
     }
 
-    onRowSelect(id) {
+    onRowSelect(id: number) {
         this.router.navigate(['/apps/mail/detail/', id]);
     }
 
-    onStar(id) {
+    onStar(id: number) {
         this.mailService.onStar(id);
     }
 
-    onArchive(event, id) {
+    onArchive(event: Event, id: number) {
         event.stopPropagation();
         this.mailService.onArchive(id);
         this.messageService.add({ severity: 'info', summary: 'Info', detail: 'Mail archived', life: 3000 });
     }
 
-    onBookmark(id) {
+    onBookmark(id: number) {
         this.mailService.onBookmark(id);
     }
 
-    onDelete(id) {
+    onDelete(id: number) {
         this.mailService.onDelete(id);
         this.messageService.add({ severity: 'info', summary: 'Info', detail: 'Mail deleted', life: 3000 });
     }
@@ -85,7 +86,7 @@ export class MailTableComponent implements OnInit {
         }
     }
 
-    onTrash(event, mail) {
+    onTrash(event: Event, mail: Mail) {
         event.stopPropagation();
         if (mail.trash) {
             this.onDelete(mail.id)
@@ -93,10 +94,14 @@ export class MailTableComponent implements OnInit {
         this.mailService.onTrash(mail.id);
     }
 
-    onReply(event, mail) {
+    onReply(event: Event, mail: Mail) {
         event.stopPropagation();
         this.mail = mail;
         this.dialogVisible = true;
+    }
+    
+    onGlobalFilter(table: Table, event: Event) {
+        table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
     }
 
 }

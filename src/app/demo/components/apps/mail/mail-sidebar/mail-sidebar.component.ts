@@ -11,7 +11,7 @@ import { filter, Subscription } from 'rxjs';
 })
 export class MailSidebarComponent implements OnDestroy {
 
-    items: MenuItem[];
+    items: MenuItem[] = [];
 
     badgeValues: any;
 
@@ -19,17 +19,17 @@ export class MailSidebarComponent implements OnDestroy {
 
     routeSubscription: Subscription;
 
-    url: string;
+    url: string = '';
 
     constructor(private router: Router, private mailService: MailService) {
         this.mailSubscription = this.mailService.mails$.subscribe(data => this.getBadgeValues(data));
 
-        this.routeSubscription = this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
-            this.url = event.url;
+        this.routeSubscription = this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((params: any) => {
+            this.url = params.url;
         });
     }
 
-    navigate(item) {
+    navigate(item: MenuItem) {
         if (item.routerLink) {
             this.router.navigate([item.routerLink]);
         }

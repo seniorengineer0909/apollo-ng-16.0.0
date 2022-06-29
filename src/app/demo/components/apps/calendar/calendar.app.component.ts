@@ -7,25 +7,25 @@ import { CalendarOptions } from '@fullcalendar/angular';
 })
 export class CalendarAppComponent implements OnInit {
 
-    events: any[];
+    events: any[] = [];
 
-    today: string;
+    today: string = '';
 
     calendarOptions: CalendarOptions = {
         initialView: 'dayGridMonth'
     };
 
-    showDialog: boolean;
+    showDialog: boolean = false;
 
-    clickedEvent = null;
+    clickedEvent: any = null;
 
-    dateClicked: boolean;
+    dateClicked: boolean = false;
 
     edit: boolean = false;
 
-    tags: any[];
+    tags: any[] = [];
 
-    view: string;
+    view: string = '';
 
     changedEvent: any;
 
@@ -57,7 +57,7 @@ export class CalendarAppComponent implements OnInit {
         };
     }
 
-    onEventClick(e) {
+    onEventClick(e: any) {
         this.clickedEvent = e.event;
         let plainEvent = e.event.toPlainObject({ collapseExtendedProps: true, collapseColor: true });
         this.view = 'display';
@@ -68,7 +68,7 @@ export class CalendarAppComponent implements OnInit {
         this.changedEvent.end = this.clickedEvent.end ? this.clickedEvent.end : this.clickedEvent.start;
     }
 
-    onDateSelect(e) {
+    onDateSelect(e: any) {
         this.view = 'new'
         this.showDialog = true;
         this.changedEvent = { ...e, title: null, description: null, location: null, backgroundColor: null, borderColor: null, textColor: null, tag: { color: null, name: null } };

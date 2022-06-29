@@ -30,7 +30,7 @@ export class MailDetailComponent implements OnDestroy {
 
     subscription: Subscription;
 
-    mail: Mail;
+    mail: Mail = {};
 
     id: any;
 
