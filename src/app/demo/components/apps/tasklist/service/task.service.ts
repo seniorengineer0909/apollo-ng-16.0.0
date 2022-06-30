@@ -8,7 +8,8 @@ export class TaskService {
 
     dialogConfig: DialogConfig = {
         visible: false,
-        header: ''
+        header: '',
+        newTask: false
     };
 
     tasks: Task[] = [];
@@ -60,10 +61,11 @@ export class TaskService {
         this.taskSource.next(this.tasks);
     }
 
-    showDialog(header?: string) {
+    showDialog(header: string, newTask: boolean) {
         this.dialogConfig = {
             visible: true,
-            header: header
+            header: header,
+            newTask: newTask
         };
 
         this.dialogSource.next(this.dialogConfig);

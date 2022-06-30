@@ -5,11 +5,11 @@ import { Task } from 'src/app/demo/api/task';
 import { TaskService } from '../service/task.service';
 
 @Component({
-    selector: 'task-card',
-    templateUrl: './task-card.component.html',
+    selector: 'task-list',
+    templateUrl: './task-list.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TaskCardComponent implements OnInit {
+export class TaskListComponent implements OnInit {
 
     @Input() taskList!: Task[];
 
@@ -46,7 +46,7 @@ export class TaskCardComponent implements OnInit {
 
     onEdit() {
         this.taskService.onTaskSelect(this.clickedTask);
-        this.taskService.showDialog('Edit Task');
+        this.taskService.showDialog('Edit Task', false);
     }
 
     onCheckboxChange(event: any, task: Task) {

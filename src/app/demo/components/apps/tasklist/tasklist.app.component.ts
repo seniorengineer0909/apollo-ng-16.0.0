@@ -28,6 +28,6 @@ export class TaskListAppComponent implements OnDestroy {
     }
 
     showDialog() {
-        this.taskService.showDialog('Create Task');
+        this.taskService.showDialog('Create Task', true);
     }
 }

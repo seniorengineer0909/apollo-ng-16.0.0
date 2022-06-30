@@ -27,7 +27,13 @@ export class CreateTaskComponent implements OnInit, OnDestroy {
 
     constructor(private memberService: MemberService, private messageService: MessageService, private taskService: TaskService) {
         this.subscription = this.taskService.selectedTask$.subscribe(data => this.task = data);
-        this.dialogSubscription = this.taskService.dialogSource$.subscribe(data => this.dialogConfig = data);
+        this.dialogSubscription = this.taskService.dialogSource$.subscribe(data => {
+            this.dialogConfig = data;
+            
+            if(this.dialogConfig.newTask) {
+                this.resetTask();
+            }
+        });
     }
 
     ngOnInit(): void {

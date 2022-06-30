@@ -19,4 +19,5 @@ export interface Member {
 export interface DialogConfig {
     visible: boolean;
     header?: string;
+    newTask?: boolean;
 }

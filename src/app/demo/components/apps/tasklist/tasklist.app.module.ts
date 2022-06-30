@@ -15,7 +15,7 @@ import { MenuModule } from 'primeng/menu';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DialogModule } from 'primeng/dialog';
-import { TaskCardComponent } from './task-card/task-card.component';
+import { TaskListComponent } from './task-list/task-list.component'
 import { TaskService } from './service/task.service';
 
 @NgModule({
@@ -35,7 +35,7 @@ import { TaskService } from './service/task.service';
         MenuModule,
         DialogModule
     ],
-    declarations: [TaskListAppComponent, CreateTaskComponent, TaskCardComponent],
+    declarations: [TaskListAppComponent, CreateTaskComponent, TaskListComponent],
     providers: [TaskService]
 })
 export class TaskListAppModule { }
