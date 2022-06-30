@@ -9,8 +9,4 @@ export class AppSidebarComponent {
 
     constructor(public layoutService: LayoutService, public el: ElementRef) { }
 
-    get smallLogo(): boolean {
-        return (this.layoutService.isSlim() || this.layoutService.isHorizontal());
-    }
-
 }

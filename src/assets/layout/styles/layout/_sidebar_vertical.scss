@@ -15,6 +15,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        .app-logo-normal {
+            display: inline;
+        }
+
+        .app-logo-small {
+            display: none;
+        }
     }
 
     .layout-menu-container {

@@ -6,6 +6,16 @@
                     display: none;
                 }
             }
+
+            .app-logo {
+                .app-logo-normal {
+                    display: none;
+                }
+        
+                .app-logo-small {
+                    display: inline;
+                }
+            }
             
             .layout-sidebar {
                 width: 5rem;
