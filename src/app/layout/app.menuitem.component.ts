@@ -166,6 +166,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
         // activate item on hover
         if (this.root && (this.isSlim || this.isHorizontal) && this.layoutService.isDesktop()) {
             if (this.layoutService.state.menuHoverActive) {
+                this.active = true;
                 this.menuService.onMenuStateChange({key: this.key});
             }
         }
