@@ -59,7 +59,7 @@ export class CreateTaskComponent implements OnInit, OnDestroy {
     }
 
     resetTask() {
-        this.task = { id: this.task.id ? this.task.id : Math.floor(Math.random() * 1000), status: 'Waiting' };
+        this.task = { id: this.task && this.task.id ? this.task.id : Math.floor(Math.random() * 1000), status: 'Waiting' };
     }
 
     ngOnDestroy() {
