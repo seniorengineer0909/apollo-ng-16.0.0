@@ -154,12 +154,14 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             plugins: {
                 legend: {
                     labels: {
-                        usePointStyle: true,
                         color: textColor,
+                        usePointStyle: true,
                         font: {
                             weight: 700,
-                        }
-                    }
+                        },
+                        padding: 28
+                    },
+                    position: 'bottom'
                 }
             }
         };
