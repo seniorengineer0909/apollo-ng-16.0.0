@@ -16,10 +16,5 @@ export class AppTopbarComponent {
     onProfileButtonClick() {
         this.layoutService.showProfileSidebar();
     }
-
-    getButtonClass() {
-        return {
-            'hidden' : this.layoutService.isSlim() && !this.layoutService.isMobile()
-        }
-    }
+    
 }

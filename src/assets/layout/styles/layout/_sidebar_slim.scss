@@ -1,6 +1,12 @@
 @media screen and (min-width: $breakpoint) {
     .layout-container {
         &.layout-slim {
+            .layout-topbar {
+                .topbar-menubutton {
+                    display: none;
+                }
+            }
+            
             .layout-sidebar {
                 width: 5rem;
                 overflow: visible;
