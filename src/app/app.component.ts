@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
-import { LayoutService } from './layout/service/app.layout.service';
 
 @Component({
     selector: 'app-root',
@@ -8,7 +7,7 @@ import { LayoutService } from './layout/service/app.layout.service';
 })
 export class AppComponent implements OnInit {
 
-    constructor(private primengConfig: PrimeNGConfig, private layoutService: LayoutService) { }
+    constructor(private primengConfig: PrimeNGConfig) { }
 
     ngOnInit(): void {
         this.primengConfig.ripple = true;
