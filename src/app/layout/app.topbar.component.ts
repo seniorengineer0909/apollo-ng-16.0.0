@@ -19,7 +19,7 @@ export class AppTopbarComponent {
 
     getButtonClass() {
         return {
-            'hidden' : this.layoutService.isSlim()
+            'hidden' : this.layoutService.isSlim() && !this.layoutService.isMobile()
         }
     }
 }
