@@ -57,7 +57,12 @@ export class AnimateEnter implements OnInit, OnDestroy {
         let docElement = document.documentElement;
         let winHeight = docElement.clientHeight;
 
-        return rect.top >= 0 && winHeight >= rect.top;
+        if (rect.top > 0) {
+            return (rect.top >= 0 && winHeight >= rect.top);
+        } 
+        else {
+            return true
+        }
     }
 
     enter(): void {
