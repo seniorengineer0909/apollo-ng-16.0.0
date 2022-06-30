@@ -46,7 +46,8 @@ export class MailTableComponent implements OnInit {
         this.router.navigate(['/apps/mail/detail/', id]);
     }
 
-    onStar(id: number) {
+    onStar(event: Event, id: number) {
+        event.stopPropagation();
         this.mailService.onStar(id);
     }
 
@@ -56,7 +57,8 @@ export class MailTableComponent implements OnInit {
         this.messageService.add({ severity: 'info', summary: 'Info', detail: 'Mail archived', life: 3000 });
     }
 
-    onBookmark(id: number) {
+    onBookmark(event: Event, id: number) {
+        event.stopPropagation();
         this.mailService.onBookmark(id);
     }
 

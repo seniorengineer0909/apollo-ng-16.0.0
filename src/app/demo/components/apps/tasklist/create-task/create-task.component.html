@@ -1,6 +1,6 @@
 <p-toast></p-toast>
-<p-dialog [header]="dialogConfig.header || ''" [(visible)]="dialogConfig.visible" [breakpoints]="{'960px': '75vw', '640px': '90vw'}" [style]="{width: '50rem'}" [modal]="true" [dismissableMask]="true">
-    <div class="py-2">
+<p-dialog [header]="dialogConfig.header || ''" [(visible)]="dialogConfig.visible" [modal]="true" [dismissableMask]="true" styleClass="mx-3 sm:mx-0 sm:w-full md:w-8 lg:w-6" contentStyleClass="border-round-bottom border-top-1 surface-border p-0">
+    <div class="p-4">
         <div class="grid p-fluid formgrid">
             <div class="col-12 field">
                 <label for="name" class="text-900 font-semibold">Task Name</label>
