@@ -13,7 +13,7 @@ export class TreeDemoComponent implements OnInit {
 
     files3: TreeNode[] = [];
 
-    selectedFiles1: TreeNode = {};
+    selectedFiles1: TreeNode[] = [];
 
     selectedFiles2: TreeNode[] = [];
 
