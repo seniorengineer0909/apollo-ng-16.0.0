@@ -79,44 +79,4 @@ export class AnimateEnter implements OnInit, OnDestroy {
             this.loadListener();
         }
     }
-
-    /*ngAfterViewInit() {
-        if (this.isInViewPort()) {
-            this.enter();
-        }
-
-        if (!this.entered) {
-            this.documentScrollListener = this.renderer.listen('window', 'scroll', () => {
-                if (this.isInViewPort()) {
-                    this.enter();
-                    this.documentScrollListener();
-                    this.documentScrollListener = null;
-                }
-            });
-        }
-    }
-
-    shouldEnter(): boolean {
-        return this.entered ? false: this.isInViewPort();
-    }
-
-    isInViewPort() {
-        let rect = this.el.nativeElement.parentElement.parentElement.parentElement.getBoundingClientRect();
-        let docElement = document.documentElement;
-        let winHeight = docElement.clientHeight;
-
-        return rect.top >= 0 && winHeight >= rect.top;
-    }
-
-    enter(): void {
-        this.el.nativeElement.classList.add('hidden', this.animation);
-        this.el.nativeElement.classList.remove('visibility-hidden', 'hidden');
-        this.entered = true;
-    }
-
-    ngOnDestroy() {
-        if (this.documentScrollListener) {
-            this.documentScrollListener();
-        }
-    }*/
 }
