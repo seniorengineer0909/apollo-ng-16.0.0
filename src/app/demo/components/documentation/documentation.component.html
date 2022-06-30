@@ -39,6 +39,43 @@ Run 'ng help' for more options.
         and the assets are in the <span class="text-primary font-medium">src/assets/layout</span> folder.
     </p>
 
+    <h5>Default Configuration</h5>
+    <p>Initial layout configuration can be defined at the main app component by injecting the <span class="text-primary font-medium">LayoutService</span>, this step is optional and only necessary when customizing the defaults. Note that <span class="text-primary font-medium">theme</span> and 
+        <span class="text-primary font-medium">scale</span> are not reactive since theme is configured outside of Angular at <strong class="font-semibold">index.html</strong> by default and 
+        initial scale is defined with the <span class="text-primary font-medium">$scale</span> at <strong class="font-semibold">layout.scss</strong>. When default theme or scale is changed at their files initially, it is required to configure the layout service with the matching values
+        to avoid sync issues. </p>
+
+<app-code ngPreserveWhitespaces ngNonBindable lang="javascript">
+import &#123; Component, OnInit &#125; from '@angular/core';
+import &#123; PrimeNGConfig &#125; from 'primeng/api';
+import &#123; LayoutService &#125; from './layout/service/app.layout.service';
+
+@Component(&#123;
+    selector: 'app-root',
+    templateUrl: './app.component.html'
+&#125;)
+export class AppComponent implements OnInit &#123;
+
+    constructor(private primengConfig: PrimeNGConfig, private layoutService: LayoutService) &#123; &#125;
+
+    ngOnInit(): void &#123;
+        this.primengConfig.ripple = true;       //enables core ripple functionality
+
+        //optional configuration with the default configuration
+        this.layoutService.config = &#123;
+            ripple: false,                      //toggles ripple on and off
+            inputStyle: 'outlined',             //default style for input elements
+            menuMode: 'static',                 //layout mode of the menu, valid values are "static", "overlay", "slim" and "horizontal"
+            colorScheme: 'light',               //color scheme of the template, valid values are "light", "dim" and "dark"
+            theme: 'indigo',                    //default component theme for PrimeNG
+            menuTheme: "colorScheme",           //theme of the menu, valid values are "colorScheme", "primaryColor" and "transparent"    
+            scale: 14                           //size of the body font size to scale the whole application
+        &#125;;
+    &#125;
+
+&#125;
+</app-code>
+
     <h5>Menu</h5>
     <p>Menu is a separate component defined in <span class="text-primary font-medium">src/app/layout/app.menu.component.ts</span> file and based on PrimeNG MenuModel API. In order to define the menuitems,
         navigate to this file and define your own model as a nested structure.</p>
@@ -77,6 +114,13 @@ export class AppMenuComponent implements OnInit &#123;
         ];
     &#125;
 &#125;
+</app-code>
+
+    <h5>Breadcrumb</h5>
+    <p>Breadcrumb component at the topbar section is dynamic and retrieves the path information from the router using the <span class="text-primary font-medium">data.breadcrumb</span> property.</p>
+
+<app-code ngPreserveWhitespaces ngNonBindable lang="javascript">
+&#123; path: 'documentation', data: &#123; breadcrumb: 'Documentation' &#125;, loadChildren: () => import('./demo/components/documentation/documentation.module').then(m => m.DocumentationModule) &#125;
 </app-code>
 
     <h4>Integration with Existing Angular CLI Projects</h4>
