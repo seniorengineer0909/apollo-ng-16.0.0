@@ -30,6 +30,20 @@
             <p-radioButton name="menuMode" value="horizontal" [(ngModel)]="menuMode" inputId="mode4"></p-radioButton>
             <label for="mode4">Horizontal</label>
         </div>
+
+        <h5>Menu Theme</h5>
+        <div class="field-radiobutton">
+            <p-radioButton name="menuTheme" value="colorScheme" [(ngModel)]="menuTheme" inputId="menutheme-colorscheme"></p-radioButton>
+            <label for="menutheme-colorscheme">Color Scheme</label>
+        </div>
+        <div class="field-radiobutton">
+            <p-radioButton name="menuTheme" value="primaryColor" [(ngModel)]="menuTheme" inputId="menutheme-primarycolor"></p-radioButton>
+            <label for="menutheme-primarycolor">Primary Color</label>
+        </div>
+        <div class="field-radiobutton">
+            <p-radioButton name="menuTheme" value="transparent" [(ngModel)]="menuTheme" inputId="menutheme-transparent"></p-radioButton>
+            <label for="menutheme-transparent">Transparent</label>
+        </div>
     </ng-container>
     
     <h5>Color Scheme</h5>
@@ -56,10 +70,6 @@
             <p-radioButton name="inputStyle" value="filled" [(ngModel)]="inputStyle" inputId="filled_input"></p-radioButton>
             <label for="filled_input">Filled</label>
         </div>
-    
-        <h5>Transparent Menu</h5>
-        <p-inputSwitch [(ngModel)]="transparentMenu"></p-inputSwitch>
-        <p class="text-sm">* Excludes overlay mode</p>
     
         <h5>Ripple Effect</h5>
         <p-inputSwitch [(ngModel)]="ripple"></p-inputSwitch>

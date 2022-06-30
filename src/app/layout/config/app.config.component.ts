@@ -67,12 +67,12 @@ export class AppConfigComponent implements OnInit {
         this.layoutService.config.ripple = _val;
     }
 
-    get transparentMenu(): boolean {
-        return this.layoutService.config.transparentMenu;
+    get menuTheme(): string {
+        return this.layoutService.config.menuTheme;
     }
 
-    set transparentMenu(_val: boolean) {
-        this.layoutService.config.transparentMenu = _val;
+    set menuTheme(_val: string) {
+        this.layoutService.config.menuTheme = _val;
     }
 
     ngOnInit() {

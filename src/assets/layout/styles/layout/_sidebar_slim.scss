@@ -41,7 +41,7 @@
 
                         .layout-menuitem-icon {
                             font-size: 1.5rem;
-                            color: var(--primary-color);
+                            color: var(--menuitem-icon-color);
                         }
 
                         .layout-menuitem-text {
@@ -49,13 +49,13 @@
                         }
 
                         &:hover {
-                            background-color: var(--surface-hover);
+                            background-color: var(--menuitem-hover-bg-color);
                         }
                     }
 
                     > ul {
                         position: absolute;
-                        left: 4rem;
+                        left: 5rem;
                         top: 0;
                         min-width: 15rem;
                         background-color: var(--surface-overlay);
@@ -69,6 +69,16 @@
 
                         a {
                             padding-right: .5rem;
+                            color: var(--popup-submenu-item-text-color);
+                            border-radius: var(--border-radius);
+
+                            .layout-menuitem-icon {
+                                color: var(--popup-submenu-item-icon-color);
+                            }
+
+                            &:hover {
+                                background-color: var(--popup-submenu-item-hover-bg-color);
+                            }
                         }
 
                         li {

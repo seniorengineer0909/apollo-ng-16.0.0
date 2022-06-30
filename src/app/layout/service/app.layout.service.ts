@@ -7,8 +7,8 @@ export interface AppConfig {
     theme: string;
     ripple: boolean;
     menuMode: string;
-    transparentMenu: boolean;
     scale: number;
+    menuTheme: string;
 }
 
 interface LayoutState {
@@ -31,8 +31,8 @@ export class LayoutService {
         menuMode: 'static',
         colorScheme: 'light',
         theme: 'indigo',
-        transparentMenu: false,
-        scale: 14
+        scale: 14,
+        menuTheme: 'primaryColor'
     };
 
     state: LayoutState = {

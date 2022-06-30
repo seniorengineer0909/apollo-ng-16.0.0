@@ -71,6 +71,9 @@ export class AppLayoutComponent implements OnDestroy {
             'layout-light': this.layoutService.config.colorScheme === 'light',
             'layout-dim': this.layoutService.config.colorScheme === 'dim',
             'layout-dark': this.layoutService.config.colorScheme === 'dark',
+            'layout-colorscheme-menu': this.layoutService.config.menuTheme === 'colorScheme',
+            'layout-primarycolor-menu': this.layoutService.config.menuTheme === 'primaryColor',
+            'layout-transparent-menu': this.layoutService.config.menuTheme === 'transparent',
             'layout-overlay': this.layoutService.config.menuMode === 'overlay',
             'layout-static': this.layoutService.config.menuMode === 'static',
             'layout-slim': this.layoutService.config.menuMode === 'slim',
@@ -78,7 +81,6 @@ export class AppLayoutComponent implements OnDestroy {
             'layout-static-inactive': this.layoutService.state.staticMenuDesktopInactive && this.layoutService.config.menuMode === 'static',
             'layout-overlay-active': this.layoutService.state.overlayMenuActive,
             'layout-mobile-active': this.layoutService.state.staticMenuMobileActive,
-            'layout-transparent-menu': this.layoutService.config.transparentMenu,
             'p-input-filled': this.layoutService.config.inputStyle === 'filled',
             'p-ripple-disabled': !this.layoutService.config.ripple
         }

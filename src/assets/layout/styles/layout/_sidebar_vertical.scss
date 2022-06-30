@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     width: 16rem;
-    background-color: var(--surface-overlay);
+    background: var(--menu-bg);
     border-right: var(--sidebar-border);
     box-shadow: var(--sidebar-shadow);
     display: flex;
@@ -33,7 +33,7 @@
                 font-size: .857rem;
                 text-transform: uppercase;
                 font-weight: 700;
-                color: var(--primary-color);
+                color: var(--root-menuitem-text-color);
                 padding: 1rem 2rem;
             }
     
@@ -69,16 +69,15 @@
                 display: flex;
                 align-items: center;
                 position: relative;
-                border-radius: var(--border-radius);
                 outline: 0 none;
-                color: var(--text-color);
+                color: var(--menuitem-text-color);
                 cursor: pointer;
                 padding: .75rem 2rem;
                 transition: background-color var(--transition-duration), box-shadow var(--transition-duration);
-    
+
                 .layout-menuitem-icon {
                     margin-right: .5rem;
-                    color: var(--primary-color);
+                    color: var(--menuitem-icon-color);
                 }
     
                 .layout-submenu-toggler {
@@ -98,7 +97,7 @@
                 }
 
                 &:hover {
-                    background-color: var(--surface-hover);
+                    background-color: var(--menuitem-hover-bg-color);
                 }
             }
     
