@@ -40,8 +40,8 @@ Run 'ng help' for more options.
     </p>
 
     <h5>Default Configuration</h5>
-    <p>Initial layout configuration can be defined at the main app component by injecting the <span class="text-primary font-medium">LayoutService</span>, this step is optional and only necessary when customizing the defaults. Note that <span class="text-primary font-medium">theme</span> and 
-        <span class="text-primary font-medium">scale</span> are not reactive since theme is configured outside of Angular at <strong class="font-semibold">index.html</strong> by default and 
+    <p>Initial layout configuration can be defined at the main app component by injecting the <span class="text-primary font-medium">LayoutService</span>, this step is optional and only necessary when customizing the defaults. Note that <span class="text-primary font-medium">theme</span> and
+        <span class="text-primary font-medium">scale</span> are not reactive since theme is configured outside of Angular at <strong class="font-semibold">index.html</strong> by default and
         initial scale is defined with the <span class="text-primary font-medium">$scale</span> at <strong class="font-semibold">layout.scss</strong>. When default theme or scale is changed at their files initially, it is required to configure the layout service with the matching values
         to avoid sync issues. </p>
 
@@ -68,7 +68,7 @@ export class AppComponent implements OnInit &#123;
             menuMode: 'static',                 //layout mode of the menu, valid values are "static", "overlay", "slim" and "horizontal"
             colorScheme: 'light',               //color scheme of the template, valid values are "light", "dim" and "dark"
             theme: 'indigo',                    //default component theme for PrimeNG
-            menuTheme: "colorScheme",           //theme of the menu, valid values are "colorScheme", "primaryColor" and "transparent"    
+            menuTheme: "colorScheme",           //theme of the menu, valid values are "colorScheme", "primaryColor" and "transparent"
             scale: 14                           //size of the body font size to scale the whole application
         &#125;;
     &#125;
@@ -132,7 +132,7 @@ export class AppMenuComponent implements OnInit &#123;
 
     <h4>Theme</h4>
     <p>Apollo provides 24 PrimeNG themes out of the box. Setup of a theme is simple by including the css of theme
-        to your bundle that are located inside <span class="text-primary font-medium">assets/layout/styles/theme/</span> 
+        to your bundle that are located inside <span class="text-primary font-medium">assets/layout/styles/theme/</span>
         folder such as <span class="text-primary font-medium">assets/layout/styles/theme/theme-light/blue/theme.css</span>.</p>
 
     <p>A custom theme can be developed by the following steps.</p>
@@ -162,7 +162,7 @@ $highlightTextColor: $primaryDarkerColor !default;
 </app-code>
 
     <h5>Theme Switcher</h5>
-    <p>Dynamic theming is built-in to the template and implemented by including the theme via a link tag instead of bundling the theme along with a configurator component to switch it. 
+    <p>Dynamic theming is built-in to the template and implemented by including the theme via a link tag instead of bundling the theme along with a configurator component to switch it.
         In order to switch your theme dynamically as well, it needs to be compiled to css. An example sass command to compile the css would be;
     </p>
 
@@ -170,15 +170,17 @@ $highlightTextColor: $primaryDarkerColor !default;
 sass --update src/assets/theme/mytheme/theme.scss:src/assets/theme/mytheme/theme.css
 </app-code>
 
+    <small>"*Note: The sass command above is supported by Dart Sass. Please use Dart Sass instead of Ruby Sass."</small>
+
     <p>Another alternative would be creating dynamic bundles, please see the <a href="https://www.youtube.com/watch?v=5VOuUdDXRsE" class="font-medium text-primary hover:underline">video tutorial</a> for an example.</p>
 
     <h5>Theme Designer</h5>
-    <p>Apollo includes a simplified version of the <a href="">PrimeNG Theme Designer</a> that only includes the main SASS structure. Full list of SASS variables to customize the components further is available at the 
+    <p>Apollo includes a simplified version of the <a href="">PrimeNG Theme Designer</a> that only includes the main SASS structure. Full list of SASS variables to customize the components further is available at the
         <a href="https://www.primefaces.org/designer/api/primeng/13.2.0/" class="font-medium text-primary hover:underline">SASS API</a> docs.
     </p>
 
     <h4>Migration Guide</h4>
     <p>Every important change is included in <b>CHANGELOG.md</b> file at the root folder of the distribution along with the instructions to update. Whenever a major version of Angular is released, a new version of the template
-    is provided that mainly brings compatibility support to the PrimeNG component theming. If there are no compatibility issues on component theming e.g. new components or new functionality to PrimeNG, 
+    is provided that mainly brings compatibility support to the PrimeNG component theming. If there are no compatibility issues on component theming e.g. new components or new functionality to PrimeNG,
     you may still update your application to the latest Angular and PrimeNG without the need to waiting for an update.</p>
 </div>
