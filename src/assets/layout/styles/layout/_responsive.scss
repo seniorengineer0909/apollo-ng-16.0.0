@@ -70,6 +70,7 @@
 
             .layout-mask {
                 display: block;
+                animation: fadein var(--transition-duration);
             }
         }
 
