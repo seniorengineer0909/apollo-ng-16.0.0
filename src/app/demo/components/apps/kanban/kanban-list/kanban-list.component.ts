@@ -63,12 +63,14 @@ export class KanbanListComponent implements OnInit {
         this.kanbanService.copyList(list);
     }
 
-    onCardClick(card: KanbanCard) {
-        if (this.list.listId) {
-            this.kanbanService.onCardSelect(card, this.list.listId);
+    onCardClick(event: Event, card: KanbanCard) {
+        const eventTarget = event.target as HTMLElement;
+        if (!(eventTarget.classList.contains('p-button-icon') || eventTarget.classList.contains('p-trigger'))) {
+            if (this.list.listId) {
+                this.kanbanService.onCardSelect(card, this.list.listId);
+            }
+            this.parent.sidebarVisible = true;
         }
-
-        this.parent.sidebarVisible = true;
     }
 
     insertCard() {

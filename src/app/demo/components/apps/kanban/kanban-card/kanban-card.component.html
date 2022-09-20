@@ -2,8 +2,8 @@
     <div class="flex justify-content-between align-items-center">
         <span class="text-900 font-semibold">{{card.title ? card.title : 'Untitled'}}</span>
         <div>
-            <button pButton pRipple type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-text p-button-secondary" (click)="$event.stopPropagation(); menu.toggle($event)"></button>
-            <p-tieredMenu #menu [model]="menuItems" appendTo="body" [popup]="true" ></p-tieredMenu>
+            <button pButton pRipple type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-text p-button-secondary p-trigger" (click)="menu.toggle($event)"></button>
+            <p-tieredMenu #menu [model]="menuItems" appendTo="body" [popup]="true"></p-tieredMenu>
         </div>
     </div>
     <div *ngIf="card.description" class="text-700">{{card.description}}</div>
