@@ -1,4 +1,9 @@
 # Changelog
+
+## 14.0.1
+- Refactored app.layout.component.ts
+- Fixed issue where double click is necessary to hide a kanban card overlay menu.
+
 ## 14.0.0
 **Migration Guide**
 - Upgrade to PrimeNG 14
