@@ -1,6 +1,6 @@
 {
-  "name": "apollo-ngx",
-  "version": "14.0.0",
+  "name": "apollo-ng",
+  "version": "14.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

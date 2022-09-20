@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"apollo-ngx": {
+		"apollo-ng": {
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
@@ -78,10 +78,10 @@
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "apollo-ngx:build:production"
+							"browserTarget": "apollo-ng:build:production"
 						},
 						"development": {
-							"browserTarget": "apollo-ngx:build:development"
+							"browserTarget": "apollo-ng:build:development"
 						}
 					},
 					"defaultConfiguration": "development"
@@ -89,7 +89,7 @@
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
 					"options": {
-						"browserTarget": "apollo-ngx:build"
+						"browserTarget": "apollo-ng:build"
 					}
 				},
 				"test": {
@@ -113,7 +113,7 @@
 			}
 		}
 	},
-  "defaultProject": "apollo-ngx",
+  "defaultProject": "apollo-ng",
   "cli": {
     "analytics": false
   }
