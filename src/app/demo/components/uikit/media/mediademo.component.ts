@@ -60,4 +60,5 @@ export class MediaDemoComponent implements OnInit {
             this.images = images;
         });
     }
+    
 }

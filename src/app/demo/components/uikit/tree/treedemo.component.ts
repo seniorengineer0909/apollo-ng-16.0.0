@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {NodeService} from 'src/app/demo/service/node.service';
-import {TreeNode} from 'primeng/api';
+import { Component, OnInit } from '@angular/core';
+import { NodeService } from 'src/app/demo/service/node.service';
+import { TreeNode} from 'primeng/api';
 
 @Component({
     templateUrl: './treedemo.component.html'
