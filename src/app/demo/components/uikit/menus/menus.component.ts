@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MegaMenuItem, MenuItem } from 'primeng/api';
+
 @Component({
-    templateUrl: './menus.component.html'
+    templateUrl: './menus.component.html',
+    styles: [`
+        :host ::ng-deep .p-menubar-root-list {
+            flex-wrap: wrap;
+        }
+    `]
 })
 export class MenusComponent implements OnInit {
 
@@ -28,7 +34,6 @@ export class MenusComponent implements OnInit {
     pageIndex: number = 0;
 
     ngOnInit() {
-
         this.tieredItems = [
             {
                 label: 'Customers',
