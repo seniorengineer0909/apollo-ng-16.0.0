@@ -103,7 +103,6 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'UI Kit',
                 icon: 'pi pi-fw pi-star-fill',
-                routerLink: ['/uikit'],
                 items: [
                     {
                         label: 'Form Layout',
@@ -192,7 +191,6 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Prime Blocks',
                 icon: 'pi pi-fw pi-prime',
-                routerLink: ['/blocks'],
                 items: [
                     {
                         label: 'Free Blocks',
@@ -210,7 +208,6 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Utilities',
                 icon: 'pi pi-fw pi-compass',
-                routerLink: ['/utilities'],
                 items: [
                     {
                         label: 'PrimeIcons',
@@ -233,7 +230,6 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Pages',
                 icon: 'pi pi-fw pi-briefcase',
-                routerLink: ['/pages'],
                 items: [
                     {
                         label: 'Landing',
