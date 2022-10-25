@@ -6,7 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 import { StyleClassModule } from 'primeng/styleclass';
 import { AppConfigModule } from 'src/app/layout/config/app.config.module';
-import { AnimateEnter } from './animateenter.directive'; 
+import { AnimateEnterDirective } from './animateenter.directive'; 
 
 @NgModule({
     imports: [
@@ -17,6 +17,6 @@ import { AnimateEnter } from './animateenter.directive';
         StyleClassModule,
         AppConfigModule,
     ],
-    declarations: [LandingComponent, AnimateEnter]
+    declarations: [LandingComponent, AnimateEnterDirective]
 })
 export class LandingModule { }

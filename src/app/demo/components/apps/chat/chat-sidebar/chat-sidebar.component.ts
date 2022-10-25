@@ -3,6 +3,7 @@ import { User } from 'src/app/demo/api/user';
 import { ChatService } from '../service/chat.service';
 
 @Component({
+    // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'chat-sidebar',
     templateUrl: './chat-sidebar.component.html'
 })

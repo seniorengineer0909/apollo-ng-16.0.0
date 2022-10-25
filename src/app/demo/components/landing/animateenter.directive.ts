@@ -1,12 +1,10 @@
-import {  Directive, ElementRef, OnDestroy, Renderer2, Input, OnInit } from '@angular/core';
+import {  Directive, ElementRef, OnDestroy, Renderer2, Input, OnInit, HostBinding, AfterViewInit } from '@angular/core';
 
 @Directive({
-    selector: '[animateEnter]',
-    host: {
-        '[class.visibility-hidden]': 'true'
-    }
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[animateEnter]'
 })
-export class AnimateEnter implements OnInit, OnDestroy {
+export class AnimateEnterDirective implements OnInit, AfterViewInit, OnDestroy {
 
     @Input('animateEnter') animation!: string;
 
@@ -15,6 +13,8 @@ export class AnimateEnter implements OnInit, OnDestroy {
     loadListener: Function = () => { };
 
     entered: boolean = false;
+
+    @HostBinding('class.visibility-hidden') visibilityHidden: boolean = true;
 
     constructor(public el: ElementRef, public renderer: Renderer2) { }
 

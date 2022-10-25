@@ -7,6 +7,7 @@ import { MemberService } from 'src/app/demo/service/member.service';
 import { Subscription } from 'rxjs';
 
 @Component({
+    // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'create-task',
     templateUrl: './create-task.component.html',
     providers: [MessageService]

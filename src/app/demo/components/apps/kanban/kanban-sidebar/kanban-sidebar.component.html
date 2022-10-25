@@ -71,7 +71,7 @@
                 </div>
                 <textarea type="text" pInputTextarea [(ngModel)]="taskContent" style="resize: none" class="w-full mt-4" placeholder="Add a task" (keydown.enter)="addTask($event)"></textarea>
     
-                <ul *ngIf="card.taskList?.tasks?.length != 0" class="list-none p-4 flex flex-column gap-3 surface-ground surface-border border-1 border-round">
+                <ul *ngIf="card.taskList?.tasks?.length !== 0" class="list-none p-4 flex flex-column gap-3 surface-ground surface-border border-1 border-round">
                     <li *ngFor="let task of card.taskList?.tasks">
                         <p-checkbox [(ngModel)]="task.completed" [binary]="true" [inputId]="task.text" (onChange)="calculateProgress()"></p-checkbox>
                         <span class="ml-3" style="word-break: break-all;" [ngClass]="{'text-600 line-through': task.completed, 'text-900': !task.completed}">

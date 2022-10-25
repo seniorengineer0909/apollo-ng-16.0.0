@@ -1,16 +1,16 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
+	// eslint-disable-next-line @angular-eslint/component-selector
 	selector: 'product-filter',
 	templateUrl: './filter.component.html',
 	styleUrls: ['./filter.component.scss']
 })
-
 export class FilterComponent {
 
 	@Input() display: boolean = false;
 
-	@Output() onFilterClose = new EventEmitter();
+	@Output() filterClose = new EventEmitter();
 
 	selectedFilters: string[] = ['Alfred', 'Men', 'Kids', 'Black'];
 

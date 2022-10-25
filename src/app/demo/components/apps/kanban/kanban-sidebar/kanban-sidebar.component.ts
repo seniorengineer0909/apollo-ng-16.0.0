@@ -8,6 +8,7 @@ import { MenuItem } from 'primeng/api';
 import { KanbanService } from '../service/kanban.service';
 
 @Component({
+    // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'kanban-sidebar',
     templateUrl: './kanban-sidebar.component.html',
     styleUrls: ['./kanban-sidebar.component.scss']

@@ -5,6 +5,7 @@ import { Task } from 'src/app/demo/api/task';
 import { TaskService } from '../service/task.service';
 
 @Component({
+    // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'task-list',
     templateUrl: './task-list.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush

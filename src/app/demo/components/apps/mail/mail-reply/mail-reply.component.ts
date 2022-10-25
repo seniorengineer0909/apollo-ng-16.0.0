@@ -4,6 +4,7 @@ import { Mail } from 'src/app/demo/api/mail';
 import { MailService } from '../service/mail.service';
 
 @Component({
+    // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'mail-reply',
     templateUrl: './mail-reply.component.html',
 })
