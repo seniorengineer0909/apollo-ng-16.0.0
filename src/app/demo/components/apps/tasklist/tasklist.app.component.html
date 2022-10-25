@@ -3,8 +3,8 @@
         <span class="text-900 text-xl font-semibold">Task List</span>
         <button pButton class="p-button-outlined font-semibold" icon="pi pi-plus" label="Create Task" (click)="showDialog()"></button>
     </div>
-    <task-list [taskList]="todo" title="ToDo"></task-list>
-    <task-list [taskList]="completed" title="Completed"></task-list>
+    <app-task-list [taskList]="todo" title="ToDo"></app-task-list>
+    <app-task-list [taskList]="completed" title="Completed"></app-task-list>
 </div>
 
-<create-task></create-task>
+<app-create-task></app-create-task>

@@ -64,6 +64,6 @@
         <button pButton pRipple icon="pi pi-facebook" class="p-button-secondary" label="Facebook"></button>
         <button [routerLink]="['/apps/blog/edit']" pButton pRipple icon="pi pi-pencil" class="sm:ml-auto" label="Edit Post"></button>
     </div>
-    <blog-comments [comments]="comments"></blog-comments>
-    <new-comment></new-comment>
+    <app-blog-comments [comments]="comments"></app-blog-comments>
+    <app-new-comment></app-new-comment>
 </div>

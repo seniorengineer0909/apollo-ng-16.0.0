@@ -5,8 +5,7 @@ import { KanbanService } from '../service/kanban.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'kanban-card',
+    selector: 'app-kanban-card',
     templateUrl: './kanban-card.component.html'
 })
 export class KanbanCardComponent implements OnDestroy {

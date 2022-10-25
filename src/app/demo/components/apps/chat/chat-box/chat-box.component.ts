@@ -4,8 +4,7 @@ import { User } from 'src/app/demo/api/user';
 import { ChatService } from '../service/chat.service';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'chat-box',
+    selector: 'app-chat-box',
     templateUrl: './chat-box.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })

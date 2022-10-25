@@ -6,8 +6,7 @@ import { MailService } from 'src/app/demo/components/apps/mail/service/mail.serv
 import { filter, Subscription } from 'rxjs';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'mail-sidebar',
+    selector: 'app-mail-sidebar',
     templateUrl: './mail-sidebar.component.html'
 })
 export class MailSidebarComponent implements OnDestroy {

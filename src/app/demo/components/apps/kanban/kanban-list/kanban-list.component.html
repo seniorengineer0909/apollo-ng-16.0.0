@@ -14,7 +14,7 @@
         </div>
     </div>
     <div [id]="list.listId" class="flex flex-column gap-5 overflow-y-auto px-4 mt-4 scrollable kanban-list" cdkDropList (cdkDropListDropped)="dropCard($event)" (cdkDropListEntered)="insertHeight($event)" (cdkDropListExited)="removeHeight($event)" [cdkDropListData]="list.cards" [cdkDropListConnectedTo]="listIds" #listEl style="min-height:2rem">
-        <kanban-card *ngFor="let card of list.cards" [card]="card" [listId]="list.listId" (click)="onCardClick($event, card)" cdkDrag cdkDragHandle [cdkDragDisabled]="isMobileDevice"></kanban-card>
+        <app-kanban-card *ngFor="let card of list.cards" [card]="card" [listId]="list.listId" (click)="onCardClick($event, card)" cdkDrag cdkDragHandle [cdkDragDisabled]="isMobileDevice"></app-kanban-card>
     </div>
     <div class="px-4 mb-3 w-full mt-4 flex">
         <button pButton pRipple label="New Card" icon="pi pi-plus font-semibold" class="py-3 justify-content-center font-semibold w-full border-round" (click)="insertCard()"></button>

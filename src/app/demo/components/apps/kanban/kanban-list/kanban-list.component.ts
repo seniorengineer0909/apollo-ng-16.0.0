@@ -6,8 +6,7 @@ import { KanbanService } from '../service/kanban.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'kanban-list',
+    selector: 'app-kanban-list',
     templateUrl: './kanban-list.component.html',
     styleUrls: ['./kanban-list.component.scss']
 })

@@ -8,6 +8,6 @@
         <input id="search" type="text" pInputText placeholder="Search" class="w-full" [(ngModel)]="searchValue" (input)="filter()"/>
     </span>
     <div class="flex flex-row gap-4 md:flex-column overflow-auto">
-        <user-card *ngFor="let user of filteredUsers" [user]="user"></user-card>
+        <app-user-card *ngFor="let user of filteredUsers" [user]="user"></app-user-card>
     </div>
 </div>

@@ -7,8 +7,7 @@ interface Image {
 }
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'file-uploader',
+    selector: 'app-file-uploader',
     templateUrl: './uploader.component.html',
     providers: [MessageService]
 })

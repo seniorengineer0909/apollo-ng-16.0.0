@@ -6,8 +6,7 @@ import { Mail } from 'src/app/demo/api/mail';
 import { MailService } from 'src/app/demo/components/apps/mail/service/mail.service';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'mail-table',
+    selector: 'app-mail-table',
     templateUrl: './mail-table.component.html'
 })
 export class MailTableComponent implements OnInit {
