@@ -3,6 +3,7 @@
 ## 14.0.2
 - Updated UI kit demos
 - Updated PrimeNG
+- Enabled lint
 
 ## 14.0.1
 - Refactored app.layout.component.ts
