@@ -94,12 +94,6 @@
                     transition: transform var(--transition-duration);
                 }
     
-                &.rotated-icon {
-                    .layout-menuitem-icon {
-                        transform: rotate(90deg);
-                    }
-                }
-    
                 &.active-route {
                     font-weight: 700;
                 }

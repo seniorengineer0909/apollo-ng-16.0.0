@@ -126,9 +126,8 @@ export class AppMenuComponent implements OnInit {
                     },
                     {
                         label: 'Button',
-                        icon: 'pi pi-fw pi-mobile',
-                        routerLink: ['/uikit/button'],
-                        class: 'rotated-icon'
+                        icon: 'pi pi-fw pi-box',
+                        routerLink: ['/uikit/button']
                     },
                     {
                         label: 'Table',
