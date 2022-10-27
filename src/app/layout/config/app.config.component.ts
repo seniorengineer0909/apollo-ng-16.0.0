@@ -115,7 +115,7 @@ export class AppConfigComponent implements OnInit {
 
     replaceThemeLink(href: string, onComplete: Function) {
         const id = 'theme-link';
-        const themeLink = <HTMLLinkElement>document.getElementById('theme-link');
+        const themeLink = <HTMLLinkElement>document.getElementById(id);
         const cloneLinkElement = <HTMLLinkElement>themeLink.cloneNode(true);
 
         cloneLinkElement.setAttribute('href', href);
