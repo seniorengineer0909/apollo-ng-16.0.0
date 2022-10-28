@@ -8,6 +8,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { BadgeModule } from 'primeng/badge';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { TooltipModule } from 'primeng/tooltip';
 import { RippleModule } from 'primeng/ripple';
 import { AppConfigModule } from './config/app.config.module';
 import { AppLayoutComponent } from './app.layout.component';
@@ -39,6 +40,7 @@ import { RouterModule } from '@angular/router';
         BadgeModule,
         RadioButtonModule,
         InputSwitchModule,
+        TooltipModule,
         RippleModule,
         RouterModule,
         AppConfigModule
