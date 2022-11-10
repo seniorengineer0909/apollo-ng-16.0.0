@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from 'src/app/demo/service/event.service';
-import { CalendarOptions } from '@fullcalendar/angular';
+import { defineFullCalendarElement } from '@fullcalendar/web-component';
+// @fullcalendar plugins
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import timeGridPlugin from '@fullcalendar/timegrid';
+
+defineFullCalendarElement();
 
 @Component({
     templateUrl: './calendar.app.component.html',
@@ -12,7 +18,7 @@ export class CalendarAppComponent implements OnInit {
 
     today: string = '';
 
-    calendarOptions: CalendarOptions = {
+    calendarOptions: any = {
         initialView: 'dayGridMonth'
     };
 
@@ -42,6 +48,7 @@ export class CalendarAppComponent implements OnInit {
         });
 
         this.calendarOptions = {
+            plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
             height: 720,
             initialDate: this.today,
             headerToolbar: {
@@ -53,8 +60,8 @@ export class CalendarAppComponent implements OnInit {
             selectable: true,
             selectMirror: true,
             dayMaxEvents: true,
-            eventClick: (e) => this.onEventClick(e),
-            select: (e) => this.onDateSelect(e)
+            eventClick: (e: MouseEvent) => this.onEventClick(e),
+            select: (e: MouseEvent) => this.onDateSelect(e)
         };
     }
 
