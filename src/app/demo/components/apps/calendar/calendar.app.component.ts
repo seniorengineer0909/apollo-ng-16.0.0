@@ -7,7 +7,6 @@ import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 
 defineFullCalendarElement();
-
 @Component({
     templateUrl: './calendar.app.component.html',
     styleUrls: ['./calendar.app.component.scss']

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CalendarAppRoutingModule } from './calendar.app-routing.module';
 import { CalendarAppComponent } from './calendar.app.component';
-
 import { CalendarModule } from 'primeng/calendar';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
@@ -13,7 +12,6 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast'
 import { EventService } from 'src/app/demo/service/event.service';
-
 
 @NgModule({
     imports: [
