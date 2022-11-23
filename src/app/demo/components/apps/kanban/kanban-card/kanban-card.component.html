@@ -7,7 +7,7 @@
         </div>
     </div>
     <div *ngIf="card.description" class="text-700">{{card.description}}</div>
-    <p-progressBar *ngIf="card.taskList.tasks.length" [value]="card.progress" [showValue]="false"></p-progressBar>
+    <p-progressBar *ngIf="card.taskList.tasks.length" [value]="card.progress" [showValue]="false" [style]="{'height':'.5rem'}"></p-progressBar>
     
     <div class="flex align-items-center justify-content-between flex-column md:flex-row gap-4 md:gap-0">
         <p-avatarGroup>

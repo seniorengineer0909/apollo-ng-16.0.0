@@ -28,7 +28,7 @@
                 </p-overlayPanel>
             </div>
         </div>
-        <div class="grid grid-nogutter gap-5 pt-5 flex-wrap" style="height:82vh; overflow-y: auto;">
+        <div class="grid grid-nogutter gap-5 pt-5 flex-wrap flex-1 flex flex-column">
             <div class="col-12 field px-5">
                 <label for="start" class="block text-900 font-semibold">Description</label>
                 <textarea id="description" type="text" pInputTextarea [rows]="5" [(ngModel)]="card.description" style="resize: none" class="w-full"></textarea>
@@ -99,7 +99,7 @@
                 </p-autoComplete>
             </div>
     
-            <div  class="col-12 flex flex-column row-gap-4 px-5 mb-6">
+            <div class="col-12 flex flex-column row-gap-4 px-5 mb-6">
                 <span class="block text-900 font-semibold">Comments</span>
                 <div class="flex align-items-center">
                     <p-avatar icon="pi pi-user" class="mr-3" shape="circle" size="large"></p-avatar>
