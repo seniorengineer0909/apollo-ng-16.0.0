@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { BlocksComponent } from './blocks/blocks.component';
 import { PrimeBlocksRoutingModule } from './primeblocks-routing.module';
 import { BlockViewerComponent } from './blockviewer/blockviewer.component'
-import { AppCodeModule } from '../code/code.component';
 import { ChipModule } from 'primeng/chip';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
@@ -15,7 +14,6 @@ import { PasswordModule } from 'primeng/password';
 @NgModule({
     imports: [
         CommonModule,
-        AppCodeModule,
         ButtonModule,
         RippleModule,
         ChipModule,

@@ -82,12 +82,13 @@
     border:1px solid var(--surface-border);
     border-top: 0 none;
 
-    pre[class*=language-] {
-        margin: 0 !important; 
-        border-radius: 0 !important;
+    pre.app-code {
+        background-color: var(--surface-card) !important;
+        padding-bottom: 1rem !important;
+        margin-bottom: 0 !important;
 
         code {
-            border-radius: 0 !important;
+            padding: 1rem 2.5rem;
         }
     }
 }
