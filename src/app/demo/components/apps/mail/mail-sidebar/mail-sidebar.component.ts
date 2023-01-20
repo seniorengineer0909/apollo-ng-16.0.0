@@ -50,22 +50,22 @@ export class MailSidebarComponent implements OnDestroy {
             if (!mail.archived && !mail.trash && !mail.spam && !mail.hasOwnProperty('sent')) {
                 inbox.push(mail);
             }
-            if (mail.starred) {
+            if (mail.starred && !mail.archived && !mail.trash) {
                 starred.push(mail);
             }
-            if (mail.spam) {
+            if (mail.spam && !mail.archived && !mail.trash) {
                 spam.push(mail);
             }
-            if (mail.important) {
+            if (mail.important && !mail.archived && !mail.trash) {
                 important.push(mail);
             }
-            if (mail.archived) {
+            if (mail.archived && !mail.trash ) {
                 archived.push(mail);
             }
             if (mail.trash) {
                 trash.push(mail);
             }
-            if (mail.sent) {
+            if (mail.sent && !mail.archived && !mail.trash) {
                 sent.push(mail);
             }
         }
