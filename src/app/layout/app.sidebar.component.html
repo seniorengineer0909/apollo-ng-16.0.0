@@ -1,4 +1,4 @@
-<div class="layout-sidebar">
+<div class="layout-sidebar" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     <a [routerLink]="['/']" class="app-logo">
         <svg width="124" height="22" viewBox="0 0 124 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="app-logo-normal">
             <path d="M10.4851 0L0 20.9465H3.53702L10.4856 6.07843L17.2944 20.9465H20.9715L10.4851 0Z" fill="var(--logo-color)"/>
@@ -15,7 +15,10 @@
             <path d="M10.4851 0L0 20.9465H3.53702L10.4856 6.07843L17.2944 20.9465H20.9715L10.4851 0Z" fill="var(--logo-color)"/>
             <path d="M13.8399 15.793L16.2076 21.0019H11.7681L13.8399 15.793Z" fill="var(--logo-color)"/>
             <path d="M9.04637 21.0019L6.67867 15.793L4.60693 21.0019H9.04637Z" fill="var(--logo-color)"/>
-        </svg>     
+        </svg>
+        
+        <button class="layout-sidebar-anchor p-link" type="button" (click)="anchor()"></button>
+        
     </a>
 
     <div class="layout-menu-container">
