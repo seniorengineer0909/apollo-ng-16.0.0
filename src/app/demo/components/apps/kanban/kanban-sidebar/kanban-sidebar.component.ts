@@ -16,6 +16,8 @@ export class KanbanSidebarComponent implements OnDestroy {
 
     card: KanbanCard = {id:'' ,taskList: {title: 'Untitled Task List', tasks: []}};
 
+    formValue!: KanbanCard;
+
     listId: string = '';
 
     filteredAssignees: Member[] = [];
@@ -51,7 +53,11 @@ export class KanbanSidebarComponent implements OnDestroy {
     constructor(public parent: KanbanAppComponent, private memberService: MemberService, private kanbanService: KanbanService) {
         this.memberService.getMembers().then(members => this.assignees = members);
 
-        this.cardSubscription = this.kanbanService.selectedCard$.subscribe(data => this.card = data);
+        this.cardSubscription = this.kanbanService.selectedCard$.subscribe(data => {
+            this.card = data;
+            this.formValue = {...data};
+
+        });
         this.listSubscription = this.kanbanService.selectedListId$.subscribe(data => this.listId = data);
         this.listNameSubscription = this.kanbanService.listNames$.subscribe(data => this.listNames = data);
     }
@@ -65,6 +71,7 @@ export class KanbanSidebarComponent implements OnDestroy {
 
     close() {
         this.parent.sidebarVisible = false;
+        this.resetForm();
     }
 
     filterAssignees(event: any) {
@@ -84,23 +91,31 @@ export class KanbanSidebarComponent implements OnDestroy {
     onComment(event: Event) {
         event.preventDefault();
         if (this.comment.trim().length > 0) {
-            this.newComment.text = this.comment;
-            this.card?.comments?.unshift(this.newComment);
+            this.newComment = { ...this.newComment, text: this.comment }
+            this.formValue?.comments?.unshift(this.newComment);
             this.comment = '';
         }
     }
 
-    onSave() {
-        this.parent.sidebarVisible = false;
+    onSave(event: any) {
+        event.preventDefault();
+        this.card = {...this.formValue};
+        this.kanbanService.updateCard(this.card, this.listId);
+        this.close();
     }
 
     onMove(listId: string) {
-        this.kanbanService.moveCard(this.card, listId, this.listId);
+        this.kanbanService.moveCard(this.formValue, listId, this.listId);
     }
 
     onDelete() {
-        this.kanbanService.deleteCard(this.card?.id || '', this.listId);
+        this.kanbanService.deleteCard(this.formValue?.id || '', this.listId);
         this.parent.sidebarVisible = false;
+        this.resetForm();
+    }
+
+    resetForm() {
+        this.formValue =  {id:'' ,taskList: {title: 'Untitled Task List', tasks: []}};
     }
 
     addTaskList() {
@@ -109,9 +124,9 @@ export class KanbanSidebarComponent implements OnDestroy {
         if (!this.showTaskContainer) {
             return;
         }
-        else if (!this.card.taskList) {
+        else if (!this.formValue.taskList) {
             let id = this.kanbanService.generateId();
-            this.card = { ...this.card, taskList: { id: id, title: 'Untitled Task List', tasks: []  } };
+            this.formValue = { ...this.formValue, taskList: { id: id, title: 'Untitled Task List', tasks: []  } };
         }
     }
 
@@ -119,7 +134,7 @@ export class KanbanSidebarComponent implements OnDestroy {
         event.preventDefault();
         if (this.taskContent.trim().length > 0) {
             this.newTask = { text: this.taskContent, completed: false };
-            this.card.taskList?.tasks.unshift(this.newTask);
+            this.formValue.taskList?.tasks.unshift(this.newTask);
             this.taskContent = '';
             this.calculateProgress();
         }
@@ -135,9 +150,9 @@ export class KanbanSidebarComponent implements OnDestroy {
     }
 
     calculateProgress() {
-        if(this.card.taskList) {
-            let completed = this.card.taskList.tasks.filter(t => t.completed).length;
-            this.card.progress = Math.round(100 * (completed / this.card.taskList.tasks.length));
+        if(this.formValue.taskList) {
+            let completed = this.formValue.taskList.tasks.filter(t => t.completed).length;
+            this.formValue.progress = Math.round(100 * (completed / this.formValue.taskList.tasks.length));
         }
     }
 
