@@ -6,13 +6,13 @@
             <p-tieredMenu #menu [model]="menuItems" appendTo="body" [popup]="true"></p-tieredMenu>
         </div>
     </div>
-    <div *ngIf="card.description" class="text-700">{{card.description}}</div>
+    <div *ngIf="card.description" style="word-break: break-word" class="text-700">{{card.description}}</div>
     <p-progressBar *ngIf="card.taskList.tasks.length" [value]="card.progress" [showValue]="false" [style]="{'height':'.5rem'}"></p-progressBar>
     
     <div class="flex align-items-center justify-content-between flex-column md:flex-row gap-4 md:gap-0">
         <p-avatarGroup>
             <p-avatar *ngFor="let assignee of card.assignees | slice:0:3" image="assets/demo/images/avatar/{{assignee.image}}" shape="circle" styleClass="border-2 surface-border"></p-avatar>
-            <p-avatar *ngIf="card.assignees && card.assignees.length > 3" label="+ {{card.assignees.length - 3}}" shape="circle" styleClass="border-2 surface-border mb-1"></p-avatar>
+            <p-avatar *ngIf="card.assignees && card.assignees.length > 3" label="+ {{card.assignees.length - 3}}" shape="circle" styleClass="border-2 surface-border mb-1 surface-ground"></p-avatar>
         </p-avatarGroup>
         <div *ngIf="card.attachments || card.dueDate" class="flex align-items-center gap-3">
             <span class="text-900 font-semibold" *ngIf="card.taskList.tasks.length"><i class="pi pi-check-square text-700 mr-2"></i>{{generateTaskInfo()}}</span>
