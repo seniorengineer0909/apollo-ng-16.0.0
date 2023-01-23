@@ -12,6 +12,7 @@ import { BadgeModule } from 'primeng/badge';
 import { UserCardComponent } from './user-card/user-card.component';
 import { ChatBoxComponent } from './chat-box/chat-box.component';
 import { ChatService } from './service/chat.service';
+import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import { ChatService } from './service/chat.service';
         InputTextModule,
         ButtonModule,
         BadgeModule,
-        OverlayPanelModule
+        OverlayPanelModule,
+        RippleModule
     ],
     declarations: [
         ChatSidebarComponent,

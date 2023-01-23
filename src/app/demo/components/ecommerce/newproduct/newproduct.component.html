@@ -29,7 +29,7 @@
                                 <div class="flex flex-wrap gap-3 border-round" *ngIf="product.images.length">
                                     <div *ngFor="let file of product.images; let i = index;" class="h-full relative w-7rem h-7rem border-3 border-transparent border-round hover:bg-primary transition-duration-100 cursor-auto" (mouseenter)="onImageMouseOver(file)" (mouseleave)="onImageMouseLeave(file)" style="padding: 1px;">
                                         <img [src]="file.objectURL" class="w-full h-full border-round shadow-2" [alt]="file.name">
-                                        <button [id]="file.name" #buttonEl pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-primary text-sm absolute justify-content-center align-items-center cursor-pointer" style="top: -10px; right: -10px; display: none;" (click)="$event.stopPropagation(); removeImage(file)"></button>
+                                        <button [id]="file.name" #buttonEl pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-primary text-sm absolute justify-content-center align-items-center cursor-pointer w-2rem h-2rem" style="top: -10px; right: -10px; display: none;" (click)="$event.stopPropagation(); removeImage(file)"></button>
                                     </div>
                                 </div>
                             </div>

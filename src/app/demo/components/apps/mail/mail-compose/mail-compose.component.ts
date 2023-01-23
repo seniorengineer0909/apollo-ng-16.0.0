@@ -30,6 +30,7 @@ export class MailComposeComponent {
 
     sendMail() {
         if (this.newMail.message) {
+            this.newMail.id = Math.floor(Math.random() * 1000);
             this.mailService.onSend(this.newMail);
             this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Mail sent' });
             this.router.navigate(['apps/mail/inbox']);

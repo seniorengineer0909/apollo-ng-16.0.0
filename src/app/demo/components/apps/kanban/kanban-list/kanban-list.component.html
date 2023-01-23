@@ -1,8 +1,8 @@
 <div class="surface-card flex flex-column md:w-25rem border-1 surface-border overflow-hidden border-round">
     <div class="flex justify-content-between align-items-center w-full px-4 mt-4 h-3rem">
-        <p-inplace #inplace [closable]="true" closeIcon="pi pi-check" styleClass="h-3rem" (onActivate)="focus()">
+        <p-inplace #inplace [closable]="true" closeIcon="pi pi-check" styleClass="h-auto" (onActivate)="focus()">
             <ng-template pTemplate="display">
-                <span class="block text-900 font-semibold mt-4 pl-2 text-lg"  pTooltip="Click to edit" tooltipPosition="top">{{list.title}}</span>
+                <span class="block text-900 font-semibold mt-4 pl-2 text-lg"  pTooltip="Click to edit" style="word-break: break-word;" tooltipPosition="top">{{list.title}}</span>
             </ng-template>
             <ng-template pTemplate="content">
                 <input #inputEl type="text" [value]="list.title" [(ngModel)]="list.title" pInputText class="w-10rem sm:w-15rem h-3rem text-900 text-lg" (keydown.enter)="inplace.deactivate()">

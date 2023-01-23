@@ -56,11 +56,14 @@ export class CreateTaskComponent implements OnInit, OnDestroy {
     }
 
     save() {
-        if (!this.task.id) {
-            this.task.id = Math.floor(Math.random() * 1000);
-        }
+        this.task.id = Math.floor(Math.random() * 1000);
         this.messageService.add({ severity: 'success', summary: 'Success', detail: `Task "${this.task.name}" created successfully.` });
         this.taskService.addTask(this.task);
+        this.taskService.closeDialog();
+    }
+
+    cancelTask(){
+        this.resetTask()
         this.taskService.closeDialog();
     }
 

@@ -14,11 +14,11 @@ export class CheckoutFormComponent {
     checked2: boolean = true;
 
     cities = [
-        { name: 'New York', code: 'NY' },
-        { name: 'Rome', code: 'RM' },
-        { name: 'London', code: 'LDN' },
-        { name: 'Istanbul', code: 'IST' },
-        { name: 'Paris', code: 'PRS' }
+        { name: 'USA / New York', code: 'NY' },
+        { name: 'Italy / Rome', code: 'RM' },
+        { name: 'United Kingdoom / London', code: 'LDN' },
+        { name: 'Turkey / Istanbul', code: 'IST' },
+        { name: 'France / Paris', code: 'PRS' }
     ];
 
     selectedCity: string = '';

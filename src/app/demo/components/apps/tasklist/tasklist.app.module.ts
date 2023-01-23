@@ -17,6 +17,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { DialogModule } from 'primeng/dialog';
 import { TaskListComponent } from './task-list/task-list.component'
 import { TaskService } from './service/task.service';
+import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
     imports: [
@@ -33,7 +34,8 @@ import { TaskService } from './service/task.service';
         AvatarGroupModule,
         CheckboxModule,
         MenuModule,
-        DialogModule
+        DialogModule,
+        RippleModule
     ],
     declarations: [TaskListAppComponent, CreateTaskComponent, TaskListComponent],
     providers: [TaskService]

@@ -4,7 +4,7 @@
         <li *ngFor="let task of taskList" class="flex flex-column gap-3 md:flex-row md:align-items-center p-2 border-bottom-1 surface-border">
             <div class="flex align-items-center flex-1">
                 <p-checkbox [binary]="true" (onChange)="onCheckboxChange($event, task)" [(ngModel)]="task.completed" [inputId]="task.id.toString()"></p-checkbox>
-                <label for="task.id" class="font-medium white-space-nowrap ml-2" [ngClass]="{'line-through': task.completed}">{{task.name}}</label>
+                <label for="task.id" style="word-break: break-word;" class="font-medium ml-2" [ngClass]="{'line-through': task.completed}">{{task.name}}</label>
             </div>
             <div class="flex flex-1 gap-3 flex-column sm:flex-row sm:justify-content-between">
                 <div class="flex align-items-center">

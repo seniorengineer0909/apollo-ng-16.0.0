@@ -16,7 +16,7 @@
             </div>
             <div class="col-6 field mt-0">
                 <label for="end" class="text-900 font-semibold">Due Date</label>
-                <p-calendar appendTo="body" dateFormat="yy-mm-dd" [showTime]="false" inputId="end" placeholder="End Date" [(ngModel)]="task.endDate"></p-calendar>
+                <p-calendar appendTo="body" dateFormat="yy-mm-dd" [showTime]="false" inputId="end" placeholder="Due Date" [(ngModel)]="task.endDate"></p-calendar>
             </div>
             <div class="col-12 field">
                 <label for="members" class="text-900 font-semibold">Add Team Member</label>
@@ -36,8 +36,8 @@
                 </p-autoComplete>
             </div>
             <div class="col-12 flex justify-content-end mt-4">
-                <button pButton class="p-button-outlined w-8rem mr-3" icon="pi pi-times" label="Cancel" (click)="resetTask()"></button>
-                <button pButton class="p-button-primary w-8rem" icon="pi pi-check" label="Save" (click)="save()"></button>
+                <button pButton pRipple class="p-button-outlined w-8rem mr-3" icon="pi pi-times" label="Cancel" (click)="cancelTask()"></button>
+                <button pButton pRipple class="p-button-primary w-8rem" icon="pi pi-check" label="Save" (click)="save()"></button>
             </div>
         </div>
     </div>

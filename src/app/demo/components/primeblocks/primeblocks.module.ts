@@ -10,6 +10,7 @@ import { RippleModule } from 'primeng/ripple';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { PasswordModule } from 'primeng/password';
         FormsModule,
         InputTextModule,
         PasswordModule,
-        PrimeBlocksRoutingModule
+        PrimeBlocksRoutingModule,
+        TooltipModule
     ],
     declarations: [BlocksComponent, BlockViewerComponent]
 })

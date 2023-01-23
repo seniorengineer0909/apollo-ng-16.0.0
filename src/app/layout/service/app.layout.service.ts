@@ -18,6 +18,8 @@ interface LayoutState {
     configSidebarVisible: boolean;
     staticMenuMobileActive: boolean;
     menuHoverActive: boolean;
+    revealMenuActive: boolean;
+    anchored: boolean,
 }
 
 @Injectable({
@@ -41,7 +43,9 @@ export class LayoutService {
         profileSidebarVisible: false,
         configSidebarVisible: false,
         staticMenuMobileActive: false,
-        menuHoverActive: false
+        menuHoverActive: false,
+        revealMenuActive: false,
+        anchored: false
     };
 
     private configUpdate = new Subject<AppConfig>();

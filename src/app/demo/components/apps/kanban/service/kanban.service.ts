@@ -57,10 +57,15 @@ export class KanbanService {
     addCard(listId: string) {
         const cardId = this.generateId();
         const title = "Untitled card";
-        const newCard = {id: cardId, title: title, description: '', progress: '', assignees: [], attachments: 0, comments: [], startDate: '', dueDate: '', completed: false, taskList: {tasks: []}};
+        const newCard = {id: cardId, title: title, description: '', progress: '', assignees: [], attachments: 0, comments: [], startDate: '', dueDate: '', completed: false, taskList: {title:'Untitled Task List', tasks: []}};
 
         let lists = [];
         lists = this._lists.map(l => l.listId === listId ? ({...l, cards: [...l.cards || [], newCard]}) : l);
+        this.updateLists(lists);
+    }
+
+    updateCard(card: KanbanCard, listId: string) {
+        let lists = this._lists.map(l => l.listId === listId ? ({...l, cards: l.cards.map(c => c.id === card.id ? {...card} : c)}) : l);
         this.updateLists(lists);
     }
 
