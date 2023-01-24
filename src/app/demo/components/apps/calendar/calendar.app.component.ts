@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from 'src/app/demo/service/event.service';
-import { defineFullCalendarElement } from '@fullcalendar/web-component';
 // @fullcalendar plugins
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
-
-defineFullCalendarElement();
 @Component({
     templateUrl: './calendar.app.component.html',
     styleUrls: ['./calendar.app.component.scss']

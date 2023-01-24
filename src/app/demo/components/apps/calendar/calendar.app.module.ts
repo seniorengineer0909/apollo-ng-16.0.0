@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CalendarAppRoutingModule } from './calendar.app-routing.module';
@@ -12,12 +12,13 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast'
 import { EventService } from 'src/app/demo/service/event.service';
-
+import { FullCalendarModule } from '@fullcalendar/angular';
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         CalendarAppRoutingModule,
+        FullCalendarModule,
         DialogModule,
         InputTextareaModule,
         ButtonModule,
@@ -28,7 +29,6 @@ import { EventService } from 'src/app/demo/service/event.service';
         RippleModule
     ],
     declarations: [CalendarAppComponent],
-    providers: [EventService],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    providers: [EventService]
 })
 export class CalendarAppModule { }
