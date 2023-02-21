@@ -14,7 +14,7 @@
                 transform: translateX(-12.75rem);
                 z-index: 999;
 
-                .app-logo {
+                .sidebar-header {
                     display: flex;
                     justify-content: center;
                     gap: 1rem;
@@ -31,14 +31,15 @@
                     }
                 }
 
+
                 .layout-menu {
                     .layout-root-menuitem {
-                        > .layout-menuitem-root-text {
-                            > span {
+                        >.layout-menuitem-root-text {
+                            >span {
                                 margin-right: auto;
                             }
 
-                            > .layout-menuitem-root-icon {
+                            >.layout-menuitem-root-icon {
                                 display: block;
                                 margin-right: 0.125rem;
                             }
@@ -86,15 +87,19 @@
                 .layout-sidebar {
                     transform: translateX(0);
 
-                    .layout-sidebar-anchor {
-                        display: block;
-                        animation: px-fadein 0.15s linear;
+                    .sidebar-header {
+                        .layout-sidebar-anchor {
+                            display: block;
+                            animation: px-fadein 0.15s linear;
+                        }
                     }
+
+                 
 
                     .layout-menu {
                         .layout-root-menuitem {
-                            > .layout-menuitem-root-text {
-                                > .layout-menuitem-root-icon {
+                            >.layout-menuitem-root-text {
+                                >.layout-menuitem-root-icon {
                                     display: none;
                                 }
                             }
@@ -103,6 +108,7 @@
                         ul {
                             a {
                                 padding: 0.75rem 2rem;
+
                                 .layout-submenu-toggler {
                                     display: block;
                                 }
@@ -113,7 +119,7 @@
             }
 
             &.layout-reveal-anchored {
-                .app-logo {
+                .sidebar-header {
                     .layout-sidebar-anchor {
                         background-color: var(--logo-color);
                     }

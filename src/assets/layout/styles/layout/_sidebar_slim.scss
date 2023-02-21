@@ -7,16 +7,18 @@
                 }
             }
 
-            .app-logo {
-                .app-logo-normal {
-                    display: none;
-                }
-        
-                .app-logo-small {
-                    display: inline;
-                }
-            }
+            .sidebar-header {
+                .app-logo {
+                    .app-logo-normal {
+                        display: none;
+                    }
             
+                    .app-logo-small {
+                        display: inline;
+                    }
+                }    
+            }
+           
             .layout-sidebar {
                 width: 5rem;
                 overflow: visible;

@@ -7,13 +7,15 @@
                 }
             }
 
-            .app-logo {
-                .app-logo-normal {
-                    display: none;
-                }
-        
-                .app-logo-small {
-                    display: inline;
+            .sidebar-header{
+                .app-logo {
+                    .app-logo-normal {
+                        display: none;
+                    }
+            
+                    .app-logo-small {
+                        display: inline;
+                    }
                 }
             }
 
@@ -31,7 +33,7 @@
                     padding-bottom: 0;
                 }
 
-                .app-logo {
+                .sidebar-header {
                     padding: 0 2rem;
                 }
             }
