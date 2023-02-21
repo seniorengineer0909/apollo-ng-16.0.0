@@ -30,6 +30,9 @@
                             transform 0.3s;
                     }
                 }
+                .layout-menu-container {
+                    overflow: hidden;
+                }
 
 
                 .layout-menu {
@@ -86,7 +89,9 @@
             &.layout-reveal-active {
                 .layout-sidebar {
                     transform: translateX(0);
-
+                    .layout-menu-container {
+                        overflow: auto;
+                    }
                     .sidebar-header {
                         .layout-sidebar-anchor {
                             display: block;
@@ -111,6 +116,46 @@
 
                                 .layout-submenu-toggler {
                                     display: block;
+                                }
+                            }
+                            ul {
+                                overflow: hidden;
+                                border-radius: var(--border-radius);
+                
+                                li {
+                                    a {
+                                        padding-left: 2.5rem;
+                                    }
+                
+                                    li {
+                                        a {
+                                            padding-left: 3rem;
+                                        }
+                
+                                        li {
+                                            a {
+                                                padding-left: 3.5rem;
+                                            }
+                
+                                            li {
+                                                a {
+                                                    padding-left: 4rem;
+                                                }
+                
+                                                li {
+                                                    a {
+                                                        padding-left: 5.5rem;
+                                                    }
+                
+                                                    li {
+                                                        a {
+                                                            padding-left: 5rem;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
