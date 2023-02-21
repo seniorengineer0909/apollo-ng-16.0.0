@@ -19,5 +19,19 @@ export class VerificationComponent {
 	get dark(): boolean {
 		return this.layoutService.config.colorScheme !== 'light';
 	}
+    onDigitInput(event: any) {
+        let element;
+        if (event.code !== 'Backspace')
+            if (event.code.includes('Numpad')|| event.code.includes('Digit')) {
+                element = event.srcElement.nextElementSibling;
+            }
+        if (event.code === 'Backspace')
+            element = event.srcElement.previousElementSibling;
+
+        if (element == null)
+            return;
+        else
+            element.focus();
+    }
     
 }

@@ -7,16 +7,19 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { AppConfigModule } from 'src/app/layout/config/app.config.module';
+import { InputTextModule } from 'primeng/inputtext';
+import {KeyFilterModule} from 'primeng/keyfilter';
 
 @NgModule({
     imports: [
         CommonModule,
         VerificationRoutingModule,
         FormsModule,
-        InputNumberModule,
+        InputTextModule,
+        KeyFilterModule,
         ButtonModule,
         RippleModule,
-        AppConfigModule
+        AppConfigModule,
     ],
     declarations: [VerificationComponent]
 })
