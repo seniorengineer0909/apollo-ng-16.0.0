@@ -9,68 +9,68 @@ export class BlocksComponent{
 <div class="grid grid-nogutter surface-section text-800">
     <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
         <section>
-            <span class="block text-6xl font-bold mb-1">Create the screens your</span>
-            <div class="text-6xl text-primary font-bold mb-3">visitors deserve to see</div>
+            <span class="block text-6xl font-bold mb-1">Create the screens</span>
+            <div class="text-6xl text-primary font-bold mb-3">your visitors deserve to see</div>
             <p class="mt-0 mb-4 text-700 line-height-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
+            
             <button pButton pRipple label="Learn More" type="button" class="mr-3 p-button-raised"></button>
             <button pButton pRipple label="Live Demo" type="button" class="p-button-outlined"></button>
         </section>
     </div>
     <div class="col-12 md:col-6 overflow-hidden">
-        <img src="assets/demo/images/blocks/hero/hero-1.png" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
+        <img src="assets/images/blocks/hero/hero-1.png" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
     </div>
 </div>`;
 
     block2: string = `
 <div class="surface-section px-4 py-8 md:px-6 lg:px-8 text-center">
-    <div class="mb-3 font-bold text-2xl">
+    <div class="mb-3 font-bold text-3xl">
         <span class="text-900">One Product, </span>
         <span class="text-blue-600">Many Solutions</span>
     </div>
-    <div class="text-700 text-sm mb-6">Ac turpis egestas maecenas pharetra convallis posuere morbi leo urna.</div>
+    <div class="text-700 mb-6">Ac turpis egestas maecenas pharetra convallis posuere morbi leo urna.</div>
     <div class="grid">
         <div class="col-12 md:col-4 mb-4 px-5">
             <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
                 <i class="pi pi-desktop text-4xl text-blue-500"></i>
             </span>
-            <div class="text-900 mb-3 font-medium">Built for Developers</div>
-            <span class="text-700 text-sm line-height-3">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</span>
+            <div class="text-900 text-xl mb-3 font-medium">Built for Developers</div>
+            <span class="text-700 line-height-3">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</span>
         </div>
         <div class="col-12 md:col-4 mb-4 px-5">
             <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
                 <i class="pi pi-lock text-4xl text-blue-500"></i>
             </span>
-            <div class="text-900 mb-3 font-medium">End-to-End Encryption</div>
-            <span class="text-700 text-sm line-height-3">Risus nec feugiat in fermentum posuere urna nec. Posuere sollicitudin aliquam ultrices sagittis.</span>
+            <div class="text-900 text-xl mb-3 font-medium">End-to-End Encryption</div>
+            <span class="text-700 line-height-3">Risus nec feugiat in fermentum posuere urna nec. Posuere sollicitudin aliquam ultrices sagittis.</span>
         </div>
         <div class="col-12 md:col-4 mb-4 px-5">
             <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
                 <i class="pi pi-check-circle text-4xl text-blue-500"></i>
             </span>
-            <div class="text-900 mb-3 font-medium">Easy to Use</div>
-            <span class="text-700 text-sm line-height-3">Ornare suspendisse sed nisi lacus sed viverra tellus. Neque volutpat ac tincidunt vitae semper.</span>
+            <div class="text-900 text-xl mb-3 font-medium">Easy to Use</div>
+            <span class="text-700 line-height-3">Ornare suspendisse sed nisi lacus sed viverra tellus. Neque volutpat ac tincidunt vitae semper.</span>
         </div>
         <div class="col-12 md:col-4 mb-4 px-5">
             <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
                 <i class="pi pi-globe text-4xl text-blue-500"></i>
             </span>
-            <div class="text-900 mb-3 font-medium">Fast & Global Support</div>
-            <span class="text-700 text-sm line-height-3">Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus.</span>
+            <div class="text-900 text-xl mb-3 font-medium">Fast & Global Support</div>
+            <span class="text-700 line-height-3">Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus.</span>
         </div>
         <div class="col-12 md:col-4 mb-4 px-5">
             <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
                 <i class="pi pi-github text-4xl text-blue-500"></i>
             </span>
-            <div class="text-900 mb-3 font-medium">Open Source</div>
-            <span class="text-700 text-sm line-height-3">Nec tincidunt praesent semper feugiat. Sed adipiscing diam donec adipiscing tristique risus nec feugiat. </span>
+            <div class="text-900 text-xl mb-3 font-medium">Open Source</div>
+            <span class="text-700 line-height-3">Nec tincidunt praesent semper feugiat. Sed adipiscing diam donec adipiscing tristique risus nec feugiat. </span>
         </div>
         <div class="col-12 md:col-4 md:mb-4 mb-0 px-3">
             <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
                 <i class="pi pi-shield text-4xl text-blue-500"></i>
             </span>
-            <div class="text-900 mb-3 font-medium">Trusted Securitty</div>
-            <span class="text-700 text-sm line-height-3">Mattis rhoncus urna neque viverra justo nec ultrices. Id cursus metus aliquam eleifend.</span>
+            <div class="text-900 text-xl mb-3 font-medium">Trusted Securitty</div>
+            <span class="text-700 line-height-3">Mattis rhoncus urna neque viverra justo nec ultrices. Id cursus metus aliquam eleifend.</span>
         </div>
     </div>
 </div>`;
@@ -95,15 +95,15 @@ export class BlocksComponent{
                     <ul class="list-none p-0 m-0 flex-grow-1">
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Arcu vitae elementum</span>
+                            <span class="text-900">Arcu vitae elementum</span>
                         </li>
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Dui faucibus in ornare</span>
+                            <span class="text-900">Dui faucibus in ornare</span>
                         </li>
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Morbi tincidunt augue</span>
+                            <span class="text-900">Morbi tincidunt augue</span>
                         </li>
                     </ul>
                     <hr class="mb-3 mx-0 border-top-1 border-none surface-border mt-auto" />
@@ -126,19 +126,19 @@ export class BlocksComponent{
                     <ul class="list-none p-0 m-0 flex-grow-1">
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Arcu vitae elementum</span>
+                            <span class="text-900">Arcu vitae elementum</span>
                         </li>
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Dui faucibus in ornare</span>
+                            <span class="text-900">Dui faucibus in ornare</span>
                         </li>
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Morbi tincidunt augue</span>
+                            <span class="text-900">Morbi tincidunt augue</span>
                         </li>
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Duis ultricies lacus sed</span>
+                            <span class="text-900">Duis ultricies lacus sed</span>
                         </li>
                     </ul>
                     <hr class="mb-3 mx-0 border-top-1 border-none surface-border" />
@@ -161,27 +161,27 @@ export class BlocksComponent{
                     <ul class="list-none p-0 m-0 flex-grow-1">
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Arcu vitae elementum</span>
+                            <span class="text-900">Arcu vitae elementum</span>
                         </li>
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Dui faucibus in ornare</span>
+                            <span class="text-900">Dui faucibus in ornare</span>
                         </li>
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Morbi tincidunt augue</span>
+                            <span class="text-900">Morbi tincidunt augue</span>
                         </li>
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Duis ultricies lacus sed</span>
+                            <span class="text-900">Duis ultricies lacus sed</span>
                         </li>
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Imperdiet proin</span>
+                            <span class="text-900">Imperdiet proin</span>
                         </li>
                         <li class="flex align-items-center mb-3">
                             <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                            <span>Nisi scelerisque</span>
+                            <span class="text-900">Nisi scelerisque</span>
                         </li>
                     </ul>
                     <hr class="mb-3 mx-0 border-top-1 border-none surface-border" />
@@ -323,7 +323,7 @@ export class BlocksComponent{
     block8: string = `
 <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
     <div class="text-center mb-5">
-        <img src="assets/demo/images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-3">
+        <img src="assets/images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-3">
         <div class="text-900 text-3xl font-medium mb-3">Welcome Back</div>
         <span class="text-600 font-medium line-height-3">Don't have an account?</span>
         <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>
@@ -331,15 +331,15 @@ export class BlocksComponent{
 
     <div>
         <label for="email1" class="block text-900 font-medium mb-2">Email</label>
-        <input id="email1" type="text" pInputText class="w-full mb-3">
+        <input id="email1" type="text" placeholder="Email address" pInputText class="w-full mb-3">
 
         <label for="password1" class="block text-900 font-medium mb-2">Password</label>
-        <input id="password1" type="password" pInputText class="w-full mb-3">
+        <input id="password1" type="password" placeholder="Password" pInputText class="w-full mb-3">
 
         <div class="flex align-items-center justify-content-between mb-6">
             <div class="flex align-items-center">
                 <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
-                <label for="rememberme1">Remember me</label>
+                <label for="rememberme1" class="text-900">Remember me</label>
             </div>
             <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
         </div>
@@ -389,7 +389,7 @@ export class BlocksComponent{
             <div class="text-500 w-6 md:w-2 font-medium">Plot</div>
             <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1 line-height-3">
                 A group of professional bank robbers start to feel the heat from police
-                when they unknowingly leave a clue at their latest heist.</div>
+                 when they unknowingly leave a clue at their latest heist.</div>
             <div class="w-6 md:w-2 flex justify-content-end">
                 <button pButton pRipple label="Edit" icon="pi pi-pencil" class="p-button-text"></button>
             </div>
@@ -403,5 +403,5 @@ export class BlocksComponent{
     <div class="font-medium text-500 mb-3">Vivamus id nisl interdum, blandit augue sit amet, eleifend mi.</div>
     <div style="height: 150px" class="border-2 border-dashed surface-border"></div>
 </div>`;
-
+    
 }
