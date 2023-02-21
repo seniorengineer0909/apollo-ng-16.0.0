@@ -8,6 +8,7 @@ import { RippleModule } from 'primeng/ripple';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { AppConfigModule } from 'src/app/layout/config/app.config.module';
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { AppConfigModule } from 'src/app/layout/config/app.config.module';
         RippleModule,
         InputTextModule,
         CheckboxModule,
-        AppConfigModule
+        AppConfigModule,
+        PasswordModule
     ],
     declarations: [RegisterComponent]
 })
