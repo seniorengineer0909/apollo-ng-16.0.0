@@ -18,6 +18,8 @@ export class AppSidebarComponent {
                 this.timeout = null;
             }
             this.layoutService.state.revealMenuActive = true;
+           
+    
         }
     }
 
