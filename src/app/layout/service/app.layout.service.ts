@@ -18,8 +18,7 @@ interface LayoutState {
     configSidebarVisible: boolean;
     staticMenuMobileActive: boolean;
     menuHoverActive: boolean;
-    revealMenuActive: boolean;
-    drawerMenuActive: boolean;
+    sidebarActive:boolean;
     anchored: boolean,
 }
 
@@ -45,8 +44,7 @@ export class LayoutService {
         configSidebarVisible: false,
         staticMenuMobileActive: false,
         menuHoverActive: false,
-        revealMenuActive: false,
-        drawerMenuActive: false,
+        sidebarActive:false,
         anchored: false
     };
 

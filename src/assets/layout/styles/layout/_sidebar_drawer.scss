@@ -111,7 +111,7 @@
                 }
             }
 
-            &.layout-drawer-active {
+            &.layout-sidebar-active {
                 .layout-sidebar {
                     width: 16rem;
 
@@ -217,7 +217,7 @@
                 }
             }
 
-            &.layout-reveal-anchored {
+            &.layout-sidebar-anchored {
                 .sidebar-header {
                     .layout-sidebar-anchor {
                         background-color: var(--logo-color);

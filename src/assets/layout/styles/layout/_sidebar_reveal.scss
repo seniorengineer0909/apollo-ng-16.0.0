@@ -99,7 +99,7 @@
                 }
             }
 
-            &.layout-reveal-active {
+            &.layout-sidebar-active {
                 .layout-sidebar {
                     transform: translateX(0);
                     .layout-menu-container {
@@ -187,7 +187,7 @@
                 }
             }
 
-            &.layout-reveal-anchored {
+            &.layout-sidebar-anchored {
                 .sidebar-header {
                     .layout-sidebar-anchor {
                         background-color: var(--logo-color);

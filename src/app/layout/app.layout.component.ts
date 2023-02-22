@@ -93,10 +93,8 @@ export class AppLayoutComponent implements OnDestroy {
             'layout-mobile-active': this.layoutService.state.staticMenuMobileActive,
             'p-input-filled': this.layoutService.config.inputStyle === 'filled',
             'p-ripple-disabled': !this.layoutService.config.ripple,
-            'layout-reveal-active': this.layoutService.state.revealMenuActive,
-            'layout-reveal-anchored': this.layoutService.state.anchored,
-            'layout-drawer-active': this.layoutService.state.revealMenuActive,
-            'layout-drawer-anchored': this.layoutService.state.anchored
+            'layout-sidebar-active': this.layoutService.state.sidebarActive,
+            'layout-sidebar-anchored': this.layoutService.state.anchored
         }
     }
 
