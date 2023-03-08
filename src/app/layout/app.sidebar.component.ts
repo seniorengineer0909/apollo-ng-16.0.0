@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { LayoutService } from './service/app.layout.service';
 
 @Component({
@@ -8,8 +8,9 @@ import { LayoutService } from './service/app.layout.service';
 export class AppSidebarComponent {
     timeout: any = null;
 
-
-    constructor(public layoutService: LayoutService, public el: ElementRef) { }
+    @ViewChild('menuContainer') menuContainer!: ElementRef;
+    constructor(public layoutService: LayoutService, public el: ElementRef) {}
+    
 
     onMouseEnter() {
         if (!this.layoutService.state.anchored) {

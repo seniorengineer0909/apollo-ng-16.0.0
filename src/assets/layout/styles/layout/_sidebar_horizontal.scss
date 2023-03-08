@@ -29,8 +29,11 @@
                 position: static;
 
                 .layout-menu-container {
-                    overflow: visible;
+                    overflow: auto;
                     padding-bottom: 0;
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
                 }
 
                 .sidebar-header {
@@ -40,7 +43,7 @@
 
             .layout-menu {
                 display: flex;
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
                 flex-direction: row;
                 align-items: center;
                 height: 100%;
@@ -50,7 +53,6 @@
                 }
 
                 .layout-root-menuitem {
-                    position: relative;
                     border-radius: var(--border-radius);
 
                     > .layout-menuitem-root-text {
@@ -93,7 +95,7 @@
 
                     > ul {
                         position: absolute;
-                        left: 0;
+                        left: auto;
                         top: 3rem;
                         min-width: 15rem;
                         background-color: var(--surface-overlay);
