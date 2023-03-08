@@ -18,5 +18,8 @@ export class AppTopbarComponent {
     onProfileButtonClick() {
         this.layoutService.showProfileSidebar();
     }
+    onConfigButtonClick() {
+        this.layoutService.showConfigSidebar();
+    }
     
 }

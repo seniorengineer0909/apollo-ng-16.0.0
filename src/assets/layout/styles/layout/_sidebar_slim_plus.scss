@@ -1,13 +1,14 @@
 @media screen and (min-width: $breakpoint) {
     .layout-container {
-        &.layout-horizontal {
+        &.layout-slim-plus {
             .layout-topbar {
                 .topbar-menubutton {
                     display: none;
                 }
             }
 
-            .sidebar-header{
+            .sidebar-header {
+                justify-content: center;
                 .app-logo {
                     .app-logo-normal {
                         display: none;
@@ -15,78 +16,76 @@
             
                     .app-logo-small {
                         display: inline;
+                        align-items: center;
                     }
-                }
+                }    
             }
-
+           
             .layout-sidebar {
-                width: auto;
-                height: auto;
-                top: 0;
-                z-index: 999;
+                width: 7rem;
                 overflow: visible;
-                flex-direction: row;
-                position: static;
+                z-index: 999;
 
                 .layout-menu-container {
                     overflow: auto;
-                    padding-bottom: 0;
+
                     &::-webkit-scrollbar {
                         display: none;
                     }
                 }
+            }
 
-                .sidebar-header {
-                    padding: 0 2rem;
-                }
+            .layout-content-wrapper {
+                margin-left: 7rem;
             }
 
             .layout-menu {
-                display: flex;
-                flex-wrap: nowrap;
-                flex-direction: row;
-                align-items: center;
-                height: 100%;
-
                 ul {
                     display: none;
                 }
+                
+                li.active-menuitem {
+                    > ul {
+                        display: block;
+                    }
+                }
 
                 .layout-root-menuitem {
-                    border-radius: var(--border-radius);
-
                     > .layout-menuitem-root-text {
                         display: none;
                     }
 
                     > a {
                         display: flex;
+                        flex-direction: column;
                         align-items: center;
-                        padding: .75rem;
-                        border-radius: 0;
+                        justify-content: center;
+                        border-radius: var(--border-radius);
+                        text-align: center;
                         cursor: pointer;
                         outline: none;
-                        color: var(--menuitem-text-color);
                         transition: background-color var(--transition-duration);
+                        width: auto;
+                        height: auto;
+                        margin: 0 auto 1rem auto;
+                        padding: 0.75rem 0;
 
                         .layout-submenu-toggler {
-                            display: block;
-                            margin-left: auto;
-                            transition: transform 0.2s;
+                            display: none;
                         }
 
                         .layout-menuitem-icon {
-                            font-size: 1.25rem;
+                            font-size: 1.5rem;
                             color: var(--menuitem-icon-color);
                         }
 
                         .layout-menuitem-text {
                             font-size: 0.875rem;
                             display: block;
-                            margin-left: .75rem;
-                            margin-right: .75rem;
-                            white-space: nowrap;
+                            margin-top: 0.25rem;
+                            color: var(--menuitem-text-color);
                         }
+
 
                         &:hover {
                             background-color: var(--menuitem-hover-bg-color);
@@ -95,13 +94,14 @@
 
                     > ul {
                         position: absolute;
-                        left: auto;
-                        top: 3rem;
+                        left: 7rem;
+                        top: 0;
                         min-width: 15rem;
                         background-color: var(--surface-overlay);
-                        box-shadow: var(--sidebar-shadow);
-                        padding: 1rem;
                         border-radius: var(--border-radius);
+                        box-shadow: var(--sidebar-shadow);
+                        border: var(--sidebar-border);
+                        padding: 1rem;
                         max-height: 20rem;
                         overflow: auto;
                         z-index: 999;
