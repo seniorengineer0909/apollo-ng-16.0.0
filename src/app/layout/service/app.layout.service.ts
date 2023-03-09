@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
+export type MenuMode = 'static' | 'overlay' | 'horizontal' | 'slim' | 'slim-plus' | 'reveal' | 'drawer';
+
+export type ColorScheme = 'light' | 'dark'| 'dim';
+
+export type MenuColorScheme = 'colorScheme' | 'primaryColor'| 'transparent';
+
 export interface AppConfig {
     inputStyle: string;
-    colorScheme: string;
+    colorScheme: ColorScheme;
     theme: string;
     ripple: boolean;
-    menuMode: string;
+    menuMode: MenuMode;
     scale: number;
-    menuTheme: string;
+    menuTheme: MenuColorScheme;
 }
 
 interface LayoutState {

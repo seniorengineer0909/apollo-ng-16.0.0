@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuService } from '../app.menu.service';
-import { LayoutService } from '../service/app.layout.service';
+import { ColorScheme, LayoutService, MenuColorScheme, MenuMode } from '../service/app.layout.service';
 
 @Component({
     selector: 'app-config',
@@ -32,22 +32,22 @@ export class AppConfigComponent implements OnInit {
         this.layoutService.config.scale = _val;
     }
 
-    get menuMode(): string {
+    get menuMode(): MenuMode {
         return this.layoutService.config.menuMode;
     }
 
-    set menuMode(_val: string) {
+    set menuMode(_val: MenuMode) {
         this.layoutService.config.menuMode = _val;
         if (this.layoutService.isSlimPlus() || this.layoutService.isSlim() || this.layoutService.isHorizontal()) {
             this.menuService.reset();
         }
     }
 
-    get colorScheme(): string {
+    get colorScheme(): ColorScheme {
         return this.layoutService.config.colorScheme;
     }
 
-    set colorScheme(_val: string) {
+    set colorScheme(_val: ColorScheme) {
         this.changeColorScheme(_val);
     }
 
@@ -67,11 +67,11 @@ export class AppConfigComponent implements OnInit {
         this.layoutService.config.ripple = _val;
     }
 
-    get menuTheme(): string {
+    get menuTheme(): MenuColorScheme {
         return this.layoutService.config.menuTheme;
     }
 
-    set menuTheme(_val: string) {
+    set menuTheme(_val: MenuColorScheme) {
         this.layoutService.config.menuTheme = _val;
     }
 
@@ -92,7 +92,7 @@ export class AppConfigComponent implements OnInit {
         this.layoutService.showConfigSidebar();
     }
 
-    changeColorScheme(colorScheme: string) {
+    changeColorScheme(colorScheme: ColorScheme) {
         const themeLink = <HTMLLinkElement>document.getElementById('theme-link');
         const themeLinkHref = themeLink.getAttribute('href');
         const currentColorScheme = 'theme-' + this.layoutService.config.colorScheme;
