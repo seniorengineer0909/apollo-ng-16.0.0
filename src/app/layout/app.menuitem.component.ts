@@ -55,7 +55,7 @@ import { AppSidebarComponent } from './app.sidebar.component';
         <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
     </a>
 
-    <ul *ngIf="item.items && item.visible !== false" [@children]="submenuAnimation" (@children.done)="onSubmenuAnimated($event)">
+    <ul *ngIf="item.items && item.visible !== false" [class]="this.active?'active-menuitem':''" [@children]="submenuAnimation" (@children.done)="onSubmenuAnimated($event)">
     <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
         <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
     </ng-template>
@@ -98,6 +98,8 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     key: string = "";
 
+    scrolled:boolean = false;
+
     constructor(public layoutService: LayoutService, private cd: ChangeDetectorRef, public router: Router,private appSidebar: AppSidebarComponent, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(value => {
             Promise.resolve(null).then(() => {
@@ -137,6 +139,8 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
         }
     }
 
+      
+
     updateActiveStateFromRoute() {
         let activeRoute = this.router.isActive(this.item.routerLink[0], { paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' });
 
@@ -144,26 +148,37 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             this.menuService.onMenuStateChange({key: this.key, routeEvent: true});
         }
     }
+    
     onSubmenuAnimated(event: AnimationEvent) {
-        if (event.toState === 'visible' && this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim)) {
-            const el = <HTMLUListElement> event.element;
+        if (event.toState === 'visible' && this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim|| this.layoutService.isSlimPlus)) {
             const container = <HTMLDivElement> this.appSidebar.menuContainer.nativeElement;
-
-            if (this.layoutService.isHorizontal()) {
-                el.style.removeProperty('top');
-                const scrollLeft = container.scrollLeft;
-                const offsetLeft = el.parentElement?.offsetLeft || 0;
-                el.style.left = (offsetLeft - scrollLeft) + 'px';
-            }
-            else if (this.layoutService.isSlim()|| this.layoutService.isSlimPlus()) {
-                el.style.removeProperty('left');
-                const scrollTop = container.scrollTop;
-                const offsetTop = el.parentElement?.offsetTop || 0;
-                el.style.top = (offsetTop - scrollTop) + 'px';
-            }
+            const el = <HTMLUListElement> event.element;
+            const elParent = <HTMLUListElement> el.parentElement;
+            this.calculatePosition(el, elParent, this.layoutService.isHorizontal(), this.layoutService.isSlim(), this.layoutService.isSlimPlus());
+         
         }
     }
 
+    calculatePosition(overlay: HTMLElement, target: HTMLElement, isHorizontal: boolean, isSlim: boolean, isSlimPlus: boolean) {
+        if (overlay) {
+            const { left, top } = target.getBoundingClientRect();
+            const [vWidth, vHeight] = [window.innerWidth, window.innerHeight];
+            const [oWidth, oHeight] = [overlay.offsetWidth, overlay.offsetHeight];
+
+            // reset
+            overlay.style.top = '';
+            overlay.style.left = '';
+      
+            if (isHorizontal) {
+                const width = left + oWidth;
+                overlay.style.left = vWidth < width ? `${left - (width - vWidth)}px` : `${left}px`;
+            } else if (isSlim || isSlimPlus) {
+                const height = top + oHeight;
+                overlay.style.top = vHeight < height ? `${top - (height - vHeight)}px` : `${top}px`;
+            }
+        }
+      }
+    
     itemClick(event: Event) {
         // avoid processing disabled items
         if (this.item.disabled) {
@@ -205,7 +220,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     onMouseEnter() {
         // activate item on hover
-        if (this.root && (this.isSlim || this.isHorizontal || this.isSlimPlus) && this.layoutService.isDesktop()) {
+        if (this.root && (this.isSlim || this.isHorizontal || this.isSlimPlus) && this.layoutService.isDesktop() && !this.scrolled) {
             if (this.layoutService.state.menuHoverActive) {
                 this.active = true;
                 this.menuService.onMenuStateChange({key: this.key});
@@ -214,8 +229,10 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     }
 
     get submenuAnimation() {
-        if (this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim() || this.layoutService.isSlimPlus()))
+        if (this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim() || this.layoutService.isSlimPlus())){
             return this.active ? 'visible' : 'hidden';
+        }
+          
         else
             return this.root ? 'expanded' : (this.active ? 'expanded' : 'collapsed');
     }
