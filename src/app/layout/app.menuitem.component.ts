@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, HostBinding, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostBinding, Input, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { animate, state, style, transition, trigger,AnimationEvent } from '@angular/animations';
 import { Subscription } from 'rxjs';
@@ -6,6 +6,7 @@ import { filter } from 'rxjs/operators';
 import { MenuService } from './app.menu.service';
 import { LayoutService } from './service/app.layout.service';
 import { AppSidebarComponent } from './app.sidebar.component';
+import {DomHandler} from 'primeng/dom';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -55,7 +56,7 @@ import { AppSidebarComponent } from './app.sidebar.component';
         <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
     </a>
 
-    <ul *ngIf="item.items && item.visible !== false" [class]="this.active?'active-menuitem':''" [@children]="submenuAnimation" (@children.done)="onSubmenuAnimated($event)">
+    <ul #submenu *ngIf="item.items && item.visible !== false" [@children]="submenuAnimation" (@children.done)="onSubmenuAnimated($event)">
     <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
         <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
     </ng-template>
@@ -90,6 +91,8 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     @Input() parentKey!: string;
 
+    @ViewChild('submenu') submenu!: ElementRef;
+
     active = false;
 
     menuSourceSubscription: Subscription;
@@ -97,8 +100,6 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     menuResetSubscription: Subscription;
 
     key: string = "";
-
-    scrolled:boolean = false;
 
     constructor(public layoutService: LayoutService, private cd: ChangeDetectorRef, public router: Router,private appSidebar: AppSidebarComponent, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(value => {
@@ -139,7 +140,11 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
         }
     }
 
-      
+    ngAfterViewChecked() {
+        if (this.root && this.active && this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim()|| this.layoutService.isSlimPlus())) {
+            this.calculatePosition(this.submenu?.nativeElement, this.submenu?.nativeElement.parentElement);
+        }
+    }
 
     updateActiveStateFromRoute() {
         let activeRoute = this.router.isActive(this.item.routerLink[0], { paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' });
@@ -150,29 +155,27 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     }
     
     onSubmenuAnimated(event: AnimationEvent) {
-        if (event.toState === 'visible' && this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim|| this.layoutService.isSlimPlus)) {
-            const container = <HTMLDivElement> this.appSidebar.menuContainer.nativeElement;
+        if (event.toState === 'visible' && this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim()|| this.layoutService.isSlimPlus())) {
             const el = <HTMLUListElement> event.element;
             const elParent = <HTMLUListElement> el.parentElement;
-            this.calculatePosition(el, elParent, this.layoutService.isHorizontal(), this.layoutService.isSlim(), this.layoutService.isSlimPlus());
-         
+            this.calculatePosition(el, elParent);
         }
     }
 
-    calculatePosition(overlay: HTMLElement, target: HTMLElement, isHorizontal: boolean, isSlim: boolean, isSlimPlus: boolean) {
+    calculatePosition(overlay: HTMLElement, target: HTMLElement) {
         if (overlay) {
             const { left, top } = target.getBoundingClientRect();
             const [vWidth, vHeight] = [window.innerWidth, window.innerHeight];
             const [oWidth, oHeight] = [overlay.offsetWidth, overlay.offsetHeight];
-
+            const scrollbarWidth = DomHandler.calculateScrollbarWidth();
             // reset
             overlay.style.top = '';
             overlay.style.left = '';
       
-            if (isHorizontal) {
-                const width = left + oWidth;
+            if (this.layoutService.isHorizontal()) {
+                const width = left + oWidth + scrollbarWidth;
                 overlay.style.left = vWidth < width ? `${left - (width - vWidth)}px` : `${left}px`;
-            } else if (isSlim || isSlimPlus) {
+            } else if ( this.layoutService.isSlim() || this.layoutService.isSlimPlus()) {
                 const height = top + oHeight;
                 overlay.style.top = vHeight < height ? `${top - (height - vHeight)}px` : `${top}px`;
             }
@@ -220,7 +223,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     onMouseEnter() {
         // activate item on hover
-        if (this.root && (this.isSlim || this.isHorizontal || this.isSlimPlus) && this.layoutService.isDesktop() && !this.scrolled) {
+        if (this.root && (this.isSlim || this.isHorizontal || this.isSlimPlus) && this.layoutService.isDesktop()) {
             if (this.layoutService.state.menuHoverActive) {
                 this.active = true;
                 this.menuService.onMenuStateChange({key: this.key});
