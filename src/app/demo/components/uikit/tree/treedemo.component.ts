@@ -7,17 +7,17 @@ import { TreeNode} from 'primeng/api';
 })
 export class TreeDemoComponent implements OnInit {
 
-    files1: TreeNode[] = [];
+    files1: TreeNode<any> | TreeNode<any>[] | any[] | any;
 
-    files2: TreeNode[] = [];
+    files2: TreeNode<any> | TreeNode<any>[] | any[] | any;
 
-    files3: TreeNode[] = [];
+    files3: TreeNode<any> | TreeNode<any>[] | any[] | any;
 
-    selectedFiles1: TreeNode[] = [];
+    selectedFiles1: TreeNode<any> | TreeNode<any>[] | any[] | any;
 
-    selectedFiles2: TreeNode[] = [];
+    selectedFiles2: TreeNode<any> | TreeNode<any>[] | any[] | any;
 
-    selectedFiles3: TreeNode = {};
+    selectedFiles3: TreeNode | any = {};
 
     cols: any[] = [];
 
