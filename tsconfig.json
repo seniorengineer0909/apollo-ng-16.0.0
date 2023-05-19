@@ -24,6 +24,7 @@
       "dom"
     ]
   },
+  "exclude": ["node_modules", "**/node_modules/*"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
